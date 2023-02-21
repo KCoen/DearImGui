@@ -1,9 +1,11 @@
 ﻿using System.Diagnostics.CodeAnalysis;
+using System.Reflection.PortableExecutable;
 using System.Runtime.CompilerServices;
 using System.Text.RegularExpressions;
 using CppSharp;
 using CppSharp.AST;
 using CppSharp.Generators;
+using CppSharp.Generators.C;
 using CppSharp.Passes;
 using DearGenerator.Extensions;
 using Platform = Microsoft.CodeAnalysis.Platform;
@@ -162,9 +164,12 @@ public abstract class Library : ILibrary
     [SuppressMessage("ReSharper", "StringLiteralTypo")]
     protected static void SetupImGui(Module module)
     {
+        module.IncludeDirs.Add(@"..\..\..\..\imgui\Vulkan-Headers\include");
+        module.IncludeDirs.Add(@"..\..\..\..\imgui");
         module.IncludeDirs.Add(@"..\..\..\..\imgui\imgui");
         module.Defines.Add("IMGUI_DISABLE_OBSOLETE_FUNCTIONS");
         module.Defines.Add("IMGUI_DISABLE_OBSOLETE_KEYIO");
+        module.Defines.Add("IMGUI_INCLUDE_IMGUI_USER_H");
         module.Headers.Add("imgui.h");
     }
 
