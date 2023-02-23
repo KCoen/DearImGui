@@ -2155,7 +2155,7 @@ namespace DearImGui
     /// <summary>Function signature for ImGui::SetAllocatorFunctions().<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L249.</summary>
     // DEBUG: typedef void*   (*ImGuiMemAllocFunc)(size_t sz, void* user_data)
     [SuppressUnmanagedCodeSecurity, UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    public unsafe delegate IntPtr ImGuiMemAllocFunc(UIntPtr sz, IntPtr user_data);
+    public unsafe delegate IntPtr ImGuiMemAllocFunc(global::System.UIntPtr sz, IntPtr user_data);
 
     /// <summary>Function signature for ImGui::SetAllocatorFunctions().<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L250.</summary>
     // DEBUG: typedef void    (*ImGuiMemFreeFunc)(void* ptr, void* user_data)
@@ -2175,10 +2175,10 @@ namespace DearImGui
     public unsafe delegate void Action_IntPtr(IntPtr vp);
 
     [SuppressUnmanagedCodeSecurity, UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    public unsafe delegate void Action_IntPtr_Numerics_Vector2(IntPtr vp, Vector2 pos);
+    public unsafe delegate void Action_IntPtr_Numerics_Vector2(IntPtr vp, global::System.Numerics.Vector2 pos);
 
     [SuppressUnmanagedCodeSecurity, UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    public unsafe delegate Vector2 Func_Numerics_Vector2_IntPtr(IntPtr vp);
+    public unsafe delegate global::System.Numerics.Vector2 Func_Numerics_Vector2_IntPtr(IntPtr vp);
 
     [SuppressUnmanagedCodeSecurity, UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     [return: MarshalAs(UnmanagedType.I1)]
@@ -2221,13 +2221,13 @@ namespace DearImGui
 
         internal IntPtr __Instance { get; set; }
 
-        internal static readonly new ConcurrentDictionary<IntPtr, WeakReference<ImDrawListSharedData>> NativeToManagedMap = new ConcurrentDictionary<IntPtr, WeakReference<ImDrawListSharedData>>();
-        internal static void __RecordNativeToManagedMapping(IntPtr native, ImDrawListSharedData managed)
+        internal static readonly new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::System.WeakReference<global::DearImGui.ImDrawListSharedData>> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::System.WeakReference<global::DearImGui.ImDrawListSharedData>>();
+        internal static void __RecordNativeToManagedMapping(IntPtr native, global::DearImGui.ImDrawListSharedData managed)
         {
-            NativeToManagedMap[native] = new WeakReference<ImDrawListSharedData>(managed);
+            NativeToManagedMap[native] = new global::System.WeakReference<global::DearImGui.ImDrawListSharedData>(managed);
         }
 
-        internal static bool __TryGetNativeToManagedMapping(IntPtr native, out ImDrawListSharedData managed)
+        internal static bool __TryGetNativeToManagedMapping(IntPtr native, out global::DearImGui.ImDrawListSharedData managed)
         {
             managed = default;
             return NativeToManagedMap.TryGetValue(native, out var wr) && wr.TryGetTarget(out managed);
@@ -2289,13 +2289,13 @@ namespace DearImGui
 
         internal IntPtr __Instance { get; set; }
 
-        internal static readonly new ConcurrentDictionary<IntPtr, WeakReference<ImFontBuilderIO>> NativeToManagedMap = new ConcurrentDictionary<IntPtr, WeakReference<ImFontBuilderIO>>();
-        internal static void __RecordNativeToManagedMapping(IntPtr native, ImFontBuilderIO managed)
+        internal static readonly new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::System.WeakReference<global::DearImGui.ImFontBuilderIO>> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::System.WeakReference<global::DearImGui.ImFontBuilderIO>>();
+        internal static void __RecordNativeToManagedMapping(IntPtr native, global::DearImGui.ImFontBuilderIO managed)
         {
-            NativeToManagedMap[native] = new WeakReference<ImFontBuilderIO>(managed);
+            NativeToManagedMap[native] = new global::System.WeakReference<global::DearImGui.ImFontBuilderIO>(managed);
         }
 
-        internal static bool __TryGetNativeToManagedMapping(IntPtr native, out ImFontBuilderIO managed)
+        internal static bool __TryGetNativeToManagedMapping(IntPtr native, out global::DearImGui.ImFontBuilderIO managed)
         {
             managed = default;
             return NativeToManagedMap.TryGetValue(native, out var wr) && wr.TryGetTarget(out managed);
@@ -2402,23 +2402,23 @@ namespace DearImGui
         {
             internal float Alpha;
             internal float DisabledAlpha;
-            internal Vector2 WindowPadding;
+            internal global::System.Numerics.Vector2 WindowPadding;
             internal float WindowRounding;
             internal float WindowBorderSize;
-            internal Vector2 WindowMinSize;
-            internal Vector2 WindowTitleAlign;
-            internal ImGuiDir WindowMenuButtonPosition;
+            internal global::System.Numerics.Vector2 WindowMinSize;
+            internal global::System.Numerics.Vector2 WindowTitleAlign;
+            internal global::DearImGui.ImGuiDir WindowMenuButtonPosition;
             internal float ChildRounding;
             internal float ChildBorderSize;
             internal float PopupRounding;
             internal float PopupBorderSize;
-            internal Vector2 FramePadding;
+            internal global::System.Numerics.Vector2 FramePadding;
             internal float FrameRounding;
             internal float FrameBorderSize;
-            internal Vector2 ItemSpacing;
-            internal Vector2 ItemInnerSpacing;
-            internal Vector2 CellPadding;
-            internal Vector2 TouchExtraPadding;
+            internal global::System.Numerics.Vector2 ItemSpacing;
+            internal global::System.Numerics.Vector2 ItemInnerSpacing;
+            internal global::System.Numerics.Vector2 CellPadding;
+            internal global::System.Numerics.Vector2 TouchExtraPadding;
             internal float IndentSpacing;
             internal float ColumnsMinSpacing;
             internal float ScrollbarSize;
@@ -2429,11 +2429,11 @@ namespace DearImGui
             internal float TabRounding;
             internal float TabBorderSize;
             internal float TabMinWidthForCloseButton;
-            internal ImGuiDir ColorButtonPosition;
-            internal Vector2 ButtonTextAlign;
-            internal Vector2 SelectableTextAlign;
-            internal Vector2 DisplayWindowPadding;
-            internal Vector2 DisplaySafeAreaPadding;
+            internal global::DearImGui.ImGuiDir ColorButtonPosition;
+            internal global::System.Numerics.Vector2 ButtonTextAlign;
+            internal global::System.Numerics.Vector2 SelectableTextAlign;
+            internal global::System.Numerics.Vector2 DisplayWindowPadding;
+            internal global::System.Numerics.Vector2 DisplaySafeAreaPadding;
             internal float MouseCursorScale;
             internal byte AntiAliasedLines;
             internal byte AntiAliasedLinesUseTex;
@@ -2471,13 +2471,13 @@ namespace DearImGui
 
         internal IntPtr __Instance { get; set; }
 
-        internal static readonly new ConcurrentDictionary<IntPtr, WeakReference<ImGuiStyle>> NativeToManagedMap = new ConcurrentDictionary<IntPtr, WeakReference<ImGuiStyle>>();
-        internal static void __RecordNativeToManagedMapping(IntPtr native, ImGuiStyle managed)
+        internal static readonly new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::System.WeakReference<global::DearImGui.ImGuiStyle>> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::System.WeakReference<global::DearImGui.ImGuiStyle>>();
+        internal static void __RecordNativeToManagedMapping(IntPtr native, global::DearImGui.ImGuiStyle managed)
         {
-            NativeToManagedMap[native] = new WeakReference<ImGuiStyle>(managed);
+            NativeToManagedMap[native] = new global::System.WeakReference<global::DearImGui.ImGuiStyle>(managed);
         }
 
-        internal static bool __TryGetNativeToManagedMapping(IntPtr native, out ImGuiStyle managed)
+        internal static bool __TryGetNativeToManagedMapping(IntPtr native, out global::DearImGui.ImGuiStyle managed)
         {
             managed = default;
             return NativeToManagedMap.TryGetValue(native, out var wr) && wr.TryGetTarget(out managed);
@@ -2532,7 +2532,7 @@ namespace DearImGui
         // DEBUG: ImGuiStyle()
         public ImGuiStyle()
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(ImGuiStyle.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::DearImGui.ImGuiStyle.__Internal));
             __ownsNativeInstance = true;
             __RecordNativeToManagedMapping(__Instance, this);
             if (Environment.Is64BitProcess)
@@ -2547,13 +2547,13 @@ namespace DearImGui
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L1918.</summary>
         // DEBUG: ImGuiStyle
-        public ImGuiStyle(ImGuiStyle _0)
+        public ImGuiStyle(global::DearImGui.ImGuiStyle _0)
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(ImGuiStyle.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::DearImGui.ImGuiStyle.__Internal));
             __ownsNativeInstance = true;
             __RecordNativeToManagedMapping(__Instance, this);
             if (ReferenceEquals(_0, null))
-                throw new ArgumentNullException("_0", "Cannot be null because it is a C++ reference (&).");
+                throw new global::System.ArgumentNullException("_0", "Cannot be null because it is a C++ reference (&).");
             var __arg0 = _0.__Instance;
             if (Environment.Is64BitProcess)
             {
@@ -2633,7 +2633,7 @@ namespace DearImGui
         }
 
         /// <summary>Padding within a window.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L1922.</summary>
-        public Vector2 WindowPadding
+        public global::System.Numerics.Vector2 WindowPadding
         {
             get
             {
@@ -2681,7 +2681,7 @@ namespace DearImGui
         }
 
         /// <summary>Minimum window size. This is a global setting. If you want to constraint individual windows, use SetNextWindowSizeConstraints().<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L1925.</summary>
-        public Vector2 WindowMinSize
+        public global::System.Numerics.Vector2 WindowMinSize
         {
             get
             {
@@ -2701,7 +2701,7 @@ namespace DearImGui
         }
 
         /// <summary>Alignment for title bar text. Defaults to (0.0f,0.5f) for left-aligned,vertically centered.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L1926.</summary>
-        public Vector2 WindowTitleAlign
+        public global::System.Numerics.Vector2 WindowTitleAlign
         {
             get
             {
@@ -2721,7 +2721,7 @@ namespace DearImGui
         }
 
         /// <summary>Side of the collapsing/docking button in the title bar (None/Left/Right). Defaults to ImGuiDir_Left.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L1927.</summary>
-        public ImGuiDir WindowMenuButtonPosition
+        public global::DearImGui.ImGuiDir WindowMenuButtonPosition
         {
             get
             {
@@ -2791,7 +2791,7 @@ namespace DearImGui
         }
 
         /// <summary>Padding within a framed rectangle (used by most widgets).<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L1932.</summary>
-        public Vector2 FramePadding
+        public global::System.Numerics.Vector2 FramePadding
         {
             get
             {
@@ -2839,7 +2839,7 @@ namespace DearImGui
         }
 
         /// <summary>Horizontal and vertical spacing between widgets/lines.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L1935.</summary>
-        public Vector2 ItemSpacing
+        public global::System.Numerics.Vector2 ItemSpacing
         {
             get
             {
@@ -2859,7 +2859,7 @@ namespace DearImGui
         }
 
         /// <summary>Horizontal and vertical spacing between within elements of a composed widget (e.g. a slider and its label).<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L1936.</summary>
-        public Vector2 ItemInnerSpacing
+        public global::System.Numerics.Vector2 ItemInnerSpacing
         {
             get
             {
@@ -2879,7 +2879,7 @@ namespace DearImGui
         }
 
         /// <summary>Padding within a table cell.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L1937.</summary>
-        public Vector2 CellPadding
+        public global::System.Numerics.Vector2 CellPadding
         {
             get
             {
@@ -2899,7 +2899,7 @@ namespace DearImGui
         }
 
         /// <summary>Expand reactive bounding box for touch-based system where touch position is not accurate enough. Unfortunately we don't sort widgets so priority on overlap will always be given to the first widget. So don't grow this too much!<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L1938.</summary>
-        public Vector2 TouchExtraPadding
+        public global::System.Numerics.Vector2 TouchExtraPadding
         {
             get
             {
@@ -3059,7 +3059,7 @@ namespace DearImGui
         }
 
         /// <summary>Side of the color button in the ColorEdit4 widget (left/right). Defaults to ImGuiDir_Right.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L1949.</summary>
-        public ImGuiDir ColorButtonPosition
+        public global::DearImGui.ImGuiDir ColorButtonPosition
         {
             get
             {
@@ -3073,7 +3073,7 @@ namespace DearImGui
         }
 
         /// <summary>Alignment of button text when button is larger than text. Defaults to (0.5f, 0.5f) (centered).<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L1950.</summary>
-        public Vector2 ButtonTextAlign
+        public global::System.Numerics.Vector2 ButtonTextAlign
         {
             get
             {
@@ -3093,7 +3093,7 @@ namespace DearImGui
         }
 
         /// <summary>Alignment of selectable text. Defaults to (0.0f, 0.0f) (top-left aligned). It's generally important to keep this left-aligned if you want to lay multiple items on a same line.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L1951.</summary>
-        public Vector2 SelectableTextAlign
+        public global::System.Numerics.Vector2 SelectableTextAlign
         {
             get
             {
@@ -3113,7 +3113,7 @@ namespace DearImGui
         }
 
         /// <summary>Window position are clamped to be visible within the display area or monitors by at least this amount. Only applies to regular windows.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L1952.</summary>
-        public Vector2 DisplayWindowPadding
+        public global::System.Numerics.Vector2 DisplayWindowPadding
         {
             get
             {
@@ -3133,7 +3133,7 @@ namespace DearImGui
         }
 
         /// <summary>If you cannot see the edges of your screen (e.g. on a TV) increase the safe area padding. Apply to popups/tooltips as well regular windows. NB: Prefer configuring your TV sets correctly!<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L1953.</summary>
-        public Vector2 DisplaySafeAreaPadding
+        public global::System.Numerics.Vector2 DisplaySafeAreaPadding
         {
             get
             {
@@ -3272,13 +3272,13 @@ namespace DearImGui
 
         internal IntPtr __Instance { get; set; }
 
-        internal static readonly new ConcurrentDictionary<IntPtr, WeakReference<ImGuiKeyData>> NativeToManagedMap = new ConcurrentDictionary<IntPtr, WeakReference<ImGuiKeyData>>();
-        internal static void __RecordNativeToManagedMapping(IntPtr native, ImGuiKeyData managed)
+        internal static readonly new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::System.WeakReference<global::DearImGui.ImGuiKeyData>> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::System.WeakReference<global::DearImGui.ImGuiKeyData>>();
+        internal static void __RecordNativeToManagedMapping(IntPtr native, global::DearImGui.ImGuiKeyData managed)
         {
-            NativeToManagedMap[native] = new WeakReference<ImGuiKeyData>(managed);
+            NativeToManagedMap[native] = new global::System.WeakReference<global::DearImGui.ImGuiKeyData>(managed);
         }
 
-        internal static bool __TryGetNativeToManagedMapping(IntPtr native, out ImGuiKeyData managed)
+        internal static bool __TryGetNativeToManagedMapping(IntPtr native, out global::DearImGui.ImGuiKeyData managed)
         {
             managed = default;
             return NativeToManagedMap.TryGetValue(native, out var wr) && wr.TryGetTarget(out managed);
@@ -3331,13 +3331,13 @@ namespace DearImGui
 
         /// <summary>[Internal] Storage used by IsKeyDown(), IsKeyPressed() etc functions.<br/>If prior to 1.87 you used io.KeysDownDuration[] (which was marked as internal), you should use GetKeyData(key)-&gt;DownDuration and not io.KeysData[key]-&gt;DownDuration.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L1975.</summary>
         // DEBUG: ImGuiKeyData
-        public ImGuiKeyData(ImGuiKeyData _0)
+        public ImGuiKeyData(global::DearImGui.ImGuiKeyData _0)
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(ImGuiKeyData.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::DearImGui.ImGuiKeyData.__Internal));
             __ownsNativeInstance = true;
             __RecordNativeToManagedMapping(__Instance, this);
             if (ReferenceEquals(_0, null))
-                throw new ArgumentNullException("_0", "Cannot be null because it is a C++ reference (&).");
+                throw new global::System.ArgumentNullException("_0", "Cannot be null because it is a C++ reference (&).");
             var __arg0 = _0.__Instance;
             if (Environment.Is64BitProcess)
             {
@@ -3353,7 +3353,7 @@ namespace DearImGui
         // DEBUG: ImGuiKeyData
         public ImGuiKeyData()
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(ImGuiKeyData.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::DearImGui.ImGuiKeyData.__Internal));
             __ownsNativeInstance = true;
             __RecordNativeToManagedMapping(__Instance, this);
         }
@@ -3618,9 +3618,9 @@ namespace DearImGui
         [StructLayout(LayoutKind.Sequential)]
         internal partial struct __Internal
         {
-            internal ImGuiConfigFlags ConfigFlags;
-            internal ImGuiBackendFlags BackendFlags;
-            internal Vector2 DisplaySize;
+            internal global::DearImGui.ImGuiConfigFlags ConfigFlags;
+            internal global::DearImGui.ImGuiBackendFlags BackendFlags;
+            internal global::System.Numerics.Vector2 DisplaySize;
             internal float DeltaTime;
             internal float IniSavingRate;
             internal IntPtr IniFilename;
@@ -3635,7 +3635,7 @@ namespace DearImGui
             internal float FontGlobalScale;
             internal byte FontAllowUserScaling;
             internal IntPtr FontDefault;
-            internal Vector2 DisplayFramebufferScale;
+            internal global::System.Numerics.Vector2 DisplayFramebufferScale;
             internal byte ConfigDockingNoSplit;
             internal byte ConfigDockingWithShift;
             internal byte ConfigDockingAlwaysTabBar;
@@ -3675,8 +3675,8 @@ namespace DearImGui
             internal int MetricsRenderWindows;
             internal int MetricsActiveWindows;
             internal int MetricsActiveAllocations;
-            internal Vector2 MouseDelta;
-            internal Vector2 MousePos;
+            internal global::System.Numerics.Vector2 MouseDelta;
+            internal global::System.Numerics.Vector2 MousePos;
             internal fixed byte MouseDown[5];
             internal float MouseWheel;
             internal float MouseWheelH;
@@ -3689,7 +3689,7 @@ namespace DearImGui
             internal int KeyMods;
             internal fixed byte KeysData[2128];
             internal byte WantCaptureMouseUnlessPopupClose;
-            internal Vector2 MousePosPrev;
+            internal global::System.Numerics.Vector2 MousePosPrev;
             internal fixed byte MouseClickedPos[40];
             internal fixed double MouseClickedTime[5];
             internal fixed byte MouseClicked[5];
@@ -3726,10 +3726,10 @@ namespace DearImGui
             internal static extern void dtor(IntPtr __instance);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?AddKeyEvent@ImGuiIO@@QAEXH_N@Z", CallingConvention = CallingConvention.ThisCall)]
-            internal static extern void AddKeyEvent(IntPtr __instance, ImGuiKey key, bool down);
+            internal static extern void AddKeyEvent(IntPtr __instance, global::DearImGui.ImGuiKey key, bool down);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?AddKeyAnalogEvent@ImGuiIO@@QAEXH_NM@Z", CallingConvention = CallingConvention.ThisCall)]
-            internal static extern void AddKeyAnalogEvent(IntPtr __instance, ImGuiKey key, bool down, float v);
+            internal static extern void AddKeyAnalogEvent(IntPtr __instance, global::DearImGui.ImGuiKey key, bool down, float v);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?AddMousePosEvent@ImGuiIO@@QAEXMM@Z", CallingConvention = CallingConvention.ThisCall)]
             internal static extern void AddMousePosEvent(IntPtr __instance, float x, float y);
@@ -3756,7 +3756,7 @@ namespace DearImGui
             internal static extern void AddInputCharactersUTF8(IntPtr __instance, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string str);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?SetKeyEventNativeData@ImGuiIO@@QAEXHHHH@Z", CallingConvention = CallingConvention.ThisCall)]
-            internal static extern void SetKeyEventNativeData(IntPtr __instance, ImGuiKey key, int native_keycode, int native_scancode, int native_legacy_index);
+            internal static extern void SetKeyEventNativeData(IntPtr __instance, global::DearImGui.ImGuiKey key, int native_keycode, int native_scancode, int native_legacy_index);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?SetAppAcceptingEvents@ImGuiIO@@QAEX_N@Z", CallingConvention = CallingConvention.ThisCall)]
             internal static extern void SetAppAcceptingEvents(IntPtr __instance, bool accepting_events);
@@ -3781,10 +3781,10 @@ namespace DearImGui
             internal static extern void dtor(IntPtr __instance);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?AddKeyEvent@ImGuiIO@@QEAAXH_N@Z", CallingConvention = CallingConvention.Cdecl)]
-            internal static extern void AddKeyEvent(IntPtr __instance, ImGuiKey key, bool down);
+            internal static extern void AddKeyEvent(IntPtr __instance, global::DearImGui.ImGuiKey key, bool down);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?AddKeyAnalogEvent@ImGuiIO@@QEAAXH_NM@Z", CallingConvention = CallingConvention.Cdecl)]
-            internal static extern void AddKeyAnalogEvent(IntPtr __instance, ImGuiKey key, bool down, float v);
+            internal static extern void AddKeyAnalogEvent(IntPtr __instance, global::DearImGui.ImGuiKey key, bool down, float v);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?AddMousePosEvent@ImGuiIO@@QEAAXMM@Z", CallingConvention = CallingConvention.Cdecl)]
             internal static extern void AddMousePosEvent(IntPtr __instance, float x, float y);
@@ -3811,7 +3811,7 @@ namespace DearImGui
             internal static extern void AddInputCharactersUTF8(IntPtr __instance, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string str);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?SetKeyEventNativeData@ImGuiIO@@QEAAXHHHH@Z", CallingConvention = CallingConvention.Cdecl)]
-            internal static extern void SetKeyEventNativeData(IntPtr __instance, ImGuiKey key, int native_keycode, int native_scancode, int native_legacy_index);
+            internal static extern void SetKeyEventNativeData(IntPtr __instance, global::DearImGui.ImGuiKey key, int native_keycode, int native_scancode, int native_legacy_index);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?SetAppAcceptingEvents@ImGuiIO@@QEAAX_N@Z", CallingConvention = CallingConvention.Cdecl)]
             internal static extern void SetAppAcceptingEvents(IntPtr __instance, bool accepting_events);
@@ -3826,13 +3826,13 @@ namespace DearImGui
 
         internal IntPtr __Instance { get; set; }
 
-        internal static readonly new ConcurrentDictionary<IntPtr, WeakReference<ImGuiIO>> NativeToManagedMap = new ConcurrentDictionary<IntPtr, WeakReference<ImGuiIO>>();
-        internal static void __RecordNativeToManagedMapping(IntPtr native, ImGuiIO managed)
+        internal static readonly new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::System.WeakReference<global::DearImGui.ImGuiIO>> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::System.WeakReference<global::DearImGui.ImGuiIO>>();
+        internal static void __RecordNativeToManagedMapping(IntPtr native, global::DearImGui.ImGuiIO managed)
         {
-            NativeToManagedMap[native] = new WeakReference<ImGuiIO>(managed);
+            NativeToManagedMap[native] = new global::System.WeakReference<global::DearImGui.ImGuiIO>(managed);
         }
 
-        internal static bool __TryGetNativeToManagedMapping(IntPtr native, out ImGuiIO managed)
+        internal static bool __TryGetNativeToManagedMapping(IntPtr native, out global::DearImGui.ImGuiIO managed)
         {
             managed = default;
             return NativeToManagedMap.TryGetValue(native, out var wr) && wr.TryGetTarget(out managed);
@@ -3891,7 +3891,7 @@ namespace DearImGui
         // DEBUG: ImGuiIO()
         public ImGuiIO()
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(ImGuiIO.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::DearImGui.ImGuiIO.__Internal));
             __ownsNativeInstance = true;
             __RecordNativeToManagedMapping(__Instance, this);
             if (Environment.Is64BitProcess)
@@ -3906,13 +3906,13 @@ namespace DearImGui
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L1983.</summary>
         // DEBUG: ImGuiIO
-        public ImGuiIO(ImGuiIO _0)
+        public ImGuiIO(global::DearImGui.ImGuiIO _0)
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(ImGuiIO.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::DearImGui.ImGuiIO.__Internal));
             __ownsNativeInstance = true;
             __RecordNativeToManagedMapping(__Instance, this);
             if (ReferenceEquals(_0, null))
-                throw new ArgumentNullException("_0", "Cannot be null because it is a C++ reference (&).");
+                throw new global::System.ArgumentNullException("_0", "Cannot be null because it is a C++ reference (&).");
             var __arg0 = _0.__Instance;
             if (Environment.Is64BitProcess)
             {
@@ -3969,7 +3969,7 @@ namespace DearImGui
 
         /// <summary>Queue a new key down/up event. Key should be "translated" (as in, generally ImGuiKey_A matches the key end-user would use to emit an 'A' character).<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2063.</summary>
         // DEBUG: void  AddKeyEvent(ImGuiKey key, bool down)
-        public void AddKeyEvent(ImGuiKey key, bool down)
+        public void AddKeyEvent(global::DearImGui.ImGuiKey key, bool down)
         {
             if (Environment.Is64BitProcess)
             {
@@ -3983,7 +3983,7 @@ namespace DearImGui
 
         /// <summary>Queue a new key down/up event for analog values (e.g. ImGuiKey_Gamepad_ values). Dead-zones should be handled by the backend.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2064.</summary>
         // DEBUG: void  AddKeyAnalogEvent(ImGuiKey key, bool down, float v)
-        public void AddKeyAnalogEvent(ImGuiKey key, bool down, float v)
+        public void AddKeyAnalogEvent(global::DearImGui.ImGuiKey key, bool down, float v)
         {
             if (Environment.Is64BitProcess)
             {
@@ -4109,7 +4109,7 @@ namespace DearImGui
 
         /// <summary>[Optional] Specify index for legacy &lt;1.87 IsKeyXXX() functions with native indices + specify native keycode, scancode.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2074.</summary>
         // DEBUG: void  SetKeyEventNativeData(ImGuiKey key, int native_keycode, int native_scancode, int native_legacy_index = -1)
-        public void SetKeyEventNativeData(ImGuiKey key, int native_keycode, int native_scancode, int native_legacy_index = (int)(-1))
+        public void SetKeyEventNativeData(global::DearImGui.ImGuiKey key, int native_keycode, int native_scancode, int native_legacy_index = (int)(-1))
         {
             if (Environment.Is64BitProcess)
             {
@@ -4164,7 +4164,7 @@ namespace DearImGui
         }
 
         /// <summary>= 0.<br/>See ImGuiConfigFlags_ enum. Set by user/application. Gamepad/keyboard navigation options, etc.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L1989.</summary>
-        public ImGuiConfigFlags ConfigFlags
+        public global::DearImGui.ImGuiConfigFlags ConfigFlags
         {
             get
             {
@@ -4178,7 +4178,7 @@ namespace DearImGui
         }
 
         /// <summary>= 0.<br/>See ImGuiBackendFlags_ enum. Set by backend (imgui_impl_xxx files or custom backend) to communicate features supported by the backend.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L1990.</summary>
-        public ImGuiBackendFlags BackendFlags
+        public global::DearImGui.ImGuiBackendFlags BackendFlags
         {
             get
             {
@@ -4192,7 +4192,7 @@ namespace DearImGui
         }
 
         /// <summary>&lt;unset&gt;.<br/>Main display size, in pixels (generally == GetMainViewport()-&gt;Size). May change every frame.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L1991.</summary>
-        public Vector2 DisplaySize
+        public global::System.Numerics.Vector2 DisplaySize
         {
             get
             {
@@ -4244,7 +4244,7 @@ namespace DearImGui
         {
             get
             {
-                return CppSharp.Runtime.MarshalUtil.GetString(Encoding.UTF8, ((__Internal*)__Instance)->IniFilename);
+                return CppSharp.Runtime.MarshalUtil.GetString(global::System.Text.Encoding.UTF8, ((__Internal*)__Instance)->IniFilename);
             }
 
             set
@@ -4254,11 +4254,11 @@ namespace DearImGui
                 __IniFilename_OwnsNativeMemory = true;
                 if (value == null)
                 {
-                    ((__Internal*)__Instance)->IniFilename = IntPtr.Zero;
+                    ((__Internal*)__Instance)->IniFilename = global::System.IntPtr.Zero;
                     return;
                 }
 
-                var __bytes0 = Encoding.UTF8.GetBytes(value);
+                var __bytes0 = global::System.Text.Encoding.UTF8.GetBytes(value);
                 var __bytePtr0 = Marshal.AllocHGlobal(__bytes0.Length + 1);
                 Marshal.Copy(__bytes0, 0, __bytePtr0, __bytes0.Length);
                 Marshal.WriteByte(__bytePtr0 + __bytes0.Length, 0);
@@ -4271,7 +4271,7 @@ namespace DearImGui
         {
             get
             {
-                return CppSharp.Runtime.MarshalUtil.GetString(Encoding.UTF8, ((__Internal*)__Instance)->LogFilename);
+                return CppSharp.Runtime.MarshalUtil.GetString(global::System.Text.Encoding.UTF8, ((__Internal*)__Instance)->LogFilename);
             }
 
             set
@@ -4281,11 +4281,11 @@ namespace DearImGui
                 __LogFilename_OwnsNativeMemory = true;
                 if (value == null)
                 {
-                    ((__Internal*)__Instance)->LogFilename = IntPtr.Zero;
+                    ((__Internal*)__Instance)->LogFilename = global::System.IntPtr.Zero;
                     return;
                 }
 
-                var __bytes0 = Encoding.UTF8.GetBytes(value);
+                var __bytes0 = global::System.Text.Encoding.UTF8.GetBytes(value);
                 var __bytePtr0 = Marshal.AllocHGlobal(__bytes0.Length + 1);
                 Marshal.Copy(__bytes0, 0, __bytePtr0, __bytes0.Length);
                 Marshal.WriteByte(__bytePtr0 + __bytes0.Length, 0);
@@ -4378,11 +4378,11 @@ namespace DearImGui
         }
 
         /// <summary>&lt;auto&gt;.<br/>Font atlas: load, rasterize and pack one or more fonts into a single texture.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2003.</summary>
-        public ImFontAtlas Fonts
+        public global::DearImGui.ImFontAtlas Fonts
         {
             get
             {
-                var __result0 = ImFontAtlas.__GetOrCreateInstance(((__Internal*)__Instance)->Fonts, false);
+                var __result0 = global::DearImGui.ImFontAtlas.__GetOrCreateInstance(((__Internal*)__Instance)->Fonts, false);
                 return __result0;
             }
 
@@ -4421,11 +4421,11 @@ namespace DearImGui
         }
 
         /// <summary>= NULL.<br/>Font to use on NewFrame(). Use NULL to uses Fonts-&gt;Fonts[0].<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2006.</summary>
-        public ImFont FontDefault
+        public global::DearImGui.ImFont FontDefault
         {
             get
             {
-                var __result0 = ImFont.__GetOrCreateInstance(((__Internal*)__Instance)->FontDefault, false);
+                var __result0 = global::DearImGui.ImFont.__GetOrCreateInstance(((__Internal*)__Instance)->FontDefault, false);
                 return __result0;
             }
 
@@ -4436,7 +4436,7 @@ namespace DearImGui
         }
 
         /// <summary>= (1, 1).<br/>For retina display or other situations where window coordinates are different from framebuffer coordinates. This generally ends up in ImDrawData::FramebufferScale.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2007.</summary>
-        public Vector2 DisplayFramebufferScale
+        public global::System.Numerics.Vector2 DisplayFramebufferScale
         {
             get
             {
@@ -4684,7 +4684,7 @@ namespace DearImGui
         {
             get
             {
-                return CppSharp.Runtime.MarshalUtil.GetString(Encoding.UTF8, ((__Internal*)__Instance)->BackendPlatformName);
+                return CppSharp.Runtime.MarshalUtil.GetString(global::System.Text.Encoding.UTF8, ((__Internal*)__Instance)->BackendPlatformName);
             }
 
             set
@@ -4694,11 +4694,11 @@ namespace DearImGui
                 __BackendPlatformName_OwnsNativeMemory = true;
                 if (value == null)
                 {
-                    ((__Internal*)__Instance)->BackendPlatformName = IntPtr.Zero;
+                    ((__Internal*)__Instance)->BackendPlatformName = global::System.IntPtr.Zero;
                     return;
                 }
 
-                var __bytes0 = Encoding.UTF8.GetBytes(value);
+                var __bytes0 = global::System.Text.Encoding.UTF8.GetBytes(value);
                 var __bytePtr0 = Marshal.AllocHGlobal(__bytes0.Length + 1);
                 Marshal.Copy(__bytes0, 0, __bytePtr0, __bytes0.Length);
                 Marshal.WriteByte(__bytePtr0 + __bytes0.Length, 0);
@@ -4711,7 +4711,7 @@ namespace DearImGui
         {
             get
             {
-                return CppSharp.Runtime.MarshalUtil.GetString(Encoding.UTF8, ((__Internal*)__Instance)->BackendRendererName);
+                return CppSharp.Runtime.MarshalUtil.GetString(global::System.Text.Encoding.UTF8, ((__Internal*)__Instance)->BackendRendererName);
             }
 
             set
@@ -4721,11 +4721,11 @@ namespace DearImGui
                 __BackendRendererName_OwnsNativeMemory = true;
                 if (value == null)
                 {
-                    ((__Internal*)__Instance)->BackendRendererName = IntPtr.Zero;
+                    ((__Internal*)__Instance)->BackendRendererName = global::System.IntPtr.Zero;
                     return;
                 }
 
-                var __bytes0 = Encoding.UTF8.GetBytes(value);
+                var __bytes0 = global::System.Text.Encoding.UTF8.GetBytes(value);
                 var __bytePtr0 = Marshal.AllocHGlobal(__bytes0.Length + 1);
                 Marshal.Copy(__bytes0, 0, __bytePtr0, __bytes0.Length);
                 Marshal.WriteByte(__bytePtr0 + __bytes0.Length, 0);
@@ -4776,32 +4776,32 @@ namespace DearImGui
         }
 
         /// <summary>Optional: Access OS clipboard.<br/>(default to use native Win32 clipboard on Windows, otherwise uses a private clipboard. Override to access OS clipboard on other architectures).<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2045.</summary>
-        public ImGetClipboardTextHandler GetClipboardTextFn
+        public global::DearImGui.ImGetClipboardTextHandler GetClipboardTextFn
         {
             get
             {
                 var __ptr0 = ((__Internal*)__Instance)->GetClipboardTextFn;
-                return __ptr0 == IntPtr.Zero ? null : (ImGetClipboardTextHandler)Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(ImGetClipboardTextHandler));
+                return __ptr0 == IntPtr.Zero ? null : (global::DearImGui.ImGetClipboardTextHandler)Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(global::DearImGui.ImGetClipboardTextHandler));
             }
 
             set
             {
-                ((__Internal*)__Instance)->GetClipboardTextFn = value == null ? IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(value);
+                ((__Internal*)__Instance)->GetClipboardTextFn = value == null ? global::System.IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(value);
             }
         }
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2046.</summary>
-        public ImSetClipboardTextHandler SetClipboardTextFn
+        public global::DearImGui.ImSetClipboardTextHandler SetClipboardTextFn
         {
             get
             {
                 var __ptr0 = ((__Internal*)__Instance)->SetClipboardTextFn;
-                return __ptr0 == IntPtr.Zero ? null : (ImSetClipboardTextHandler)Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(ImSetClipboardTextHandler));
+                return __ptr0 == IntPtr.Zero ? null : (global::DearImGui.ImSetClipboardTextHandler)Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(global::DearImGui.ImSetClipboardTextHandler));
             }
 
             set
             {
-                ((__Internal*)__Instance)->SetClipboardTextFn = value == null ? IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(value);
+                ((__Internal*)__Instance)->SetClipboardTextFn = value == null ? global::System.IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(value);
             }
         }
 
@@ -4820,17 +4820,17 @@ namespace DearImGui
         }
 
         /// <summary>Optional: Notify OS Input Method Editor of the screen position of your cursor for text input position (e.g. when using Japanese/Chinese IME on Windows).<br/>(default to use native imm32 api on Windows).<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2051.</summary>
-        public ImSetPlatformImeDataHandler SetPlatformImeDataFn
+        public global::DearImGui.ImSetPlatformImeDataHandler SetPlatformImeDataFn
         {
             get
             {
                 var __ptr0 = ((__Internal*)__Instance)->SetPlatformImeDataFn;
-                return __ptr0 == IntPtr.Zero ? null : (ImSetPlatformImeDataHandler)Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(ImSetPlatformImeDataHandler));
+                return __ptr0 == IntPtr.Zero ? null : (global::DearImGui.ImSetPlatformImeDataHandler)Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(global::DearImGui.ImSetPlatformImeDataHandler));
             }
 
             set
             {
-                ((__Internal*)__Instance)->SetPlatformImeDataFn = value == null ? IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(value);
+                ((__Internal*)__Instance)->SetPlatformImeDataFn = value == null ? global::System.IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(value);
             }
         }
 
@@ -5031,7 +5031,7 @@ namespace DearImGui
         }
 
         /// <summary>Mouse delta. Note that this is zero if either current or previous position are invalid (-FLT_MAX,-FLT_MAX), so a disappearing/reappearing mouse won't have a huge delta.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2098.</summary>
-        public Vector2 MouseDelta
+        public global::System.Numerics.Vector2 MouseDelta
         {
             get
             {
@@ -5051,7 +5051,7 @@ namespace DearImGui
         }
 
         /// <summary>Mouse position, in pixels. Set to ImVec2(-FLT_MAX, -FLT_MAX) if mouse is unavailable (on another screen, etc.).<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2114.</summary>
-        public Vector2 MousePos
+        public global::System.Numerics.Vector2 MousePos
         {
             get
             {
@@ -5219,16 +5219,16 @@ namespace DearImGui
         }
 
         /// <summary>Key state for all known keys. Use IsKeyXXX() functions to access this.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2127.</summary>
-        public Span<ImGuiKeyData> KeysData
+        public Span<global::DearImGui.ImGuiKeyData> KeysData
         {
             get
             {
-                ImGuiKeyData[] __value = null;
+                global::DearImGui.ImGuiKeyData[] __value = null;
                 if (((__Internal*)__Instance)->KeysData != null)
                 {
-                    __value = new ImGuiKeyData[133];
+                    __value = new global::DearImGui.ImGuiKeyData[133];
                     for (int i = 0; i < 133; i++)
-                        __value[i] = ImGuiKeyData.__GetOrCreateInstance((IntPtr)((ImGuiKeyData.__Internal*)&(((__Internal*)__Instance)->KeysData[i * sizeof(ImGuiKeyData.__Internal)])), true, true);
+                        __value[i] = global::DearImGui.ImGuiKeyData.__GetOrCreateInstance((IntPtr)((global::DearImGui.ImGuiKeyData.__Internal*)&(((__Internal*)__Instance)->KeysData[i * sizeof(global::DearImGui.ImGuiKeyData.__Internal)])), true, true);
                 }
 
                 return __value;
@@ -5241,7 +5241,7 @@ namespace DearImGui
                     if (value.Length != 133)
                         throw new ArgumentOutOfRangeException("value", "The dimensions of the provided array don't match the required size.");
                     for (int i = 0; i < 133; i++)
-                        *(ImGuiKeyData.__Internal*)&((__Internal*)__Instance)->KeysData[i * sizeof(ImGuiKeyData.__Internal)] = *(ImGuiKeyData.__Internal*)value[i].__Instance;
+                        *(global::DearImGui.ImGuiKeyData.__Internal*)&((__Internal*)__Instance)->KeysData[i * sizeof(global::DearImGui.ImGuiKeyData.__Internal)] = *(global::DearImGui.ImGuiKeyData.__Internal*)value[i].__Instance;
                 }
             }
         }
@@ -5261,7 +5261,7 @@ namespace DearImGui
         }
 
         /// <summary>Previous mouse position (note that MouseDelta is not necessary == MousePos-MousePosPrev, in case either position is invalid).<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2129.</summary>
-        public Vector2 MousePosPrev
+        public global::System.Numerics.Vector2 MousePosPrev
         {
             get
             {
@@ -5644,11 +5644,11 @@ namespace DearImGui
         [StructLayout(LayoutKind.Sequential)]
         internal partial struct __Internal
         {
-            internal ImGuiInputTextFlags EventFlag;
-            internal ImGuiInputTextFlags Flags;
+            internal global::DearImGui.ImGuiInputTextFlags EventFlag;
+            internal global::DearImGui.ImGuiInputTextFlags Flags;
             internal IntPtr UserData;
             internal ushort EventChar;
-            internal ImGuiKey EventKey;
+            internal global::DearImGui.ImGuiKey EventKey;
             internal IntPtr Buf;
             internal int BufTextLen;
             internal int BufSize;
@@ -5712,13 +5712,13 @@ namespace DearImGui
 
         internal IntPtr __Instance { get; set; }
 
-        internal static readonly new ConcurrentDictionary<IntPtr, WeakReference<ImGuiInputTextCallbackData>> NativeToManagedMap = new ConcurrentDictionary<IntPtr, WeakReference<ImGuiInputTextCallbackData>>();
-        internal static void __RecordNativeToManagedMapping(IntPtr native, ImGuiInputTextCallbackData managed)
+        internal static readonly new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::System.WeakReference<global::DearImGui.ImGuiInputTextCallbackData>> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::System.WeakReference<global::DearImGui.ImGuiInputTextCallbackData>>();
+        internal static void __RecordNativeToManagedMapping(IntPtr native, global::DearImGui.ImGuiInputTextCallbackData managed)
         {
-            NativeToManagedMap[native] = new WeakReference<ImGuiInputTextCallbackData>(managed);
+            NativeToManagedMap[native] = new global::System.WeakReference<global::DearImGui.ImGuiInputTextCallbackData>(managed);
         }
 
-        internal static bool __TryGetNativeToManagedMapping(IntPtr native, out ImGuiInputTextCallbackData managed)
+        internal static bool __TryGetNativeToManagedMapping(IntPtr native, out global::DearImGui.ImGuiInputTextCallbackData managed)
         {
             managed = default;
             return NativeToManagedMap.TryGetValue(native, out var wr) && wr.TryGetTarget(out managed);
@@ -5773,7 +5773,7 @@ namespace DearImGui
         // DEBUG: ImGuiInputTextCallbackData()
         public ImGuiInputTextCallbackData()
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(ImGuiInputTextCallbackData.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::DearImGui.ImGuiInputTextCallbackData.__Internal));
             __ownsNativeInstance = true;
             __RecordNativeToManagedMapping(__Instance, this);
             if (Environment.Is64BitProcess)
@@ -5788,13 +5788,13 @@ namespace DearImGui
 
         /// <summary>Shared state of InputText(), passed as an argument to your callback when a ImGuiInputTextFlags_Callback* flag is used.<br/>The callback function should return 0 by default.<br/>Callbacks (follow a flag name and see comments in ImGuiInputTextFlags_ declarations for more details).<br/>- ImGuiInputTextFlags_CallbackEdit:, Callback on buffer edit (note that InputText() already returns true on edit, the callback is useful mainly to manipulate the underlying buffer while focus is active).<br/>- ImGuiInputTextFlags_CallbackAlways:, Callback on each iteration.<br/>- ImGuiInputTextFlags_CallbackCompletion:, Callback on pressing TAB.<br/>- ImGuiInputTextFlags_CallbackHistory:, Callback on pressing Up/Down arrows.<br/>- ImGuiInputTextFlags_CallbackCharFilter:, Callback on character inputs to replace or discard them. Modify 'EventChar' to replace or discard, or return 1 in callback to discard.<br/>- ImGuiInputTextFlags_CallbackResize:, Callback on buffer capacity changes request (beyond 'buf_size' parameter value), allowing the string to grow.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2169.</summary>
         // DEBUG: ImGuiInputTextCallbackData
-        public ImGuiInputTextCallbackData(ImGuiInputTextCallbackData _0)
+        public ImGuiInputTextCallbackData(global::DearImGui.ImGuiInputTextCallbackData _0)
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(ImGuiInputTextCallbackData.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::DearImGui.ImGuiInputTextCallbackData.__Internal));
             __ownsNativeInstance = true;
             __RecordNativeToManagedMapping(__Instance, this);
             if (ReferenceEquals(_0, null))
-                throw new ArgumentNullException("_0", "Cannot be null because it is a C++ reference (&).");
+                throw new global::System.ArgumentNullException("_0", "Cannot be null because it is a C++ reference (&).");
             var __arg0 = _0.__Instance;
             if (Environment.Is64BitProcess)
             {
@@ -5888,7 +5888,7 @@ namespace DearImGui
         }
 
         /// <summary>One ImGuiInputTextFlags_Callback*.<br/>Read-only.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2171.</summary>
-        public ImGuiInputTextFlags EventFlag
+        public global::DearImGui.ImGuiInputTextFlags EventFlag
         {
             get
             {
@@ -5902,7 +5902,7 @@ namespace DearImGui
         }
 
         /// <summary>What user passed to InputText().<br/>Read-only.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2172.</summary>
-        public ImGuiInputTextFlags Flags
+        public global::DearImGui.ImGuiInputTextFlags Flags
         {
             get
             {
@@ -5944,7 +5944,7 @@ namespace DearImGui
         }
 
         /// <summary>Key pressed (Up/Down/TAB).<br/>Read-only.<br/>[Completion,History].<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2179.</summary>
-        public ImGuiKey EventKey
+        public global::DearImGui.ImGuiKey EventKey
         {
             get
             {
@@ -6080,9 +6080,9 @@ namespace DearImGui
         internal partial struct __Internal
         {
             internal IntPtr UserData;
-            internal Vector2 Pos;
-            internal Vector2 CurrentSize;
-            internal Vector2 DesiredSize;
+            internal global::System.Numerics.Vector2 Pos;
+            internal global::System.Numerics.Vector2 CurrentSize;
+            internal global::System.Numerics.Vector2 DesiredSize;
         }
 
         private partial struct __Internal32
@@ -6107,13 +6107,13 @@ namespace DearImGui
 
         internal IntPtr __Instance { get; set; }
 
-        internal static readonly new ConcurrentDictionary<IntPtr, WeakReference<ImGuiSizeCallbackData>> NativeToManagedMap = new ConcurrentDictionary<IntPtr, WeakReference<ImGuiSizeCallbackData>>();
-        internal static void __RecordNativeToManagedMapping(IntPtr native, ImGuiSizeCallbackData managed)
+        internal static readonly new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::System.WeakReference<global::DearImGui.ImGuiSizeCallbackData>> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::System.WeakReference<global::DearImGui.ImGuiSizeCallbackData>>();
+        internal static void __RecordNativeToManagedMapping(IntPtr native, global::DearImGui.ImGuiSizeCallbackData managed)
         {
-            NativeToManagedMap[native] = new WeakReference<ImGuiSizeCallbackData>(managed);
+            NativeToManagedMap[native] = new global::System.WeakReference<global::DearImGui.ImGuiSizeCallbackData>(managed);
         }
 
-        internal static bool __TryGetNativeToManagedMapping(IntPtr native, out ImGuiSizeCallbackData managed)
+        internal static bool __TryGetNativeToManagedMapping(IntPtr native, out global::DearImGui.ImGuiSizeCallbackData managed)
         {
             managed = default;
             return NativeToManagedMap.TryGetValue(native, out var wr) && wr.TryGetTarget(out managed);
@@ -6168,7 +6168,7 @@ namespace DearImGui
         // DEBUG: ImGuiSizeCallbackData
         public ImGuiSizeCallbackData()
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(ImGuiSizeCallbackData.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::DearImGui.ImGuiSizeCallbackData.__Internal));
             __ownsNativeInstance = true;
             __RecordNativeToManagedMapping(__Instance, this);
             if (Environment.Is64BitProcess)
@@ -6183,13 +6183,13 @@ namespace DearImGui
 
         /// <summary>Resizing callback data to apply custom constraint. As enabled by SetNextWindowSizeConstraints(). Callback is called during the next Begin().<br/>NB: For basic min/max size constraint on each axis you don't need to use the callback! The SetNextWindowSizeConstraints() parameters are enough.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2200.</summary>
         // DEBUG: ImGuiSizeCallbackData
-        public ImGuiSizeCallbackData(ImGuiSizeCallbackData _0)
+        public ImGuiSizeCallbackData(global::DearImGui.ImGuiSizeCallbackData _0)
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(ImGuiSizeCallbackData.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::DearImGui.ImGuiSizeCallbackData.__Internal));
             __ownsNativeInstance = true;
             __RecordNativeToManagedMapping(__Instance, this);
             if (ReferenceEquals(_0, null))
-                throw new ArgumentNullException("_0", "Cannot be null because it is a C++ reference (&).");
+                throw new global::System.ArgumentNullException("_0", "Cannot be null because it is a C++ reference (&).");
             var __arg0 = _0.__Instance;
             if (Environment.Is64BitProcess)
             {
@@ -6241,7 +6241,7 @@ namespace DearImGui
         }
 
         /// <summary>Read-only.<br/>Window position, for reference.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2203.</summary>
-        public Vector2 Pos
+        public global::System.Numerics.Vector2 Pos
         {
             get
             {
@@ -6261,7 +6261,7 @@ namespace DearImGui
         }
 
         /// <summary>Read-only.<br/>Current window size.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2204.</summary>
-        public Vector2 CurrentSize
+        public global::System.Numerics.Vector2 CurrentSize
         {
             get
             {
@@ -6281,7 +6281,7 @@ namespace DearImGui
         }
 
         /// <summary>Read-write.<br/>Desired size, based on user's mouse position. Write to this field to restrain resizing.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2205.</summary>
-        public Vector2 DesiredSize
+        public global::System.Numerics.Vector2 DesiredSize
         {
             get
             {
@@ -6322,10 +6322,10 @@ namespace DearImGui
         {
             internal uint ClassId;
             internal uint ParentViewportId;
-            internal ImGuiViewportFlags ViewportFlagsOverrideSet;
-            internal ImGuiViewportFlags ViewportFlagsOverrideClear;
-            internal ImGuiTabItemFlags TabItemFlagsOverrideSet;
-            internal ImGuiDockNodeFlags DockNodeFlagsOverrideSet;
+            internal global::DearImGui.ImGuiViewportFlags ViewportFlagsOverrideSet;
+            internal global::DearImGui.ImGuiViewportFlags ViewportFlagsOverrideClear;
+            internal global::DearImGui.ImGuiTabItemFlags TabItemFlagsOverrideSet;
+            internal global::DearImGui.ImGuiDockNodeFlags DockNodeFlagsOverrideSet;
             internal byte DockingAlwaysTabBar;
             internal byte DockingAllowUnclassed;
         }
@@ -6352,13 +6352,13 @@ namespace DearImGui
 
         internal IntPtr __Instance { get; set; }
 
-        internal static readonly new ConcurrentDictionary<IntPtr, WeakReference<ImGuiWindowClass>> NativeToManagedMap = new ConcurrentDictionary<IntPtr, WeakReference<ImGuiWindowClass>>();
-        internal static void __RecordNativeToManagedMapping(IntPtr native, ImGuiWindowClass managed)
+        internal static readonly new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::System.WeakReference<global::DearImGui.ImGuiWindowClass>> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::System.WeakReference<global::DearImGui.ImGuiWindowClass>>();
+        internal static void __RecordNativeToManagedMapping(IntPtr native, global::DearImGui.ImGuiWindowClass managed)
         {
-            NativeToManagedMap[native] = new WeakReference<ImGuiWindowClass>(managed);
+            NativeToManagedMap[native] = new global::System.WeakReference<global::DearImGui.ImGuiWindowClass>(managed);
         }
 
-        internal static bool __TryGetNativeToManagedMapping(IntPtr native, out ImGuiWindowClass managed)
+        internal static bool __TryGetNativeToManagedMapping(IntPtr native, out global::DearImGui.ImGuiWindowClass managed)
         {
             managed = default;
             return NativeToManagedMap.TryGetValue(native, out var wr) && wr.TryGetTarget(out managed);
@@ -6413,7 +6413,7 @@ namespace DearImGui
         // DEBUG: ImGuiWindowClass() { memset(this, 0, sizeof(*this)); ParentViewportId = (ImGuiID)-1; DockingAllowUnclassed = true; }
         public ImGuiWindowClass()
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(ImGuiWindowClass.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::DearImGui.ImGuiWindowClass.__Internal));
             __ownsNativeInstance = true;
             __RecordNativeToManagedMapping(__Instance, this);
             if (Environment.Is64BitProcess)
@@ -6428,13 +6428,13 @@ namespace DearImGui
 
         /// <summary>[ALPHA] Rarely used / very advanced uses only. Use with SetNextWindowClass() and DockSpace() functions.<br/>Important: the content of this class is still highly WIP and likely to change and be refactored.<br/>Before we stabilize Docking features. Please be mindful if using this.<br/>Provide hints:.<br/>- To the platform backend via altered viewport flags (enable/disable OS decoration, OS task bar icons, etc.).<br/>- To the platform backend for OS level parent/child relationships of viewport.<br/>- To the docking system for various options and filtering.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2215.</summary>
         // DEBUG: ImGuiWindowClass
-        public ImGuiWindowClass(ImGuiWindowClass _0)
+        public ImGuiWindowClass(global::DearImGui.ImGuiWindowClass _0)
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(ImGuiWindowClass.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::DearImGui.ImGuiWindowClass.__Internal));
             __ownsNativeInstance = true;
             __RecordNativeToManagedMapping(__Instance, this);
             if (ReferenceEquals(_0, null))
-                throw new ArgumentNullException("_0", "Cannot be null because it is a C++ reference (&).");
+                throw new global::System.ArgumentNullException("_0", "Cannot be null because it is a C++ reference (&).");
             var __arg0 = _0.__Instance;
             if (Environment.Is64BitProcess)
             {
@@ -6500,7 +6500,7 @@ namespace DearImGui
         }
 
         /// <summary>Viewport flags to set when a window of this class owns a viewport. This allows you to enforce OS decoration or task bar icon, override the defaults on a per-window basis.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2219.</summary>
-        public ImGuiViewportFlags ViewportFlagsOverrideSet
+        public global::DearImGui.ImGuiViewportFlags ViewportFlagsOverrideSet
         {
             get
             {
@@ -6514,7 +6514,7 @@ namespace DearImGui
         }
 
         /// <summary>Viewport flags to clear when a window of this class owns a viewport. This allows you to enforce OS decoration or task bar icon, override the defaults on a per-window basis.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2220.</summary>
-        public ImGuiViewportFlags ViewportFlagsOverrideClear
+        public global::DearImGui.ImGuiViewportFlags ViewportFlagsOverrideClear
         {
             get
             {
@@ -6528,7 +6528,7 @@ namespace DearImGui
         }
 
         /// <summary>[EXPERIMENTAL] TabItem flags to set when a window of this class gets submitted into a dock node tab bar. May use with ImGuiTabItemFlags_Leading or ImGuiTabItemFlags_Trailing.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2221.</summary>
-        public ImGuiTabItemFlags TabItemFlagsOverrideSet
+        public global::DearImGui.ImGuiTabItemFlags TabItemFlagsOverrideSet
         {
             get
             {
@@ -6542,7 +6542,7 @@ namespace DearImGui
         }
 
         /// <summary>[EXPERIMENTAL] Dock node flags to set when a window of this class is hosted by a dock node (it doesn't have to be selected!).<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2222.</summary>
-        public ImGuiDockNodeFlags DockNodeFlagsOverrideSet
+        public global::DearImGui.ImGuiDockNodeFlags DockNodeFlagsOverrideSet
         {
             get
             {
@@ -6672,13 +6672,13 @@ namespace DearImGui
 
         internal IntPtr __Instance { get; set; }
 
-        internal static readonly new ConcurrentDictionary<IntPtr, WeakReference<ImGuiPayload>> NativeToManagedMap = new ConcurrentDictionary<IntPtr, WeakReference<ImGuiPayload>>();
-        internal static void __RecordNativeToManagedMapping(IntPtr native, ImGuiPayload managed)
+        internal static readonly new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::System.WeakReference<global::DearImGui.ImGuiPayload>> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::System.WeakReference<global::DearImGui.ImGuiPayload>>();
+        internal static void __RecordNativeToManagedMapping(IntPtr native, global::DearImGui.ImGuiPayload managed)
         {
-            NativeToManagedMap[native] = new WeakReference<ImGuiPayload>(managed);
+            NativeToManagedMap[native] = new global::System.WeakReference<global::DearImGui.ImGuiPayload>(managed);
         }
 
-        internal static bool __TryGetNativeToManagedMapping(IntPtr native, out ImGuiPayload managed)
+        internal static bool __TryGetNativeToManagedMapping(IntPtr native, out global::DearImGui.ImGuiPayload managed)
         {
             managed = default;
             return NativeToManagedMap.TryGetValue(native, out var wr) && wr.TryGetTarget(out managed);
@@ -6733,7 +6733,7 @@ namespace DearImGui
         // DEBUG: ImGuiPayload()  { Clear(); }
         public ImGuiPayload()
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(ImGuiPayload.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::DearImGui.ImGuiPayload.__Internal));
             __ownsNativeInstance = true;
             __RecordNativeToManagedMapping(__Instance, this);
             if (Environment.Is64BitProcess)
@@ -6748,13 +6748,13 @@ namespace DearImGui
 
         /// <summary>Data payload for Drag and Drop operations: AcceptDragDropPayload(), GetDragDropPayload().<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2230.</summary>
         // DEBUG: ImGuiPayload
-        public ImGuiPayload(ImGuiPayload _0)
+        public ImGuiPayload(global::DearImGui.ImGuiPayload _0)
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(ImGuiPayload.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::DearImGui.ImGuiPayload.__Internal));
             __ownsNativeInstance = true;
             __RecordNativeToManagedMapping(__Instance, this);
             if (ReferenceEquals(_0, null))
-                throw new ArgumentNullException("_0", "Cannot be null because it is a C++ reference (&).");
+                throw new global::System.ArgumentNullException("_0", "Cannot be null because it is a C++ reference (&).");
             var __arg0 = _0.__Instance;
             if (Environment.Is64BitProcess)
             {
@@ -6896,7 +6896,7 @@ namespace DearImGui
                 if (value != null)
                 {
                     for (int i = 0; i < 33; i++)
-                        ((__Internal*)__Instance)->DataType[i] = Convert.ToSByte(value[i]);
+                        ((__Internal*)__Instance)->DataType[i] = global::System.Convert.ToSByte(value[i]);
                 }
             }
         }
@@ -6968,7 +6968,7 @@ namespace DearImGui
             internal uint ColumnUserID;
             internal short ColumnIndex;
             internal short SortOrder;
-            internal ImGuiSortDirection SortDirection;
+            internal global::DearImGui.ImGuiSortDirection SortDirection;
         }
 
         private partial struct __Internal32
@@ -6993,13 +6993,13 @@ namespace DearImGui
 
         internal IntPtr __Instance { get; set; }
 
-        internal static readonly new ConcurrentDictionary<IntPtr, WeakReference<ImGuiTableColumnSortSpecs>> NativeToManagedMap = new ConcurrentDictionary<IntPtr, WeakReference<ImGuiTableColumnSortSpecs>>();
-        internal static void __RecordNativeToManagedMapping(IntPtr native, ImGuiTableColumnSortSpecs managed)
+        internal static readonly new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::System.WeakReference<global::DearImGui.ImGuiTableColumnSortSpecs>> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::System.WeakReference<global::DearImGui.ImGuiTableColumnSortSpecs>>();
+        internal static void __RecordNativeToManagedMapping(IntPtr native, global::DearImGui.ImGuiTableColumnSortSpecs managed)
         {
-            NativeToManagedMap[native] = new WeakReference<ImGuiTableColumnSortSpecs>(managed);
+            NativeToManagedMap[native] = new global::System.WeakReference<global::DearImGui.ImGuiTableColumnSortSpecs>(managed);
         }
 
-        internal static bool __TryGetNativeToManagedMapping(IntPtr native, out ImGuiTableColumnSortSpecs managed)
+        internal static bool __TryGetNativeToManagedMapping(IntPtr native, out global::DearImGui.ImGuiTableColumnSortSpecs managed)
         {
             managed = default;
             return NativeToManagedMap.TryGetValue(native, out var wr) && wr.TryGetTarget(out managed);
@@ -7054,7 +7054,7 @@ namespace DearImGui
         // DEBUG: ImGuiTableColumnSortSpecs() { memset(this, 0, sizeof(*this)); }
         public ImGuiTableColumnSortSpecs()
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(ImGuiTableColumnSortSpecs.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::DearImGui.ImGuiTableColumnSortSpecs.__Internal));
             __ownsNativeInstance = true;
             __RecordNativeToManagedMapping(__Instance, this);
             if (Environment.Is64BitProcess)
@@ -7069,13 +7069,13 @@ namespace DearImGui
 
         /// <summary>Sorting specification for one column of a table (sizeof == 12 bytes).<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2252.</summary>
         // DEBUG: ImGuiTableColumnSortSpecs
-        public ImGuiTableColumnSortSpecs(ImGuiTableColumnSortSpecs _0)
+        public ImGuiTableColumnSortSpecs(global::DearImGui.ImGuiTableColumnSortSpecs _0)
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(ImGuiTableColumnSortSpecs.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::DearImGui.ImGuiTableColumnSortSpecs.__Internal));
             __ownsNativeInstance = true;
             __RecordNativeToManagedMapping(__Instance, this);
             if (ReferenceEquals(_0, null))
-                throw new ArgumentNullException("_0", "Cannot be null because it is a C++ reference (&).");
+                throw new global::System.ArgumentNullException("_0", "Cannot be null because it is a C++ reference (&).");
             var __arg0 = _0.__Instance;
             if (Environment.Is64BitProcess)
             {
@@ -7155,7 +7155,7 @@ namespace DearImGui
         }
 
         /// <summary>ImGuiSortDirection_Ascending or ImGuiSortDirection_Descending (you can use this or SortSign, whichever is more convenient for your sort function).<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2257.</summary>
-        public ImGuiSortDirection SortDirection
+        public global::DearImGui.ImGuiSortDirection SortDirection
         {
             get
             {
@@ -7210,13 +7210,13 @@ namespace DearImGui
 
         internal IntPtr __Instance { get; set; }
 
-        internal static readonly new ConcurrentDictionary<IntPtr, WeakReference<ImGuiTableSortSpecs>> NativeToManagedMap = new ConcurrentDictionary<IntPtr, WeakReference<ImGuiTableSortSpecs>>();
-        internal static void __RecordNativeToManagedMapping(IntPtr native, ImGuiTableSortSpecs managed)
+        internal static readonly new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::System.WeakReference<global::DearImGui.ImGuiTableSortSpecs>> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::System.WeakReference<global::DearImGui.ImGuiTableSortSpecs>>();
+        internal static void __RecordNativeToManagedMapping(IntPtr native, global::DearImGui.ImGuiTableSortSpecs managed)
         {
-            NativeToManagedMap[native] = new WeakReference<ImGuiTableSortSpecs>(managed);
+            NativeToManagedMap[native] = new global::System.WeakReference<global::DearImGui.ImGuiTableSortSpecs>(managed);
         }
 
-        internal static bool __TryGetNativeToManagedMapping(IntPtr native, out ImGuiTableSortSpecs managed)
+        internal static bool __TryGetNativeToManagedMapping(IntPtr native, out global::DearImGui.ImGuiTableSortSpecs managed)
         {
             managed = default;
             return NativeToManagedMap.TryGetValue(native, out var wr) && wr.TryGetTarget(out managed);
@@ -7271,7 +7271,7 @@ namespace DearImGui
         // DEBUG: ImGuiTableSortSpecs()       { memset(this, 0, sizeof(*this)); }
         public ImGuiTableSortSpecs()
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(ImGuiTableSortSpecs.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::DearImGui.ImGuiTableSortSpecs.__Internal));
             __ownsNativeInstance = true;
             __RecordNativeToManagedMapping(__Instance, this);
             if (Environment.Is64BitProcess)
@@ -7286,13 +7286,13 @@ namespace DearImGui
 
         /// <summary>Sorting specifications for a table (often handling sort specs for a single column, occasionally more).<br/>Obtained by calling TableGetSortSpecs().<br/>When 'SpecsDirty == true' you can sort your data. It will be true with sorting specs have changed since last call, or the first time.<br/>Make sure to set 'SpecsDirty = false' after sorting, else you may wastefully sort your data every frame!<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2266.</summary>
         // DEBUG: ImGuiTableSortSpecs
-        public ImGuiTableSortSpecs(ImGuiTableSortSpecs _0)
+        public ImGuiTableSortSpecs(global::DearImGui.ImGuiTableSortSpecs _0)
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(ImGuiTableSortSpecs.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::DearImGui.ImGuiTableSortSpecs.__Internal));
             __ownsNativeInstance = true;
             __RecordNativeToManagedMapping(__Instance, this);
             if (ReferenceEquals(_0, null))
-                throw new ArgumentNullException("_0", "Cannot be null because it is a C++ reference (&).");
+                throw new global::System.ArgumentNullException("_0", "Cannot be null because it is a C++ reference (&).");
             var __arg0 = _0.__Instance;
             if (Environment.Is64BitProcess)
             {
@@ -7330,11 +7330,11 @@ namespace DearImGui
         }
 
         /// <summary>Pointer to sort spec array.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2268.</summary>
-        public ImGuiTableColumnSortSpecs Specs
+        public global::DearImGui.ImGuiTableColumnSortSpecs Specs
         {
             get
             {
-                var __result0 = ImGuiTableColumnSortSpecs.__GetOrCreateInstance(((__Internal*)__Instance)->Specs, false);
+                var __result0 = global::DearImGui.ImGuiTableColumnSortSpecs.__GetOrCreateInstance(((__Internal*)__Instance)->Specs, false);
                 return __result0;
             }
         }
@@ -7413,13 +7413,13 @@ namespace DearImGui
 
         internal IntPtr __Instance { get; set; }
 
-        internal static readonly new ConcurrentDictionary<IntPtr, WeakReference<ImGuiOnceUponAFrame>> NativeToManagedMap = new ConcurrentDictionary<IntPtr, WeakReference<ImGuiOnceUponAFrame>>();
-        internal static void __RecordNativeToManagedMapping(IntPtr native, ImGuiOnceUponAFrame managed)
+        internal static readonly new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::System.WeakReference<global::DearImGui.ImGuiOnceUponAFrame>> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::System.WeakReference<global::DearImGui.ImGuiOnceUponAFrame>>();
+        internal static void __RecordNativeToManagedMapping(IntPtr native, global::DearImGui.ImGuiOnceUponAFrame managed)
         {
-            NativeToManagedMap[native] = new WeakReference<ImGuiOnceUponAFrame>(managed);
+            NativeToManagedMap[native] = new global::System.WeakReference<global::DearImGui.ImGuiOnceUponAFrame>(managed);
         }
 
-        internal static bool __TryGetNativeToManagedMapping(IntPtr native, out ImGuiOnceUponAFrame managed)
+        internal static bool __TryGetNativeToManagedMapping(IntPtr native, out global::DearImGui.ImGuiOnceUponAFrame managed)
         {
             managed = default;
             return NativeToManagedMap.TryGetValue(native, out var wr) && wr.TryGetTarget(out managed);
@@ -7474,7 +7474,7 @@ namespace DearImGui
         // DEBUG: ImGuiOnceUponAFrame() { RefFrame = -1; }
         public ImGuiOnceUponAFrame()
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(ImGuiOnceUponAFrame.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::DearImGui.ImGuiOnceUponAFrame.__Internal));
             __ownsNativeInstance = true;
             __RecordNativeToManagedMapping(__Instance, this);
             if (Environment.Is64BitProcess)
@@ -7489,13 +7489,13 @@ namespace DearImGui
 
         /// <summary>Helper: Execute a block of code at maximum once a frame. Convenient if you want to quickly create an UI within deep-nested code that runs multiple times every frame.<br/>Usage: static ImGuiOnceUponAFrame oaf; if (oaf) ImGui::Text("This will be called only once per frame");.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2289.</summary>
         // DEBUG: ImGuiOnceUponAFrame
-        public ImGuiOnceUponAFrame(ImGuiOnceUponAFrame _0)
+        public ImGuiOnceUponAFrame(global::DearImGui.ImGuiOnceUponAFrame _0)
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(ImGuiOnceUponAFrame.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::DearImGui.ImGuiOnceUponAFrame.__Internal));
             __ownsNativeInstance = true;
             __RecordNativeToManagedMapping(__Instance, this);
             if (ReferenceEquals(_0, null))
-                throw new ArgumentNullException("_0", "Cannot be null because it is a C++ reference (&).");
+                throw new global::System.ArgumentNullException("_0", "Cannot be null because it is a C++ reference (&).");
             var __arg0 = _0.__Instance;
             if (Environment.Is64BitProcess)
             {
@@ -7534,10 +7534,10 @@ namespace DearImGui
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2293.</summary>
         // DEBUG: operator bool() const { int current_frame = ImGui::GetFrameCount(); if (RefFrame == current_frame) return false; RefFrame = current_frame; return true; }
-        public static implicit operator bool (ImGuiOnceUponAFrame __op)
+        public static implicit operator bool (global::DearImGui.ImGuiOnceUponAFrame __op)
         {
             if (ReferenceEquals(__op, null))
-                throw new ArgumentNullException("__op", "Cannot be null because it is a C++ reference (&).");
+                throw new global::System.ArgumentNullException("__op", "Cannot be null because it is a C++ reference (&).");
             var __arg0 = __op.__Instance;
             var ___ret = Environment.Is64BitProcess ? __Internal64.OperatorConversion(__arg0) : __Internal32.OperatorConversion(__arg0);
             return ___ret;
@@ -7717,13 +7717,13 @@ namespace DearImGui
 
             internal IntPtr __Instance { get; set; }
 
-            internal static readonly new ConcurrentDictionary<IntPtr, WeakReference<ImGuiTextFilter.ImGuiTextRange>> NativeToManagedMap = new ConcurrentDictionary<IntPtr, WeakReference<ImGuiTextFilter.ImGuiTextRange>>();
-            internal static void __RecordNativeToManagedMapping(IntPtr native, ImGuiTextFilter.ImGuiTextRange managed)
+            internal static readonly new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::System.WeakReference<global::DearImGui.ImGuiTextFilter.ImGuiTextRange>> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::System.WeakReference<global::DearImGui.ImGuiTextFilter.ImGuiTextRange>>();
+            internal static void __RecordNativeToManagedMapping(IntPtr native, global::DearImGui.ImGuiTextFilter.ImGuiTextRange managed)
             {
-                NativeToManagedMap[native] = new WeakReference<ImGuiTextFilter.ImGuiTextRange>(managed);
+                NativeToManagedMap[native] = new global::System.WeakReference<global::DearImGui.ImGuiTextFilter.ImGuiTextRange>(managed);
             }
 
-            internal static bool __TryGetNativeToManagedMapping(IntPtr native, out ImGuiTextFilter.ImGuiTextRange managed)
+            internal static bool __TryGetNativeToManagedMapping(IntPtr native, out global::DearImGui.ImGuiTextFilter.ImGuiTextRange managed)
             {
                 managed = default;
                 return NativeToManagedMap.TryGetValue(native, out var wr) && wr.TryGetTarget(out managed);
@@ -7780,7 +7780,7 @@ namespace DearImGui
             // DEBUG: ImGuiTextRange()                                { b = e = NULL; }
             public ImGuiTextRange()
             {
-                __Instance = Marshal.AllocHGlobal(sizeof(ImGuiTextFilter.ImGuiTextRange.__Internal));
+                __Instance = Marshal.AllocHGlobal(sizeof(global::DearImGui.ImGuiTextFilter.ImGuiTextRange.__Internal));
                 __ownsNativeInstance = true;
                 __RecordNativeToManagedMapping(__Instance, this);
                 if (Environment.Is64BitProcess)
@@ -7797,7 +7797,7 @@ namespace DearImGui
             // DEBUG: ImGuiTextRange(const char* _b, const char* _e)  { b = _b; e = _e; }
             public ImGuiTextRange(string _b, string _e)
             {
-                __Instance = Marshal.AllocHGlobal(sizeof(ImGuiTextFilter.ImGuiTextRange.__Internal));
+                __Instance = Marshal.AllocHGlobal(sizeof(global::DearImGui.ImGuiTextFilter.ImGuiTextRange.__Internal));
                 __ownsNativeInstance = true;
                 __RecordNativeToManagedMapping(__Instance, this);
                 if (Environment.Is64BitProcess)
@@ -7812,13 +7812,13 @@ namespace DearImGui
 
             /// <summary>[Internal].<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2307.</summary>
             // DEBUG: ImGuiTextRange
-            public ImGuiTextRange(ImGuiTextFilter.ImGuiTextRange _0)
+            public ImGuiTextRange(global::DearImGui.ImGuiTextFilter.ImGuiTextRange _0)
             {
-                __Instance = Marshal.AllocHGlobal(sizeof(ImGuiTextFilter.ImGuiTextRange.__Internal));
+                __Instance = Marshal.AllocHGlobal(sizeof(global::DearImGui.ImGuiTextFilter.ImGuiTextRange.__Internal));
                 __ownsNativeInstance = true;
                 __RecordNativeToManagedMapping(__Instance, this);
                 if (ReferenceEquals(_0, null))
-                    throw new ArgumentNullException("_0", "Cannot be null because it is a C++ reference (&).");
+                    throw new global::System.ArgumentNullException("_0", "Cannot be null because it is a C++ reference (&).");
                 var __arg0 = _0.__Instance;
                 if (Environment.Is64BitProcess)
                 {
@@ -7861,9 +7861,9 @@ namespace DearImGui
 
             /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2315.</summary>
             // DEBUG: void  split(char separator, ImVector<ImGuiTextRange>* out) const
-            public void Split(char separator, ImVector<ImGuiTextFilter.ImGuiTextRange> @out)
+            public void Split(char separator, ImVector<global::DearImGui.ImGuiTextFilter.ImGuiTextRange> @out)
             {
-                var __arg0 = Convert.ToSByte(separator);
+                var __arg0 = global::System.Convert.ToSByte(separator);
                 var __arg1 = new IntPtr(Unsafe.AsPointer(ref @out))
                 /* DEBUG: TypeMapImVector.CSharpMarshalToNative: Function: True, ReturnVarName: False */
                 ;
@@ -7882,7 +7882,7 @@ namespace DearImGui
             {
                 get
                 {
-                    return CppSharp.Runtime.MarshalUtil.GetString(Encoding.UTF8, ((__Internal*)__Instance)->b);
+                    return CppSharp.Runtime.MarshalUtil.GetString(global::System.Text.Encoding.UTF8, ((__Internal*)__Instance)->b);
                 }
 
                 set
@@ -7892,11 +7892,11 @@ namespace DearImGui
                     __b_OwnsNativeMemory = true;
                     if (value == null)
                     {
-                        ((__Internal*)__Instance)->b = IntPtr.Zero;
+                        ((__Internal*)__Instance)->b = global::System.IntPtr.Zero;
                         return;
                     }
 
-                    var __bytes0 = Encoding.UTF8.GetBytes(value);
+                    var __bytes0 = global::System.Text.Encoding.UTF8.GetBytes(value);
                     var __bytePtr0 = Marshal.AllocHGlobal(__bytes0.Length + 1);
                     Marshal.Copy(__bytes0, 0, __bytePtr0, __bytes0.Length);
                     Marshal.WriteByte(__bytePtr0 + __bytes0.Length, 0);
@@ -7909,7 +7909,7 @@ namespace DearImGui
             {
                 get
                 {
-                    return CppSharp.Runtime.MarshalUtil.GetString(Encoding.UTF8, ((__Internal*)__Instance)->e);
+                    return CppSharp.Runtime.MarshalUtil.GetString(global::System.Text.Encoding.UTF8, ((__Internal*)__Instance)->e);
                 }
 
                 set
@@ -7919,11 +7919,11 @@ namespace DearImGui
                     __e_OwnsNativeMemory = true;
                     if (value == null)
                     {
-                        ((__Internal*)__Instance)->e = IntPtr.Zero;
+                        ((__Internal*)__Instance)->e = global::System.IntPtr.Zero;
                         return;
                     }
 
-                    var __bytes0 = Encoding.UTF8.GetBytes(value);
+                    var __bytes0 = global::System.Text.Encoding.UTF8.GetBytes(value);
                     var __bytePtr0 = Marshal.AllocHGlobal(__bytes0.Length + 1);
                     Marshal.Copy(__bytes0, 0, __bytePtr0, __bytes0.Length);
                     Marshal.WriteByte(__bytePtr0 + __bytes0.Length, 0);
@@ -7944,13 +7944,13 @@ namespace DearImGui
 
         internal IntPtr __Instance { get; set; }
 
-        internal static readonly new ConcurrentDictionary<IntPtr, WeakReference<ImGuiTextFilter>> NativeToManagedMap = new ConcurrentDictionary<IntPtr, WeakReference<ImGuiTextFilter>>();
-        internal static void __RecordNativeToManagedMapping(IntPtr native, ImGuiTextFilter managed)
+        internal static readonly new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::System.WeakReference<global::DearImGui.ImGuiTextFilter>> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::System.WeakReference<global::DearImGui.ImGuiTextFilter>>();
+        internal static void __RecordNativeToManagedMapping(IntPtr native, global::DearImGui.ImGuiTextFilter managed)
         {
-            NativeToManagedMap[native] = new WeakReference<ImGuiTextFilter>(managed);
+            NativeToManagedMap[native] = new global::System.WeakReference<global::DearImGui.ImGuiTextFilter>(managed);
         }
 
-        internal static bool __TryGetNativeToManagedMapping(IntPtr native, out ImGuiTextFilter managed)
+        internal static bool __TryGetNativeToManagedMapping(IntPtr native, out global::DearImGui.ImGuiTextFilter managed)
         {
             managed = default;
             return NativeToManagedMap.TryGetValue(native, out var wr) && wr.TryGetTarget(out managed);
@@ -8005,7 +8005,7 @@ namespace DearImGui
         // DEBUG: ImGuiTextFilter(const char* default_filter = "")
         public ImGuiTextFilter(string default_filter = "")
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(ImGuiTextFilter.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::DearImGui.ImGuiTextFilter.__Internal));
             __ownsNativeInstance = true;
             __RecordNativeToManagedMapping(__Instance, this);
             if (Environment.Is64BitProcess)
@@ -8020,13 +8020,13 @@ namespace DearImGui
 
         /// <summary>Helper: Parse and apply text filters. In format "aaaaa[,bbbb][,ccccc]".<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2297.</summary>
         // DEBUG: ImGuiTextFilter
-        public ImGuiTextFilter(ImGuiTextFilter _0)
+        public ImGuiTextFilter(global::DearImGui.ImGuiTextFilter _0)
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(ImGuiTextFilter.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::DearImGui.ImGuiTextFilter.__Internal));
             __ownsNativeInstance = true;
             __RecordNativeToManagedMapping(__Instance, this);
             if (ReferenceEquals(_0, null))
-                throw new ArgumentNullException("_0", "Cannot be null because it is a C++ reference (&).");
+                throw new global::System.ArgumentNullException("_0", "Cannot be null because it is a C++ reference (&).");
             var __arg0 = _0.__Instance;
             if (Environment.Is64BitProcess)
             {
@@ -8117,9 +8117,9 @@ namespace DearImGui
             }
         }
 
-        public static implicit operator ImGuiTextFilter(string default_filter)
+        public static implicit operator global::DearImGui.ImGuiTextFilter(string default_filter)
         {
-            return new ImGuiTextFilter(default_filter);
+            return new global::DearImGui.ImGuiTextFilter(default_filter);
         }
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2317.</summary>
@@ -8135,17 +8135,17 @@ namespace DearImGui
                 if (value != null)
                 {
                     for (int i = 0; i < 256; i++)
-                        ((__Internal*)__Instance)->InputBuf[i] = Convert.ToSByte(value[i]);
+                        ((__Internal*)__Instance)->InputBuf[i] = global::System.Convert.ToSByte(value[i]);
                 }
             }
         }
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2318.</summary>
-        public ImVector<ImGuiTextFilter.ImGuiTextRange> Filters
+        public ImVector<global::DearImGui.ImGuiTextFilter.ImGuiTextRange> Filters
         {
             get
             {
-                return new ImVector<ImGuiTextFilter.ImGuiTextRange>(Unsafe.As<ImVector.__Internal, ImVector<ImGuiTextFilter.ImGuiTextRange>.__Internal>(ref ((__Internal*)__Instance)->Filters))
+                return new ImVector<global::DearImGui.ImGuiTextFilter.ImGuiTextRange>(Unsafe.As<ImVector.__Internal, ImVector<global::DearImGui.ImGuiTextFilter.ImGuiTextRange>.__Internal>(ref ((__Internal*)__Instance)->Filters))
                 /* DEBUG: TypeMapImVector.CSharpMarshalToManaged: Function: False, ReturnVarName: True */
                 ;
             }
@@ -8233,7 +8233,7 @@ namespace DearImGui
             internal static extern void Appendf(IntPtr __instance, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string fmt);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?appendfv@ImGuiTextBuffer@@QAEXPBDPAD@Z", CallingConvention = CallingConvention.ThisCall)]
-            internal static extern void Appendfv(IntPtr __instance, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string fmt, Object args);
+            internal static extern void Appendfv(IntPtr __instance, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string fmt, global::System.Object args);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "??AImGuiTextBuffer@@QBEDH@Z", CallingConvention = CallingConvention.ThisCall)]
             internal static extern sbyte OperatorSubscript(IntPtr __instance, int i);
@@ -8280,7 +8280,7 @@ namespace DearImGui
             internal static extern void Appendf(IntPtr __instance, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string fmt);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?appendfv@ImGuiTextBuffer@@QEAAXPEBDPEAD@Z", CallingConvention = CallingConvention.Cdecl)]
-            internal static extern void Appendfv(IntPtr __instance, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string fmt, Object args);
+            internal static extern void Appendfv(IntPtr __instance, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string fmt, global::System.Object args);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "??AImGuiTextBuffer@@QEBADH@Z", CallingConvention = CallingConvention.Cdecl)]
             internal static extern sbyte OperatorSubscript(IntPtr __instance, int i);
@@ -8299,13 +8299,13 @@ namespace DearImGui
 
         internal IntPtr __Instance { get; set; }
 
-        internal static readonly new ConcurrentDictionary<IntPtr, WeakReference<ImGuiTextBuffer>> NativeToManagedMap = new ConcurrentDictionary<IntPtr, WeakReference<ImGuiTextBuffer>>();
-        internal static void __RecordNativeToManagedMapping(IntPtr native, ImGuiTextBuffer managed)
+        internal static readonly new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::System.WeakReference<global::DearImGui.ImGuiTextBuffer>> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::System.WeakReference<global::DearImGui.ImGuiTextBuffer>>();
+        internal static void __RecordNativeToManagedMapping(IntPtr native, global::DearImGui.ImGuiTextBuffer managed)
         {
-            NativeToManagedMap[native] = new WeakReference<ImGuiTextBuffer>(managed);
+            NativeToManagedMap[native] = new global::System.WeakReference<global::DearImGui.ImGuiTextBuffer>(managed);
         }
 
-        internal static bool __TryGetNativeToManagedMapping(IntPtr native, out ImGuiTextBuffer managed)
+        internal static bool __TryGetNativeToManagedMapping(IntPtr native, out global::DearImGui.ImGuiTextBuffer managed)
         {
             managed = default;
             return NativeToManagedMap.TryGetValue(native, out var wr) && wr.TryGetTarget(out managed);
@@ -8360,7 +8360,7 @@ namespace DearImGui
         // DEBUG: ImGuiTextBuffer()   { }
         public ImGuiTextBuffer()
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(ImGuiTextBuffer.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::DearImGui.ImGuiTextBuffer.__Internal));
             __ownsNativeInstance = true;
             __RecordNativeToManagedMapping(__Instance, this);
             if (Environment.Is64BitProcess)
@@ -8375,13 +8375,13 @@ namespace DearImGui
 
         /// <summary>Helper: Growable text buffer for logging/accumulating text.<br/>(this could be called 'ImGuiTextBuilder' / 'ImGuiStringBuilder').<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2324.</summary>
         // DEBUG: ImGuiTextBuffer
-        public ImGuiTextBuffer(ImGuiTextBuffer _0)
+        public ImGuiTextBuffer(global::DearImGui.ImGuiTextBuffer _0)
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(ImGuiTextBuffer.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::DearImGui.ImGuiTextBuffer.__Internal));
             __ownsNativeInstance = true;
             __RecordNativeToManagedMapping(__Instance, this);
             if (ReferenceEquals(_0, null))
-                throw new ArgumentNullException("_0", "Cannot be null because it is a C++ reference (&).");
+                throw new global::System.ArgumentNullException("_0", "Cannot be null because it is a C++ reference (&).");
             var __arg0 = _0.__Instance;
             if (Environment.Is64BitProcess)
             {
@@ -8433,7 +8433,7 @@ namespace DearImGui
         public string Begin()
         {
             var ___ret = Environment.Is64BitProcess ? __Internal64.Begin(__Instance) : __Internal32.Begin(__Instance);
-            return CppSharp.Runtime.MarshalUtil.GetString(Encoding.UTF8, ___ret);
+            return CppSharp.Runtime.MarshalUtil.GetString(global::System.Text.Encoding.UTF8, ___ret);
         }
 
         /// <summary>Buf is zero-terminated, so end() will point on the zero-terminator.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2332.</summary>
@@ -8441,7 +8441,7 @@ namespace DearImGui
         public string End()
         {
             var ___ret = Environment.Is64BitProcess ? __Internal64.End(__Instance) : __Internal32.End(__Instance);
-            return CppSharp.Runtime.MarshalUtil.GetString(Encoding.UTF8, ___ret);
+            return CppSharp.Runtime.MarshalUtil.GetString(global::System.Text.Encoding.UTF8, ___ret);
         }
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2335.</summary>
@@ -8502,7 +8502,7 @@ namespace DearImGui
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2340.</summary>
         // DEBUG: void      appendfv(const char* fmt, va_list args) IM_FMTLIST(2)
-        public void Appendfv(string fmt, Object args)
+        public void Appendfv(string fmt, global::System.Object args)
         {
             if (Environment.Is64BitProcess)
             {
@@ -8520,7 +8520,7 @@ namespace DearImGui
         {
             get
             {
-                var __ptr = (sbyte*)ImGui._EmptyString_ImGuiTextBuffer__2PADA;
+                var __ptr = (sbyte*)global::DearImGuiImGui._EmptyString_ImGuiTextBuffer__2PADA;
                 return CppSharp.Runtime.MarshalUtil.GetCharArray(__ptr, 1);
             }
         }
@@ -8530,7 +8530,7 @@ namespace DearImGui
             get
             {
                 var ___ret = Environment.Is64BitProcess ? __Internal64.OperatorSubscript(__Instance, i) : __Internal32.OperatorSubscript(__Instance, i);
-                return Convert.ToChar(___ret);
+                return global::System.Convert.ToChar(___ret);
             }
         }
 
@@ -8571,7 +8571,7 @@ namespace DearImGui
             get
             {
                 var ___ret = Environment.Is64BitProcess ? __Internal64.CStr(__Instance) : __Internal32.CStr(__Instance);
-                return CppSharp.Runtime.MarshalUtil.GetString(Encoding.UTF8, ___ret);
+                return CppSharp.Runtime.MarshalUtil.GetString(global::System.Text.Encoding.UTF8, ___ret);
             }
         }
     }
@@ -8803,13 +8803,13 @@ namespace DearImGui
 
             internal IntPtr __Instance { get; set; }
 
-            internal static readonly new ConcurrentDictionary<IntPtr, WeakReference<ImGuiStorage.ImGuiStoragePair>> NativeToManagedMap = new ConcurrentDictionary<IntPtr, WeakReference<ImGuiStorage.ImGuiStoragePair>>();
-            internal static void __RecordNativeToManagedMapping(IntPtr native, ImGuiStorage.ImGuiStoragePair managed)
+            internal static readonly new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::System.WeakReference<global::DearImGui.ImGuiStorage.ImGuiStoragePair>> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::System.WeakReference<global::DearImGui.ImGuiStorage.ImGuiStoragePair>>();
+            internal static void __RecordNativeToManagedMapping(IntPtr native, global::DearImGui.ImGuiStorage.ImGuiStoragePair managed)
             {
-                NativeToManagedMap[native] = new WeakReference<ImGuiStorage.ImGuiStoragePair>(managed);
+                NativeToManagedMap[native] = new global::System.WeakReference<global::DearImGui.ImGuiStorage.ImGuiStoragePair>(managed);
             }
 
-            internal static bool __TryGetNativeToManagedMapping(IntPtr native, out ImGuiStorage.ImGuiStoragePair managed)
+            internal static bool __TryGetNativeToManagedMapping(IntPtr native, out global::DearImGui.ImGuiStorage.ImGuiStoragePair managed)
             {
                 managed = default;
                 return NativeToManagedMap.TryGetValue(native, out var wr) && wr.TryGetTarget(out managed);
@@ -8864,7 +8864,7 @@ namespace DearImGui
             // DEBUG: ImGuiStoragePair(ImGuiID _key, int _val_i)      { key = _key; val_i = _val_i; }
             public ImGuiStoragePair(uint _key, int _val_i)
             {
-                __Instance = Marshal.AllocHGlobal(sizeof(ImGuiStorage.ImGuiStoragePair.__Internal));
+                __Instance = Marshal.AllocHGlobal(sizeof(global::DearImGui.ImGuiStorage.ImGuiStoragePair.__Internal));
                 __ownsNativeInstance = true;
                 __RecordNativeToManagedMapping(__Instance, this);
                 if (Environment.Is64BitProcess)
@@ -8881,7 +8881,7 @@ namespace DearImGui
             // DEBUG: ImGuiStoragePair(ImGuiID _key, float _val_f)    { key = _key; val_f = _val_f; }
             public ImGuiStoragePair(uint _key, float _val_f)
             {
-                __Instance = Marshal.AllocHGlobal(sizeof(ImGuiStorage.ImGuiStoragePair.__Internal));
+                __Instance = Marshal.AllocHGlobal(sizeof(global::DearImGui.ImGuiStorage.ImGuiStoragePair.__Internal));
                 __ownsNativeInstance = true;
                 __RecordNativeToManagedMapping(__Instance, this);
                 if (Environment.Is64BitProcess)
@@ -8898,7 +8898,7 @@ namespace DearImGui
             // DEBUG: ImGuiStoragePair(ImGuiID _key, void* _val_p)    { key = _key; val_p = _val_p; }
             public ImGuiStoragePair(uint _key, IntPtr _val_p)
             {
-                __Instance = Marshal.AllocHGlobal(sizeof(ImGuiStorage.ImGuiStoragePair.__Internal));
+                __Instance = Marshal.AllocHGlobal(sizeof(global::DearImGui.ImGuiStorage.ImGuiStoragePair.__Internal));
                 __ownsNativeInstance = true;
                 __RecordNativeToManagedMapping(__Instance, this);
                 if (Environment.Is64BitProcess)
@@ -8913,13 +8913,13 @@ namespace DearImGui
 
             /// <summary>[Internal].<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2354.</summary>
             // DEBUG: ImGuiStoragePair
-            public ImGuiStoragePair(ImGuiStorage.ImGuiStoragePair _0)
+            public ImGuiStoragePair(global::DearImGui.ImGuiStorage.ImGuiStoragePair _0)
             {
-                __Instance = Marshal.AllocHGlobal(sizeof(ImGuiStorage.ImGuiStoragePair.__Internal));
+                __Instance = Marshal.AllocHGlobal(sizeof(global::DearImGui.ImGuiStorage.ImGuiStoragePair.__Internal));
                 __ownsNativeInstance = true;
                 __RecordNativeToManagedMapping(__Instance, this);
                 if (ReferenceEquals(_0, null))
-                    throw new ArgumentNullException("_0", "Cannot be null because it is a C++ reference (&).");
+                    throw new global::System.ArgumentNullException("_0", "Cannot be null because it is a C++ reference (&).");
                 var __arg0 = _0.__Instance;
                 if (Environment.Is64BitProcess)
                 {
@@ -9015,13 +9015,13 @@ namespace DearImGui
 
         internal IntPtr __Instance { get; set; }
 
-        internal static readonly new ConcurrentDictionary<IntPtr, WeakReference<ImGuiStorage>> NativeToManagedMap = new ConcurrentDictionary<IntPtr, WeakReference<ImGuiStorage>>();
-        internal static void __RecordNativeToManagedMapping(IntPtr native, ImGuiStorage managed)
+        internal static readonly new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::System.WeakReference<global::DearImGui.ImGuiStorage>> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::System.WeakReference<global::DearImGui.ImGuiStorage>>();
+        internal static void __RecordNativeToManagedMapping(IntPtr native, global::DearImGui.ImGuiStorage managed)
         {
-            NativeToManagedMap[native] = new WeakReference<ImGuiStorage>(managed);
+            NativeToManagedMap[native] = new global::System.WeakReference<global::DearImGui.ImGuiStorage>(managed);
         }
 
-        internal static bool __TryGetNativeToManagedMapping(IntPtr native, out ImGuiStorage managed)
+        internal static bool __TryGetNativeToManagedMapping(IntPtr native, out global::DearImGui.ImGuiStorage managed)
         {
             managed = default;
             return NativeToManagedMap.TryGetValue(native, out var wr) && wr.TryGetTarget(out managed);
@@ -9074,13 +9074,13 @@ namespace DearImGui
 
         /// <summary>Helper: Key-&gt;Value storage.<br/>Typically you don't have to worry about this since a storage is held within each Window.<br/>We use it to e.g. store collapse state for a tree (Int 0/1).<br/>This is optimized for efficient lookup (dichotomy into a contiguous buffer) and rare insertion (typically tied to user interactions aka max once a frame).<br/>You can use it as custom user storage for temporary values. Declare your own storage if, for example:.<br/>- You want to manipulate the open/close state of a particular sub-tree in your interface (tree node uses Int 0/1 to store their state).<br/>- You want to store custom debug data easily without adding or editing structures in your code (probably not efficient, but convenient).<br/>Types are NOT stored, so it is up to you to make sure your Key don't collide with different types.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2351.</summary>
         // DEBUG: ImGuiStorage
-        public ImGuiStorage(ImGuiStorage _0)
+        public ImGuiStorage(global::DearImGui.ImGuiStorage _0)
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(ImGuiStorage.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::DearImGui.ImGuiStorage.__Internal));
             __ownsNativeInstance = true;
             __RecordNativeToManagedMapping(__Instance, this);
             if (ReferenceEquals(_0, null))
-                throw new ArgumentNullException("_0", "Cannot be null because it is a C++ reference (&).");
+                throw new global::System.ArgumentNullException("_0", "Cannot be null because it is a C++ reference (&).");
             var __arg0 = _0.__Instance;
             if (Environment.Is64BitProcess)
             {
@@ -9096,7 +9096,7 @@ namespace DearImGui
         // DEBUG: ImGuiStorage
         public ImGuiStorage()
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(ImGuiStorage.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::DearImGui.ImGuiStorage.__Internal));
             __ownsNativeInstance = true;
             __RecordNativeToManagedMapping(__Instance, this);
             if (Environment.Is64BitProcess)
@@ -9307,11 +9307,11 @@ namespace DearImGui
         }
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2363.</summary>
-        public ImVector<ImGuiStorage.ImGuiStoragePair> Data
+        public ImVector<global::DearImGui.ImGuiStorage.ImGuiStoragePair> Data
         {
             get
             {
-                return new ImVector<ImGuiStorage.ImGuiStoragePair>(Unsafe.As<ImVector.__Internal, ImVector<ImGuiStorage.ImGuiStoragePair>.__Internal>(ref ((__Internal*)__Instance)->Data))
+                return new ImVector<global::DearImGui.ImGuiStorage.ImGuiStoragePair>(Unsafe.As<ImVector.__Internal, ImVector<global::DearImGui.ImGuiStorage.ImGuiStoragePair>.__Internal>(ref ((__Internal*)__Instance)->Data))
                 /* DEBUG: TypeMapImVector.CSharpMarshalToManaged: Function: False, ReturnVarName: True */
                 ;
             }
@@ -9410,13 +9410,13 @@ namespace DearImGui
 
         internal IntPtr __Instance { get; set; }
 
-        internal static readonly new ConcurrentDictionary<IntPtr, WeakReference<ImGuiListClipper>> NativeToManagedMap = new ConcurrentDictionary<IntPtr, WeakReference<ImGuiListClipper>>();
-        internal static void __RecordNativeToManagedMapping(IntPtr native, ImGuiListClipper managed)
+        internal static readonly new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::System.WeakReference<global::DearImGui.ImGuiListClipper>> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::System.WeakReference<global::DearImGui.ImGuiListClipper>>();
+        internal static void __RecordNativeToManagedMapping(IntPtr native, global::DearImGui.ImGuiListClipper managed)
         {
-            NativeToManagedMap[native] = new WeakReference<ImGuiListClipper>(managed);
+            NativeToManagedMap[native] = new global::System.WeakReference<global::DearImGui.ImGuiListClipper>(managed);
         }
 
-        internal static bool __TryGetNativeToManagedMapping(IntPtr native, out ImGuiListClipper managed)
+        internal static bool __TryGetNativeToManagedMapping(IntPtr native, out global::DearImGui.ImGuiListClipper managed)
         {
             managed = default;
             return NativeToManagedMap.TryGetValue(native, out var wr) && wr.TryGetTarget(out managed);
@@ -9471,7 +9471,7 @@ namespace DearImGui
         // DEBUG: ImGuiListClipper()
         public ImGuiListClipper()
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(ImGuiListClipper.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::DearImGui.ImGuiListClipper.__Internal));
             __ownsNativeInstance = true;
             __RecordNativeToManagedMapping(__Instance, this);
             if (Environment.Is64BitProcess)
@@ -9486,12 +9486,12 @@ namespace DearImGui
 
         /// <summary>Helper: Manually clip large list of items.<br/>If you have lots evenly spaced items and you have a random access to the list, you can perform coarse.<br/>Clipping based on visibility to only submit items that are in view.<br/>The clipper calculates the range of visible items and advance the cursor to compensate for the non-visible items we have skipped.<br/>(Dear ImGui already clip items based on their bounds but: it needs to first layout the item to do so, and generally.<br/>Fetching/submitting your own data incurs additional cost. Coarse clipping using ImGuiListClipper allows you to easily.<br/>Scale using lists with tens of thousands of items without a problem).<br/>Usage:.<br/>ImGuiListClipper clipper;.<br/>Clipper.Begin(1000);, // We have 1000 elements, evenly spaced.<br/>While (clipper.Step()).<br/>For (int i = clipper.DisplayStart; i &lt; clipper.DisplayEnd; i++).<br/>ImGui::Text("line number %d", i);.<br/>Generally what happens is:.<br/>- Clipper lets you process the first element (DisplayStart = 0, DisplayEnd = 1) regardless of it being visible or not.<br/>- User code submit that one element.<br/>- Clipper can measure the height of the first element.<br/>- Clipper calculate the actual range of elements to display based on the current clipping rectangle, position the cursor before the first visible element.<br/>- User code submit visible elements.<br/>- The clipper also handles various subtleties related to keyboard/gamepad navigation, wrapping etc.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2414.</summary>
         // DEBUG: ImGuiListClipper
-        public ImGuiListClipper(ImGuiListClipper _0)
+        public ImGuiListClipper(global::DearImGui.ImGuiListClipper _0)
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(ImGuiListClipper.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::DearImGui.ImGuiListClipper.__Internal));
             __ownsNativeInstance = true;
             __RecordNativeToManagedMapping(__Instance, this);
-            *((ImGuiListClipper.__Internal*)__Instance) = *((ImGuiListClipper.__Internal*)_0.__Instance);
+            *((global::DearImGui.ImGuiListClipper.__Internal*)__Instance) = *((global::DearImGui.ImGuiListClipper.__Internal*)_0.__Instance);
         }
 
         /// <inheritdoc/>
@@ -9687,7 +9687,7 @@ namespace DearImGui
         [StructLayout(LayoutKind.Sequential)]
         internal partial struct __Internal
         {
-            internal Vector4 ClipRect;
+            internal global::System.Numerics.Vector4 ClipRect;
             internal IntPtr TextureId;
             internal uint VtxOffset;
             internal uint IdxOffset;
@@ -9735,12 +9735,12 @@ namespace DearImGui
 
         private ImDrawCmd(void* native, bool skipVTables = false) : this()
         {
-            __instance = *(ImDrawCmd.__Internal*)native;
+            __instance = *(global::DearImGui.ImDrawCmd.__Internal*)native;
         }
 
         /// <summary>Typically, 1 command = 1 GPU draw call (unless command is a callback).<br/>- VtxOffset: When 'io.BackendFlags &amp; ImGuiBackendFlags_RendererHasVtxOffset' is enabled,.<br/>This fields allow us to render meshes larger than 64K vertices while keeping 16-bit indices.<br/>Backends made for &lt;1.71. will typically ignore the VtxOffset fields.<br/>- The ClipRect/TextureId/VtxOffset fields must be contiguous as we memcmp() them together (this is asserted for).<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2514.</summary>
         // DEBUG: ImDrawCmd
-        public ImDrawCmd(ImDrawCmd _0) : this()
+        public ImDrawCmd(global::DearImGui.ImDrawCmd _0) : this()
         {
             var ____arg0 = _0.__Instance;
             var __arg0 = new IntPtr(&____arg0);
@@ -9814,17 +9814,17 @@ namespace DearImGui
         }
 
         /// <summary>4-8.<br/>If != NULL, call the function instead of rendering the vertices. clip_rect and texture_id will be set normally.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2521.</summary>
-        public ImDrawCallback UserCallback
+        public global::DearImGui.ImDrawCallback UserCallback
         {
             get
             {
                 var __ptr0 = __instance.UserCallback;
-                return __ptr0 == IntPtr.Zero ? null : (ImDrawCallback)Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(ImDrawCallback));
+                return __ptr0 == IntPtr.Zero ? null : (global::DearImGui.ImDrawCallback)Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(global::DearImGui.ImDrawCallback));
             }
 
             set
             {
-                __instance.UserCallback = value == null ? IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(value);
+                __instance.UserCallback = value == null ? global::System.IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(value);
             }
         }
 
@@ -9855,7 +9855,7 @@ namespace DearImGui
         [StructLayout(LayoutKind.Sequential)]
         internal partial struct __Internal
         {
-            internal Vector4 ClipRect;
+            internal global::System.Numerics.Vector4 ClipRect;
             internal IntPtr TextureId;
             internal uint VtxOffset;
         }
@@ -9882,13 +9882,13 @@ namespace DearImGui
 
         internal IntPtr __Instance { get; set; }
 
-        internal static readonly new ConcurrentDictionary<IntPtr, WeakReference<ImDrawCmdHeader>> NativeToManagedMap = new ConcurrentDictionary<IntPtr, WeakReference<ImDrawCmdHeader>>();
-        internal static void __RecordNativeToManagedMapping(IntPtr native, ImDrawCmdHeader managed)
+        internal static readonly new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::System.WeakReference<global::DearImGui.ImDrawCmdHeader>> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::System.WeakReference<global::DearImGui.ImDrawCmdHeader>>();
+        internal static void __RecordNativeToManagedMapping(IntPtr native, global::DearImGui.ImDrawCmdHeader managed)
         {
-            NativeToManagedMap[native] = new WeakReference<ImDrawCmdHeader>(managed);
+            NativeToManagedMap[native] = new global::System.WeakReference<global::DearImGui.ImDrawCmdHeader>(managed);
         }
 
-        internal static bool __TryGetNativeToManagedMapping(IntPtr native, out ImDrawCmdHeader managed)
+        internal static bool __TryGetNativeToManagedMapping(IntPtr native, out global::DearImGui.ImDrawCmdHeader managed)
         {
             managed = default;
             return NativeToManagedMap.TryGetValue(native, out var wr) && wr.TryGetTarget(out managed);
@@ -9941,13 +9941,13 @@ namespace DearImGui
 
         /// <summary>[Internal] For use by ImDrawList.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2547.</summary>
         // DEBUG: ImDrawCmdHeader
-        public ImDrawCmdHeader(ImDrawCmdHeader _0)
+        public ImDrawCmdHeader(global::DearImGui.ImDrawCmdHeader _0)
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(ImDrawCmdHeader.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::DearImGui.ImDrawCmdHeader.__Internal));
             __ownsNativeInstance = true;
             __RecordNativeToManagedMapping(__Instance, this);
             if (ReferenceEquals(_0, null))
-                throw new ArgumentNullException("_0", "Cannot be null because it is a C++ reference (&).");
+                throw new global::System.ArgumentNullException("_0", "Cannot be null because it is a C++ reference (&).");
             var __arg0 = _0.__Instance;
             if (Environment.Is64BitProcess)
             {
@@ -9963,7 +9963,7 @@ namespace DearImGui
         // DEBUG: ImDrawCmdHeader
         public ImDrawCmdHeader()
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(ImDrawCmdHeader.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::DearImGui.ImDrawCmdHeader.__Internal));
             __ownsNativeInstance = true;
             __RecordNativeToManagedMapping(__Instance, this);
             if (Environment.Is64BitProcess)
@@ -10002,7 +10002,7 @@ namespace DearImGui
         }
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2549.</summary>
-        public Vector4 ClipRect
+        public global::System.Numerics.Vector4 ClipRect
         {
             get
             {
@@ -10093,13 +10093,13 @@ namespace DearImGui
 
         internal IntPtr __Instance { get; set; }
 
-        internal static readonly new ConcurrentDictionary<IntPtr, WeakReference<ImDrawChannel>> NativeToManagedMap = new ConcurrentDictionary<IntPtr, WeakReference<ImDrawChannel>>();
-        internal static void __RecordNativeToManagedMapping(IntPtr native, ImDrawChannel managed)
+        internal static readonly new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::System.WeakReference<global::DearImGui.ImDrawChannel>> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::System.WeakReference<global::DearImGui.ImDrawChannel>>();
+        internal static void __RecordNativeToManagedMapping(IntPtr native, global::DearImGui.ImDrawChannel managed)
         {
-            NativeToManagedMap[native] = new WeakReference<ImDrawChannel>(managed);
+            NativeToManagedMap[native] = new global::System.WeakReference<global::DearImGui.ImDrawChannel>(managed);
         }
 
-        internal static bool __TryGetNativeToManagedMapping(IntPtr native, out ImDrawChannel managed)
+        internal static bool __TryGetNativeToManagedMapping(IntPtr native, out global::DearImGui.ImDrawChannel managed)
         {
             managed = default;
             return NativeToManagedMap.TryGetValue(native, out var wr) && wr.TryGetTarget(out managed);
@@ -10152,13 +10152,13 @@ namespace DearImGui
 
         /// <summary>[Internal] For use by ImDrawListSplitter.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2555.</summary>
         // DEBUG: ImDrawChannel
-        public ImDrawChannel(ImDrawChannel _0)
+        public ImDrawChannel(global::DearImGui.ImDrawChannel _0)
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(ImDrawChannel.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::DearImGui.ImDrawChannel.__Internal));
             __ownsNativeInstance = true;
             __RecordNativeToManagedMapping(__Instance, this);
             if (ReferenceEquals(_0, null))
-                throw new ArgumentNullException("_0", "Cannot be null because it is a C++ reference (&).");
+                throw new global::System.ArgumentNullException("_0", "Cannot be null because it is a C++ reference (&).");
             var __arg0 = _0.__Instance;
             if (Environment.Is64BitProcess)
             {
@@ -10174,7 +10174,7 @@ namespace DearImGui
         // DEBUG: ImDrawChannel
         public ImDrawChannel()
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(ImDrawChannel.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::DearImGui.ImDrawChannel.__Internal));
             __ownsNativeInstance = true;
             __RecordNativeToManagedMapping(__Instance, this);
             if (Environment.Is64BitProcess)
@@ -10223,11 +10223,11 @@ namespace DearImGui
         }
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2557.</summary>
-        public ImVector<ImDrawCmd> CmdBuffer
+        public ImVector<global::DearImGui.ImDrawCmd> CmdBuffer
         {
             get
             {
-                return new ImVector<ImDrawCmd>(Unsafe.As<ImVector.__Internal, ImVector<ImDrawCmd>.__Internal>(ref ((__Internal*)__Instance)->_CmdBuffer))
+                return new ImVector<global::DearImGui.ImDrawCmd>(Unsafe.As<ImVector.__Internal, ImVector<global::DearImGui.ImDrawCmd>.__Internal>(ref ((__Internal*)__Instance)->_CmdBuffer))
                 /* DEBUG: TypeMapImVector.CSharpMarshalToManaged: Function: False, ReturnVarName: True */
                 ;
             }
@@ -10328,13 +10328,13 @@ namespace DearImGui
 
         internal IntPtr __Instance { get; set; }
 
-        internal static readonly new ConcurrentDictionary<IntPtr, WeakReference<ImDrawListSplitter>> NativeToManagedMap = new ConcurrentDictionary<IntPtr, WeakReference<ImDrawListSplitter>>();
-        internal static void __RecordNativeToManagedMapping(IntPtr native, ImDrawListSplitter managed)
+        internal static readonly new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::System.WeakReference<global::DearImGui.ImDrawListSplitter>> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::System.WeakReference<global::DearImGui.ImDrawListSplitter>>();
+        internal static void __RecordNativeToManagedMapping(IntPtr native, global::DearImGui.ImDrawListSplitter managed)
         {
-            NativeToManagedMap[native] = new WeakReference<ImDrawListSplitter>(managed);
+            NativeToManagedMap[native] = new global::System.WeakReference<global::DearImGui.ImDrawListSplitter>(managed);
         }
 
-        internal static bool __TryGetNativeToManagedMapping(IntPtr native, out ImDrawListSplitter managed)
+        internal static bool __TryGetNativeToManagedMapping(IntPtr native, out global::DearImGui.ImDrawListSplitter managed)
         {
             managed = default;
             return NativeToManagedMap.TryGetValue(native, out var wr) && wr.TryGetTarget(out managed);
@@ -10370,11 +10370,11 @@ namespace DearImGui
             var ret = Marshal.AllocHGlobal(sizeof(__Internal));
             if (Environment.Is64BitProcess)
             {
-                ImDrawListSplitter.__Internal64.cctor(ret, new IntPtr(&native));
+                global::DearImGui.ImDrawListSplitter.__Internal64.cctor(ret, new IntPtr(&native));
             }
             else
             {
-                ImDrawListSplitter.__Internal32.cctor(ret, new IntPtr(&native));
+                global::DearImGui.ImDrawListSplitter.__Internal32.cctor(ret, new IntPtr(&native));
             }
 
             return ret.ToPointer();
@@ -10397,7 +10397,7 @@ namespace DearImGui
         // DEBUG: inline ImDrawListSplitter()  { memset(this, 0, sizeof(*this)); }
         public ImDrawListSplitter()
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(ImDrawListSplitter.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::DearImGui.ImDrawListSplitter.__Internal));
             __ownsNativeInstance = true;
             __RecordNativeToManagedMapping(__Instance, this);
             if (Environment.Is64BitProcess)
@@ -10412,13 +10412,13 @@ namespace DearImGui
 
         /// <summary>Split/Merge functions are used to split the draw list into different layers which can be drawn into out of order.<br/>This is used by the Columns/Tables API, so items of each column can be batched together in a same draw call.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2564.</summary>
         // DEBUG: ImDrawListSplitter
-        public ImDrawListSplitter(ImDrawListSplitter _0)
+        public ImDrawListSplitter(global::DearImGui.ImDrawListSplitter _0)
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(ImDrawListSplitter.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::DearImGui.ImDrawListSplitter.__Internal));
             __ownsNativeInstance = true;
             __RecordNativeToManagedMapping(__Instance, this);
             if (ReferenceEquals(_0, null))
-                throw new ArgumentNullException("_0", "Cannot be null because it is a C++ reference (&).");
+                throw new global::System.ArgumentNullException("_0", "Cannot be null because it is a C++ reference (&).");
             var __arg0 = _0.__Instance;
             if (Environment.Is64BitProcess)
             {
@@ -10495,7 +10495,7 @@ namespace DearImGui
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2574.</summary>
         // DEBUG: void              Split(ImDrawList* draw_list, int count)
-        public void Split(ImDrawList draw_list, int count)
+        public void Split(global::DearImGui.ImDrawList draw_list, int count)
         {
             var ____arg0 = draw_list.__Instance;
             var __arg0 = new IntPtr(&____arg0);
@@ -10511,7 +10511,7 @@ namespace DearImGui
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2575.</summary>
         // DEBUG: void              Merge(ImDrawList* draw_list)
-        public void Merge(ImDrawList draw_list)
+        public void Merge(global::DearImGui.ImDrawList draw_list)
         {
             var ____arg0 = draw_list.__Instance;
             var __arg0 = new IntPtr(&____arg0);
@@ -10527,7 +10527,7 @@ namespace DearImGui
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2576.</summary>
         // DEBUG: void              SetCurrentChannel(ImDrawList* draw_list, int channel_idx)
-        public void SetCurrentChannel(ImDrawList draw_list, int channel_idx)
+        public void SetCurrentChannel(global::DearImGui.ImDrawList draw_list, int channel_idx)
         {
             var ____arg0 = draw_list.__Instance;
             var __arg0 = new IntPtr(&____arg0);
@@ -10570,11 +10570,11 @@ namespace DearImGui
         }
 
         /// <summary>Draw channels (not resized down so _Count might be &lt; Channels.Size).<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2568.</summary>
-        public ImVector<ImDrawChannel> Channels
+        public ImVector<global::DearImGui.ImDrawChannel> Channels
         {
             get
             {
-                return new ImVector<ImDrawChannel>(Unsafe.As<ImVector.__Internal, ImVector<ImDrawChannel>.__Internal>(ref ((__Internal*)__Instance)->_Channels))
+                return new ImVector<global::DearImGui.ImDrawChannel>(Unsafe.As<ImVector.__Internal, ImVector<global::DearImGui.ImDrawChannel>.__Internal>(ref ((__Internal*)__Instance)->_Channels))
                 /* DEBUG: TypeMapImVector.CSharpMarshalToManaged: Function: False, ReturnVarName: True */
                 ;
             }
@@ -10714,7 +10714,7 @@ namespace DearImGui
             internal ImVector.__Internal CmdBuffer;
             internal ImVector.__Internal IdxBuffer;
             internal ImVector.__Internal VtxBuffer;
-            internal ImDrawListFlags Flags;
+            internal global::DearImGui.ImDrawListFlags Flags;
             internal uint _VtxCurrentIdx;
             internal IntPtr _Data;
             internal IntPtr _OwnerName;
@@ -10723,8 +10723,8 @@ namespace DearImGui
             internal ImVector.__Internal _ClipRectStack;
             internal ImVector.__Internal _TextureIdStack;
             internal ImVector.__Internal _Path;
-            internal ImDrawCmdHeader.__Internal _CmdHeader;
-            internal ImDrawListSplitter.__Internal _Splitter;
+            internal global::DearImGui.ImDrawCmdHeader.__Internal _CmdHeader;
+            internal global::DearImGui.ImDrawListSplitter.__Internal _Splitter;
             internal float _FringeScale;
         }
 
@@ -10758,10 +10758,10 @@ namespace DearImGui
             internal static extern void AddLine(IntPtr __instance, IntPtr p1, IntPtr p2, uint col, float thickness);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?AddRect@ImDrawList@@QAEXABUImVec2@@0IMHM@Z", CallingConvention = CallingConvention.ThisCall)]
-            internal static extern void AddRect(IntPtr __instance, IntPtr p_min, IntPtr p_max, uint col, float rounding, ImDrawFlags flags, float thickness);
+            internal static extern void AddRect(IntPtr __instance, IntPtr p_min, IntPtr p_max, uint col, float rounding, global::DearImGui.ImDrawFlags flags, float thickness);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?AddRectFilled@ImDrawList@@QAEXABUImVec2@@0IMH@Z", CallingConvention = CallingConvention.ThisCall)]
-            internal static extern void AddRectFilled(IntPtr __instance, IntPtr p_min, IntPtr p_max, uint col, float rounding, ImDrawFlags flags);
+            internal static extern void AddRectFilled(IntPtr __instance, IntPtr p_min, IntPtr p_max, uint col, float rounding, global::DearImGui.ImDrawFlags flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?AddRectFilledMultiColor@ImDrawList@@QAEXABUImVec2@@0IIII@Z", CallingConvention = CallingConvention.ThisCall)]
             internal static extern void AddRectFilledMultiColor(IntPtr __instance, IntPtr p_min, IntPtr p_max, uint col_upr_left, uint col_upr_right, uint col_bot_right, uint col_bot_left);
@@ -10797,7 +10797,7 @@ namespace DearImGui
             internal static extern void AddText(IntPtr __instance, IntPtr font, float font_size, IntPtr pos, uint col, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string text_begin, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string text_end, float wrap_width, IntPtr cpu_fine_clip_rect);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?AddPolyline@ImDrawList@@QAEXPBUImVec2@@HIHM@Z", CallingConvention = CallingConvention.ThisCall)]
-            internal static extern void AddPolyline(IntPtr __instance, IntPtr points, int num_points, uint col, ImDrawFlags flags, float thickness);
+            internal static extern void AddPolyline(IntPtr __instance, IntPtr points, int num_points, uint col, global::DearImGui.ImDrawFlags flags, float thickness);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?AddConvexPolyFilled@ImDrawList@@QAEXPBUImVec2@@HI@Z", CallingConvention = CallingConvention.ThisCall)]
             internal static extern void AddConvexPolyFilled(IntPtr __instance, IntPtr points, int num_points, uint col);
@@ -10815,7 +10815,7 @@ namespace DearImGui
             internal static extern void AddImageQuad(IntPtr __instance, IntPtr user_texture_id, IntPtr p1, IntPtr p2, IntPtr p3, IntPtr p4, IntPtr uv1, IntPtr uv2, IntPtr uv3, IntPtr uv4, uint col);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?AddImageRounded@ImDrawList@@QAEXPAXABUImVec2@@111IMH@Z", CallingConvention = CallingConvention.ThisCall)]
-            internal static extern void AddImageRounded(IntPtr __instance, IntPtr user_texture_id, IntPtr p_min, IntPtr p_max, IntPtr uv_min, IntPtr uv_max, uint col, float rounding, ImDrawFlags flags);
+            internal static extern void AddImageRounded(IntPtr __instance, IntPtr user_texture_id, IntPtr p_min, IntPtr p_max, IntPtr uv_min, IntPtr uv_max, uint col, float rounding, global::DearImGui.ImDrawFlags flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?PathClear@ImDrawList@@QAEXXZ", CallingConvention = CallingConvention.ThisCall)]
             internal static extern void PathClear(IntPtr __instance);
@@ -10830,7 +10830,7 @@ namespace DearImGui
             internal static extern void PathFillConvex(IntPtr __instance, uint col);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?PathStroke@ImDrawList@@QAEXIHM@Z", CallingConvention = CallingConvention.ThisCall)]
-            internal static extern void PathStroke(IntPtr __instance, uint col, ImDrawFlags flags, float thickness);
+            internal static extern void PathStroke(IntPtr __instance, uint col, global::DearImGui.ImDrawFlags flags, float thickness);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?PathArcTo@ImDrawList@@QAEXABUImVec2@@MMMH@Z", CallingConvention = CallingConvention.ThisCall)]
             internal static extern void PathArcTo(IntPtr __instance, IntPtr center, float radius, float a_min, float a_max, int num_segments);
@@ -10845,7 +10845,7 @@ namespace DearImGui
             internal static extern void PathBezierQuadraticCurveTo(IntPtr __instance, IntPtr p2, IntPtr p3, int num_segments);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?PathRect@ImDrawList@@QAEXABUImVec2@@0MH@Z", CallingConvention = CallingConvention.ThisCall)]
-            internal static extern void PathRect(IntPtr __instance, IntPtr rect_min, IntPtr rect_max, float rounding, ImDrawFlags flags);
+            internal static extern void PathRect(IntPtr __instance, IntPtr rect_min, IntPtr rect_max, float rounding, global::DearImGui.ImDrawFlags flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?AddCallback@ImDrawList@@QAEXP6AXPBU1@PBUImDrawCmd@@@ZPAX@Z", CallingConvention = CallingConvention.ThisCall)]
             internal static extern void AddCallback(IntPtr __instance, IntPtr callback, IntPtr callback_data);
@@ -10951,10 +10951,10 @@ namespace DearImGui
             internal static extern void AddLine(IntPtr __instance, IntPtr p1, IntPtr p2, uint col, float thickness);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?AddRect@ImDrawList@@QEAAXAEBUImVec2@@0IMHM@Z", CallingConvention = CallingConvention.Cdecl)]
-            internal static extern void AddRect(IntPtr __instance, IntPtr p_min, IntPtr p_max, uint col, float rounding, ImDrawFlags flags, float thickness);
+            internal static extern void AddRect(IntPtr __instance, IntPtr p_min, IntPtr p_max, uint col, float rounding, global::DearImGui.ImDrawFlags flags, float thickness);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?AddRectFilled@ImDrawList@@QEAAXAEBUImVec2@@0IMH@Z", CallingConvention = CallingConvention.Cdecl)]
-            internal static extern void AddRectFilled(IntPtr __instance, IntPtr p_min, IntPtr p_max, uint col, float rounding, ImDrawFlags flags);
+            internal static extern void AddRectFilled(IntPtr __instance, IntPtr p_min, IntPtr p_max, uint col, float rounding, global::DearImGui.ImDrawFlags flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?AddRectFilledMultiColor@ImDrawList@@QEAAXAEBUImVec2@@0IIII@Z", CallingConvention = CallingConvention.Cdecl)]
             internal static extern void AddRectFilledMultiColor(IntPtr __instance, IntPtr p_min, IntPtr p_max, uint col_upr_left, uint col_upr_right, uint col_bot_right, uint col_bot_left);
@@ -10990,7 +10990,7 @@ namespace DearImGui
             internal static extern void AddText(IntPtr __instance, IntPtr font, float font_size, IntPtr pos, uint col, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string text_begin, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string text_end, float wrap_width, IntPtr cpu_fine_clip_rect);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?AddPolyline@ImDrawList@@QEAAXPEBUImVec2@@HIHM@Z", CallingConvention = CallingConvention.Cdecl)]
-            internal static extern void AddPolyline(IntPtr __instance, IntPtr points, int num_points, uint col, ImDrawFlags flags, float thickness);
+            internal static extern void AddPolyline(IntPtr __instance, IntPtr points, int num_points, uint col, global::DearImGui.ImDrawFlags flags, float thickness);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?AddConvexPolyFilled@ImDrawList@@QEAAXPEBUImVec2@@HI@Z", CallingConvention = CallingConvention.Cdecl)]
             internal static extern void AddConvexPolyFilled(IntPtr __instance, IntPtr points, int num_points, uint col);
@@ -11008,7 +11008,7 @@ namespace DearImGui
             internal static extern void AddImageQuad(IntPtr __instance, IntPtr user_texture_id, IntPtr p1, IntPtr p2, IntPtr p3, IntPtr p4, IntPtr uv1, IntPtr uv2, IntPtr uv3, IntPtr uv4, uint col);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?AddImageRounded@ImDrawList@@QEAAXPEAXAEBUImVec2@@111IMH@Z", CallingConvention = CallingConvention.Cdecl)]
-            internal static extern void AddImageRounded(IntPtr __instance, IntPtr user_texture_id, IntPtr p_min, IntPtr p_max, IntPtr uv_min, IntPtr uv_max, uint col, float rounding, ImDrawFlags flags);
+            internal static extern void AddImageRounded(IntPtr __instance, IntPtr user_texture_id, IntPtr p_min, IntPtr p_max, IntPtr uv_min, IntPtr uv_max, uint col, float rounding, global::DearImGui.ImDrawFlags flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?PathClear@ImDrawList@@QEAAXXZ", CallingConvention = CallingConvention.Cdecl)]
             internal static extern void PathClear(IntPtr __instance);
@@ -11023,7 +11023,7 @@ namespace DearImGui
             internal static extern void PathFillConvex(IntPtr __instance, uint col);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?PathStroke@ImDrawList@@QEAAXIHM@Z", CallingConvention = CallingConvention.Cdecl)]
-            internal static extern void PathStroke(IntPtr __instance, uint col, ImDrawFlags flags, float thickness);
+            internal static extern void PathStroke(IntPtr __instance, uint col, global::DearImGui.ImDrawFlags flags, float thickness);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?PathArcTo@ImDrawList@@QEAAXAEBUImVec2@@MMMH@Z", CallingConvention = CallingConvention.Cdecl)]
             internal static extern void PathArcTo(IntPtr __instance, IntPtr center, float radius, float a_min, float a_max, int num_segments);
@@ -11038,7 +11038,7 @@ namespace DearImGui
             internal static extern void PathBezierQuadraticCurveTo(IntPtr __instance, IntPtr p2, IntPtr p3, int num_segments);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?PathRect@ImDrawList@@QEAAXAEBUImVec2@@0MH@Z", CallingConvention = CallingConvention.Cdecl)]
-            internal static extern void PathRect(IntPtr __instance, IntPtr rect_min, IntPtr rect_max, float rounding, ImDrawFlags flags);
+            internal static extern void PathRect(IntPtr __instance, IntPtr rect_min, IntPtr rect_max, float rounding, global::DearImGui.ImDrawFlags flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?AddCallback@ImDrawList@@QEAAXP6AXPEBU1@PEBUImDrawCmd@@@ZPEAX@Z", CallingConvention = CallingConvention.Cdecl)]
             internal static extern void AddCallback(IntPtr __instance, IntPtr callback, IntPtr callback_data);
@@ -11134,12 +11134,12 @@ namespace DearImGui
 
         private ImDrawList(void* native, bool skipVTables = false) : this()
         {
-            __instance = *(ImDrawList.__Internal*)native;
+            __instance = *(global::DearImGui.ImDrawList.__Internal*)native;
         }
 
         /// <summary>If you want to create ImDrawList instances, pass them ImGui::GetDrawListSharedData() or create and use your own ImDrawListSharedData (so you can use ImDrawList without ImGui).<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2641.</summary>
         // DEBUG: ImDrawList(const ImDrawListSharedData* shared_data) { memset(this, 0, sizeof(*this)); _Data = shared_data; }
-        public ImDrawList(ImDrawListSharedData shared_data) : this()
+        public ImDrawList(global::DearImGui.ImDrawListSharedData shared_data) : this()
         {
             var __arg0 = shared_data is null ? IntPtr.Zero : shared_data.__Instance;
             fixed (__Internal* __instancePtr = &__instance)
@@ -11157,7 +11157,7 @@ namespace DearImGui
 
         /// <summary>Draw command list.<br/>This is the low-level list of polygons that ImGui:: functions are filling. At the end of the frame,.<br/>All command lists are passed to your ImGuiIO::RenderDrawListFn function for rendering.<br/>Each dear imgui window contains its own ImDrawList. You can use ImGui::GetWindowDrawList() to.<br/>Access the current window draw list and draw custom primitives.<br/>You can interleave normal ImGui:: calls and adding primitives to the current draw list.<br/>In single viewport mode, top-left is == GetMainViewport()-&gt;Pos (generally 0,0), bottom-right is == GetMainViewport()-&gt;Pos+Size (generally io.DisplaySize).<br/>You are totally free to apply whatever transformation matrix to want to the data (depending on the use of the transformation you may want to apply it to ClipRect as well!).<br/>Important: Primitives are always added to the list and not culled (culling is done at higher-level by ImGui:: functions), if you use this API a lot consider coarse culling your drawn objects.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2619.</summary>
         // DEBUG: ImDrawList
-        public ImDrawList(ImDrawList _0) : this()
+        public ImDrawList(global::DearImGui.ImDrawList _0) : this()
         {
             var ____arg0 = _0.__Instance;
             var __arg0 = new IntPtr(&____arg0);
@@ -11176,7 +11176,7 @@ namespace DearImGui
 
         /// <summary>Render-level scissoring. This is passed down to your render function but not used for CPU-side coarse clipping. Prefer using higher-level ImGui::PushClipRect() to affect logic (hit-testing and widget culling).<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2644.</summary>
         // DEBUG: void  PushClipRect(const ImVec2& clip_rect_min, const ImVec2& clip_rect_max, bool intersect_with_current_clip_rect = false)
-        public void PushClipRect(Vector2 clip_rect_min, Vector2 clip_rect_max, bool intersect_with_current_clip_rect = false)
+        public void PushClipRect(global::System.Numerics.Vector2 clip_rect_min, global::System.Numerics.Vector2 clip_rect_max, bool intersect_with_current_clip_rect = false)
         {
             var __arg0 = new IntPtr(Unsafe.AsPointer(ref clip_rect_min))
             /* DEBUG: TypeMapImVec2.CSharpMarshalToNative: Case 4 */
@@ -11269,7 +11269,7 @@ namespace DearImGui
 
         /// <summary>Primitives.<br/>- Filled shapes must always use clockwise winding order. The anti-aliasing fringe depends on it. Counter-clockwise shapes will have "inward" anti-aliasing.<br/>- For rectangular primitives, "p_min" and "p_max" represent the upper-left and lower-right corners.<br/>- For circle primitives, use "num_segments == 0" to automatically calculate tessellation (preferred).<br/>In older versions (until Dear ImGui 1.77) the AddCircle functions defaulted to num_segments == 12.<br/>In future versions we will use textures to provide cheaper and higher-quality circles.<br/>Use AddNgon() and AddNgonFilled() functions if you need to guaranteed a specific number of sides.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2659.</summary>
         // DEBUG: void  AddLine(const ImVec2& p1, const ImVec2& p2, ImU32 col, float thickness = 1.0f)
-        public void AddLine(Vector2 p1, Vector2 p2, uint col, float thickness = 1.0F)
+        public void AddLine(global::System.Numerics.Vector2 p1, global::System.Numerics.Vector2 p2, uint col, float thickness = 1.0F)
         {
             var __arg0 = new IntPtr(Unsafe.AsPointer(ref p1))
             /* DEBUG: TypeMapImVec2.CSharpMarshalToNative: Case 4 */
@@ -11294,7 +11294,7 @@ namespace DearImGui
 
         /// <summary>A: upper-left, b: lower-right (== upper-left + size).<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2660.</summary>
         // DEBUG: void  AddRect(const ImVec2& p_min, const ImVec2& p_max, ImU32 col, float rounding = 0.0f, ImDrawFlags flags = 0, float thickness = 1.0f)
-        public void AddRect(Vector2 p_min, Vector2 p_max, uint col, float rounding = 0.0F, ImDrawFlags flags = (ImDrawFlags)(0), float thickness = 1.0F)
+        public void AddRect(global::System.Numerics.Vector2 p_min, global::System.Numerics.Vector2 p_max, uint col, float rounding = 0.0F, global::DearImGui.ImDrawFlags flags = (ImDrawFlags)(0), float thickness = 1.0F)
         {
             var __arg0 = new IntPtr(Unsafe.AsPointer(ref p_min))
             /* DEBUG: TypeMapImVec2.CSharpMarshalToNative: Case 4 */
@@ -11319,7 +11319,7 @@ namespace DearImGui
 
         /// <summary>A: upper-left, b: lower-right (== upper-left + size).<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2661.</summary>
         // DEBUG: void  AddRectFilled(const ImVec2& p_min, const ImVec2& p_max, ImU32 col, float rounding = 0.0f, ImDrawFlags flags = 0)
-        public void AddRectFilled(Vector2 p_min, Vector2 p_max, uint col, float rounding = 0.0F, ImDrawFlags flags = (ImDrawFlags)(0))
+        public void AddRectFilled(global::System.Numerics.Vector2 p_min, global::System.Numerics.Vector2 p_max, uint col, float rounding = 0.0F, global::DearImGui.ImDrawFlags flags = (ImDrawFlags)(0))
         {
             var __arg0 = new IntPtr(Unsafe.AsPointer(ref p_min))
             /* DEBUG: TypeMapImVec2.CSharpMarshalToNative: Case 4 */
@@ -11344,7 +11344,7 @@ namespace DearImGui
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2662.</summary>
         // DEBUG: void  AddRectFilledMultiColor(const ImVec2& p_min, const ImVec2& p_max, ImU32 col_upr_left, ImU32 col_upr_right, ImU32 col_bot_right, ImU32 col_bot_left)
-        public void AddRectFilledMultiColor(Vector2 p_min, Vector2 p_max, uint col_upr_left, uint col_upr_right, uint col_bot_right, uint col_bot_left)
+        public void AddRectFilledMultiColor(global::System.Numerics.Vector2 p_min, global::System.Numerics.Vector2 p_max, uint col_upr_left, uint col_upr_right, uint col_bot_right, uint col_bot_left)
         {
             var __arg0 = new IntPtr(Unsafe.AsPointer(ref p_min))
             /* DEBUG: TypeMapImVec2.CSharpMarshalToNative: Case 4 */
@@ -11369,7 +11369,7 @@ namespace DearImGui
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2663.</summary>
         // DEBUG: void  AddQuad(const ImVec2& p1, const ImVec2& p2, const ImVec2& p3, const ImVec2& p4, ImU32 col, float thickness = 1.0f)
-        public void AddQuad(Vector2 p1, Vector2 p2, Vector2 p3, Vector2 p4, uint col, float thickness = 1.0F)
+        public void AddQuad(global::System.Numerics.Vector2 p1, global::System.Numerics.Vector2 p2, global::System.Numerics.Vector2 p3, global::System.Numerics.Vector2 p4, uint col, float thickness = 1.0F)
         {
             var __arg0 = new IntPtr(Unsafe.AsPointer(ref p1))
             /* DEBUG: TypeMapImVec2.CSharpMarshalToNative: Case 4 */
@@ -11402,7 +11402,7 @@ namespace DearImGui
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2664.</summary>
         // DEBUG: void  AddQuadFilled(const ImVec2& p1, const ImVec2& p2, const ImVec2& p3, const ImVec2& p4, ImU32 col)
-        public void AddQuadFilled(Vector2 p1, Vector2 p2, Vector2 p3, Vector2 p4, uint col)
+        public void AddQuadFilled(global::System.Numerics.Vector2 p1, global::System.Numerics.Vector2 p2, global::System.Numerics.Vector2 p3, global::System.Numerics.Vector2 p4, uint col)
         {
             var __arg0 = new IntPtr(Unsafe.AsPointer(ref p1))
             /* DEBUG: TypeMapImVec2.CSharpMarshalToNative: Case 4 */
@@ -11435,7 +11435,7 @@ namespace DearImGui
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2665.</summary>
         // DEBUG: void  AddTriangle(const ImVec2& p1, const ImVec2& p2, const ImVec2& p3, ImU32 col, float thickness = 1.0f)
-        public void AddTriangle(Vector2 p1, Vector2 p2, Vector2 p3, uint col, float thickness = 1.0F)
+        public void AddTriangle(global::System.Numerics.Vector2 p1, global::System.Numerics.Vector2 p2, global::System.Numerics.Vector2 p3, uint col, float thickness = 1.0F)
         {
             var __arg0 = new IntPtr(Unsafe.AsPointer(ref p1))
             /* DEBUG: TypeMapImVec2.CSharpMarshalToNative: Case 4 */
@@ -11464,7 +11464,7 @@ namespace DearImGui
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2666.</summary>
         // DEBUG: void  AddTriangleFilled(const ImVec2& p1, const ImVec2& p2, const ImVec2& p3, ImU32 col)
-        public void AddTriangleFilled(Vector2 p1, Vector2 p2, Vector2 p3, uint col)
+        public void AddTriangleFilled(global::System.Numerics.Vector2 p1, global::System.Numerics.Vector2 p2, global::System.Numerics.Vector2 p3, uint col)
         {
             var __arg0 = new IntPtr(Unsafe.AsPointer(ref p1))
             /* DEBUG: TypeMapImVec2.CSharpMarshalToNative: Case 4 */
@@ -11493,7 +11493,7 @@ namespace DearImGui
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2667.</summary>
         // DEBUG: void  AddCircle(const ImVec2& center, float radius, ImU32 col, int num_segments = 0, float thickness = 1.0f)
-        public void AddCircle(Vector2 center, float radius, uint col, int num_segments = (int)(0), float thickness = 1.0F)
+        public void AddCircle(global::System.Numerics.Vector2 center, float radius, uint col, int num_segments = (int)(0), float thickness = 1.0F)
         {
             var __arg0 = new IntPtr(Unsafe.AsPointer(ref center))
             /* DEBUG: TypeMapImVec2.CSharpMarshalToNative: Case 4 */
@@ -11514,7 +11514,7 @@ namespace DearImGui
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2668.</summary>
         // DEBUG: void  AddCircleFilled(const ImVec2& center, float radius, ImU32 col, int num_segments = 0)
-        public void AddCircleFilled(Vector2 center, float radius, uint col, int num_segments = (int)(0))
+        public void AddCircleFilled(global::System.Numerics.Vector2 center, float radius, uint col, int num_segments = (int)(0))
         {
             var __arg0 = new IntPtr(Unsafe.AsPointer(ref center))
             /* DEBUG: TypeMapImVec2.CSharpMarshalToNative: Case 4 */
@@ -11535,7 +11535,7 @@ namespace DearImGui
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2669.</summary>
         // DEBUG: void  AddNgon(const ImVec2& center, float radius, ImU32 col, int num_segments, float thickness = 1.0f)
-        public void AddNgon(Vector2 center, float radius, uint col, int num_segments, float thickness = 1.0F)
+        public void AddNgon(global::System.Numerics.Vector2 center, float radius, uint col, int num_segments, float thickness = 1.0F)
         {
             var __arg0 = new IntPtr(Unsafe.AsPointer(ref center))
             /* DEBUG: TypeMapImVec2.CSharpMarshalToNative: Case 4 */
@@ -11556,7 +11556,7 @@ namespace DearImGui
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2670.</summary>
         // DEBUG: void  AddNgonFilled(const ImVec2& center, float radius, ImU32 col, int num_segments)
-        public void AddNgonFilled(Vector2 center, float radius, uint col, int num_segments)
+        public void AddNgonFilled(global::System.Numerics.Vector2 center, float radius, uint col, int num_segments)
         {
             var __arg0 = new IntPtr(Unsafe.AsPointer(ref center))
             /* DEBUG: TypeMapImVec2.CSharpMarshalToNative: Case 4 */
@@ -11577,7 +11577,7 @@ namespace DearImGui
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2671.</summary>
         // DEBUG: void  AddText(const ImVec2& pos, ImU32 col, const char* text_begin, const char* text_end = NULL)
-        public void AddText(Vector2 pos, uint col, string text_begin, string text_end = default)
+        public void AddText(global::System.Numerics.Vector2 pos, uint col, string text_begin, string text_end = default)
         {
             var __arg0 = new IntPtr(Unsafe.AsPointer(ref pos))
             /* DEBUG: TypeMapImVec2.CSharpMarshalToNative: Case 4 */
@@ -11598,7 +11598,7 @@ namespace DearImGui
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2672.</summary>
         // DEBUG: void  AddText(const ImFont* font, float font_size, const ImVec2& pos, ImU32 col, const char* text_begin, const char* text_end = NULL, float wrap_width = 0.0f, const ImVec4* cpu_fine_clip_rect = NULL)
-        public void AddText(ImFont font, float font_size, Vector2 pos, uint col, string text_begin, string text_end = default, float wrap_width = 0.0F, Vector4 cpu_fine_clip_rect = default)
+        public void AddText(global::DearImGui.ImFont font, float font_size, global::System.Numerics.Vector2 pos, uint col, string text_begin, string text_end = default, float wrap_width = 0.0F, global::System.Numerics.Vector4 cpu_fine_clip_rect = default)
         {
             var __arg0 = font is null ? IntPtr.Zero : font.__Instance;
             var __arg2 = new IntPtr(Unsafe.AsPointer(ref pos))
@@ -11624,7 +11624,7 @@ namespace DearImGui
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2673.</summary>
         // DEBUG: void  AddPolyline(const ImVec2* points, int num_points, ImU32 col, ImDrawFlags flags, float thickness)
-        public void AddPolyline(Vector2 points, int num_points, uint col, ImDrawFlags flags, float thickness)
+        public void AddPolyline(global::System.Numerics.Vector2 points, int num_points, uint col, global::DearImGui.ImDrawFlags flags, float thickness)
         {
             var __arg0 = new IntPtr(Unsafe.AsPointer(ref points))
             /* DEBUG: TypeMapImVec2.CSharpMarshalToNative: Case 4 */
@@ -11645,7 +11645,7 @@ namespace DearImGui
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2674.</summary>
         // DEBUG: void  AddConvexPolyFilled(const ImVec2* points, int num_points, ImU32 col)
-        public void AddConvexPolyFilled(Vector2 points, int num_points, uint col)
+        public void AddConvexPolyFilled(global::System.Numerics.Vector2 points, int num_points, uint col)
         {
             var __arg0 = new IntPtr(Unsafe.AsPointer(ref points))
             /* DEBUG: TypeMapImVec2.CSharpMarshalToNative: Case 4 */
@@ -11666,7 +11666,7 @@ namespace DearImGui
 
         /// <summary>Cubic Bezier (4 control points).<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2675.</summary>
         // DEBUG: void  AddBezierCubic(const ImVec2& p1, const ImVec2& p2, const ImVec2& p3, const ImVec2& p4, ImU32 col, float thickness, int num_segments = 0)
-        public void AddBezierCubic(Vector2 p1, Vector2 p2, Vector2 p3, Vector2 p4, uint col, float thickness, int num_segments = (int)(0))
+        public void AddBezierCubic(global::System.Numerics.Vector2 p1, global::System.Numerics.Vector2 p2, global::System.Numerics.Vector2 p3, global::System.Numerics.Vector2 p4, uint col, float thickness, int num_segments = (int)(0))
         {
             var __arg0 = new IntPtr(Unsafe.AsPointer(ref p1))
             /* DEBUG: TypeMapImVec2.CSharpMarshalToNative: Case 4 */
@@ -11699,7 +11699,7 @@ namespace DearImGui
 
         /// <summary>Quadratic Bezier (3 control points).<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2676.</summary>
         // DEBUG: void  AddBezierQuadratic(const ImVec2& p1, const ImVec2& p2, const ImVec2& p3, ImU32 col, float thickness, int num_segments = 0)
-        public void AddBezierQuadratic(Vector2 p1, Vector2 p2, Vector2 p3, uint col, float thickness, int num_segments = (int)(0))
+        public void AddBezierQuadratic(global::System.Numerics.Vector2 p1, global::System.Numerics.Vector2 p2, global::System.Numerics.Vector2 p3, uint col, float thickness, int num_segments = (int)(0))
         {
             var __arg0 = new IntPtr(Unsafe.AsPointer(ref p1))
             /* DEBUG: TypeMapImVec2.CSharpMarshalToNative: Case 4 */
@@ -11728,7 +11728,7 @@ namespace DearImGui
 
         /// <summary>Image primitives.<br/>- Read FAQ to understand what ImTextureID is.<br/>- "p_min" and "p_max" represent the upper-left and lower-right corners of the rectangle.<br/>- "uv_min" and "uv_max" represent the normalized texture coordinates to use for those corners. Using (0,0)-&gt;(1,1) texture coordinates will generally display the entire texture.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2682.</summary>
         // DEBUG: void  AddImage(ImTextureID user_texture_id, const ImVec2& p_min, const ImVec2& p_max, const ImVec2& uv_min = ImVec2(0, 0), const ImVec2& uv_max = ImVec2(1, 1), ImU32 col = IM_COL32_WHITE)
-        public void AddImage(IntPtr user_texture_id, Vector2 p_min, Vector2 p_max, Vector2 uv_min, Vector2 uv_max, uint col = (uint)(4294967295))
+        public void AddImage(IntPtr user_texture_id, global::System.Numerics.Vector2 p_min, global::System.Numerics.Vector2 p_max, global::System.Numerics.Vector2 uv_min, global::System.Numerics.Vector2 uv_max, uint col = (uint)(4294967295))
         {
             var __arg1 = new IntPtr(Unsafe.AsPointer(ref p_min))
             /* DEBUG: TypeMapImVec2.CSharpMarshalToNative: Case 4 */
@@ -11761,7 +11761,7 @@ namespace DearImGui
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2683.</summary>
         // DEBUG: void  AddImageQuad(ImTextureID user_texture_id, const ImVec2& p1, const ImVec2& p2, const ImVec2& p3, const ImVec2& p4, const ImVec2& uv1 = ImVec2(0, 0), const ImVec2& uv2 = ImVec2(1, 0), const ImVec2& uv3 = ImVec2(1, 1), const ImVec2& uv4 = ImVec2(0, 1), ImU32 col = IM_COL32_WHITE)
-        public void AddImageQuad(IntPtr user_texture_id, Vector2 p1, Vector2 p2, Vector2 p3, Vector2 p4, Vector2 uv1, Vector2 uv2, Vector2 uv3, Vector2 uv4, uint col = (uint)(4294967295))
+        public void AddImageQuad(IntPtr user_texture_id, global::System.Numerics.Vector2 p1, global::System.Numerics.Vector2 p2, global::System.Numerics.Vector2 p3, global::System.Numerics.Vector2 p4, global::System.Numerics.Vector2 uv1, global::System.Numerics.Vector2 uv2, global::System.Numerics.Vector2 uv3, global::System.Numerics.Vector2 uv4, uint col = (uint)(4294967295))
         {
             var __arg1 = new IntPtr(Unsafe.AsPointer(ref p1))
             /* DEBUG: TypeMapImVec2.CSharpMarshalToNative: Case 4 */
@@ -11810,7 +11810,7 @@ namespace DearImGui
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2684.</summary>
         // DEBUG: void  AddImageRounded(ImTextureID user_texture_id, const ImVec2& p_min, const ImVec2& p_max, const ImVec2& uv_min, const ImVec2& uv_max, ImU32 col, float rounding, ImDrawFlags flags = 0)
-        public void AddImageRounded(IntPtr user_texture_id, Vector2 p_min, Vector2 p_max, Vector2 uv_min, Vector2 uv_max, uint col, float rounding, ImDrawFlags flags = (ImDrawFlags)(0))
+        public void AddImageRounded(IntPtr user_texture_id, global::System.Numerics.Vector2 p_min, global::System.Numerics.Vector2 p_max, global::System.Numerics.Vector2 uv_min, global::System.Numerics.Vector2 uv_max, uint col, float rounding, global::DearImGui.ImDrawFlags flags = (ImDrawFlags)(0))
         {
             var __arg1 = new IntPtr(Unsafe.AsPointer(ref p_min))
             /* DEBUG: TypeMapImVec2.CSharpMarshalToNative: Case 4 */
@@ -11860,7 +11860,7 @@ namespace DearImGui
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2689.</summary>
         // DEBUG: inline    void  PathLineTo(const ImVec2& pos)                               { _Path.push_back(pos); }
-        public void PathLineTo(Vector2 pos)
+        public void PathLineTo(global::System.Numerics.Vector2 pos)
         {
             var __arg0 = new IntPtr(Unsafe.AsPointer(ref pos))
             /* DEBUG: TypeMapImVec2.CSharpMarshalToNative: Case 4 */
@@ -11881,7 +11881,7 @@ namespace DearImGui
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2690.</summary>
         // DEBUG: inline    void  PathLineToMergeDuplicate(const ImVec2& pos)                 { if (_Path.Size == 0 || memcmp(&_Path.Data[_Path.Size - 1], &pos, 8) != 0) _Path.push_back(pos); }
-        public void PathLineToMergeDuplicate(Vector2 pos)
+        public void PathLineToMergeDuplicate(global::System.Numerics.Vector2 pos)
         {
             var __arg0 = new IntPtr(Unsafe.AsPointer(ref pos))
             /* DEBUG: TypeMapImVec2.CSharpMarshalToNative: Case 4 */
@@ -11919,7 +11919,7 @@ namespace DearImGui
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2692.</summary>
         // DEBUG: inline    void  PathStroke(ImU32 col, ImDrawFlags flags = 0, float thickness = 1.0f) { AddPolyline(_Path.Data, _Path.Size, col, flags, thickness); _Path.Size = 0; }
-        public void PathStroke(uint col, ImDrawFlags flags = (ImDrawFlags)(0), float thickness = 1.0F)
+        public void PathStroke(uint col, global::DearImGui.ImDrawFlags flags = (ImDrawFlags)(0), float thickness = 1.0F)
         {
             fixed (__Internal* __instancePtr = &__instance)
             {
@@ -11936,7 +11936,7 @@ namespace DearImGui
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2693.</summary>
         // DEBUG: void  PathArcTo(const ImVec2& center, float radius, float a_min, float a_max, int num_segments = 0)
-        public void PathArcTo(Vector2 center, float radius, float a_min, float a_max, int num_segments = (int)(0))
+        public void PathArcTo(global::System.Numerics.Vector2 center, float radius, float a_min, float a_max, int num_segments = (int)(0))
         {
             var __arg0 = new IntPtr(Unsafe.AsPointer(ref center))
             /* DEBUG: TypeMapImVec2.CSharpMarshalToNative: Case 4 */
@@ -11957,7 +11957,7 @@ namespace DearImGui
 
         /// <summary>Use precomputed angles for a 12 steps circle.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2694.</summary>
         // DEBUG: void  PathArcToFast(const ImVec2& center, float radius, int a_min_of_12, int a_max_of_12)
-        public void PathArcToFast(Vector2 center, float radius, int a_min_of_12, int a_max_of_12)
+        public void PathArcToFast(global::System.Numerics.Vector2 center, float radius, int a_min_of_12, int a_max_of_12)
         {
             var __arg0 = new IntPtr(Unsafe.AsPointer(ref center))
             /* DEBUG: TypeMapImVec2.CSharpMarshalToNative: Case 4 */
@@ -11978,7 +11978,7 @@ namespace DearImGui
 
         /// <summary>Cubic Bezier (4 control points).<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2695.</summary>
         // DEBUG: void  PathBezierCubicCurveTo(const ImVec2& p2, const ImVec2& p3, const ImVec2& p4, int num_segments = 0)
-        public void PathBezierCubicCurveTo(Vector2 p2, Vector2 p3, Vector2 p4, int num_segments = (int)(0))
+        public void PathBezierCubicCurveTo(global::System.Numerics.Vector2 p2, global::System.Numerics.Vector2 p3, global::System.Numerics.Vector2 p4, int num_segments = (int)(0))
         {
             var __arg0 = new IntPtr(Unsafe.AsPointer(ref p2))
             /* DEBUG: TypeMapImVec2.CSharpMarshalToNative: Case 4 */
@@ -12007,7 +12007,7 @@ namespace DearImGui
 
         /// <summary>Quadratic Bezier (3 control points).<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2696.</summary>
         // DEBUG: void  PathBezierQuadraticCurveTo(const ImVec2& p2, const ImVec2& p3, int num_segments = 0)
-        public void PathBezierQuadraticCurveTo(Vector2 p2, Vector2 p3, int num_segments = (int)(0))
+        public void PathBezierQuadraticCurveTo(global::System.Numerics.Vector2 p2, global::System.Numerics.Vector2 p3, int num_segments = (int)(0))
         {
             var __arg0 = new IntPtr(Unsafe.AsPointer(ref p2))
             /* DEBUG: TypeMapImVec2.CSharpMarshalToNative: Case 4 */
@@ -12032,7 +12032,7 @@ namespace DearImGui
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2697.</summary>
         // DEBUG: void  PathRect(const ImVec2& rect_min, const ImVec2& rect_max, float rounding = 0.0f, ImDrawFlags flags = 0)
-        public void PathRect(Vector2 rect_min, Vector2 rect_max, float rounding = 0.0F, ImDrawFlags flags = (ImDrawFlags)(0))
+        public void PathRect(global::System.Numerics.Vector2 rect_min, global::System.Numerics.Vector2 rect_max, float rounding = 0.0F, global::DearImGui.ImDrawFlags flags = (ImDrawFlags)(0))
         {
             var __arg0 = new IntPtr(Unsafe.AsPointer(ref rect_min))
             /* DEBUG: TypeMapImVec2.CSharpMarshalToNative: Case 4 */
@@ -12057,9 +12057,9 @@ namespace DearImGui
 
         /// <summary>Your rendering function must check for 'UserCallback' in ImDrawCmd and call the function instead of rendering triangles.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2700.</summary>
         // DEBUG: void  AddCallback(ImDrawCallback callback, void* callback_data)
-        public void AddCallback(ImDrawCallback callback, IntPtr callback_data)
+        public void AddCallback(global::DearImGui.ImDrawCallback callback, IntPtr callback_data)
         {
-            var __arg0 = callback == null ? IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(callback);
+            var __arg0 = callback == null ? global::System.IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(callback);
             fixed (__Internal* __instancePtr = &__instance)
             {
                 if (Environment.Is64BitProcess)
@@ -12092,12 +12092,12 @@ namespace DearImGui
 
         /// <summary>Create a clone of the CmdBuffer/IdxBuffer/VtxBuffer.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2702.</summary>
         // DEBUG: ImDrawList* CloneOutput() const
-        public ImDrawList CloneOutput()
+        public global::DearImGui.ImDrawList CloneOutput()
         {
             fixed (__Internal* __instancePtr = &__instance)
             {
                 var ___ret = Environment.Is64BitProcess ? __Internal64.CloneOutput(new IntPtr(__instancePtr)) : __Internal32.CloneOutput(new IntPtr(__instancePtr));
-                var __result0 = ___ret != IntPtr.Zero ? ImDrawList.__CreateInstance(___ret) : default;
+                var __result0 = ___ret != IntPtr.Zero ? global::DearImGui.ImDrawList.__CreateInstance(___ret) : default;
                 return __result0;
             }
         }
@@ -12189,7 +12189,7 @@ namespace DearImGui
 
         /// <summary>Axis aligned rectangle (composed of two triangles).<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2719.</summary>
         // DEBUG: void  PrimRect(const ImVec2& a, const ImVec2& b, ImU32 col)
-        public void PrimRect(Vector2 a, Vector2 b, uint col)
+        public void PrimRect(global::System.Numerics.Vector2 a, global::System.Numerics.Vector2 b, uint col)
         {
             var __arg0 = new IntPtr(Unsafe.AsPointer(ref a))
             /* DEBUG: TypeMapImVec2.CSharpMarshalToNative: Case 4 */
@@ -12214,7 +12214,7 @@ namespace DearImGui
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2720.</summary>
         // DEBUG: void  PrimRectUV(const ImVec2& a, const ImVec2& b, const ImVec2& uv_a, const ImVec2& uv_b, ImU32 col)
-        public void PrimRectUV(Vector2 a, Vector2 b, Vector2 uv_a, Vector2 uv_b, uint col)
+        public void PrimRectUV(global::System.Numerics.Vector2 a, global::System.Numerics.Vector2 b, global::System.Numerics.Vector2 uv_a, global::System.Numerics.Vector2 uv_b, uint col)
         {
             var __arg0 = new IntPtr(Unsafe.AsPointer(ref a))
             /* DEBUG: TypeMapImVec2.CSharpMarshalToNative: Case 4 */
@@ -12247,7 +12247,7 @@ namespace DearImGui
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2721.</summary>
         // DEBUG: void  PrimQuadUV(const ImVec2& a, const ImVec2& b, const ImVec2& c, const ImVec2& d, const ImVec2& uv_a, const ImVec2& uv_b, const ImVec2& uv_c, const ImVec2& uv_d, ImU32 col)
-        public void PrimQuadUV(Vector2 a, Vector2 b, Vector2 c, Vector2 d, Vector2 uv_a, Vector2 uv_b, Vector2 uv_c, Vector2 uv_d, uint col)
+        public void PrimQuadUV(global::System.Numerics.Vector2 a, global::System.Numerics.Vector2 b, global::System.Numerics.Vector2 c, global::System.Numerics.Vector2 d, global::System.Numerics.Vector2 uv_a, global::System.Numerics.Vector2 uv_b, global::System.Numerics.Vector2 uv_c, global::System.Numerics.Vector2 uv_d, uint col)
         {
             var __arg0 = new IntPtr(Unsafe.AsPointer(ref a))
             /* DEBUG: TypeMapImVec2.CSharpMarshalToNative: Case 4 */
@@ -12296,7 +12296,7 @@ namespace DearImGui
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2722.</summary>
         // DEBUG: inline    void  PrimWriteVtx(const ImVec2& pos, const ImVec2& uv, ImU32 col)    { _VtxWritePtr->pos = pos; _VtxWritePtr->uv = uv; _VtxWritePtr->col = col; _VtxWritePtr++; _VtxCurrentIdx++; }
-        public void PrimWriteVtx(Vector2 pos, Vector2 uv, uint col)
+        public void PrimWriteVtx(global::System.Numerics.Vector2 pos, global::System.Numerics.Vector2 uv, uint col)
         {
             var __arg0 = new IntPtr(Unsafe.AsPointer(ref pos))
             /* DEBUG: TypeMapImVec2.CSharpMarshalToNative: Case 4 */
@@ -12338,7 +12338,7 @@ namespace DearImGui
 
         /// <summary>Write vertex with unique index.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2724.</summary>
         // DEBUG: inline    void  PrimVtx(const ImVec2& pos, const ImVec2& uv, ImU32 col)         { PrimWriteIdx((ImDrawIdx)_VtxCurrentIdx); PrimWriteVtx(pos, uv, col); }
-        public void PrimVtx(Vector2 pos, Vector2 uv, uint col)
+        public void PrimVtx(global::System.Numerics.Vector2 pos, global::System.Numerics.Vector2 uv, uint col)
         {
             var __arg0 = new IntPtr(Unsafe.AsPointer(ref pos))
             /* DEBUG: TypeMapImVec2.CSharpMarshalToNative: Case 4 */
@@ -12493,7 +12493,7 @@ namespace DearImGui
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2740.</summary>
         // DEBUG: void  _PathArcToFastEx(const ImVec2& center, float radius, int a_min_sample, int a_max_sample, int a_step)
-        public void PathArcToFastEx(Vector2 center, float radius, int a_min_sample, int a_max_sample, int a_step)
+        public void PathArcToFastEx(global::System.Numerics.Vector2 center, float radius, int a_min_sample, int a_max_sample, int a_step)
         {
             var __arg0 = new IntPtr(Unsafe.AsPointer(ref center))
             /* DEBUG: TypeMapImVec2.CSharpMarshalToNative: Case 4 */
@@ -12514,7 +12514,7 @@ namespace DearImGui
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2741.</summary>
         // DEBUG: void  _PathArcToN(const ImVec2& center, float radius, float a_min, float a_max, int num_segments)
-        public void PathArcToN(Vector2 center, float radius, float a_min, float a_max, int num_segments)
+        public void PathArcToN(global::System.Numerics.Vector2 center, float radius, float a_min, float a_max, int num_segments)
         {
             var __arg0 = new IntPtr(Unsafe.AsPointer(ref center))
             /* DEBUG: TypeMapImVec2.CSharpMarshalToNative: Case 4 */
@@ -12533,59 +12533,59 @@ namespace DearImGui
             }
         }
 
-        public static implicit operator ImDrawList(ImDrawListSharedData shared_data)
+        public static implicit operator global::DearImGui.ImDrawList(global::DearImGui.ImDrawListSharedData shared_data)
         {
-            return new ImDrawList(shared_data);
+            return new global::DearImGui.ImDrawList(shared_data);
         }
 
         /// <summary>Image primitives.<br/>- Read FAQ to understand what ImTextureID is.<br/>- "p_min" and "p_max" represent the upper-left and lower-right corners of the rectangle.<br/>- "uv_min" and "uv_max" represent the normalized texture coordinates to use for those corners. Using (0,0)-&gt;(1,1) texture coordinates will generally display the entire texture.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2682.</summary>
         // DEBUG: void  AddImage(ImTextureID user_texture_id, const ImVec2& p_min, const ImVec2& p_max, const ImVec2& uv_min = ImVec2(0, 0), const ImVec2& uv_max = ImVec2(1, 1), ImU32 col = IM_COL32_WHITE)
-        public void AddImage(IntPtr user_texture_id, Vector2 p_min, Vector2 p_max)
+        public void AddImage(IntPtr user_texture_id, global::System.Numerics.Vector2 p_min, global::System.Numerics.Vector2 p_max)
         {
-            AddImage(user_texture_id, p_min, p_max, new Vector2(0, 0), new Vector2(1, 1), 4294967295);
+            AddImage(user_texture_id, p_min, p_max, new global::System.Numerics.Vector2(0, 0), new global::System.Numerics.Vector2(1, 1), 4294967295);
         }
 
         /// <summary>Image primitives.<br/>- Read FAQ to understand what ImTextureID is.<br/>- "p_min" and "p_max" represent the upper-left and lower-right corners of the rectangle.<br/>- "uv_min" and "uv_max" represent the normalized texture coordinates to use for those corners. Using (0,0)-&gt;(1,1) texture coordinates will generally display the entire texture.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2682.</summary>
         // DEBUG: void  AddImage(ImTextureID user_texture_id, const ImVec2& p_min, const ImVec2& p_max, const ImVec2& uv_min = ImVec2(0, 0), const ImVec2& uv_max = ImVec2(1, 1), ImU32 col = IM_COL32_WHITE)
-        public void AddImage(IntPtr user_texture_id, Vector2 p_min, Vector2 p_max, Vector2 uv_min)
+        public void AddImage(IntPtr user_texture_id, global::System.Numerics.Vector2 p_min, global::System.Numerics.Vector2 p_max, global::System.Numerics.Vector2 uv_min)
         {
-            AddImage(user_texture_id, p_min, p_max, uv_min, new Vector2(1, 1), 4294967295);
+            AddImage(user_texture_id, p_min, p_max, uv_min, new global::System.Numerics.Vector2(1, 1), 4294967295);
         }
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2683.</summary>
         // DEBUG: void  AddImageQuad(ImTextureID user_texture_id, const ImVec2& p1, const ImVec2& p2, const ImVec2& p3, const ImVec2& p4, const ImVec2& uv1 = ImVec2(0, 0), const ImVec2& uv2 = ImVec2(1, 0), const ImVec2& uv3 = ImVec2(1, 1), const ImVec2& uv4 = ImVec2(0, 1), ImU32 col = IM_COL32_WHITE)
-        public void AddImageQuad(IntPtr user_texture_id, Vector2 p1, Vector2 p2, Vector2 p3, Vector2 p4)
+        public void AddImageQuad(IntPtr user_texture_id, global::System.Numerics.Vector2 p1, global::System.Numerics.Vector2 p2, global::System.Numerics.Vector2 p3, global::System.Numerics.Vector2 p4)
         {
-            AddImageQuad(user_texture_id, p1, p2, p3, p4, new Vector2(0, 0), new Vector2(1, 0), new Vector2(1, 1), new Vector2(0, 1), 4294967295);
+            AddImageQuad(user_texture_id, p1, p2, p3, p4, new global::System.Numerics.Vector2(0, 0), new global::System.Numerics.Vector2(1, 0), new global::System.Numerics.Vector2(1, 1), new global::System.Numerics.Vector2(0, 1), 4294967295);
         }
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2683.</summary>
         // DEBUG: void  AddImageQuad(ImTextureID user_texture_id, const ImVec2& p1, const ImVec2& p2, const ImVec2& p3, const ImVec2& p4, const ImVec2& uv1 = ImVec2(0, 0), const ImVec2& uv2 = ImVec2(1, 0), const ImVec2& uv3 = ImVec2(1, 1), const ImVec2& uv4 = ImVec2(0, 1), ImU32 col = IM_COL32_WHITE)
-        public void AddImageQuad(IntPtr user_texture_id, Vector2 p1, Vector2 p2, Vector2 p3, Vector2 p4, Vector2 uv1)
+        public void AddImageQuad(IntPtr user_texture_id, global::System.Numerics.Vector2 p1, global::System.Numerics.Vector2 p2, global::System.Numerics.Vector2 p3, global::System.Numerics.Vector2 p4, global::System.Numerics.Vector2 uv1)
         {
-            AddImageQuad(user_texture_id, p1, p2, p3, p4, uv1, new Vector2(1, 0), new Vector2(1, 1), new Vector2(0, 1), 4294967295);
+            AddImageQuad(user_texture_id, p1, p2, p3, p4, uv1, new global::System.Numerics.Vector2(1, 0), new global::System.Numerics.Vector2(1, 1), new global::System.Numerics.Vector2(0, 1), 4294967295);
         }
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2683.</summary>
         // DEBUG: void  AddImageQuad(ImTextureID user_texture_id, const ImVec2& p1, const ImVec2& p2, const ImVec2& p3, const ImVec2& p4, const ImVec2& uv1 = ImVec2(0, 0), const ImVec2& uv2 = ImVec2(1, 0), const ImVec2& uv3 = ImVec2(1, 1), const ImVec2& uv4 = ImVec2(0, 1), ImU32 col = IM_COL32_WHITE)
-        public void AddImageQuad(IntPtr user_texture_id, Vector2 p1, Vector2 p2, Vector2 p3, Vector2 p4, Vector2 uv1, Vector2 uv2)
+        public void AddImageQuad(IntPtr user_texture_id, global::System.Numerics.Vector2 p1, global::System.Numerics.Vector2 p2, global::System.Numerics.Vector2 p3, global::System.Numerics.Vector2 p4, global::System.Numerics.Vector2 uv1, global::System.Numerics.Vector2 uv2)
         {
-            AddImageQuad(user_texture_id, p1, p2, p3, p4, uv1, uv2, new Vector2(1, 1), new Vector2(0, 1), 4294967295);
+            AddImageQuad(user_texture_id, p1, p2, p3, p4, uv1, uv2, new global::System.Numerics.Vector2(1, 1), new global::System.Numerics.Vector2(0, 1), 4294967295);
         }
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2683.</summary>
         // DEBUG: void  AddImageQuad(ImTextureID user_texture_id, const ImVec2& p1, const ImVec2& p2, const ImVec2& p3, const ImVec2& p4, const ImVec2& uv1 = ImVec2(0, 0), const ImVec2& uv2 = ImVec2(1, 0), const ImVec2& uv3 = ImVec2(1, 1), const ImVec2& uv4 = ImVec2(0, 1), ImU32 col = IM_COL32_WHITE)
-        public void AddImageQuad(IntPtr user_texture_id, Vector2 p1, Vector2 p2, Vector2 p3, Vector2 p4, Vector2 uv1, Vector2 uv2, Vector2 uv3)
+        public void AddImageQuad(IntPtr user_texture_id, global::System.Numerics.Vector2 p1, global::System.Numerics.Vector2 p2, global::System.Numerics.Vector2 p3, global::System.Numerics.Vector2 p4, global::System.Numerics.Vector2 uv1, global::System.Numerics.Vector2 uv2, global::System.Numerics.Vector2 uv3)
         {
-            AddImageQuad(user_texture_id, p1, p2, p3, p4, uv1, uv2, uv3, new Vector2(0, 1), 4294967295);
+            AddImageQuad(user_texture_id, p1, p2, p3, p4, uv1, uv2, uv3, new global::System.Numerics.Vector2(0, 1), 4294967295);
         }
 
         /// <summary>Draw commands. Typically 1 command = 1 GPU draw call, unless the command is a callback.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2622.</summary>
-        public ImVector<ImDrawCmd> CmdBuffer
+        public ImVector<global::DearImGui.ImDrawCmd> CmdBuffer
         {
             get
             {
-                return new ImVector<ImDrawCmd>(Unsafe.As<ImVector.__Internal, ImVector<ImDrawCmd>.__Internal>(ref __instance.CmdBuffer))
+                return new ImVector<global::DearImGui.ImDrawCmd>(Unsafe.As<ImVector.__Internal, ImVector<global::DearImGui.ImDrawCmd>.__Internal>(ref __instance.CmdBuffer))
                 /* DEBUG: TypeMapImVector.CSharpMarshalToManaged: Function: False, ReturnVarName: True */
                 ;
             }
@@ -12603,18 +12603,18 @@ namespace DearImGui
         }
 
         /// <summary>Vertex buffer.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2624.</summary>
-        public ImVector<ImDrawVert> VtxBuffer
+        public ImVector<global::DearImGui.ImDrawVert> VtxBuffer
         {
             get
             {
-                return new ImVector<ImDrawVert>(Unsafe.As<ImVector.__Internal, ImVector<ImDrawVert>.__Internal>(ref __instance.VtxBuffer))
+                return new ImVector<global::DearImGui.ImDrawVert>(Unsafe.As<ImVector.__Internal, ImVector<global::DearImGui.ImDrawVert>.__Internal>(ref __instance.VtxBuffer))
                 /* DEBUG: TypeMapImVector.CSharpMarshalToManaged: Function: False, ReturnVarName: True */
                 ;
             }
         }
 
         /// <summary>Flags, you may poke into these to adjust anti-aliasing settings per-primitive.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2625.</summary>
-        public ImDrawListFlags Flags
+        public global::DearImGui.ImDrawListFlags Flags
         {
             get
             {
@@ -12657,9 +12657,9 @@ namespace DearImGui
             internal int TotalIdxCount;
             internal int TotalVtxCount;
             internal IntPtr CmdLists;
-            internal Vector2 DisplayPos;
-            internal Vector2 DisplaySize;
-            internal Vector2 FramebufferScale;
+            internal global::System.Numerics.Vector2 DisplayPos;
+            internal global::System.Numerics.Vector2 DisplaySize;
+            internal global::System.Numerics.Vector2 FramebufferScale;
             internal IntPtr OwnerViewport;
         }
 
@@ -12720,12 +12720,12 @@ namespace DearImGui
 
         private ImDrawData(void* native, bool skipVTables = false) : this()
         {
-            __instance = *(ImDrawData.__Internal*)native;
+            __instance = *(global::DearImGui.ImDrawData.__Internal*)native;
         }
 
         /// <summary>All draw data to render a Dear ImGui frame.<br/>(NB: the style and the naming convention here is a little inconsistent, we currently preserve them for backward compatibility purpose,.<br/>As this is one of the oldest structure exposed by the library! Basically, ImDrawList == CmdList).<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2747.</summary>
         // DEBUG: ImDrawData
-        public ImDrawData(ImDrawData _0) : this()
+        public ImDrawData(global::DearImGui.ImDrawData _0) : this()
         {
             var ____arg0 = _0.__Instance;
             var __arg0 = new IntPtr(&____arg0);
@@ -12778,7 +12778,7 @@ namespace DearImGui
 
         /// <summary>Helper to scale the ClipRect field of each ImDrawCmd. Use if your final output buffer is at a different scale than Dear ImGui expects, or if there is a difference between your window resolution and framebuffer resolution.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2763.</summary>
         // DEBUG: void  ScaleClipRects(const ImVec2& fb_scale)
-        public void ScaleClipRects(Vector2 fb_scale)
+        public void ScaleClipRects(global::System.Numerics.Vector2 fb_scale)
         {
             var __arg0 = new IntPtr(Unsafe.AsPointer(ref fb_scale))
             /* DEBUG: TypeMapImVec2.CSharpMarshalToNative: Case 4 */
@@ -12854,11 +12854,11 @@ namespace DearImGui
         }
 
         /// <summary>Viewport carrying the ImDrawData instance, might be of use to the renderer (generally not).<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2757.</summary>
-        public ImGuiViewport OwnerViewport
+        public global::DearImGui.ImGuiViewport OwnerViewport
         {
             get
             {
-                var __result0 = ImGuiViewport.__GetOrCreateInstance(__instance.OwnerViewport, false);
+                var __result0 = global::DearImGui.ImGuiViewport.__GetOrCreateInstance(__instance.OwnerViewport, false);
                 return __result0;
             }
 
@@ -12909,8 +12909,8 @@ namespace DearImGui
             internal int OversampleH;
             internal int OversampleV;
             internal byte PixelSnapH;
-            internal Vector2 GlyphExtraSpacing;
-            internal Vector2 GlyphOffset;
+            internal global::System.Numerics.Vector2 GlyphExtraSpacing;
+            internal global::System.Numerics.Vector2 GlyphOffset;
             internal IntPtr GlyphRanges;
             internal float GlyphMinAdvanceX;
             internal float GlyphMaxAdvanceX;
@@ -12944,13 +12944,13 @@ namespace DearImGui
 
         internal IntPtr __Instance { get; set; }
 
-        internal static readonly new ConcurrentDictionary<IntPtr, WeakReference<ImFontConfig>> NativeToManagedMap = new ConcurrentDictionary<IntPtr, WeakReference<ImFontConfig>>();
-        internal static void __RecordNativeToManagedMapping(IntPtr native, ImFontConfig managed)
+        internal static readonly new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::System.WeakReference<global::DearImGui.ImFontConfig>> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::System.WeakReference<global::DearImGui.ImFontConfig>>();
+        internal static void __RecordNativeToManagedMapping(IntPtr native, global::DearImGui.ImFontConfig managed)
         {
-            NativeToManagedMap[native] = new WeakReference<ImFontConfig>(managed);
+            NativeToManagedMap[native] = new global::System.WeakReference<global::DearImGui.ImFontConfig>(managed);
         }
 
-        internal static bool __TryGetNativeToManagedMapping(IntPtr native, out ImFontConfig managed)
+        internal static bool __TryGetNativeToManagedMapping(IntPtr native, out global::DearImGui.ImFontConfig managed)
         {
             managed = default;
             return NativeToManagedMap.TryGetValue(native, out var wr) && wr.TryGetTarget(out managed);
@@ -13005,7 +13005,7 @@ namespace DearImGui
         // DEBUG: ImFontConfig()
         public ImFontConfig()
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(ImFontConfig.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::DearImGui.ImFontConfig.__Internal));
             __ownsNativeInstance = true;
             __RecordNativeToManagedMapping(__Instance, this);
             if (Environment.Is64BitProcess)
@@ -13020,13 +13020,13 @@ namespace DearImGui
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2770.</summary>
         // DEBUG: ImFontConfig
-        public ImFontConfig(ImFontConfig _0)
+        public ImFontConfig(global::DearImGui.ImFontConfig _0)
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(ImFontConfig.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::DearImGui.ImFontConfig.__Internal));
             __ownsNativeInstance = true;
             __RecordNativeToManagedMapping(__Instance, this);
             if (ReferenceEquals(_0, null))
-                throw new ArgumentNullException("_0", "Cannot be null because it is a C++ reference (&).");
+                throw new global::System.ArgumentNullException("_0", "Cannot be null because it is a C++ reference (&).");
             var __arg0 = _0.__Instance;
             if (Environment.Is64BitProcess)
             {
@@ -13176,7 +13176,7 @@ namespace DearImGui
         }
 
         /// <summary>0, 0.<br/>Extra spacing (in pixels) between glyphs. Only X axis is supported for now.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2780.</summary>
-        public Vector2 GlyphExtraSpacing
+        public global::System.Numerics.Vector2 GlyphExtraSpacing
         {
             get
             {
@@ -13196,7 +13196,7 @@ namespace DearImGui
         }
 
         /// <summary>0, 0.<br/>Offset all glyphs from this font input.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2781.</summary>
-        public Vector2 GlyphOffset
+        public global::System.Numerics.Vector2 GlyphOffset
         {
             get
             {
@@ -13309,11 +13309,11 @@ namespace DearImGui
         }
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2792.</summary>
-        public ImFont DstFont
+        public global::DearImGui.ImFont DstFont
         {
             get
             {
-                var __result0 = ImFont.__GetOrCreateInstance(((__Internal*)__Instance)->DstFont, false);
+                var __result0 = global::DearImGui.ImFont.__GetOrCreateInstance(((__Internal*)__Instance)->DstFont, false);
                 return __result0;
             }
 
@@ -13381,13 +13381,13 @@ namespace DearImGui
 
         internal IntPtr __Instance { get; set; }
 
-        internal static readonly new ConcurrentDictionary<IntPtr, WeakReference<ImFontGlyph>> NativeToManagedMap = new ConcurrentDictionary<IntPtr, WeakReference<ImFontGlyph>>();
-        internal static void __RecordNativeToManagedMapping(IntPtr native, ImFontGlyph managed)
+        internal static readonly new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::System.WeakReference<global::DearImGui.ImFontGlyph>> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::System.WeakReference<global::DearImGui.ImFontGlyph>>();
+        internal static void __RecordNativeToManagedMapping(IntPtr native, global::DearImGui.ImFontGlyph managed)
         {
-            NativeToManagedMap[native] = new WeakReference<ImFontGlyph>(managed);
+            NativeToManagedMap[native] = new global::System.WeakReference<global::DearImGui.ImFontGlyph>(managed);
         }
 
-        internal static bool __TryGetNativeToManagedMapping(IntPtr native, out ImFontGlyph managed)
+        internal static bool __TryGetNativeToManagedMapping(IntPtr native, out global::DearImGui.ImFontGlyph managed)
         {
             managed = default;
             return NativeToManagedMap.TryGetValue(native, out var wr) && wr.TryGetTarget(out managed);
@@ -13442,20 +13442,20 @@ namespace DearImGui
         // DEBUG: ImFontGlyph
         public ImFontGlyph()
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(ImFontGlyph.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::DearImGui.ImFontGlyph.__Internal));
             __ownsNativeInstance = true;
             __RecordNativeToManagedMapping(__Instance, this);
         }
 
         /// <summary>Hold rendering data for one glyph.<br/>(Note: some language parsers may fail to convert the 31+1 bitfield members, in this case maybe drop store a single u32 or we can rework this).<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2799.</summary>
         // DEBUG: ImFontGlyph
-        public ImFontGlyph(ImFontGlyph _0)
+        public ImFontGlyph(global::DearImGui.ImFontGlyph _0)
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(ImFontGlyph.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::DearImGui.ImFontGlyph.__Internal));
             __ownsNativeInstance = true;
             __RecordNativeToManagedMapping(__Instance, this);
             if (ReferenceEquals(_0, null))
-                throw new ArgumentNullException("_0", "Cannot be null because it is a C++ reference (&).");
+                throw new global::System.ArgumentNullException("_0", "Cannot be null because it is a C++ reference (&).");
             var __arg0 = _0.__Instance;
             if (Environment.Is64BitProcess)
             {
@@ -13657,10 +13657,10 @@ namespace DearImGui
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?GetBit@ImFontGlyphRangesBuilder@@QBE_NI@Z", CallingConvention = CallingConvention.ThisCall)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool GetBit(IntPtr __instance, UIntPtr n);
+            internal static extern bool GetBit(IntPtr __instance, global::System.UIntPtr n);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?SetBit@ImFontGlyphRangesBuilder@@QAEXI@Z", CallingConvention = CallingConvention.ThisCall)]
-            internal static extern void SetBit(IntPtr __instance, UIntPtr n);
+            internal static extern void SetBit(IntPtr __instance, global::System.UIntPtr n);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?AddChar@ImFontGlyphRangesBuilder@@QAEXG@Z", CallingConvention = CallingConvention.ThisCall)]
             internal static extern void AddChar(IntPtr __instance, ushort c);
@@ -13692,10 +13692,10 @@ namespace DearImGui
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?GetBit@ImFontGlyphRangesBuilder@@QEBA_N_K@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool GetBit(IntPtr __instance, UIntPtr n);
+            internal static extern bool GetBit(IntPtr __instance, global::System.UIntPtr n);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?SetBit@ImFontGlyphRangesBuilder@@QEAAX_K@Z", CallingConvention = CallingConvention.Cdecl)]
-            internal static extern void SetBit(IntPtr __instance, UIntPtr n);
+            internal static extern void SetBit(IntPtr __instance, global::System.UIntPtr n);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?AddChar@ImFontGlyphRangesBuilder@@QEAAXG@Z", CallingConvention = CallingConvention.Cdecl)]
             internal static extern void AddChar(IntPtr __instance, ushort c);
@@ -13713,13 +13713,13 @@ namespace DearImGui
 
         internal IntPtr __Instance { get; set; }
 
-        internal static readonly new ConcurrentDictionary<IntPtr, WeakReference<ImFontGlyphRangesBuilder>> NativeToManagedMap = new ConcurrentDictionary<IntPtr, WeakReference<ImFontGlyphRangesBuilder>>();
-        internal static void __RecordNativeToManagedMapping(IntPtr native, ImFontGlyphRangesBuilder managed)
+        internal static readonly new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::System.WeakReference<global::DearImGui.ImFontGlyphRangesBuilder>> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::System.WeakReference<global::DearImGui.ImFontGlyphRangesBuilder>>();
+        internal static void __RecordNativeToManagedMapping(IntPtr native, global::DearImGui.ImFontGlyphRangesBuilder managed)
         {
-            NativeToManagedMap[native] = new WeakReference<ImFontGlyphRangesBuilder>(managed);
+            NativeToManagedMap[native] = new global::System.WeakReference<global::DearImGui.ImFontGlyphRangesBuilder>(managed);
         }
 
-        internal static bool __TryGetNativeToManagedMapping(IntPtr native, out ImFontGlyphRangesBuilder managed)
+        internal static bool __TryGetNativeToManagedMapping(IntPtr native, out global::DearImGui.ImFontGlyphRangesBuilder managed)
         {
             managed = default;
             return NativeToManagedMap.TryGetValue(native, out var wr) && wr.TryGetTarget(out managed);
@@ -13774,7 +13774,7 @@ namespace DearImGui
         // DEBUG: ImFontGlyphRangesBuilder()              { Clear(); }
         public ImFontGlyphRangesBuilder()
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(ImFontGlyphRangesBuilder.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::DearImGui.ImFontGlyphRangesBuilder.__Internal));
             __ownsNativeInstance = true;
             __RecordNativeToManagedMapping(__Instance, this);
             if (Environment.Is64BitProcess)
@@ -13789,13 +13789,13 @@ namespace DearImGui
 
         /// <summary>Helper to build glyph ranges from text/string data. Feed your application strings/characters to it then call BuildRanges().<br/>This is essentially a tightly packed of vector of 64k booleans = 8KB storage.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2811.</summary>
         // DEBUG: ImFontGlyphRangesBuilder
-        public ImFontGlyphRangesBuilder(ImFontGlyphRangesBuilder _0)
+        public ImFontGlyphRangesBuilder(global::DearImGui.ImFontGlyphRangesBuilder _0)
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(ImFontGlyphRangesBuilder.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::DearImGui.ImFontGlyphRangesBuilder.__Internal));
             __ownsNativeInstance = true;
             __RecordNativeToManagedMapping(__Instance, this);
             if (ReferenceEquals(_0, null))
-                throw new ArgumentNullException("_0", "Cannot be null because it is a C++ reference (&).");
+                throw new global::System.ArgumentNullException("_0", "Cannot be null because it is a C++ reference (&).");
             var __arg0 = _0.__Instance;
             if (Environment.Is64BitProcess)
             {
@@ -13858,7 +13858,7 @@ namespace DearImGui
 
         /// <summary>Get bit n in the array.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2817.</summary>
         // DEBUG: inline bool     GetBit(size_t n) const  { int off = (int)(n >> 5); ImU32 mask = 1u << (n & 31); return (UsedChars[off] & mask) != 0; }
-        public bool GetBit(UIntPtr n)
+        public bool GetBit(global::System.UIntPtr n)
         {
             var __arg0 = n
             /* DEBUG: TypeMapSizeT.CSharpMarshalToNative: Function: True, ReturnVarName: False */
@@ -13869,7 +13869,7 @@ namespace DearImGui
 
         /// <summary>Set bit n in the array.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2818.</summary>
         // DEBUG: inline void     SetBit(size_t n)        { int off = (int)(n >> 5); ImU32 mask = 1u << (n & 31); UsedChars[off] |= mask; }
-        public void SetBit(UIntPtr n)
+        public void SetBit(global::System.UIntPtr n)
         {
             var __arg0 = n
             /* DEBUG: TypeMapSizeT.CSharpMarshalToNative: Function: True, ReturnVarName: False */
@@ -13982,7 +13982,7 @@ namespace DearImGui
             internal ushort Y;
             internal uint GlyphID;
             internal float GlyphAdvanceX;
-            internal Vector2 GlyphOffset;
+            internal global::System.Numerics.Vector2 GlyphOffset;
             internal IntPtr Font;
         }
 
@@ -14016,13 +14016,13 @@ namespace DearImGui
 
         internal IntPtr __Instance { get; set; }
 
-        internal static readonly new ConcurrentDictionary<IntPtr, WeakReference<ImFontAtlasCustomRect>> NativeToManagedMap = new ConcurrentDictionary<IntPtr, WeakReference<ImFontAtlasCustomRect>>();
-        internal static void __RecordNativeToManagedMapping(IntPtr native, ImFontAtlasCustomRect managed)
+        internal static readonly new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::System.WeakReference<global::DearImGui.ImFontAtlasCustomRect>> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::System.WeakReference<global::DearImGui.ImFontAtlasCustomRect>>();
+        internal static void __RecordNativeToManagedMapping(IntPtr native, global::DearImGui.ImFontAtlasCustomRect managed)
         {
-            NativeToManagedMap[native] = new WeakReference<ImFontAtlasCustomRect>(managed);
+            NativeToManagedMap[native] = new global::System.WeakReference<global::DearImGui.ImFontAtlasCustomRect>(managed);
         }
 
-        internal static bool __TryGetNativeToManagedMapping(IntPtr native, out ImFontAtlasCustomRect managed)
+        internal static bool __TryGetNativeToManagedMapping(IntPtr native, out global::DearImGui.ImFontAtlasCustomRect managed)
         {
             managed = default;
             return NativeToManagedMap.TryGetValue(native, out var wr) && wr.TryGetTarget(out managed);
@@ -14077,7 +14077,7 @@ namespace DearImGui
         // DEBUG: ImFontAtlasCustomRect()         { Width = Height = 0; X = Y = 0xFFFF; GlyphID = 0; GlyphAdvanceX = 0.0f; GlyphOffset = ImVec2(0, 0); Font = NULL; }
         public ImFontAtlasCustomRect()
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(ImFontAtlasCustomRect.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::DearImGui.ImFontAtlasCustomRect.__Internal));
             __ownsNativeInstance = true;
             __RecordNativeToManagedMapping(__Instance, this);
             if (Environment.Is64BitProcess)
@@ -14092,13 +14092,13 @@ namespace DearImGui
 
         /// <summary>See ImFontAtlas::AddCustomRectXXX functions.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2826.</summary>
         // DEBUG: ImFontAtlasCustomRect
-        public ImFontAtlasCustomRect(ImFontAtlasCustomRect _0)
+        public ImFontAtlasCustomRect(global::DearImGui.ImFontAtlasCustomRect _0)
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(ImFontAtlasCustomRect.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::DearImGui.ImFontAtlasCustomRect.__Internal));
             __ownsNativeInstance = true;
             __RecordNativeToManagedMapping(__Instance, this);
             if (ReferenceEquals(_0, null))
-                throw new ArgumentNullException("_0", "Cannot be null because it is a C++ reference (&).");
+                throw new global::System.ArgumentNullException("_0", "Cannot be null because it is a C++ reference (&).");
             var __arg0 = _0.__Instance;
             if (Environment.Is64BitProcess)
             {
@@ -14220,7 +14220,7 @@ namespace DearImGui
         }
 
         /// <summary>Input.<br/>For custom font glyphs only: glyph display offset.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2832.</summary>
-        public Vector2 GlyphOffset
+        public global::System.Numerics.Vector2 GlyphOffset
         {
             get
             {
@@ -14240,11 +14240,11 @@ namespace DearImGui
         }
 
         /// <summary>Input.<br/>For custom font glyphs only: target font.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2833.</summary>
-        public ImFont Font
+        public global::DearImGui.ImFont Font
         {
             get
             {
-                var __result0 = ImFont.__GetOrCreateInstance(((__Internal*)__Instance)->Font, false);
+                var __result0 = global::DearImGui.ImFont.__GetOrCreateInstance(((__Internal*)__Instance)->Font, false);
                 return __result0;
             }
 
@@ -14359,7 +14359,7 @@ namespace DearImGui
         [StructLayout(LayoutKind.Sequential)]
         internal partial struct __Internal
         {
-            internal ImFontAtlasFlags Flags;
+            internal global::DearImGui.ImFontAtlasFlags Flags;
             internal IntPtr TexID;
             internal int TexDesiredWidth;
             internal int TexGlyphPadding;
@@ -14370,8 +14370,8 @@ namespace DearImGui
             internal IntPtr TexPixelsRGBA32;
             internal int TexWidth;
             internal int TexHeight;
-            internal Vector2 TexUvScale;
-            internal Vector2 TexUvWhitePixel;
+            internal global::System.Numerics.Vector2 TexUvScale;
+            internal global::System.Numerics.Vector2 TexUvWhitePixel;
             internal ImVector.__Internal Fonts;
             internal ImVector.__Internal CustomRects;
             internal ImVector.__Internal ConfigData;
@@ -14447,7 +14447,7 @@ namespace DearImGui
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?GetMouseCursorTexData@ImFontAtlas@@QAE_NHPAUImVec2@@0QAU2@1@Z", CallingConvention = CallingConvention.ThisCall)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool GetMouseCursorTexData(IntPtr __instance, ImGuiMouseCursor cursor, IntPtr out_offset, IntPtr out_size, Vector2* out_uv_border, Vector2* out_uv_fill);
+            internal static extern bool GetMouseCursorTexData(IntPtr __instance, global::DearImGui.ImGuiMouseCursor cursor, IntPtr out_offset, IntPtr out_size, global::System.Numerics.Vector2* out_uv_border, global::System.Numerics.Vector2* out_uv_fill);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?IsBuilt@ImFontAtlas@@QBE_NXZ", CallingConvention = CallingConvention.ThisCall)]
             [return: MarshalAs(UnmanagedType.I1)]
@@ -14544,7 +14544,7 @@ namespace DearImGui
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?GetMouseCursorTexData@ImFontAtlas@@QEAA_NHPEAUImVec2@@0QEAU2@1@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool GetMouseCursorTexData(IntPtr __instance, ImGuiMouseCursor cursor, IntPtr out_offset, IntPtr out_size, Vector2* out_uv_border, Vector2* out_uv_fill);
+            internal static extern bool GetMouseCursorTexData(IntPtr __instance, global::DearImGui.ImGuiMouseCursor cursor, IntPtr out_offset, IntPtr out_size, global::System.Numerics.Vector2* out_uv_border, global::System.Numerics.Vector2* out_uv_fill);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?IsBuilt@ImFontAtlas@@QEBA_NXZ", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
@@ -14578,13 +14578,13 @@ namespace DearImGui
 
         internal IntPtr __Instance { get; set; }
 
-        internal static readonly new ConcurrentDictionary<IntPtr, WeakReference<ImFontAtlas>> NativeToManagedMap = new ConcurrentDictionary<IntPtr, WeakReference<ImFontAtlas>>();
-        internal static void __RecordNativeToManagedMapping(IntPtr native, ImFontAtlas managed)
+        internal static readonly new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::System.WeakReference<global::DearImGui.ImFontAtlas>> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::System.WeakReference<global::DearImGui.ImFontAtlas>>();
+        internal static void __RecordNativeToManagedMapping(IntPtr native, global::DearImGui.ImFontAtlas managed)
         {
-            NativeToManagedMap[native] = new WeakReference<ImFontAtlas>(managed);
+            NativeToManagedMap[native] = new global::System.WeakReference<global::DearImGui.ImFontAtlas>(managed);
         }
 
-        internal static bool __TryGetNativeToManagedMapping(IntPtr native, out ImFontAtlas managed)
+        internal static bool __TryGetNativeToManagedMapping(IntPtr native, out global::DearImGui.ImFontAtlas managed)
         {
             managed = default;
             return NativeToManagedMap.TryGetValue(native, out var wr) && wr.TryGetTarget(out managed);
@@ -14620,11 +14620,11 @@ namespace DearImGui
             var ret = Marshal.AllocHGlobal(sizeof(__Internal));
             if (Environment.Is64BitProcess)
             {
-                ImFontAtlas.__Internal64.cctor(ret, new IntPtr(&native));
+                global::DearImGui.ImFontAtlas.__Internal64.cctor(ret, new IntPtr(&native));
             }
             else
             {
-                ImFontAtlas.__Internal32.cctor(ret, new IntPtr(&native));
+                global::DearImGui.ImFontAtlas.__Internal32.cctor(ret, new IntPtr(&native));
             }
 
             return ret.ToPointer();
@@ -14647,7 +14647,7 @@ namespace DearImGui
         // DEBUG: ImFontAtlas()
         public ImFontAtlas()
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(ImFontAtlas.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::DearImGui.ImFontAtlas.__Internal));
             __ownsNativeInstance = true;
             __RecordNativeToManagedMapping(__Instance, this);
             if (Environment.Is64BitProcess)
@@ -14662,13 +14662,13 @@ namespace DearImGui
 
         /// <summary>Load and rasterize multiple TTF/OTF fonts into a same texture. The font atlas will build a single texture holding:.<br/>- One or more fonts.<br/>- Custom graphics data needed to render the shapes needed by Dear ImGui.<br/>- Mouse cursor shapes for software cursor rendering (unless setting 'Flags |= ImFontAtlasFlags_NoMouseCursors' in the font atlas).<br/>It is the user-code responsibility to setup/build the atlas, then upload the pixel data into a texture accessible by your graphics api.<br/>- Optionally, call any of the AddFont*** functions. If you don't call any, the default font embedded in the code will be loaded for you.<br/>- Call GetTexDataAsAlpha8() or GetTexDataAsRGBA32() to build and retrieve pixels data.<br/>- Upload the pixels data into a texture within your graphics system (see imgui_impl_xxxx.cpp examples).<br/>- Call SetTexID(my_tex_id); and pass the pointer/identifier to your texture in a format natural to your graphics API.<br/>This value will be passed back to you during rendering to identify the texture. Read FAQ entry about ImTextureID for more details.<br/>Common pitfalls:.<br/>- If you pass a 'glyph_ranges' array to AddFont*** functions, you need to make sure that your array persist up until the.<br/>Atlas is build (when calling GetTexData*** or Build()). We only copy the pointer, not the data.<br/>- Important: By default, AddFontFromMemoryTTF() takes ownership of the data. Even though we are not writing to it, we will free the pointer on destruction.<br/>You can set font_cfg-&gt;FontDataOwnedByAtlas=false to keep ownership of your data and it won't be freed,.<br/>- Even though many functions are suffixed with "TTF", OTF data is supported just as well.<br/>- This is an old API and it is currently awkward for those and and various other reasons! We will address them in the future!<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2864.</summary>
         // DEBUG: ImFontAtlas
-        public ImFontAtlas(ImFontAtlas _0)
+        public ImFontAtlas(global::DearImGui.ImFontAtlas _0)
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(ImFontAtlas.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::DearImGui.ImFontAtlas.__Internal));
             __ownsNativeInstance = true;
             __RecordNativeToManagedMapping(__Instance, this);
             if (ReferenceEquals(_0, null))
-                throw new ArgumentNullException("_0", "Cannot be null because it is a C++ reference (&).");
+                throw new global::System.ArgumentNullException("_0", "Cannot be null because it is a C++ reference (&).");
             var __arg0 = _0.__Instance;
             if (Environment.Is64BitProcess)
             {
@@ -14717,76 +14717,76 @@ namespace DearImGui
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2868.</summary>
         // DEBUG: ImFont*           AddFont(const ImFontConfig* font_cfg)
-        public ImFont AddFont(ImFontConfig font_cfg)
+        public global::DearImGui.ImFont AddFont(global::DearImGui.ImFontConfig font_cfg)
         {
             var __arg0 = font_cfg is null ? IntPtr.Zero : font_cfg.__Instance;
             var ___ret = Environment.Is64BitProcess ? __Internal64.AddFont(__Instance, __arg0) : __Internal32.AddFont(__Instance, __arg0);
-            var __result0 = ImFont.__GetOrCreateInstance(___ret, false);
+            var __result0 = global::DearImGui.ImFont.__GetOrCreateInstance(___ret, false);
             return __result0;
         }
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2869.</summary>
         // DEBUG: ImFont*           AddFontDefault(const ImFontConfig* font_cfg = NULL)
-        public ImFont AddFontDefault(ImFontConfig font_cfg = default)
+        public global::DearImGui.ImFont AddFontDefault(global::DearImGui.ImFontConfig font_cfg = default)
         {
             var __arg0 = font_cfg is null ? IntPtr.Zero : font_cfg.__Instance;
             var ___ret = Environment.Is64BitProcess ? __Internal64.AddFontDefault(__Instance, __arg0) : __Internal32.AddFontDefault(__Instance, __arg0);
-            var __result0 = ImFont.__GetOrCreateInstance(___ret, false);
+            var __result0 = global::DearImGui.ImFont.__GetOrCreateInstance(___ret, false);
             return __result0;
         }
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2870.</summary>
         // DEBUG: ImFont*           AddFontFromFileTTF(const char* filename, float size_pixels, const ImFontConfig* font_cfg = NULL, const ImWchar* glyph_ranges = NULL)
-        public ImFont AddFontFromFileTTF(string filename, float size_pixels, ImFontConfig font_cfg, ref ushort glyph_ranges)
+        public global::DearImGui.ImFont AddFontFromFileTTF(string filename, float size_pixels, global::DearImGui.ImFontConfig font_cfg, ref ushort glyph_ranges)
         {
             var __arg2 = font_cfg is null ? IntPtr.Zero : font_cfg.__Instance;
             fixed (ushort* __glyph_ranges3 = &glyph_ranges)
             {
                 var __arg3 = __glyph_ranges3;
                 var ___ret = Environment.Is64BitProcess ? __Internal64.AddFontFromFileTTF(__Instance, filename, size_pixels, __arg2, __arg3) : __Internal32.AddFontFromFileTTF(__Instance, filename, size_pixels, __arg2, __arg3);
-                var __result0 = ImFont.__GetOrCreateInstance(___ret, false);
+                var __result0 = global::DearImGui.ImFont.__GetOrCreateInstance(___ret, false);
                 return __result0;
             }
         }
 
         /// <summary>Note: Transfer ownership of 'ttf_data' to ImFontAtlas! Will be deleted after destruction of the atlas. Set font_cfg-&gt;FontDataOwnedByAtlas=false to keep ownership of your data and it won't be freed.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2871.</summary>
         // DEBUG: ImFont*           AddFontFromMemoryTTF(void* font_data, int font_size, float size_pixels, const ImFontConfig* font_cfg = NULL, const ImWchar* glyph_ranges = NULL)
-        public ImFont AddFontFromMemoryTTF(IntPtr font_data, int font_size, float size_pixels, ImFontConfig font_cfg, ref ushort glyph_ranges)
+        public global::DearImGui.ImFont AddFontFromMemoryTTF(IntPtr font_data, int font_size, float size_pixels, global::DearImGui.ImFontConfig font_cfg, ref ushort glyph_ranges)
         {
             var __arg3 = font_cfg is null ? IntPtr.Zero : font_cfg.__Instance;
             fixed (ushort* __glyph_ranges4 = &glyph_ranges)
             {
                 var __arg4 = __glyph_ranges4;
                 var ___ret = Environment.Is64BitProcess ? __Internal64.AddFontFromMemoryTTF(__Instance, font_data, font_size, size_pixels, __arg3, __arg4) : __Internal32.AddFontFromMemoryTTF(__Instance, font_data, font_size, size_pixels, __arg3, __arg4);
-                var __result0 = ImFont.__GetOrCreateInstance(___ret, false);
+                var __result0 = global::DearImGui.ImFont.__GetOrCreateInstance(___ret, false);
                 return __result0;
             }
         }
 
         /// <summary>'compressed_font_data' still owned by caller. Compress with binary_to_compressed_c.cpp.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2872.</summary>
         // DEBUG: ImFont*           AddFontFromMemoryCompressedTTF(const void* compressed_font_data, int compressed_font_size, float size_pixels, const ImFontConfig* font_cfg = NULL, const ImWchar* glyph_ranges = NULL)
-        public ImFont AddFontFromMemoryCompressedTTF(IntPtr compressed_font_data, int compressed_font_size, float size_pixels, ImFontConfig font_cfg, ref ushort glyph_ranges)
+        public global::DearImGui.ImFont AddFontFromMemoryCompressedTTF(IntPtr compressed_font_data, int compressed_font_size, float size_pixels, global::DearImGui.ImFontConfig font_cfg, ref ushort glyph_ranges)
         {
             var __arg3 = font_cfg is null ? IntPtr.Zero : font_cfg.__Instance;
             fixed (ushort* __glyph_ranges4 = &glyph_ranges)
             {
                 var __arg4 = __glyph_ranges4;
                 var ___ret = Environment.Is64BitProcess ? __Internal64.AddFontFromMemoryCompressedTTF(__Instance, compressed_font_data, compressed_font_size, size_pixels, __arg3, __arg4) : __Internal32.AddFontFromMemoryCompressedTTF(__Instance, compressed_font_data, compressed_font_size, size_pixels, __arg3, __arg4);
-                var __result0 = ImFont.__GetOrCreateInstance(___ret, false);
+                var __result0 = global::DearImGui.ImFont.__GetOrCreateInstance(___ret, false);
                 return __result0;
             }
         }
 
         /// <summary>'compressed_font_data_base85' still owned by caller. Compress with binary_to_compressed_c.cpp with -base85 parameter.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2873.</summary>
         // DEBUG: ImFont*           AddFontFromMemoryCompressedBase85TTF(const char* compressed_font_data_base85, float size_pixels, const ImFontConfig* font_cfg = NULL, const ImWchar* glyph_ranges = NULL)
-        public ImFont AddFontFromMemoryCompressedBase85TTF(string compressed_font_data_base85, float size_pixels, ImFontConfig font_cfg, ref ushort glyph_ranges)
+        public global::DearImGui.ImFont AddFontFromMemoryCompressedBase85TTF(string compressed_font_data_base85, float size_pixels, global::DearImGui.ImFontConfig font_cfg, ref ushort glyph_ranges)
         {
             var __arg2 = font_cfg is null ? IntPtr.Zero : font_cfg.__Instance;
             fixed (ushort* __glyph_ranges3 = &glyph_ranges)
             {
                 var __arg3 = __glyph_ranges3;
                 var ___ret = Environment.Is64BitProcess ? __Internal64.AddFontFromMemoryCompressedBase85TTF(__Instance, compressed_font_data_base85, size_pixels, __arg2, __arg3) : __Internal32.AddFontFromMemoryCompressedBase85TTF(__Instance, compressed_font_data_base85, size_pixels, __arg2, __arg3);
-                var __result0 = ImFont.__GetOrCreateInstance(___ret, false);
+                var __result0 = global::DearImGui.ImFont.__GetOrCreateInstance(___ret, false);
                 return __result0;
             }
         }
@@ -14917,7 +14917,7 @@ namespace DearImGui
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2918.</summary>
         // DEBUG: int               AddCustomRectFontGlyph(ImFont* font, ImWchar id, int width, int height, float advance_x, const ImVec2& offset = ImVec2(0, 0))
-        public int AddCustomRectFontGlyph(ImFont font, ushort id, int width, int height, float advance_x, Vector2 offset)
+        public int AddCustomRectFontGlyph(global::DearImGui.ImFont font, ushort id, int width, int height, float advance_x, global::System.Numerics.Vector2 offset)
         {
             var __arg0 = font is null ? IntPtr.Zero : font.__Instance;
             var __arg5 = new IntPtr(Unsafe.AsPointer(ref offset))
@@ -14930,16 +14930,16 @@ namespace DearImGui
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2919.</summary>
         // DEBUG: ImFontAtlasCustomRect*      GetCustomRectByIndex(int index) { IM_ASSERT(index >= 0); return &CustomRects[index]; }
-        public ImFontAtlasCustomRect GetCustomRectByIndex(int index)
+        public global::DearImGui.ImFontAtlasCustomRect GetCustomRectByIndex(int index)
         {
             var ___ret = Environment.Is64BitProcess ? __Internal64.GetCustomRectByIndex(__Instance, index) : __Internal32.GetCustomRectByIndex(__Instance, index);
-            var __result0 = ImFontAtlasCustomRect.__GetOrCreateInstance(___ret, false);
+            var __result0 = global::DearImGui.ImFontAtlasCustomRect.__GetOrCreateInstance(___ret, false);
             return __result0;
         }
 
         /// <summary>[Internal].<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2922.</summary>
         // DEBUG: void              CalcCustomRectUV(const ImFontAtlasCustomRect* rect, ImVec2* out_uv_min, ImVec2* out_uv_max) const
-        public void CalcCustomRectUV(ImFontAtlasCustomRect rect, Vector2 out_uv_min, Vector2 out_uv_max)
+        public void CalcCustomRectUV(global::DearImGui.ImFontAtlasCustomRect rect, global::System.Numerics.Vector2 out_uv_min, global::System.Numerics.Vector2 out_uv_max)
         {
             var __arg0 = rect is null ? IntPtr.Zero : rect.__Instance;
             var __arg1 = new IntPtr(Unsafe.AsPointer(ref out_uv_min))
@@ -14962,7 +14962,7 @@ namespace DearImGui
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2923.</summary>
         // DEBUG: bool              GetMouseCursorTexData(ImGuiMouseCursor cursor, ImVec2* out_offset, ImVec2* out_size, ImVec2 out_uv_border[2], ImVec2 out_uv_fill[2])
-        public bool GetMouseCursorTexData(ImGuiMouseCursor cursor, Vector2 out_offset, Vector2 out_size, Span<Vector2> out_uv_border, Span<Vector2> out_uv_fill)
+        public bool GetMouseCursorTexData(global::DearImGui.ImGuiMouseCursor cursor, global::System.Numerics.Vector2 out_offset, global::System.Numerics.Vector2 out_size, Span<global::System.Numerics.Vector2> out_uv_border, Span<global::System.Numerics.Vector2> out_uv_fill)
         {
             var __arg1 = new IntPtr(Unsafe.AsPointer(ref out_offset))
             /* DEBUG: TypeMapImVec2.CSharpMarshalToNative: Case 6 */
@@ -14974,12 +14974,12 @@ namespace DearImGui
             ;
             if (out_uv_border == null || out_uv_border.Length != 2)
                 throw new ArgumentOutOfRangeException("out_uv_border", "The dimensions of the provided array don't match the required size.");
-            Span<Vector2> __out_uv_border;
+            Span<global::System.Numerics.Vector2> __out_uv_border;
             if (out_uv_border == null)
                 __out_uv_border = null;
             else
             {
-                __out_uv_border = new Vector2[out_uv_border.Length];
+                __out_uv_border = new global::System.Numerics.Vector2[out_uv_border.Length];
                 for (int i = 0; i < __out_uv_border.Length; i++)
                 {
                     var __element = out_uv_border[i];
@@ -14987,17 +14987,17 @@ namespace DearImGui
                 }
             }
 
-            fixed (Vector2* ____out_uv_border3 = &MemoryMarshal.GetReference(__out_uv_border))
+            fixed (global::System.Numerics.Vector2* ____out_uv_border3 = &MemoryMarshal.GetReference(__out_uv_border))
             {
                 var __arg3 = ____out_uv_border3;
                 if (out_uv_fill == null || out_uv_fill.Length != 2)
                     throw new ArgumentOutOfRangeException("out_uv_fill", "The dimensions of the provided array don't match the required size.");
-                Span<Vector2> __out_uv_fill;
+                Span<global::System.Numerics.Vector2> __out_uv_fill;
                 if (out_uv_fill == null)
                     __out_uv_fill = null;
                 else
                 {
-                    __out_uv_fill = new Vector2[out_uv_fill.Length];
+                    __out_uv_fill = new global::System.Numerics.Vector2[out_uv_fill.Length];
                     for (int i = 0; i < __out_uv_fill.Length; i++)
                     {
                         var __element = out_uv_fill[i];
@@ -15005,7 +15005,7 @@ namespace DearImGui
                     }
                 }
 
-                fixed (Vector2* ____out_uv_fill4 = &MemoryMarshal.GetReference(__out_uv_fill))
+                fixed (global::System.Numerics.Vector2* ____out_uv_fill4 = &MemoryMarshal.GetReference(__out_uv_fill))
                 {
                     var __arg4 = ____out_uv_fill4;
                     var ___ret = Environment.Is64BitProcess ? __Internal64.GetMouseCursorTexData(__Instance, cursor, __arg1, __arg2, __arg3, __arg4) : __Internal32.GetMouseCursorTexData(__Instance, cursor, __arg1, __arg2, __arg3, __arg4);
@@ -15016,7 +15016,7 @@ namespace DearImGui
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2870.</summary>
         // DEBUG: ImFont*           AddFontFromFileTTF(const char* filename, float size_pixels, const ImFontConfig* font_cfg = NULL, const ImWchar* glyph_ranges = NULL)
-        public ImFont AddFontFromFileTTF(string filename, float size_pixels, ImFontConfig font_cfg = default)
+        public global::DearImGui.ImFont AddFontFromFileTTF(string filename, float size_pixels, global::DearImGui.ImFontConfig font_cfg = default)
         {
             ushort param0 = 0;
             return AddFontFromFileTTF(filename, size_pixels, font_cfg, ref param0);
@@ -15024,7 +15024,7 @@ namespace DearImGui
 
         /// <summary>Note: Transfer ownership of 'ttf_data' to ImFontAtlas! Will be deleted after destruction of the atlas. Set font_cfg-&gt;FontDataOwnedByAtlas=false to keep ownership of your data and it won't be freed.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2871.</summary>
         // DEBUG: ImFont*           AddFontFromMemoryTTF(void* font_data, int font_size, float size_pixels, const ImFontConfig* font_cfg = NULL, const ImWchar* glyph_ranges = NULL)
-        public ImFont AddFontFromMemoryTTF(IntPtr font_data, int font_size, float size_pixels, ImFontConfig font_cfg = default)
+        public global::DearImGui.ImFont AddFontFromMemoryTTF(IntPtr font_data, int font_size, float size_pixels, global::DearImGui.ImFontConfig font_cfg = default)
         {
             ushort param0 = 0;
             return AddFontFromMemoryTTF(font_data, font_size, size_pixels, font_cfg, ref param0);
@@ -15032,7 +15032,7 @@ namespace DearImGui
 
         /// <summary>'compressed_font_data' still owned by caller. Compress with binary_to_compressed_c.cpp.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2872.</summary>
         // DEBUG: ImFont*           AddFontFromMemoryCompressedTTF(const void* compressed_font_data, int compressed_font_size, float size_pixels, const ImFontConfig* font_cfg = NULL, const ImWchar* glyph_ranges = NULL)
-        public ImFont AddFontFromMemoryCompressedTTF(IntPtr compressed_font_data, int compressed_font_size, float size_pixels, ImFontConfig font_cfg = default)
+        public global::DearImGui.ImFont AddFontFromMemoryCompressedTTF(IntPtr compressed_font_data, int compressed_font_size, float size_pixels, global::DearImGui.ImFontConfig font_cfg = default)
         {
             ushort param0 = 0;
             return AddFontFromMemoryCompressedTTF(compressed_font_data, compressed_font_size, size_pixels, font_cfg, ref param0);
@@ -15040,7 +15040,7 @@ namespace DearImGui
 
         /// <summary>'compressed_font_data_base85' still owned by caller. Compress with binary_to_compressed_c.cpp with -base85 parameter.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2873.</summary>
         // DEBUG: ImFont*           AddFontFromMemoryCompressedBase85TTF(const char* compressed_font_data_base85, float size_pixels, const ImFontConfig* font_cfg = NULL, const ImWchar* glyph_ranges = NULL)
-        public ImFont AddFontFromMemoryCompressedBase85TTF(string compressed_font_data_base85, float size_pixels, ImFontConfig font_cfg = default)
+        public global::DearImGui.ImFont AddFontFromMemoryCompressedBase85TTF(string compressed_font_data_base85, float size_pixels, global::DearImGui.ImFontConfig font_cfg = default)
         {
             ushort param0 = 0;
             return AddFontFromMemoryCompressedBase85TTF(compressed_font_data_base85, size_pixels, font_cfg, ref param0);
@@ -15064,13 +15064,13 @@ namespace DearImGui
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2918.</summary>
         // DEBUG: int               AddCustomRectFontGlyph(ImFont* font, ImWchar id, int width, int height, float advance_x, const ImVec2& offset = ImVec2(0, 0))
-        public int AddCustomRectFontGlyph(ImFont font, ushort id, int width, int height, float advance_x)
+        public int AddCustomRectFontGlyph(global::DearImGui.ImFont font, ushort id, int width, int height, float advance_x)
         {
-            return AddCustomRectFontGlyph(font, id, width, height, advance_x, new Vector2(0, 0));
+            return AddCustomRectFontGlyph(font, id, width, height, advance_x, new global::System.Numerics.Vector2(0, 0));
         }
 
         /// <summary>Build flags (see ImFontAtlasFlags_).<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2929.</summary>
-        public ImFontAtlasFlags Flags
+        public global::DearImGui.ImFontAtlasFlags Flags
         {
             get
             {
@@ -15224,7 +15224,7 @@ namespace DearImGui
         }
 
         /// <summary>= (1.0f/TexWidth, 1.0f/TexHeight).<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2943.</summary>
-        public Vector2 TexUvScale
+        public global::System.Numerics.Vector2 TexUvScale
         {
             get
             {
@@ -15244,7 +15244,7 @@ namespace DearImGui
         }
 
         /// <summary>Texture coordinates to a white pixel.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2944.</summary>
-        public Vector2 TexUvWhitePixel
+        public global::System.Numerics.Vector2 TexUvWhitePixel
         {
             get
             {
@@ -15264,44 +15264,44 @@ namespace DearImGui
         }
 
         /// <summary>Hold all the fonts returned by AddFont*. Fonts[0] is the default font upon calling ImGui::NewFrame(), use ImGui::PushFont()/PopFont() to change the current font.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2945.</summary>
-        public ImVector<ImFont> Fonts
+        public ImVector<global::DearImGui.ImFont> Fonts
         {
             get
             {
-                return new ImVector<ImFont>(Unsafe.As<ImVector.__Internal, ImVector<ImFont>.__Internal>(ref ((__Internal*)__Instance)->Fonts))
+                return new ImVector<global::DearImGui.ImFont>(Unsafe.As<ImVector.__Internal, ImVector<global::DearImGui.ImFont>.__Internal>(ref ((__Internal*)__Instance)->Fonts))
                 /* DEBUG: TypeMapImVector.CSharpMarshalToManaged: Function: False, ReturnVarName: True */
                 ;
             }
         }
 
         /// <summary>Rectangles for packing custom texture data into the atlas.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2946.</summary>
-        public ImVector<ImFontAtlasCustomRect> CustomRects
+        public ImVector<global::DearImGui.ImFontAtlasCustomRect> CustomRects
         {
             get
             {
-                return new ImVector<ImFontAtlasCustomRect>(Unsafe.As<ImVector.__Internal, ImVector<ImFontAtlasCustomRect>.__Internal>(ref ((__Internal*)__Instance)->CustomRects))
+                return new ImVector<global::DearImGui.ImFontAtlasCustomRect>(Unsafe.As<ImVector.__Internal, ImVector<global::DearImGui.ImFontAtlasCustomRect>.__Internal>(ref ((__Internal*)__Instance)->CustomRects))
                 /* DEBUG: TypeMapImVector.CSharpMarshalToManaged: Function: False, ReturnVarName: True */
                 ;
             }
         }
 
         /// <summary>Configuration data.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2947.</summary>
-        public ImVector<ImFontConfig> ConfigData
+        public ImVector<global::DearImGui.ImFontConfig> ConfigData
         {
             get
             {
-                return new ImVector<ImFontConfig>(Unsafe.As<ImVector.__Internal, ImVector<ImFontConfig>.__Internal>(ref ((__Internal*)__Instance)->ConfigData))
+                return new ImVector<global::DearImGui.ImFontConfig>(Unsafe.As<ImVector.__Internal, ImVector<global::DearImGui.ImFontConfig>.__Internal>(ref ((__Internal*)__Instance)->ConfigData))
                 /* DEBUG: TypeMapImVector.CSharpMarshalToManaged: Function: False, ReturnVarName: True */
                 ;
             }
         }
 
         /// <summary>Opaque interface to a font builder (default to stb_truetype, can be changed to use FreeType by defining IMGUI_ENABLE_FREETYPE).<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2951.</summary>
-        public ImFontBuilderIO FontBuilderIO
+        public global::DearImGui.ImFontBuilderIO FontBuilderIO
         {
             get
             {
-                var __result0 = ImFontBuilderIO.__GetOrCreateInstance(((__Internal*)__Instance)->FontBuilderIO, false);
+                var __result0 = global::DearImGui.ImFontBuilderIO.__GetOrCreateInstance(((__Internal*)__Instance)->FontBuilderIO, false);
                 return __result0;
             }
         }
@@ -15619,13 +15619,13 @@ namespace DearImGui
 
         internal IntPtr __Instance { get; set; }
 
-        internal static readonly new ConcurrentDictionary<IntPtr, WeakReference<ImFont>> NativeToManagedMap = new ConcurrentDictionary<IntPtr, WeakReference<ImFont>>();
-        internal static void __RecordNativeToManagedMapping(IntPtr native, ImFont managed)
+        internal static readonly new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::System.WeakReference<global::DearImGui.ImFont>> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::System.WeakReference<global::DearImGui.ImFont>>();
+        internal static void __RecordNativeToManagedMapping(IntPtr native, global::DearImGui.ImFont managed)
         {
-            NativeToManagedMap[native] = new WeakReference<ImFont>(managed);
+            NativeToManagedMap[native] = new global::System.WeakReference<global::DearImGui.ImFont>(managed);
         }
 
-        internal static bool __TryGetNativeToManagedMapping(IntPtr native, out ImFont managed)
+        internal static bool __TryGetNativeToManagedMapping(IntPtr native, out global::DearImGui.ImFont managed)
         {
             managed = default;
             return NativeToManagedMap.TryGetValue(native, out var wr) && wr.TryGetTarget(out managed);
@@ -15661,11 +15661,11 @@ namespace DearImGui
             var ret = Marshal.AllocHGlobal(sizeof(__Internal));
             if (Environment.Is64BitProcess)
             {
-                ImFont.__Internal64.cctor(ret, new IntPtr(&native));
+                global::DearImGui.ImFont.__Internal64.cctor(ret, new IntPtr(&native));
             }
             else
             {
-                ImFont.__Internal32.cctor(ret, new IntPtr(&native));
+                global::DearImGui.ImFont.__Internal32.cctor(ret, new IntPtr(&native));
             }
 
             return ret.ToPointer();
@@ -15688,7 +15688,7 @@ namespace DearImGui
         // DEBUG: ImFont()
         public ImFont()
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(ImFont.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::DearImGui.ImFont.__Internal));
             __ownsNativeInstance = true;
             __RecordNativeToManagedMapping(__Instance, this);
             if (Environment.Is64BitProcess)
@@ -15703,13 +15703,13 @@ namespace DearImGui
 
         /// <summary>Font runtime data and rendering.<br/>ImFontAtlas automatically loads a default embedded font for you when you call GetTexDataAsAlpha8() or GetTexDataAsRGBA32().<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2965.</summary>
         // DEBUG: ImFont
-        public ImFont(ImFont _0)
+        public ImFont(global::DearImGui.ImFont _0)
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(ImFont.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::DearImGui.ImFont.__Internal));
             __ownsNativeInstance = true;
             __RecordNativeToManagedMapping(__Instance, this);
             if (ReferenceEquals(_0, null))
-                throw new ArgumentNullException("_0", "Cannot be null because it is a C++ reference (&).");
+                throw new global::System.ArgumentNullException("_0", "Cannot be null because it is a C++ reference (&).");
             var __arg0 = _0.__Instance;
             if (Environment.Is64BitProcess)
             {
@@ -15758,19 +15758,19 @@ namespace DearImGui
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2993.</summary>
         // DEBUG: const ImFontGlyph*FindGlyph(ImWchar c) const
-        public ImFontGlyph FindGlyph(ushort c)
+        public global::DearImGui.ImFontGlyph FindGlyph(ushort c)
         {
             var ___ret = Environment.Is64BitProcess ? __Internal64.FindGlyph(__Instance, c) : __Internal32.FindGlyph(__Instance, c);
-            var __result0 = ImFontGlyph.__GetOrCreateInstance(___ret, false);
+            var __result0 = global::DearImGui.ImFontGlyph.__GetOrCreateInstance(___ret, false);
             return __result0;
         }
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2994.</summary>
         // DEBUG: const ImFontGlyph*FindGlyphNoFallback(ImWchar c) const
-        public ImFontGlyph FindGlyphNoFallback(ushort c)
+        public global::DearImGui.ImFontGlyph FindGlyphNoFallback(ushort c)
         {
             var ___ret = Environment.Is64BitProcess ? __Internal64.FindGlyphNoFallback(__Instance, c) : __Internal32.FindGlyphNoFallback(__Instance, c);
-            var __result0 = ImFontGlyph.__GetOrCreateInstance(___ret, false);
+            var __result0 = global::DearImGui.ImFontGlyph.__GetOrCreateInstance(___ret, false);
             return __result0;
         }
 
@@ -15784,10 +15784,10 @@ namespace DearImGui
 
         /// <summary>Utf8.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L3001.</summary>
         // DEBUG: ImVec2            CalcTextSizeA(float size, float max_width, float wrap_width, const char* text_begin, const char* text_end = NULL, const char** remaining = NULL) const
-        public Vector2 CalcTextSizeA(float size, float max_width, float wrap_width, string text_begin, string text_end = default, char** remaining = default)
+        public global::System.Numerics.Vector2 CalcTextSizeA(float size, float max_width, float wrap_width, string text_begin, string text_end = default, char** remaining = default)
         {
             var __arg5 = (sbyte**)&remaining;
-            var ___ret = new Vector2();
+            var ___ret = new global::DearImGui.ImVec2.__Internal();
             if (Environment.Is64BitProcess)
             {
                 __Internal64.CalcTextSizeA(__Instance, new IntPtr(&___ret), size, max_width, wrap_width, text_begin, text_end, __arg5);
@@ -15808,12 +15808,12 @@ namespace DearImGui
         public string CalcWordWrapPositionA(float scale, string text, string text_end, float wrap_width)
         {
             var ___ret = Environment.Is64BitProcess ? __Internal64.CalcWordWrapPositionA(__Instance, scale, text, text_end, wrap_width) : __Internal32.CalcWordWrapPositionA(__Instance, scale, text, text_end, wrap_width);
-            return CppSharp.Runtime.MarshalUtil.GetString(Encoding.UTF8, ___ret);
+            return CppSharp.Runtime.MarshalUtil.GetString(global::System.Text.Encoding.UTF8, ___ret);
         }
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L3003.</summary>
         // DEBUG: void              RenderChar(ImDrawList* draw_list, float size, const ImVec2& pos, ImU32 col, ImWchar c) const
-        public void RenderChar(ImDrawList draw_list, float size, Vector2 pos, uint col, ushort c)
+        public void RenderChar(global::DearImGui.ImDrawList draw_list, float size, global::System.Numerics.Vector2 pos, uint col, ushort c)
         {
             var ____arg0 = draw_list.__Instance;
             var __arg0 = new IntPtr(&____arg0);
@@ -15833,7 +15833,7 @@ namespace DearImGui
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L3004.</summary>
         // DEBUG: void              RenderText(ImDrawList* draw_list, float size, const ImVec2& pos, ImU32 col, const ImVec4& clip_rect, const char* text_begin, const char* text_end, float wrap_width = 0.0f, bool cpu_fine_clip = false) const
-        public void RenderText(ImDrawList draw_list, float size, Vector2 pos, uint col, Vector4 clip_rect, string text_begin, string text_end, float wrap_width = 0.0F, bool cpu_fine_clip = false)
+        public void RenderText(global::DearImGui.ImDrawList draw_list, float size, global::System.Numerics.Vector2 pos, uint col, global::System.Numerics.Vector4 clip_rect, string text_begin, string text_end, float wrap_width = 0.0F, bool cpu_fine_clip = false)
         {
             var ____arg0 = draw_list.__Instance;
             var __arg0 = new IntPtr(&____arg0);
@@ -15899,7 +15899,7 @@ namespace DearImGui
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L3010.</summary>
         // DEBUG: void              AddGlyph(const ImFontConfig* src_cfg, ImWchar c, float x0, float y0, float x1, float y1, float u0, float v0, float u1, float v1, float advance_x)
-        public void AddGlyph(ImFontConfig src_cfg, ushort c, float x0, float y0, float x1, float y1, float u0, float v0, float u1, float v1, float advance_x)
+        public void AddGlyph(global::DearImGui.ImFontConfig src_cfg, ushort c, float x0, float y0, float x1, float y1, float u0, float v0, float u1, float v1, float advance_x)
         {
             var __arg0 = src_cfg is null ? IntPtr.Zero : src_cfg.__Instance;
             if (Environment.Is64BitProcess)
@@ -15999,32 +15999,32 @@ namespace DearImGui
         }
 
         /// <summary>12-16.<br/>Out.<br/>All glyphs.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2974.</summary>
-        public ImVector<ImFontGlyph> Glyphs
+        public ImVector<global::DearImGui.ImFontGlyph> Glyphs
         {
             get
             {
-                return new ImVector<ImFontGlyph>(Unsafe.As<ImVector.__Internal, ImVector<ImFontGlyph>.__Internal>(ref ((__Internal*)__Instance)->Glyphs))
+                return new ImVector<global::DearImGui.ImFontGlyph>(Unsafe.As<ImVector.__Internal, ImVector<global::DearImGui.ImFontGlyph>.__Internal>(ref ((__Internal*)__Instance)->Glyphs))
                 /* DEBUG: TypeMapImVector.CSharpMarshalToManaged: Function: False, ReturnVarName: True */
                 ;
             }
         }
 
         /// <summary>4-8.<br/>Out.<br/>= FindGlyph(FontFallbackChar).<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2975.</summary>
-        public ImFontGlyph FallbackGlyph
+        public global::DearImGui.ImFontGlyph FallbackGlyph
         {
             get
             {
-                var __result0 = ImFontGlyph.__GetOrCreateInstance(((__Internal*)__Instance)->FallbackGlyph, false);
+                var __result0 = global::DearImGui.ImFontGlyph.__GetOrCreateInstance(((__Internal*)__Instance)->FallbackGlyph, false);
                 return __result0;
             }
         }
 
         /// <summary>4-8.<br/>Out.<br/>What we has been loaded into.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2978.</summary>
-        public ImFontAtlas ContainerAtlas
+        public global::DearImGui.ImFontAtlas ContainerAtlas
         {
             get
             {
-                var __result0 = ImFontAtlas.__GetOrCreateInstance(((__Internal*)__Instance)->ContainerAtlas, false);
+                var __result0 = global::DearImGui.ImFontAtlas.__GetOrCreateInstance(((__Internal*)__Instance)->ContainerAtlas, false);
                 return __result0;
             }
 
@@ -16035,11 +16035,11 @@ namespace DearImGui
         }
 
         /// <summary>4-8.<br/>In.<br/>Pointer within ContainerAtlas-&gt;ConfigData.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L2979.</summary>
-        public ImFontConfig ConfigData
+        public global::DearImGui.ImFontConfig ConfigData
         {
             get
             {
-                var __result0 = ImFontConfig.__GetOrCreateInstance(((__Internal*)__Instance)->ConfigData, false);
+                var __result0 = global::DearImGui.ImFontConfig.__GetOrCreateInstance(((__Internal*)__Instance)->ConfigData, false);
                 return __result0;
             }
         }
@@ -16228,11 +16228,11 @@ namespace DearImGui
         internal partial struct __Internal
         {
             internal uint ID;
-            internal ImGuiViewportFlags Flags;
-            internal Vector2 Pos;
-            internal Vector2 Size;
-            internal Vector2 WorkPos;
-            internal Vector2 WorkSize;
+            internal global::DearImGui.ImGuiViewportFlags Flags;
+            internal global::System.Numerics.Vector2 Pos;
+            internal global::System.Numerics.Vector2 Size;
+            internal global::System.Numerics.Vector2 WorkPos;
+            internal global::System.Numerics.Vector2 WorkSize;
             internal float DpiScale;
             internal uint ParentViewportId;
             internal IntPtr DrawData;
@@ -16285,13 +16285,13 @@ namespace DearImGui
 
         internal IntPtr __Instance { get; set; }
 
-        internal static readonly new ConcurrentDictionary<IntPtr, WeakReference<ImGuiViewport>> NativeToManagedMap = new ConcurrentDictionary<IntPtr, WeakReference<ImGuiViewport>>();
-        internal static void __RecordNativeToManagedMapping(IntPtr native, ImGuiViewport managed)
+        internal static readonly new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::System.WeakReference<global::DearImGui.ImGuiViewport>> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::System.WeakReference<global::DearImGui.ImGuiViewport>>();
+        internal static void __RecordNativeToManagedMapping(IntPtr native, global::DearImGui.ImGuiViewport managed)
         {
-            NativeToManagedMap[native] = new WeakReference<ImGuiViewport>(managed);
+            NativeToManagedMap[native] = new global::System.WeakReference<global::DearImGui.ImGuiViewport>(managed);
         }
 
-        internal static bool __TryGetNativeToManagedMapping(IntPtr native, out ImGuiViewport managed)
+        internal static bool __TryGetNativeToManagedMapping(IntPtr native, out global::DearImGui.ImGuiViewport managed)
         {
             managed = default;
             return NativeToManagedMap.TryGetValue(native, out var wr) && wr.TryGetTarget(out managed);
@@ -16346,7 +16346,7 @@ namespace DearImGui
         // DEBUG: ImGuiViewport()     { memset(this, 0, sizeof(*this)); }
         public ImGuiViewport()
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(ImGuiViewport.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::DearImGui.ImGuiViewport.__Internal));
             __ownsNativeInstance = true;
             __RecordNativeToManagedMapping(__Instance, this);
             if (Environment.Is64BitProcess)
@@ -16361,12 +16361,12 @@ namespace DearImGui
 
         /// <summary>- Currently represents the Platform Window created by the application which is hosting our Dear ImGui windows.<br/>- With multi-viewport enabled, we extend this concept to have multiple active viewports.<br/>- In the future we will extend this concept further to also represent Platform Monitor and support a "no main platform window" operation mode.<br/>- About Main Area vs Work Area:.<br/>- Main Area = entire viewport.<br/>- Work Area = entire viewport minus sections used by main menu bars (for platform windows), or by task bar (for platform monitor).<br/>- Windows are generally trying to stay within the Work Area of their host viewport.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L3046.</summary>
         // DEBUG: ImGuiViewport
-        public ImGuiViewport(ImGuiViewport _0)
+        public ImGuiViewport(global::DearImGui.ImGuiViewport _0)
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(ImGuiViewport.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::DearImGui.ImGuiViewport.__Internal));
             __ownsNativeInstance = true;
             __RecordNativeToManagedMapping(__Instance, this);
-            *((ImGuiViewport.__Internal*)__Instance) = *((ImGuiViewport.__Internal*)_0.__Instance);
+            *((global::DearImGui.ImGuiViewport.__Internal*)__Instance) = *((global::DearImGui.ImGuiViewport.__Internal*)_0.__Instance);
         }
 
         /// <inheritdoc/>
@@ -16419,7 +16419,7 @@ namespace DearImGui
         }
 
         /// <summary>See ImGuiViewportFlags_.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L3049.</summary>
-        public ImGuiViewportFlags Flags
+        public global::DearImGui.ImGuiViewportFlags Flags
         {
             get
             {
@@ -16433,7 +16433,7 @@ namespace DearImGui
         }
 
         /// <summary>Main Area: Position of the viewport (Dear ImGui coordinates are the same as OS desktop/native coordinates).<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L3050.</summary>
-        public Vector2 Pos
+        public global::System.Numerics.Vector2 Pos
         {
             get
             {
@@ -16453,7 +16453,7 @@ namespace DearImGui
         }
 
         /// <summary>Main Area: Size of the viewport.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L3051.</summary>
-        public Vector2 Size
+        public global::System.Numerics.Vector2 Size
         {
             get
             {
@@ -16473,7 +16473,7 @@ namespace DearImGui
         }
 
         /// <summary>Work Area: Position of the viewport minus task bars, menus bars, status bars (&gt;= Pos).<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L3052.</summary>
-        public Vector2 WorkPos
+        public global::System.Numerics.Vector2 WorkPos
         {
             get
             {
@@ -16493,7 +16493,7 @@ namespace DearImGui
         }
 
         /// <summary>Work Area: Size of the viewport minus task bars, menu bars, status bars (&lt;= Size).<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L3053.</summary>
-        public Vector2 WorkSize
+        public global::System.Numerics.Vector2 WorkSize
         {
             get
             {
@@ -16541,11 +16541,11 @@ namespace DearImGui
         }
 
         /// <summary>The ImDrawData corresponding to this viewport. Valid after Render() and until the next call to NewFrame().<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L3056.</summary>
-        public ImDrawData DrawData
+        public global::DearImGui.ImDrawData DrawData
         {
             get
             {
-                var __result0 = ((__Internal*)__Instance)->DrawData != IntPtr.Zero ? ImDrawData.__CreateInstance(((__Internal*)__Instance)->DrawData) : default;
+                var __result0 = ((__Internal*)__Instance)->DrawData != IntPtr.Zero ? global::DearImGui.ImDrawData.__CreateInstance(((__Internal*)__Instance)->DrawData) : default;
                 return __result0;
             }
 
@@ -16655,11 +16655,11 @@ namespace DearImGui
         }
 
         /// <summary>Helpers.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L3075.</summary>
-        public Vector2 Center
+        public global::System.Numerics.Vector2 Center
         {
             get
             {
-                var ___ret = new Vector2();
+                var ___ret = new global::DearImGui.ImVec2.__Internal();
                 if (Environment.Is64BitProcess)
                 {
                     __Internal64.GetCenter(__Instance, new IntPtr(&___ret));
@@ -16677,11 +16677,11 @@ namespace DearImGui
         }
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L3076.</summary>
-        public Vector2 WorkCenter
+        public global::System.Numerics.Vector2 WorkCenter
         {
             get
             {
-                var ___ret = new Vector2();
+                var ___ret = new global::DearImGui.ImVec2.__Internal();
                 if (Environment.Is64BitProcess)
                 {
                     __Internal64.GetWorkCenter(__Instance, new IntPtr(&___ret));
@@ -16820,13 +16820,13 @@ namespace DearImGui
 
         internal IntPtr __Instance { get; set; }
 
-        internal static readonly new ConcurrentDictionary<IntPtr, WeakReference<ImGuiPlatformIO>> NativeToManagedMap = new ConcurrentDictionary<IntPtr, WeakReference<ImGuiPlatformIO>>();
-        internal static void __RecordNativeToManagedMapping(IntPtr native, ImGuiPlatformIO managed)
+        internal static readonly new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::System.WeakReference<global::DearImGui.ImGuiPlatformIO>> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::System.WeakReference<global::DearImGui.ImGuiPlatformIO>>();
+        internal static void __RecordNativeToManagedMapping(IntPtr native, global::DearImGui.ImGuiPlatformIO managed)
         {
-            NativeToManagedMap[native] = new WeakReference<ImGuiPlatformIO>(managed);
+            NativeToManagedMap[native] = new global::System.WeakReference<global::DearImGui.ImGuiPlatformIO>(managed);
         }
 
-        internal static bool __TryGetNativeToManagedMapping(IntPtr native, out ImGuiPlatformIO managed)
+        internal static bool __TryGetNativeToManagedMapping(IntPtr native, out global::DearImGui.ImGuiPlatformIO managed)
         {
             managed = default;
             return NativeToManagedMap.TryGetValue(native, out var wr) && wr.TryGetTarget(out managed);
@@ -16881,7 +16881,7 @@ namespace DearImGui
         // DEBUG: ImGuiPlatformIO()               { memset(this, 0, sizeof(*this)); }
         public ImGuiPlatformIO()
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(ImGuiPlatformIO.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::DearImGui.ImGuiPlatformIO.__Internal));
             __ownsNativeInstance = true;
             __RecordNativeToManagedMapping(__Instance, this);
             if (Environment.Is64BitProcess)
@@ -16896,13 +16896,13 @@ namespace DearImGui
 
         /// <summary>(Optional) Access via ImGui::GetPlatformIO().<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L3129.</summary>
         // DEBUG: ImGuiPlatformIO
-        public ImGuiPlatformIO(ImGuiPlatformIO _0)
+        public ImGuiPlatformIO(global::DearImGui.ImGuiPlatformIO _0)
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(ImGuiPlatformIO.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::DearImGui.ImGuiPlatformIO.__Internal));
             __ownsNativeInstance = true;
             __RecordNativeToManagedMapping(__Instance, this);
             if (ReferenceEquals(_0, null))
-                throw new ArgumentNullException("_0", "Cannot be null because it is a C++ reference (&).");
+                throw new global::System.ArgumentNullException("_0", "Cannot be null because it is a C++ reference (&).");
             var __arg0 = _0.__Instance;
             if (Environment.Is64BitProcess)
             {
@@ -16950,367 +16950,367 @@ namespace DearImGui
         }
 
         /// <summary>U.<br/>Create a new platform window for the given viewport.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L3149.</summary>
-        public Action_IntPtr PlatformCreateWindow
+        public global::DearImGui.Action_IntPtr PlatformCreateWindow
         {
             get
             {
                 var __ptr0 = ((__Internal*)__Instance)->Platform_CreateWindow;
-                return __ptr0 == IntPtr.Zero ? null : (Action_IntPtr)Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(Action_IntPtr));
+                return __ptr0 == IntPtr.Zero ? null : (global::DearImGui.Action_IntPtr)Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(global::DearImGui.Action_IntPtr));
             }
 
             set
             {
-                ((__Internal*)__Instance)->Platform_CreateWindow = value == null ? IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(value);
+                ((__Internal*)__Instance)->Platform_CreateWindow = value == null ? global::System.IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(value);
             }
         }
 
         /// <summary>N . U . D.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L3150.</summary>
-        public Action_IntPtr PlatformDestroyWindow
+        public global::DearImGui.Action_IntPtr PlatformDestroyWindow
         {
             get
             {
                 var __ptr0 = ((__Internal*)__Instance)->Platform_DestroyWindow;
-                return __ptr0 == IntPtr.Zero ? null : (Action_IntPtr)Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(Action_IntPtr));
+                return __ptr0 == IntPtr.Zero ? null : (global::DearImGui.Action_IntPtr)Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(global::DearImGui.Action_IntPtr));
             }
 
             set
             {
-                ((__Internal*)__Instance)->Platform_DestroyWindow = value == null ? IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(value);
+                ((__Internal*)__Instance)->Platform_DestroyWindow = value == null ? global::System.IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(value);
             }
         }
 
         /// <summary>U.<br/>Newly created windows are initially hidden so SetWindowPos/Size/Title can be called on them before showing the window.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L3151.</summary>
-        public Action_IntPtr PlatformShowWindow
+        public global::DearImGui.Action_IntPtr PlatformShowWindow
         {
             get
             {
                 var __ptr0 = ((__Internal*)__Instance)->Platform_ShowWindow;
-                return __ptr0 == IntPtr.Zero ? null : (Action_IntPtr)Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(Action_IntPtr));
+                return __ptr0 == IntPtr.Zero ? null : (global::DearImGui.Action_IntPtr)Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(global::DearImGui.Action_IntPtr));
             }
 
             set
             {
-                ((__Internal*)__Instance)->Platform_ShowWindow = value == null ? IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(value);
+                ((__Internal*)__Instance)->Platform_ShowWindow = value == null ? global::System.IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(value);
             }
         }
 
         /// <summary>U.<br/>Set platform window position (given the upper-left corner of client area).<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L3152.</summary>
-        public Action_IntPtr_Numerics_Vector2 PlatformSetWindowPos
+        public global::DearImGui.Action_IntPtr_Numerics_Vector2 PlatformSetWindowPos
         {
             get
             {
                 var __ptr0 = ((__Internal*)__Instance)->Platform_SetWindowPos;
-                return __ptr0 == IntPtr.Zero ? null : (Action_IntPtr_Numerics_Vector2)Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(Action_IntPtr_Numerics_Vector2));
+                return __ptr0 == IntPtr.Zero ? null : (global::DearImGui.Action_IntPtr_Numerics_Vector2)Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(global::DearImGui.Action_IntPtr_Numerics_Vector2));
             }
 
             set
             {
-                ((__Internal*)__Instance)->Platform_SetWindowPos = value == null ? IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(value);
+                ((__Internal*)__Instance)->Platform_SetWindowPos = value == null ? global::System.IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(value);
             }
         }
 
         /// <summary>N.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L3153.</summary>
-        public Func_Numerics_Vector2_IntPtr PlatformGetWindowPos
+        public global::DearImGui.Func_Numerics_Vector2_IntPtr PlatformGetWindowPos
         {
             get
             {
                 var __ptr0 = ((__Internal*)__Instance)->Platform_GetWindowPos;
-                return __ptr0 == IntPtr.Zero ? null : (Func_Numerics_Vector2_IntPtr)Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(Func_Numerics_Vector2_IntPtr));
+                return __ptr0 == IntPtr.Zero ? null : (global::DearImGui.Func_Numerics_Vector2_IntPtr)Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(global::DearImGui.Func_Numerics_Vector2_IntPtr));
             }
 
             set
             {
-                ((__Internal*)__Instance)->Platform_GetWindowPos = value == null ? IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(value);
+                ((__Internal*)__Instance)->Platform_GetWindowPos = value == null ? global::System.IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(value);
             }
         }
 
         /// <summary>U.<br/>Set platform window client area size (ignoring OS decorations such as OS title bar etc.).<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L3154.</summary>
-        public Action_IntPtr_Numerics_Vector2 PlatformSetWindowSize
+        public global::DearImGui.Action_IntPtr_Numerics_Vector2 PlatformSetWindowSize
         {
             get
             {
                 var __ptr0 = ((__Internal*)__Instance)->Platform_SetWindowSize;
-                return __ptr0 == IntPtr.Zero ? null : (Action_IntPtr_Numerics_Vector2)Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(Action_IntPtr_Numerics_Vector2));
+                return __ptr0 == IntPtr.Zero ? null : (global::DearImGui.Action_IntPtr_Numerics_Vector2)Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(global::DearImGui.Action_IntPtr_Numerics_Vector2));
             }
 
             set
             {
-                ((__Internal*)__Instance)->Platform_SetWindowSize = value == null ? IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(value);
+                ((__Internal*)__Instance)->Platform_SetWindowSize = value == null ? global::System.IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(value);
             }
         }
 
         /// <summary>N.<br/>Get platform window client area size.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L3155.</summary>
-        public Func_Numerics_Vector2_IntPtr PlatformGetWindowSize
+        public global::DearImGui.Func_Numerics_Vector2_IntPtr PlatformGetWindowSize
         {
             get
             {
                 var __ptr0 = ((__Internal*)__Instance)->Platform_GetWindowSize;
-                return __ptr0 == IntPtr.Zero ? null : (Func_Numerics_Vector2_IntPtr)Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(Func_Numerics_Vector2_IntPtr));
+                return __ptr0 == IntPtr.Zero ? null : (global::DearImGui.Func_Numerics_Vector2_IntPtr)Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(global::DearImGui.Func_Numerics_Vector2_IntPtr));
             }
 
             set
             {
-                ((__Internal*)__Instance)->Platform_GetWindowSize = value == null ? IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(value);
+                ((__Internal*)__Instance)->Platform_GetWindowSize = value == null ? global::System.IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(value);
             }
         }
 
         /// <summary>N.<br/>Move window to front and set input focus.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L3156.</summary>
-        public Action_IntPtr PlatformSetWindowFocus
+        public global::DearImGui.Action_IntPtr PlatformSetWindowFocus
         {
             get
             {
                 var __ptr0 = ((__Internal*)__Instance)->Platform_SetWindowFocus;
-                return __ptr0 == IntPtr.Zero ? null : (Action_IntPtr)Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(Action_IntPtr));
+                return __ptr0 == IntPtr.Zero ? null : (global::DearImGui.Action_IntPtr)Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(global::DearImGui.Action_IntPtr));
             }
 
             set
             {
-                ((__Internal*)__Instance)->Platform_SetWindowFocus = value == null ? IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(value);
+                ((__Internal*)__Instance)->Platform_SetWindowFocus = value == null ? global::System.IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(value);
             }
         }
 
         /// <summary>U.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L3157.</summary>
-        public Func_bool_IntPtr PlatformGetWindowFocus
+        public global::DearImGui.Func_bool_IntPtr PlatformGetWindowFocus
         {
             get
             {
                 var __ptr0 = ((__Internal*)__Instance)->Platform_GetWindowFocus;
-                return __ptr0 == IntPtr.Zero ? null : (Func_bool_IntPtr)Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(Func_bool_IntPtr));
+                return __ptr0 == IntPtr.Zero ? null : (global::DearImGui.Func_bool_IntPtr)Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(global::DearImGui.Func_bool_IntPtr));
             }
 
             set
             {
-                ((__Internal*)__Instance)->Platform_GetWindowFocus = value == null ? IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(value);
+                ((__Internal*)__Instance)->Platform_GetWindowFocus = value == null ? global::System.IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(value);
             }
         }
 
         /// <summary>N.<br/>Get platform window minimized state. When minimized, we generally won't attempt to get/set size and contents will be culled more easily.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L3158.</summary>
-        public Func_bool_IntPtr PlatformGetWindowMinimized
+        public global::DearImGui.Func_bool_IntPtr PlatformGetWindowMinimized
         {
             get
             {
                 var __ptr0 = ((__Internal*)__Instance)->Platform_GetWindowMinimized;
-                return __ptr0 == IntPtr.Zero ? null : (Func_bool_IntPtr)Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(Func_bool_IntPtr));
+                return __ptr0 == IntPtr.Zero ? null : (global::DearImGui.Func_bool_IntPtr)Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(global::DearImGui.Func_bool_IntPtr));
             }
 
             set
             {
-                ((__Internal*)__Instance)->Platform_GetWindowMinimized = value == null ? IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(value);
+                ((__Internal*)__Instance)->Platform_GetWindowMinimized = value == null ? global::System.IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(value);
             }
         }
 
         /// <summary>U.<br/>Set platform window title (given an UTF-8 string).<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L3159.</summary>
-        public ImSetClipboardTextHandler PlatformSetWindowTitle
+        public global::DearImGui.ImSetClipboardTextHandler PlatformSetWindowTitle
         {
             get
             {
                 var __ptr0 = ((__Internal*)__Instance)->Platform_SetWindowTitle;
-                return __ptr0 == IntPtr.Zero ? null : (ImSetClipboardTextHandler)Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(ImSetClipboardTextHandler));
+                return __ptr0 == IntPtr.Zero ? null : (global::DearImGui.ImSetClipboardTextHandler)Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(global::DearImGui.ImSetClipboardTextHandler));
             }
 
             set
             {
-                ((__Internal*)__Instance)->Platform_SetWindowTitle = value == null ? IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(value);
+                ((__Internal*)__Instance)->Platform_SetWindowTitle = value == null ? global::System.IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(value);
             }
         }
 
         /// <summary>U.<br/>(Optional) Setup global transparency (not per-pixel transparency).<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L3160.</summary>
-        public Action_IntPtr_float PlatformSetWindowAlpha
+        public global::DearImGui.Action_IntPtr_float PlatformSetWindowAlpha
         {
             get
             {
                 var __ptr0 = ((__Internal*)__Instance)->Platform_SetWindowAlpha;
-                return __ptr0 == IntPtr.Zero ? null : (Action_IntPtr_float)Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(Action_IntPtr_float));
+                return __ptr0 == IntPtr.Zero ? null : (global::DearImGui.Action_IntPtr_float)Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(global::DearImGui.Action_IntPtr_float));
             }
 
             set
             {
-                ((__Internal*)__Instance)->Platform_SetWindowAlpha = value == null ? IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(value);
+                ((__Internal*)__Instance)->Platform_SetWindowAlpha = value == null ? global::System.IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(value);
             }
         }
 
         /// <summary>U.<br/>(Optional) Called by UpdatePlatformWindows(). Optional hook to allow the platform backend from doing general book-keeping every frame.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L3161.</summary>
-        public Action_IntPtr PlatformUpdateWindow
+        public global::DearImGui.Action_IntPtr PlatformUpdateWindow
         {
             get
             {
                 var __ptr0 = ((__Internal*)__Instance)->Platform_UpdateWindow;
-                return __ptr0 == IntPtr.Zero ? null : (Action_IntPtr)Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(Action_IntPtr));
+                return __ptr0 == IntPtr.Zero ? null : (global::DearImGui.Action_IntPtr)Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(global::DearImGui.Action_IntPtr));
             }
 
             set
             {
-                ((__Internal*)__Instance)->Platform_UpdateWindow = value == null ? IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(value);
+                ((__Internal*)__Instance)->Platform_UpdateWindow = value == null ? global::System.IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(value);
             }
         }
 
         /// <summary>R.<br/>(Optional) Main rendering (platform side! This is often unused, or just setting a "current" context for OpenGL bindings). 'render_arg' is the value passed to RenderPlatformWindowsDefault().<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L3162.</summary>
-        public ImSetPlatformImeDataHandler PlatformRenderWindow
+        public global::DearImGui.ImSetPlatformImeDataHandler PlatformRenderWindow
         {
             get
             {
                 var __ptr0 = ((__Internal*)__Instance)->Platform_RenderWindow;
-                return __ptr0 == IntPtr.Zero ? null : (ImSetPlatformImeDataHandler)Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(ImSetPlatformImeDataHandler));
+                return __ptr0 == IntPtr.Zero ? null : (global::DearImGui.ImSetPlatformImeDataHandler)Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(global::DearImGui.ImSetPlatformImeDataHandler));
             }
 
             set
             {
-                ((__Internal*)__Instance)->Platform_RenderWindow = value == null ? IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(value);
+                ((__Internal*)__Instance)->Platform_RenderWindow = value == null ? global::System.IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(value);
             }
         }
 
         /// <summary>R.<br/>(Optional) Call Present/SwapBuffers (platform side! This is often unused!). 'render_arg' is the value passed to RenderPlatformWindowsDefault().<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L3163.</summary>
-        public ImSetPlatformImeDataHandler PlatformSwapBuffers
+        public global::DearImGui.ImSetPlatformImeDataHandler PlatformSwapBuffers
         {
             get
             {
                 var __ptr0 = ((__Internal*)__Instance)->Platform_SwapBuffers;
-                return __ptr0 == IntPtr.Zero ? null : (ImSetPlatformImeDataHandler)Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(ImSetPlatformImeDataHandler));
+                return __ptr0 == IntPtr.Zero ? null : (global::DearImGui.ImSetPlatformImeDataHandler)Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(global::DearImGui.ImSetPlatformImeDataHandler));
             }
 
             set
             {
-                ((__Internal*)__Instance)->Platform_SwapBuffers = value == null ? IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(value);
+                ((__Internal*)__Instance)->Platform_SwapBuffers = value == null ? global::System.IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(value);
             }
         }
 
         /// <summary>N.<br/>(Optional) [BETA] FIXME-DPI: DPI handling: Return DPI scale for this viewport. 1.0f = 96 DPI.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L3164.</summary>
-        public Func_float_IntPtr PlatformGetWindowDpiScale
+        public global::DearImGui.Func_float_IntPtr PlatformGetWindowDpiScale
         {
             get
             {
                 var __ptr0 = ((__Internal*)__Instance)->Platform_GetWindowDpiScale;
-                return __ptr0 == IntPtr.Zero ? null : (Func_float_IntPtr)Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(Func_float_IntPtr));
+                return __ptr0 == IntPtr.Zero ? null : (global::DearImGui.Func_float_IntPtr)Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(global::DearImGui.Func_float_IntPtr));
             }
 
             set
             {
-                ((__Internal*)__Instance)->Platform_GetWindowDpiScale = value == null ? IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(value);
+                ((__Internal*)__Instance)->Platform_GetWindowDpiScale = value == null ? global::System.IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(value);
             }
         }
 
         /// <summary>F.<br/>(Optional) [BETA] FIXME-DPI: DPI handling: Called during Begin() every time the viewport we are outputting into changes, so backend has a chance to swap fonts to adjust style.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L3165.</summary>
-        public Action_IntPtr PlatformOnChangedViewport
+        public global::DearImGui.Action_IntPtr PlatformOnChangedViewport
         {
             get
             {
                 var __ptr0 = ((__Internal*)__Instance)->Platform_OnChangedViewport;
-                return __ptr0 == IntPtr.Zero ? null : (Action_IntPtr)Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(Action_IntPtr));
+                return __ptr0 == IntPtr.Zero ? null : (global::DearImGui.Action_IntPtr)Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(global::DearImGui.Action_IntPtr));
             }
 
             set
             {
-                ((__Internal*)__Instance)->Platform_OnChangedViewport = value == null ? IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(value);
+                ((__Internal*)__Instance)->Platform_OnChangedViewport = value == null ? global::System.IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(value);
             }
         }
 
         /// <summary>(Optional) For a Vulkan Renderer to call into Platform code (since the surface creation needs to tie them both).<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L3166.</summary>
-        public Func_int_IntPtr_ulong_IntPtr_ulongPtr PlatformCreateVkSurface
+        public global::DearImGui.Func_int_IntPtr_ulong_IntPtr_ulongPtr PlatformCreateVkSurface
         {
             get
             {
                 var __ptr0 = ((__Internal*)__Instance)->Platform_CreateVkSurface;
-                return __ptr0 == IntPtr.Zero ? null : (Func_int_IntPtr_ulong_IntPtr_ulongPtr)Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(Func_int_IntPtr_ulong_IntPtr_ulongPtr));
+                return __ptr0 == IntPtr.Zero ? null : (global::DearImGui.Func_int_IntPtr_ulong_IntPtr_ulongPtr)Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(global::DearImGui.Func_int_IntPtr_ulong_IntPtr_ulongPtr));
             }
 
             set
             {
-                ((__Internal*)__Instance)->Platform_CreateVkSurface = value == null ? IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(value);
+                ((__Internal*)__Instance)->Platform_CreateVkSurface = value == null ? global::System.IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(value);
             }
         }
 
         /// <summary>U.<br/>Create swap chain, frame buffers etc. (called after Platform_CreateWindow).<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L3169.</summary>
-        public Action_IntPtr RendererCreateWindow
+        public global::DearImGui.Action_IntPtr RendererCreateWindow
         {
             get
             {
                 var __ptr0 = ((__Internal*)__Instance)->Renderer_CreateWindow;
-                return __ptr0 == IntPtr.Zero ? null : (Action_IntPtr)Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(Action_IntPtr));
+                return __ptr0 == IntPtr.Zero ? null : (global::DearImGui.Action_IntPtr)Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(global::DearImGui.Action_IntPtr));
             }
 
             set
             {
-                ((__Internal*)__Instance)->Renderer_CreateWindow = value == null ? IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(value);
+                ((__Internal*)__Instance)->Renderer_CreateWindow = value == null ? global::System.IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(value);
             }
         }
 
         /// <summary>N . U . D.<br/>Destroy swap chain, frame buffers etc. (called before Platform_DestroyWindow).<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L3170.</summary>
-        public Action_IntPtr RendererDestroyWindow
+        public global::DearImGui.Action_IntPtr RendererDestroyWindow
         {
             get
             {
                 var __ptr0 = ((__Internal*)__Instance)->Renderer_DestroyWindow;
-                return __ptr0 == IntPtr.Zero ? null : (Action_IntPtr)Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(Action_IntPtr));
+                return __ptr0 == IntPtr.Zero ? null : (global::DearImGui.Action_IntPtr)Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(global::DearImGui.Action_IntPtr));
             }
 
             set
             {
-                ((__Internal*)__Instance)->Renderer_DestroyWindow = value == null ? IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(value);
+                ((__Internal*)__Instance)->Renderer_DestroyWindow = value == null ? global::System.IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(value);
             }
         }
 
         /// <summary>U.<br/>Resize swap chain, frame buffers etc. (called after Platform_SetWindowSize).<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L3171.</summary>
-        public Action_IntPtr_Numerics_Vector2 RendererSetWindowSize
+        public global::DearImGui.Action_IntPtr_Numerics_Vector2 RendererSetWindowSize
         {
             get
             {
                 var __ptr0 = ((__Internal*)__Instance)->Renderer_SetWindowSize;
-                return __ptr0 == IntPtr.Zero ? null : (Action_IntPtr_Numerics_Vector2)Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(Action_IntPtr_Numerics_Vector2));
+                return __ptr0 == IntPtr.Zero ? null : (global::DearImGui.Action_IntPtr_Numerics_Vector2)Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(global::DearImGui.Action_IntPtr_Numerics_Vector2));
             }
 
             set
             {
-                ((__Internal*)__Instance)->Renderer_SetWindowSize = value == null ? IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(value);
+                ((__Internal*)__Instance)->Renderer_SetWindowSize = value == null ? global::System.IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(value);
             }
         }
 
         /// <summary>R.<br/>(Optional) Clear framebuffer, setup render target, then render the viewport-&gt;DrawData. 'render_arg' is the value passed to RenderPlatformWindowsDefault().<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L3172.</summary>
-        public ImSetPlatformImeDataHandler RendererRenderWindow
+        public global::DearImGui.ImSetPlatformImeDataHandler RendererRenderWindow
         {
             get
             {
                 var __ptr0 = ((__Internal*)__Instance)->Renderer_RenderWindow;
-                return __ptr0 == IntPtr.Zero ? null : (ImSetPlatformImeDataHandler)Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(ImSetPlatformImeDataHandler));
+                return __ptr0 == IntPtr.Zero ? null : (global::DearImGui.ImSetPlatformImeDataHandler)Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(global::DearImGui.ImSetPlatformImeDataHandler));
             }
 
             set
             {
-                ((__Internal*)__Instance)->Renderer_RenderWindow = value == null ? IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(value);
+                ((__Internal*)__Instance)->Renderer_RenderWindow = value == null ? global::System.IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(value);
             }
         }
 
         /// <summary>R.<br/>(Optional) Call Present/SwapBuffers. 'render_arg' is the value passed to RenderPlatformWindowsDefault().<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L3173.</summary>
-        public ImSetPlatformImeDataHandler RendererSwapBuffers
+        public global::DearImGui.ImSetPlatformImeDataHandler RendererSwapBuffers
         {
             get
             {
                 var __ptr0 = ((__Internal*)__Instance)->Renderer_SwapBuffers;
-                return __ptr0 == IntPtr.Zero ? null : (ImSetPlatformImeDataHandler)Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(ImSetPlatformImeDataHandler));
+                return __ptr0 == IntPtr.Zero ? null : (global::DearImGui.ImSetPlatformImeDataHandler)Marshal.GetDelegateForFunctionPointer(__ptr0, typeof(global::DearImGui.ImSetPlatformImeDataHandler));
             }
 
             set
             {
-                ((__Internal*)__Instance)->Renderer_SwapBuffers = value == null ? IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(value);
+                ((__Internal*)__Instance)->Renderer_SwapBuffers = value == null ? global::System.IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(value);
             }
         }
 
         /// <summary>(Optional) Monitor list.<br/>- Updated by: app/backend. Update every frame to dynamically support changing monitor or DPI configuration.<br/>- Used by: dear imgui to query DPI info, clamp popups/tooltips within same monitor and not have them straddle monitors.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L3178.</summary>
-        public ImVector<ImGuiPlatformMonitor> Monitors
+        public ImVector<global::DearImGui.ImGuiPlatformMonitor> Monitors
         {
             get
             {
-                return new ImVector<ImGuiPlatformMonitor>(Unsafe.As<ImVector.__Internal, ImVector<ImGuiPlatformMonitor>.__Internal>(ref ((__Internal*)__Instance)->Monitors))
+                return new ImVector<global::DearImGui.ImGuiPlatformMonitor>(Unsafe.As<ImVector.__Internal, ImVector<global::DearImGui.ImGuiPlatformMonitor>.__Internal>(ref ((__Internal*)__Instance)->Monitors))
                 /* DEBUG: TypeMapImVector.CSharpMarshalToManaged: Function: False, ReturnVarName: True */
                 ;
             }
         }
 
         /// <summary>Main viewports, followed by all secondary viewports.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L3186.</summary>
-        public ImVector<ImGuiViewport> Viewports
+        public ImVector<global::DearImGui.ImGuiViewport> Viewports
         {
             get
             {
-                return new ImVector<ImGuiViewport>(Unsafe.As<ImVector.__Internal, ImVector<ImGuiViewport>.__Internal>(ref ((__Internal*)__Instance)->Viewports))
+                return new ImVector<global::DearImGui.ImGuiViewport>(Unsafe.As<ImVector.__Internal, ImVector<global::DearImGui.ImGuiViewport>.__Internal>(ref ((__Internal*)__Instance)->Viewports))
                 /* DEBUG: TypeMapImVector.CSharpMarshalToManaged: Function: False, ReturnVarName: True */
                 ;
             }
@@ -17330,10 +17330,10 @@ namespace DearImGui
         [StructLayout(LayoutKind.Sequential)]
         internal partial struct __Internal
         {
-            internal Vector2 MainPos;
-            internal Vector2 MainSize;
-            internal Vector2 WorkPos;
-            internal Vector2 WorkSize;
+            internal global::System.Numerics.Vector2 MainPos;
+            internal global::System.Numerics.Vector2 MainSize;
+            internal global::System.Numerics.Vector2 WorkPos;
+            internal global::System.Numerics.Vector2 WorkSize;
             internal float DpiScale;
         }
 
@@ -17359,13 +17359,13 @@ namespace DearImGui
 
         internal IntPtr __Instance { get; set; }
 
-        internal static readonly new ConcurrentDictionary<IntPtr, WeakReference<ImGuiPlatformMonitor>> NativeToManagedMap = new ConcurrentDictionary<IntPtr, WeakReference<ImGuiPlatformMonitor>>();
-        internal static void __RecordNativeToManagedMapping(IntPtr native, ImGuiPlatformMonitor managed)
+        internal static readonly new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::System.WeakReference<global::DearImGui.ImGuiPlatformMonitor>> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::System.WeakReference<global::DearImGui.ImGuiPlatformMonitor>>();
+        internal static void __RecordNativeToManagedMapping(IntPtr native, global::DearImGui.ImGuiPlatformMonitor managed)
         {
-            NativeToManagedMap[native] = new WeakReference<ImGuiPlatformMonitor>(managed);
+            NativeToManagedMap[native] = new global::System.WeakReference<global::DearImGui.ImGuiPlatformMonitor>(managed);
         }
 
-        internal static bool __TryGetNativeToManagedMapping(IntPtr native, out ImGuiPlatformMonitor managed)
+        internal static bool __TryGetNativeToManagedMapping(IntPtr native, out global::DearImGui.ImGuiPlatformMonitor managed)
         {
             managed = default;
             return NativeToManagedMap.TryGetValue(native, out var wr) && wr.TryGetTarget(out managed);
@@ -17420,7 +17420,7 @@ namespace DearImGui
         // DEBUG: ImGuiPlatformMonitor()          { MainPos = MainSize = WorkPos = WorkSize = ImVec2(0, 0); DpiScale = 1.0f; }
         public ImGuiPlatformMonitor()
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(ImGuiPlatformMonitor.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::DearImGui.ImGuiPlatformMonitor.__Internal));
             __ownsNativeInstance = true;
             __RecordNativeToManagedMapping(__Instance, this);
             if (Environment.Is64BitProcess)
@@ -17435,13 +17435,13 @@ namespace DearImGui
 
         /// <summary>(Optional) This is required when enabling multi-viewport. Represent the bounds of each connected monitor/display and their DPI.<br/>We use this information for multiple DPI support + clamping the position of popups and tooltips so they don't straddle multiple monitors.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L3192.</summary>
         // DEBUG: ImGuiPlatformMonitor
-        public ImGuiPlatformMonitor(ImGuiPlatformMonitor _0)
+        public ImGuiPlatformMonitor(global::DearImGui.ImGuiPlatformMonitor _0)
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(ImGuiPlatformMonitor.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::DearImGui.ImGuiPlatformMonitor.__Internal));
             __ownsNativeInstance = true;
             __RecordNativeToManagedMapping(__Instance, this);
             if (ReferenceEquals(_0, null))
-                throw new ArgumentNullException("_0", "Cannot be null because it is a C++ reference (&).");
+                throw new global::System.ArgumentNullException("_0", "Cannot be null because it is a C++ reference (&).");
             var __arg0 = _0.__Instance;
             if (Environment.Is64BitProcess)
             {
@@ -17479,7 +17479,7 @@ namespace DearImGui
         }
 
         /// <summary>Coordinates of the area displayed on this monitor (Min = upper left, Max = bottom right).<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L3194.</summary>
-        public Vector2 MainPos
+        public global::System.Numerics.Vector2 MainPos
         {
             get
             {
@@ -17499,7 +17499,7 @@ namespace DearImGui
         }
 
         /// <summary>Coordinates of the area displayed on this monitor (Min = upper left, Max = bottom right).<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L3194.</summary>
-        public Vector2 MainSize
+        public global::System.Numerics.Vector2 MainSize
         {
             get
             {
@@ -17519,7 +17519,7 @@ namespace DearImGui
         }
 
         /// <summary>Coordinates without task bars / side bars / menu bars. Used to avoid positioning popups/tooltips inside this region. If you don't have this info, please copy the value for MainPos/MainSize.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L3195.</summary>
-        public Vector2 WorkPos
+        public global::System.Numerics.Vector2 WorkPos
         {
             get
             {
@@ -17539,7 +17539,7 @@ namespace DearImGui
         }
 
         /// <summary>Coordinates without task bars / side bars / menu bars. Used to avoid positioning popups/tooltips inside this region. If you don't have this info, please copy the value for MainPos/MainSize.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L3195.</summary>
-        public Vector2 WorkSize
+        public global::System.Numerics.Vector2 WorkSize
         {
             get
             {
@@ -17588,7 +17588,7 @@ namespace DearImGui
         internal partial struct __Internal
         {
             internal byte WantVisible;
-            internal Vector2 InputPos;
+            internal global::System.Numerics.Vector2 InputPos;
             internal float InputLineHeight;
         }
 
@@ -17614,13 +17614,13 @@ namespace DearImGui
 
         internal IntPtr __Instance { get; set; }
 
-        internal static readonly new ConcurrentDictionary<IntPtr, WeakReference<ImGuiPlatformImeData>> NativeToManagedMap = new ConcurrentDictionary<IntPtr, WeakReference<ImGuiPlatformImeData>>();
-        internal static void __RecordNativeToManagedMapping(IntPtr native, ImGuiPlatformImeData managed)
+        internal static readonly new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::System.WeakReference<global::DearImGui.ImGuiPlatformImeData>> NativeToManagedMap = new global::System.Collections.Concurrent.ConcurrentDictionary<IntPtr, global::System.WeakReference<global::DearImGui.ImGuiPlatformImeData>>();
+        internal static void __RecordNativeToManagedMapping(IntPtr native, global::DearImGui.ImGuiPlatformImeData managed)
         {
-            NativeToManagedMap[native] = new WeakReference<ImGuiPlatformImeData>(managed);
+            NativeToManagedMap[native] = new global::System.WeakReference<global::DearImGui.ImGuiPlatformImeData>(managed);
         }
 
-        internal static bool __TryGetNativeToManagedMapping(IntPtr native, out ImGuiPlatformImeData managed)
+        internal static bool __TryGetNativeToManagedMapping(IntPtr native, out global::DearImGui.ImGuiPlatformImeData managed)
         {
             managed = default;
             return NativeToManagedMap.TryGetValue(native, out var wr) && wr.TryGetTarget(out managed);
@@ -17675,7 +17675,7 @@ namespace DearImGui
         // DEBUG: ImGuiPlatformImeData() { memset(this, 0, sizeof(*this)); }
         public ImGuiPlatformImeData()
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(ImGuiPlatformImeData.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::DearImGui.ImGuiPlatformImeData.__Internal));
             __ownsNativeInstance = true;
             __RecordNativeToManagedMapping(__Instance, this);
             if (Environment.Is64BitProcess)
@@ -17690,13 +17690,13 @@ namespace DearImGui
 
         /// <summary>(Optional) Support for IME (Input Method Editor) via the io.SetPlatformImeDataFn() function.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L3201.</summary>
         // DEBUG: ImGuiPlatformImeData
-        public ImGuiPlatformImeData(ImGuiPlatformImeData _0)
+        public ImGuiPlatformImeData(global::DearImGui.ImGuiPlatformImeData _0)
         {
-            __Instance = Marshal.AllocHGlobal(sizeof(ImGuiPlatformImeData.__Internal));
+            __Instance = Marshal.AllocHGlobal(sizeof(global::DearImGui.ImGuiPlatformImeData.__Internal));
             __ownsNativeInstance = true;
             __RecordNativeToManagedMapping(__Instance, this);
             if (ReferenceEquals(_0, null))
-                throw new ArgumentNullException("_0", "Cannot be null because it is a C++ reference (&).");
+                throw new global::System.ArgumentNullException("_0", "Cannot be null because it is a C++ reference (&).");
             var __arg0 = _0.__Instance;
             if (Environment.Is64BitProcess)
             {
@@ -17748,7 +17748,7 @@ namespace DearImGui
         }
 
         /// <summary>Position of the input cursor.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L3204.</summary>
-        public Vector2 InputPos
+        public global::System.Numerics.Vector2 InputPos
         {
             get
             {
@@ -17862,18 +17862,18 @@ namespace DearImGui
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?Begin@ImGui@@YA_NPBDPA_NH@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool Begin([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string name, bool* p_open, ImGuiWindowFlags flags);
+            internal static extern bool Begin([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string name, bool* p_open, global::DearImGui.ImGuiWindowFlags flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?End@ImGui@@YAXXZ", CallingConvention = CallingConvention.Cdecl)]
             internal static extern void End();
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?BeginChild@ImGui@@YA_NPBDABUImVec2@@_NH@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool BeginChild([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string str_id, IntPtr size, bool border, ImGuiWindowFlags flags);
+            internal static extern bool BeginChild([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string str_id, IntPtr size, bool border, global::DearImGui.ImGuiWindowFlags flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?BeginChild@ImGui@@YA_NIABUImVec2@@_NH@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool BeginChild_1(uint id, IntPtr size, bool border, ImGuiWindowFlags flags);
+            internal static extern bool BeginChild_1(uint id, IntPtr size, bool border, global::DearImGui.ImGuiWindowFlags flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?EndChild@ImGui@@YAXXZ", CallingConvention = CallingConvention.Cdecl)]
             internal static extern void EndChild();
@@ -17888,11 +17888,11 @@ namespace DearImGui
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?IsWindowFocused@ImGui@@YA_NH@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool IsWindowFocused(ImGuiFocusedFlags flags);
+            internal static extern bool IsWindowFocused(global::DearImGui.ImGuiFocusedFlags flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?IsWindowHovered@ImGui@@YA_NH@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool IsWindowHovered(ImGuiHoveredFlags flags);
+            internal static extern bool IsWindowHovered(global::DearImGui.ImGuiHoveredFlags flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?GetWindowDrawList@ImGui@@YAPAUImDrawList@@XZ", CallingConvention = CallingConvention.Cdecl)]
             internal static extern IntPtr GetWindowDrawList();
@@ -17916,10 +17916,10 @@ namespace DearImGui
             internal static extern IntPtr GetWindowViewport();
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?SetNextWindowPos@ImGui@@YAXABUImVec2@@H0@Z", CallingConvention = CallingConvention.Cdecl)]
-            internal static extern void SetNextWindowPos(IntPtr pos, ImGuiCond cond, IntPtr pivot);
+            internal static extern void SetNextWindowPos(IntPtr pos, global::DearImGui.ImGuiCond cond, IntPtr pivot);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?SetNextWindowSize@ImGui@@YAXABUImVec2@@H@Z", CallingConvention = CallingConvention.Cdecl)]
-            internal static extern void SetNextWindowSize(IntPtr size, ImGuiCond cond);
+            internal static extern void SetNextWindowSize(IntPtr size, global::DearImGui.ImGuiCond cond);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?SetNextWindowSizeConstraints@ImGui@@YAXABUImVec2@@0P6AXPAUImGuiSizeCallbackData@@@ZPAX@Z", CallingConvention = CallingConvention.Cdecl)]
             internal static extern void SetNextWindowSizeConstraints(IntPtr size_min, IntPtr size_max, IntPtr custom_callback, IntPtr custom_callback_data);
@@ -17928,7 +17928,7 @@ namespace DearImGui
             internal static extern void SetNextWindowContentSize(IntPtr size);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?SetNextWindowCollapsed@ImGui@@YAX_NH@Z", CallingConvention = CallingConvention.Cdecl)]
-            internal static extern void SetNextWindowCollapsed(bool collapsed, ImGuiCond cond);
+            internal static extern void SetNextWindowCollapsed(bool collapsed, global::DearImGui.ImGuiCond cond);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?SetNextWindowFocus@ImGui@@YAXXZ", CallingConvention = CallingConvention.Cdecl)]
             internal static extern void SetNextWindowFocus();
@@ -17940,13 +17940,13 @@ namespace DearImGui
             internal static extern void SetNextWindowViewport(uint viewport_id);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?SetWindowPos@ImGui@@YAXABUImVec2@@H@Z", CallingConvention = CallingConvention.Cdecl)]
-            internal static extern void SetWindowPos(IntPtr pos, ImGuiCond cond);
+            internal static extern void SetWindowPos(IntPtr pos, global::DearImGui.ImGuiCond cond);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?SetWindowSize@ImGui@@YAXABUImVec2@@H@Z", CallingConvention = CallingConvention.Cdecl)]
-            internal static extern void SetWindowSize(IntPtr size, ImGuiCond cond);
+            internal static extern void SetWindowSize(IntPtr size, global::DearImGui.ImGuiCond cond);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?SetWindowCollapsed@ImGui@@YAX_NH@Z", CallingConvention = CallingConvention.Cdecl)]
-            internal static extern void SetWindowCollapsed(bool collapsed, ImGuiCond cond);
+            internal static extern void SetWindowCollapsed(bool collapsed, global::DearImGui.ImGuiCond cond);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?SetWindowFocus@ImGui@@YAXXZ", CallingConvention = CallingConvention.Cdecl)]
             internal static extern void SetWindowFocus();
@@ -17955,13 +17955,13 @@ namespace DearImGui
             internal static extern void SetWindowFontScale(float scale);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?SetWindowPos@ImGui@@YAXPBDABUImVec2@@H@Z", CallingConvention = CallingConvention.Cdecl)]
-            internal static extern void SetWindowPos([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string name, IntPtr pos, ImGuiCond cond);
+            internal static extern void SetWindowPos([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string name, IntPtr pos, global::DearImGui.ImGuiCond cond);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?SetWindowSize@ImGui@@YAXPBDABUImVec2@@H@Z", CallingConvention = CallingConvention.Cdecl)]
-            internal static extern void SetWindowSize([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string name, IntPtr size, ImGuiCond cond);
+            internal static extern void SetWindowSize([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string name, IntPtr size, global::DearImGui.ImGuiCond cond);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?SetWindowCollapsed@ImGui@@YAXPBD_NH@Z", CallingConvention = CallingConvention.Cdecl)]
-            internal static extern void SetWindowCollapsed([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string name, bool collapsed, ImGuiCond cond);
+            internal static extern void SetWindowCollapsed([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string name, bool collapsed, global::DearImGui.ImGuiCond cond);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?SetWindowFocus@ImGui@@YAXPBD@Z", CallingConvention = CallingConvention.Cdecl)]
             internal static extern void SetWindowFocus([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string name);
@@ -18015,19 +18015,19 @@ namespace DearImGui
             internal static extern void PopFont();
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?PushStyleColor@ImGui@@YAXHI@Z", CallingConvention = CallingConvention.Cdecl)]
-            internal static extern void PushStyleColor(ImGuiCol idx, uint col);
+            internal static extern void PushStyleColor(global::DearImGui.ImGuiCol idx, uint col);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?PushStyleColor@ImGui@@YAXHABUImVec4@@@Z", CallingConvention = CallingConvention.Cdecl)]
-            internal static extern void PushStyleColor(ImGuiCol idx, IntPtr col);
+            internal static extern void PushStyleColor(global::DearImGui.ImGuiCol idx, IntPtr col);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?PopStyleColor@ImGui@@YAXH@Z", CallingConvention = CallingConvention.Cdecl)]
             internal static extern void PopStyleColor(int count);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?PushStyleVar@ImGui@@YAXHM@Z", CallingConvention = CallingConvention.Cdecl)]
-            internal static extern void PushStyleVar(ImGuiStyleVar idx, float val);
+            internal static extern void PushStyleVar(global::DearImGui.ImGuiStyleVar idx, float val);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?PushStyleVar@ImGui@@YAXHABUImVec2@@@Z", CallingConvention = CallingConvention.Cdecl)]
-            internal static extern void PushStyleVar(ImGuiStyleVar idx, IntPtr val);
+            internal static extern void PushStyleVar(global::DearImGui.ImGuiStyleVar idx, IntPtr val);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?PopStyleVar@ImGui@@YAXH@Z", CallingConvention = CallingConvention.Cdecl)]
             internal static extern void PopStyleVar(int count);
@@ -18072,7 +18072,7 @@ namespace DearImGui
             internal static extern void GetFontTexUvWhitePixel(IntPtr @return);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?GetColorU32@ImGui@@YAIHM@Z", CallingConvention = CallingConvention.Cdecl)]
-            internal static extern uint GetColorU32(ImGuiCol idx, float alpha_mul);
+            internal static extern uint GetColorU32(global::DearImGui.ImGuiCol idx, float alpha_mul);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?GetColorU32@ImGui@@YAIABUImVec4@@@Z", CallingConvention = CallingConvention.Cdecl)]
             internal static extern uint GetColorU32(IntPtr col);
@@ -18081,7 +18081,7 @@ namespace DearImGui
             internal static extern uint GetColorU32(uint col);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?GetStyleColorVec4@ImGui@@YAABUImVec4@@H@Z", CallingConvention = CallingConvention.Cdecl)]
-            internal static extern IntPtr GetStyleColorVec4(ImGuiCol idx);
+            internal static extern IntPtr GetStyleColorVec4(global::DearImGui.ImGuiCol idx);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?Separator@ImGui@@YAXXZ", CallingConvention = CallingConvention.Cdecl)]
             internal static extern void Separator();
@@ -18183,37 +18183,37 @@ namespace DearImGui
             internal static extern void Text([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string fmt);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?TextV@ImGui@@YAXPBDPAD@Z", CallingConvention = CallingConvention.Cdecl)]
-            internal static extern void TextV([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string fmt, Object args);
+            internal static extern void TextV([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string fmt, global::System.Object args);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?TextColored@ImGui@@YAXABUImVec4@@PBDZZ", CallingConvention = CallingConvention.Cdecl)]
             internal static extern void TextColored(IntPtr col, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string fmt);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?TextColoredV@ImGui@@YAXABUImVec4@@PBDPAD@Z", CallingConvention = CallingConvention.Cdecl)]
-            internal static extern void TextColoredV(IntPtr col, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string fmt, Object args);
+            internal static extern void TextColoredV(IntPtr col, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string fmt, global::System.Object args);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?TextDisabled@ImGui@@YAXPBDZZ", CallingConvention = CallingConvention.Cdecl)]
             internal static extern void TextDisabled([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string fmt);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?TextDisabledV@ImGui@@YAXPBDPAD@Z", CallingConvention = CallingConvention.Cdecl)]
-            internal static extern void TextDisabledV([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string fmt, Object args);
+            internal static extern void TextDisabledV([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string fmt, global::System.Object args);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?TextWrapped@ImGui@@YAXPBDZZ", CallingConvention = CallingConvention.Cdecl)]
             internal static extern void TextWrapped([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string fmt);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?TextWrappedV@ImGui@@YAXPBDPAD@Z", CallingConvention = CallingConvention.Cdecl)]
-            internal static extern void TextWrappedV([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string fmt, Object args);
+            internal static extern void TextWrappedV([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string fmt, global::System.Object args);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?LabelText@ImGui@@YAXPBD0ZZ", CallingConvention = CallingConvention.Cdecl)]
             internal static extern void LabelText([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string fmt);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?LabelTextV@ImGui@@YAXPBD0PAD@Z", CallingConvention = CallingConvention.Cdecl)]
-            internal static extern void LabelTextV([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string fmt, Object args);
+            internal static extern void LabelTextV([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string fmt, global::System.Object args);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?BulletText@ImGui@@YAXPBDZZ", CallingConvention = CallingConvention.Cdecl)]
             internal static extern void BulletText([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string fmt);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?BulletTextV@ImGui@@YAXPBDPAD@Z", CallingConvention = CallingConvention.Cdecl)]
-            internal static extern void BulletTextV([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string fmt, Object args);
+            internal static extern void BulletTextV([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string fmt, global::System.Object args);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?Button@ImGui@@YA_NPBDABUImVec2@@@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
@@ -18225,11 +18225,11 @@ namespace DearImGui
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?InvisibleButton@ImGui@@YA_NPBDABUImVec2@@H@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool InvisibleButton([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string str_id, IntPtr size, ImGuiButtonFlags flags);
+            internal static extern bool InvisibleButton([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string str_id, IntPtr size, global::DearImGui.ImGuiButtonFlags flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?ArrowButton@ImGui@@YA_NPBDH@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool ArrowButton([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string str_id, ImGuiDir dir);
+            internal static extern bool ArrowButton([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string str_id, global::DearImGui.ImGuiDir dir);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?Image@ImGui@@YAXPAXABUImVec2@@11ABUImVec4@@2@Z", CallingConvention = CallingConvention.Cdecl)]
             internal static extern void Image(IntPtr user_texture_id, IntPtr size, IntPtr uv0, IntPtr uv1, IntPtr tint_col, IntPtr border_col);
@@ -18266,7 +18266,7 @@ namespace DearImGui
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?BeginCombo@ImGui@@YA_NPBD0H@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool BeginCombo([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string preview_value, ImGuiComboFlags flags);
+            internal static extern bool BeginCombo([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string preview_value, global::DearImGui.ImGuiComboFlags flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?EndCombo@ImGui@@YAXXZ", CallingConvention = CallingConvention.Cdecl)]
             internal static extern void EndCombo();
@@ -18285,186 +18285,186 @@ namespace DearImGui
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?DragFloat@ImGui@@YA_NPBDPAMMMM0H@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool DragFloat([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, float* v, float v_speed, float v_min, float v_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, ImGuiSliderFlags flags);
+            internal static extern bool DragFloat([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, float* v, float v_speed, float v_min, float v_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, global::DearImGui.ImGuiSliderFlags flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?DragFloat2@ImGui@@YA_NPBDQAMMMM0H@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool DragFloat2([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, float* v, float v_speed, float v_min, float v_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, ImGuiSliderFlags flags);
+            internal static extern bool DragFloat2([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, float* v, float v_speed, float v_min, float v_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, global::DearImGui.ImGuiSliderFlags flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?DragFloat3@ImGui@@YA_NPBDQAMMMM0H@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool DragFloat3([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, float* v, float v_speed, float v_min, float v_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, ImGuiSliderFlags flags);
+            internal static extern bool DragFloat3([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, float* v, float v_speed, float v_min, float v_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, global::DearImGui.ImGuiSliderFlags flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?DragFloat4@ImGui@@YA_NPBDQAMMMM0H@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool DragFloat4([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, float* v, float v_speed, float v_min, float v_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, ImGuiSliderFlags flags);
+            internal static extern bool DragFloat4([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, float* v, float v_speed, float v_min, float v_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, global::DearImGui.ImGuiSliderFlags flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?DragFloatRange2@ImGui@@YA_NPBDPAM1MMM00H@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool DragFloatRange2([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, float* v_current_min, float* v_current_max, float v_speed, float v_min, float v_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format_max, ImGuiSliderFlags flags);
+            internal static extern bool DragFloatRange2([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, float* v_current_min, float* v_current_max, float v_speed, float v_min, float v_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format_max, global::DearImGui.ImGuiSliderFlags flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?DragInt@ImGui@@YA_NPBDPAHMHH0H@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool DragInt([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, int* v, float v_speed, int v_min, int v_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, ImGuiSliderFlags flags);
+            internal static extern bool DragInt([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, int* v, float v_speed, int v_min, int v_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, global::DearImGui.ImGuiSliderFlags flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?DragInt2@ImGui@@YA_NPBDQAHMHH0H@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool DragInt2([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, int* v, float v_speed, int v_min, int v_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, ImGuiSliderFlags flags);
+            internal static extern bool DragInt2([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, int* v, float v_speed, int v_min, int v_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, global::DearImGui.ImGuiSliderFlags flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?DragInt3@ImGui@@YA_NPBDQAHMHH0H@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool DragInt3([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, int* v, float v_speed, int v_min, int v_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, ImGuiSliderFlags flags);
+            internal static extern bool DragInt3([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, int* v, float v_speed, int v_min, int v_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, global::DearImGui.ImGuiSliderFlags flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?DragInt4@ImGui@@YA_NPBDQAHMHH0H@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool DragInt4([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, int* v, float v_speed, int v_min, int v_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, ImGuiSliderFlags flags);
+            internal static extern bool DragInt4([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, int* v, float v_speed, int v_min, int v_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, global::DearImGui.ImGuiSliderFlags flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?DragIntRange2@ImGui@@YA_NPBDPAH1MHH00H@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool DragIntRange2([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, int* v_current_min, int* v_current_max, float v_speed, int v_min, int v_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format_max, ImGuiSliderFlags flags);
+            internal static extern bool DragIntRange2([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, int* v_current_min, int* v_current_max, float v_speed, int v_min, int v_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format_max, global::DearImGui.ImGuiSliderFlags flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?DragScalar@ImGui@@YA_NPBDHPAXMPBX20H@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool DragScalar([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, ImGuiDataType data_type, IntPtr p_data, float v_speed, IntPtr p_min, IntPtr p_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, ImGuiSliderFlags flags);
+            internal static extern bool DragScalar([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, global::DearImGui.ImGuiDataType data_type, IntPtr p_data, float v_speed, IntPtr p_min, IntPtr p_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, global::DearImGui.ImGuiSliderFlags flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?DragScalarN@ImGui@@YA_NPBDHPAXHMPBX20H@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool DragScalarN([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, ImGuiDataType data_type, IntPtr p_data, int components, float v_speed, IntPtr p_min, IntPtr p_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, ImGuiSliderFlags flags);
+            internal static extern bool DragScalarN([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, global::DearImGui.ImGuiDataType data_type, IntPtr p_data, int components, float v_speed, IntPtr p_min, IntPtr p_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, global::DearImGui.ImGuiSliderFlags flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?SliderFloat@ImGui@@YA_NPBDPAMMM0H@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool SliderFloat([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, float* v, float v_min, float v_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, ImGuiSliderFlags flags);
+            internal static extern bool SliderFloat([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, float* v, float v_min, float v_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, global::DearImGui.ImGuiSliderFlags flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?SliderFloat2@ImGui@@YA_NPBDQAMMM0H@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool SliderFloat2([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, float* v, float v_min, float v_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, ImGuiSliderFlags flags);
+            internal static extern bool SliderFloat2([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, float* v, float v_min, float v_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, global::DearImGui.ImGuiSliderFlags flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?SliderFloat3@ImGui@@YA_NPBDQAMMM0H@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool SliderFloat3([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, float* v, float v_min, float v_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, ImGuiSliderFlags flags);
+            internal static extern bool SliderFloat3([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, float* v, float v_min, float v_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, global::DearImGui.ImGuiSliderFlags flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?SliderFloat4@ImGui@@YA_NPBDQAMMM0H@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool SliderFloat4([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, float* v, float v_min, float v_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, ImGuiSliderFlags flags);
+            internal static extern bool SliderFloat4([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, float* v, float v_min, float v_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, global::DearImGui.ImGuiSliderFlags flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?SliderAngle@ImGui@@YA_NPBDPAMMM0H@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool SliderAngle([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, float* v_rad, float v_degrees_min, float v_degrees_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, ImGuiSliderFlags flags);
+            internal static extern bool SliderAngle([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, float* v_rad, float v_degrees_min, float v_degrees_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, global::DearImGui.ImGuiSliderFlags flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?SliderInt@ImGui@@YA_NPBDPAHHH0H@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool SliderInt([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, int* v, int v_min, int v_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, ImGuiSliderFlags flags);
+            internal static extern bool SliderInt([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, int* v, int v_min, int v_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, global::DearImGui.ImGuiSliderFlags flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?SliderInt2@ImGui@@YA_NPBDQAHHH0H@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool SliderInt2([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, int* v, int v_min, int v_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, ImGuiSliderFlags flags);
+            internal static extern bool SliderInt2([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, int* v, int v_min, int v_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, global::DearImGui.ImGuiSliderFlags flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?SliderInt3@ImGui@@YA_NPBDQAHHH0H@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool SliderInt3([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, int* v, int v_min, int v_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, ImGuiSliderFlags flags);
+            internal static extern bool SliderInt3([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, int* v, int v_min, int v_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, global::DearImGui.ImGuiSliderFlags flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?SliderInt4@ImGui@@YA_NPBDQAHHH0H@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool SliderInt4([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, int* v, int v_min, int v_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, ImGuiSliderFlags flags);
+            internal static extern bool SliderInt4([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, int* v, int v_min, int v_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, global::DearImGui.ImGuiSliderFlags flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?SliderScalar@ImGui@@YA_NPBDHPAXPBX20H@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool SliderScalar([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, ImGuiDataType data_type, IntPtr p_data, IntPtr p_min, IntPtr p_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, ImGuiSliderFlags flags);
+            internal static extern bool SliderScalar([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, global::DearImGui.ImGuiDataType data_type, IntPtr p_data, IntPtr p_min, IntPtr p_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, global::DearImGui.ImGuiSliderFlags flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?SliderScalarN@ImGui@@YA_NPBDHPAXHPBX20H@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool SliderScalarN([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, ImGuiDataType data_type, IntPtr p_data, int components, IntPtr p_min, IntPtr p_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, ImGuiSliderFlags flags);
+            internal static extern bool SliderScalarN([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, global::DearImGui.ImGuiDataType data_type, IntPtr p_data, int components, IntPtr p_min, IntPtr p_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, global::DearImGui.ImGuiSliderFlags flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?VSliderFloat@ImGui@@YA_NPBDABUImVec2@@PAMMM0H@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool VSliderFloat([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, IntPtr size, float* v, float v_min, float v_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, ImGuiSliderFlags flags);
+            internal static extern bool VSliderFloat([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, IntPtr size, float* v, float v_min, float v_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, global::DearImGui.ImGuiSliderFlags flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?VSliderInt@ImGui@@YA_NPBDABUImVec2@@PAHHH0H@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool VSliderInt([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, IntPtr size, int* v, int v_min, int v_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, ImGuiSliderFlags flags);
+            internal static extern bool VSliderInt([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, IntPtr size, int* v, int v_min, int v_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, global::DearImGui.ImGuiSliderFlags flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?VSliderScalar@ImGui@@YA_NPBDABUImVec2@@HPAXPBX30H@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool VSliderScalar([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, IntPtr size, ImGuiDataType data_type, IntPtr p_data, IntPtr p_min, IntPtr p_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, ImGuiSliderFlags flags);
+            internal static extern bool VSliderScalar([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, IntPtr size, global::DearImGui.ImGuiDataType data_type, IntPtr p_data, IntPtr p_min, IntPtr p_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, global::DearImGui.ImGuiSliderFlags flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?InputText@ImGui@@YA_NPBDPADIHP6AHPAUImGuiInputTextCallbackData@@@ZPAX@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool InputText([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, sbyte* buf, UIntPtr buf_size, ImGuiInputTextFlags flags, IntPtr callback, IntPtr user_data);
+            internal static extern bool InputText([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, sbyte* buf, global::System.UIntPtr buf_size, global::DearImGui.ImGuiInputTextFlags flags, IntPtr callback, IntPtr user_data);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?InputTextMultiline@ImGui@@YA_NPBDPADIABUImVec2@@HP6AHPAUImGuiInputTextCallbackData@@@ZPAX@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool InputTextMultiline([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, sbyte* buf, UIntPtr buf_size, IntPtr size, ImGuiInputTextFlags flags, IntPtr callback, IntPtr user_data);
+            internal static extern bool InputTextMultiline([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, sbyte* buf, global::System.UIntPtr buf_size, IntPtr size, global::DearImGui.ImGuiInputTextFlags flags, IntPtr callback, IntPtr user_data);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?InputTextWithHint@ImGui@@YA_NPBD0PADIHP6AHPAUImGuiInputTextCallbackData@@@ZPAX@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool InputTextWithHint([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string hint, sbyte* buf, UIntPtr buf_size, ImGuiInputTextFlags flags, IntPtr callback, IntPtr user_data);
+            internal static extern bool InputTextWithHint([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string hint, sbyte* buf, global::System.UIntPtr buf_size, global::DearImGui.ImGuiInputTextFlags flags, IntPtr callback, IntPtr user_data);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?InputFloat@ImGui@@YA_NPBDPAMMM0H@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool InputFloat([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, float* v, float step, float step_fast, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, ImGuiInputTextFlags flags);
+            internal static extern bool InputFloat([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, float* v, float step, float step_fast, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, global::DearImGui.ImGuiInputTextFlags flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?InputFloat2@ImGui@@YA_NPBDQAM0H@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool InputFloat2([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, float* v, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, ImGuiInputTextFlags flags);
+            internal static extern bool InputFloat2([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, float* v, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, global::DearImGui.ImGuiInputTextFlags flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?InputFloat3@ImGui@@YA_NPBDQAM0H@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool InputFloat3([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, float* v, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, ImGuiInputTextFlags flags);
+            internal static extern bool InputFloat3([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, float* v, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, global::DearImGui.ImGuiInputTextFlags flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?InputFloat4@ImGui@@YA_NPBDQAM0H@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool InputFloat4([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, float* v, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, ImGuiInputTextFlags flags);
+            internal static extern bool InputFloat4([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, float* v, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, global::DearImGui.ImGuiInputTextFlags flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?InputInt@ImGui@@YA_NPBDPAHHHH@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool InputInt([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, int* v, int step, int step_fast, ImGuiInputTextFlags flags);
+            internal static extern bool InputInt([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, int* v, int step, int step_fast, global::DearImGui.ImGuiInputTextFlags flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?InputInt2@ImGui@@YA_NPBDQAHH@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool InputInt2([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, int* v, ImGuiInputTextFlags flags);
+            internal static extern bool InputInt2([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, int* v, global::DearImGui.ImGuiInputTextFlags flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?InputInt3@ImGui@@YA_NPBDQAHH@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool InputInt3([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, int* v, ImGuiInputTextFlags flags);
+            internal static extern bool InputInt3([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, int* v, global::DearImGui.ImGuiInputTextFlags flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?InputInt4@ImGui@@YA_NPBDQAHH@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool InputInt4([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, int* v, ImGuiInputTextFlags flags);
+            internal static extern bool InputInt4([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, int* v, global::DearImGui.ImGuiInputTextFlags flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?InputDouble@ImGui@@YA_NPBDPANNN0H@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool InputDouble([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, double* v, double step, double step_fast, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, ImGuiInputTextFlags flags);
+            internal static extern bool InputDouble([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, double* v, double step, double step_fast, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, global::DearImGui.ImGuiInputTextFlags flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?InputScalar@ImGui@@YA_NPBDHPAXPBX20H@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool InputScalar([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, ImGuiDataType data_type, IntPtr p_data, IntPtr p_step, IntPtr p_step_fast, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, ImGuiInputTextFlags flags);
+            internal static extern bool InputScalar([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, global::DearImGui.ImGuiDataType data_type, IntPtr p_data, IntPtr p_step, IntPtr p_step_fast, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, global::DearImGui.ImGuiInputTextFlags flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?InputScalarN@ImGui@@YA_NPBDHPAXHPBX20H@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool InputScalarN([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, ImGuiDataType data_type, IntPtr p_data, int components, IntPtr p_step, IntPtr p_step_fast, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, ImGuiInputTextFlags flags);
+            internal static extern bool InputScalarN([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, global::DearImGui.ImGuiDataType data_type, IntPtr p_data, int components, IntPtr p_step, IntPtr p_step_fast, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, global::DearImGui.ImGuiInputTextFlags flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?ColorEdit3@ImGui@@YA_NPBDQAMH@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool ColorEdit3([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, float* col, ImGuiColorEditFlags flags);
+            internal static extern bool ColorEdit3([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, float* col, global::DearImGui.ImGuiColorEditFlags flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?ColorEdit4@ImGui@@YA_NPBDQAMH@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool ColorEdit4([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, float* col, ImGuiColorEditFlags flags);
+            internal static extern bool ColorEdit4([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, float* col, global::DearImGui.ImGuiColorEditFlags flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?ColorPicker3@ImGui@@YA_NPBDQAMH@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool ColorPicker3([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, float* col, ImGuiColorEditFlags flags);
+            internal static extern bool ColorPicker3([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, float* col, global::DearImGui.ImGuiColorEditFlags flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?ColorPicker4@ImGui@@YA_NPBDQAMHPBM@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool ColorPicker4([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, float* col, ImGuiColorEditFlags flags, float* ref_col);
+            internal static extern bool ColorPicker4([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, float* col, global::DearImGui.ImGuiColorEditFlags flags, float* ref_col);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?ColorButton@ImGui@@YA_NPBDABUImVec4@@HABUImVec2@@@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool ColorButton([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string desc_id, IntPtr col, ImGuiColorEditFlags flags, IntPtr size);
+            internal static extern bool ColorButton([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string desc_id, IntPtr col, global::DearImGui.ImGuiColorEditFlags flags, IntPtr size);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?SetColorEditOptions@ImGui@@YAXH@Z", CallingConvention = CallingConvention.Cdecl)]
-            internal static extern void SetColorEditOptions(ImGuiColorEditFlags flags);
+            internal static extern void SetColorEditOptions(global::DearImGui.ImGuiColorEditFlags flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?TreeNode@ImGui@@YA_NPBD@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
@@ -18480,31 +18480,31 @@ namespace DearImGui
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?TreeNodeV@ImGui@@YA_NPBD0PAD@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool TreeNodeV([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string str_id, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string fmt, Object args);
+            internal static extern bool TreeNodeV([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string str_id, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string fmt, global::System.Object args);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?TreeNodeV@ImGui@@YA_NPBXPBDPAD@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool TreeNodeV(IntPtr ptr_id, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string fmt, Object args);
+            internal static extern bool TreeNodeV(IntPtr ptr_id, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string fmt, global::System.Object args);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?TreeNodeEx@ImGui@@YA_NPBDH@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool TreeNodeEx([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, ImGuiTreeNodeFlags flags);
+            internal static extern bool TreeNodeEx([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, global::DearImGui.ImGuiTreeNodeFlags flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?TreeNodeEx@ImGui@@YA_NPBDH0ZZ", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool TreeNodeEx([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string str_id, ImGuiTreeNodeFlags flags, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string fmt);
+            internal static extern bool TreeNodeEx([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string str_id, global::DearImGui.ImGuiTreeNodeFlags flags, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string fmt);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?TreeNodeEx@ImGui@@YA_NPBXHPBDZZ", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool TreeNodeEx(IntPtr ptr_id, ImGuiTreeNodeFlags flags, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string fmt);
+            internal static extern bool TreeNodeEx(IntPtr ptr_id, global::DearImGui.ImGuiTreeNodeFlags flags, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string fmt);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?TreeNodeExV@ImGui@@YA_NPBDH0PAD@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool TreeNodeExV([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string str_id, ImGuiTreeNodeFlags flags, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string fmt, Object args);
+            internal static extern bool TreeNodeExV([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string str_id, global::DearImGui.ImGuiTreeNodeFlags flags, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string fmt, global::System.Object args);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?TreeNodeExV@ImGui@@YA_NPBXHPBDPAD@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool TreeNodeExV(IntPtr ptr_id, ImGuiTreeNodeFlags flags, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string fmt, Object args);
+            internal static extern bool TreeNodeExV(IntPtr ptr_id, global::DearImGui.ImGuiTreeNodeFlags flags, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string fmt, global::System.Object args);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?TreePush@ImGui@@YAXPBD@Z", CallingConvention = CallingConvention.Cdecl)]
             internal static extern void TreePush([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string str_id);
@@ -18520,22 +18520,22 @@ namespace DearImGui
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?CollapsingHeader@ImGui@@YA_NPBDH@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool CollapsingHeader([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, ImGuiTreeNodeFlags flags);
+            internal static extern bool CollapsingHeader([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, global::DearImGui.ImGuiTreeNodeFlags flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?CollapsingHeader@ImGui@@YA_NPBDPA_NH@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool CollapsingHeader([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, bool* p_visible, ImGuiTreeNodeFlags flags);
+            internal static extern bool CollapsingHeader([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, bool* p_visible, global::DearImGui.ImGuiTreeNodeFlags flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?SetNextItemOpen@ImGui@@YAX_NH@Z", CallingConvention = CallingConvention.Cdecl)]
-            internal static extern void SetNextItemOpen(bool is_open, ImGuiCond cond);
+            internal static extern void SetNextItemOpen(bool is_open, global::DearImGui.ImGuiCond cond);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?Selectable@ImGui@@YA_NPBD_NHABUImVec2@@@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool Selectable([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, bool selected, ImGuiSelectableFlags flags, IntPtr size);
+            internal static extern bool Selectable([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, bool selected, global::DearImGui.ImGuiSelectableFlags flags, IntPtr size);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?Selectable@ImGui@@YA_NPBDPA_NHABUImVec2@@@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool Selectable_1([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, bool* p_selected, ImGuiSelectableFlags flags, IntPtr size);
+            internal static extern bool Selectable_1([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, bool* p_selected, global::DearImGui.ImGuiSelectableFlags flags, IntPtr size);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?BeginListBox@ImGui@@YA_NPBDABUImVec2@@@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
@@ -18553,16 +18553,16 @@ namespace DearImGui
             internal static extern bool ListBox([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, int* current_item, IntPtr items_getter, IntPtr data, int items_count, int height_in_items);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?PlotLines@ImGui@@YAXPBDPBMHH0MMUImVec2@@H@Z", CallingConvention = CallingConvention.Cdecl)]
-            internal static extern void PlotLines([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, float* values, int values_count, int values_offset, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string overlay_text, float scale_min, float scale_max, Vector2 graph_size, int stride);
+            internal static extern void PlotLines([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, float* values, int values_count, int values_offset, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string overlay_text, float scale_min, float scale_max, global::System.Numerics.Vector2 graph_size, int stride);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?PlotLines@ImGui@@YAXPBDP6AMPAXH@Z1HH0MMUImVec2@@@Z", CallingConvention = CallingConvention.Cdecl)]
-            internal static extern void PlotLines([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, IntPtr values_getter, IntPtr data, int values_count, int values_offset, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string overlay_text, float scale_min, float scale_max, Vector2 graph_size);
+            internal static extern void PlotLines([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, IntPtr values_getter, IntPtr data, int values_count, int values_offset, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string overlay_text, float scale_min, float scale_max, global::System.Numerics.Vector2 graph_size);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?PlotHistogram@ImGui@@YAXPBDPBMHH0MMUImVec2@@H@Z", CallingConvention = CallingConvention.Cdecl)]
-            internal static extern void PlotHistogram([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, float* values, int values_count, int values_offset, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string overlay_text, float scale_min, float scale_max, Vector2 graph_size, int stride);
+            internal static extern void PlotHistogram([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, float* values, int values_count, int values_offset, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string overlay_text, float scale_min, float scale_max, global::System.Numerics.Vector2 graph_size, int stride);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?PlotHistogram@ImGui@@YAXPBDP6AMPAXH@Z1HH0MMUImVec2@@@Z", CallingConvention = CallingConvention.Cdecl)]
-            internal static extern void PlotHistogram([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, IntPtr values_getter, IntPtr data, int values_count, int values_offset, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string overlay_text, float scale_min, float scale_max, Vector2 graph_size);
+            internal static extern void PlotHistogram([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, IntPtr values_getter, IntPtr data, int values_count, int values_offset, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string overlay_text, float scale_min, float scale_max, global::System.Numerics.Vector2 graph_size);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?Value@ImGui@@YAXPBD_N@Z", CallingConvention = CallingConvention.Cdecl)]
             internal static extern void Value([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string prefix, bool b);
@@ -18615,56 +18615,56 @@ namespace DearImGui
             internal static extern void SetTooltip([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string fmt);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?SetTooltipV@ImGui@@YAXPBDPAD@Z", CallingConvention = CallingConvention.Cdecl)]
-            internal static extern void SetTooltipV([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string fmt, Object args);
+            internal static extern void SetTooltipV([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string fmt, global::System.Object args);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?BeginPopup@ImGui@@YA_NPBDH@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool BeginPopup([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string str_id, ImGuiWindowFlags flags);
+            internal static extern bool BeginPopup([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string str_id, global::DearImGui.ImGuiWindowFlags flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?BeginPopupModal@ImGui@@YA_NPBDPA_NH@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool BeginPopupModal([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string name, bool* p_open, ImGuiWindowFlags flags);
+            internal static extern bool BeginPopupModal([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string name, bool* p_open, global::DearImGui.ImGuiWindowFlags flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?EndPopup@ImGui@@YAXXZ", CallingConvention = CallingConvention.Cdecl)]
             internal static extern void EndPopup();
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?OpenPopup@ImGui@@YAXPBDH@Z", CallingConvention = CallingConvention.Cdecl)]
-            internal static extern void OpenPopup([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string str_id, ImGuiPopupFlags popup_flags);
+            internal static extern void OpenPopup([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string str_id, global::DearImGui.ImGuiPopupFlags popup_flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?OpenPopup@ImGui@@YAXIH@Z", CallingConvention = CallingConvention.Cdecl)]
-            internal static extern void OpenPopup_1(uint id, ImGuiPopupFlags popup_flags);
+            internal static extern void OpenPopup_1(uint id, global::DearImGui.ImGuiPopupFlags popup_flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?OpenPopupOnItemClick@ImGui@@YAXPBDH@Z", CallingConvention = CallingConvention.Cdecl)]
-            internal static extern void OpenPopupOnItemClick([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string str_id, ImGuiPopupFlags popup_flags);
+            internal static extern void OpenPopupOnItemClick([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string str_id, global::DearImGui.ImGuiPopupFlags popup_flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?CloseCurrentPopup@ImGui@@YAXXZ", CallingConvention = CallingConvention.Cdecl)]
             internal static extern void CloseCurrentPopup();
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?BeginPopupContextItem@ImGui@@YA_NPBDH@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool BeginPopupContextItem([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string str_id, ImGuiPopupFlags popup_flags);
+            internal static extern bool BeginPopupContextItem([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string str_id, global::DearImGui.ImGuiPopupFlags popup_flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?BeginPopupContextWindow@ImGui@@YA_NPBDH@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool BeginPopupContextWindow([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string str_id, ImGuiPopupFlags popup_flags);
+            internal static extern bool BeginPopupContextWindow([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string str_id, global::DearImGui.ImGuiPopupFlags popup_flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?BeginPopupContextVoid@ImGui@@YA_NPBDH@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool BeginPopupContextVoid([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string str_id, ImGuiPopupFlags popup_flags);
+            internal static extern bool BeginPopupContextVoid([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string str_id, global::DearImGui.ImGuiPopupFlags popup_flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?IsPopupOpen@ImGui@@YA_NPBDH@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool IsPopupOpen([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string str_id, ImGuiPopupFlags flags);
+            internal static extern bool IsPopupOpen([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string str_id, global::DearImGui.ImGuiPopupFlags flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?BeginTable@ImGui@@YA_NPBDHHABUImVec2@@M@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool BeginTable([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string str_id, int column, ImGuiTableFlags flags, IntPtr outer_size, float inner_width);
+            internal static extern bool BeginTable([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string str_id, int column, global::DearImGui.ImGuiTableFlags flags, IntPtr outer_size, float inner_width);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?EndTable@ImGui@@YAXXZ", CallingConvention = CallingConvention.Cdecl)]
             internal static extern void EndTable();
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?TableNextRow@ImGui@@YAXHM@Z", CallingConvention = CallingConvention.Cdecl)]
-            internal static extern void TableNextRow(ImGuiTableRowFlags row_flags, float min_row_height);
+            internal static extern void TableNextRow(global::DearImGui.ImGuiTableRowFlags row_flags, float min_row_height);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?TableNextColumn@ImGui@@YA_NXZ", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
@@ -18675,7 +18675,7 @@ namespace DearImGui
             internal static extern bool TableSetColumnIndex(int column_n);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?TableSetupColumn@ImGui@@YAXPBDHMI@Z", CallingConvention = CallingConvention.Cdecl)]
-            internal static extern void TableSetupColumn([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, ImGuiTableColumnFlags flags, float init_width_or_weight, uint user_id);
+            internal static extern void TableSetupColumn([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, global::DearImGui.ImGuiTableColumnFlags flags, float init_width_or_weight, uint user_id);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?TableSetupScrollFreeze@ImGui@@YAXHH@Z", CallingConvention = CallingConvention.Cdecl)]
             internal static extern void TableSetupScrollFreeze(int cols, int rows);
@@ -18702,13 +18702,13 @@ namespace DearImGui
             internal static extern IntPtr TableGetColumnName(int column_n);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?TableGetColumnFlags@ImGui@@YAHH@Z", CallingConvention = CallingConvention.Cdecl)]
-            internal static extern ImGuiTableColumnFlags TableGetColumnFlags(int column_n);
+            internal static extern global::DearImGui.ImGuiTableColumnFlags TableGetColumnFlags(int column_n);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?TableSetColumnEnabled@ImGui@@YAXH_N@Z", CallingConvention = CallingConvention.Cdecl)]
             internal static extern void TableSetColumnEnabled(int column_n, bool v);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?TableSetBgColor@ImGui@@YAXHIH@Z", CallingConvention = CallingConvention.Cdecl)]
-            internal static extern void TableSetBgColor(ImGuiTableBgTarget target, uint color, int column_n);
+            internal static extern void TableSetBgColor(global::DearImGui.ImGuiTableBgTarget target, uint color, int column_n);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?Columns@ImGui@@YAXHPBD_N@Z", CallingConvention = CallingConvention.Cdecl)]
             internal static extern void Columns(int count, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string id, bool border);
@@ -18736,33 +18736,33 @@ namespace DearImGui
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?BeginTabBar@ImGui@@YA_NPBDH@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool BeginTabBar([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string str_id, ImGuiTabBarFlags flags);
+            internal static extern bool BeginTabBar([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string str_id, global::DearImGui.ImGuiTabBarFlags flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?EndTabBar@ImGui@@YAXXZ", CallingConvention = CallingConvention.Cdecl)]
             internal static extern void EndTabBar();
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?BeginTabItem@ImGui@@YA_NPBDPA_NH@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool BeginTabItem([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, bool* p_open, ImGuiTabItemFlags flags);
+            internal static extern bool BeginTabItem([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, bool* p_open, global::DearImGui.ImGuiTabItemFlags flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?EndTabItem@ImGui@@YAXXZ", CallingConvention = CallingConvention.Cdecl)]
             internal static extern void EndTabItem();
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?TabItemButton@ImGui@@YA_NPBDH@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool TabItemButton([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, ImGuiTabItemFlags flags);
+            internal static extern bool TabItemButton([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, global::DearImGui.ImGuiTabItemFlags flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?SetTabItemClosed@ImGui@@YAXPBD@Z", CallingConvention = CallingConvention.Cdecl)]
             internal static extern void SetTabItemClosed([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string tab_or_docked_window_label);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?DockSpace@ImGui@@YAIIABUImVec2@@HPBUImGuiWindowClass@@@Z", CallingConvention = CallingConvention.Cdecl)]
-            internal static extern uint DockSpace(uint id, IntPtr size, ImGuiDockNodeFlags flags, IntPtr window_class);
+            internal static extern uint DockSpace(uint id, IntPtr size, global::DearImGui.ImGuiDockNodeFlags flags, IntPtr window_class);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?DockSpaceOverViewport@ImGui@@YAIPBUImGuiViewport@@HPBUImGuiWindowClass@@@Z", CallingConvention = CallingConvention.Cdecl)]
-            internal static extern uint DockSpaceOverViewport(IntPtr viewport, ImGuiDockNodeFlags flags, IntPtr window_class);
+            internal static extern uint DockSpaceOverViewport(IntPtr viewport, global::DearImGui.ImGuiDockNodeFlags flags, IntPtr window_class);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?SetNextWindowDockID@ImGui@@YAXIH@Z", CallingConvention = CallingConvention.Cdecl)]
-            internal static extern void SetNextWindowDockID(uint dock_id, ImGuiCond cond);
+            internal static extern void SetNextWindowDockID(uint dock_id, global::DearImGui.ImGuiCond cond);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?SetNextWindowClass@ImGui@@YAXPBUImGuiWindowClass@@@Z", CallingConvention = CallingConvention.Cdecl)]
             internal static extern void SetNextWindowClass(IntPtr window_class);
@@ -18793,15 +18793,15 @@ namespace DearImGui
             internal static extern void LogText([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string fmt);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?LogTextV@ImGui@@YAXPBDPAD@Z", CallingConvention = CallingConvention.Cdecl)]
-            internal static extern void LogTextV([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string fmt, Object args);
+            internal static extern void LogTextV([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string fmt, global::System.Object args);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?BeginDragDropSource@ImGui@@YA_NH@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool BeginDragDropSource(ImGuiDragDropFlags flags);
+            internal static extern bool BeginDragDropSource(global::DearImGui.ImGuiDragDropFlags flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?SetDragDropPayload@ImGui@@YA_NPBDPBXIH@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool SetDragDropPayload([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string type, IntPtr data, UIntPtr sz, ImGuiCond cond);
+            internal static extern bool SetDragDropPayload([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string type, IntPtr data, global::System.UIntPtr sz, global::DearImGui.ImGuiCond cond);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?EndDragDropSource@ImGui@@YAXXZ", CallingConvention = CallingConvention.Cdecl)]
             internal static extern void EndDragDropSource();
@@ -18811,7 +18811,7 @@ namespace DearImGui
             internal static extern bool BeginDragDropTarget();
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?AcceptDragDropPayload@ImGui@@YAPBUImGuiPayload@@PBDH@Z", CallingConvention = CallingConvention.Cdecl)]
-            internal static extern IntPtr AcceptDragDropPayload([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string type, ImGuiDragDropFlags flags);
+            internal static extern IntPtr AcceptDragDropPayload([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string type, global::DearImGui.ImGuiDragDropFlags flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?EndDragDropTarget@ImGui@@YAXXZ", CallingConvention = CallingConvention.Cdecl)]
             internal static extern void EndDragDropTarget();
@@ -18839,7 +18839,7 @@ namespace DearImGui
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?IsItemHovered@ImGui@@YA_NH@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool IsItemHovered(ImGuiHoveredFlags flags);
+            internal static extern bool IsItemHovered(global::DearImGui.ImGuiHoveredFlags flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?IsItemActive@ImGui@@YA_NXZ", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
@@ -18851,7 +18851,7 @@ namespace DearImGui
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?IsItemClicked@ImGui@@YA_NH@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool IsItemClicked(ImGuiMouseButton mouse_button);
+            internal static extern bool IsItemClicked(global::DearImGui.ImGuiMouseButton mouse_button);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?IsItemVisible@ImGui@@YA_NXZ", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
@@ -18934,7 +18934,7 @@ namespace DearImGui
             internal static extern IntPtr GetDrawListSharedData();
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?GetStyleColorName@ImGui@@YAPBDH@Z", CallingConvention = CallingConvention.Cdecl)]
-            internal static extern IntPtr GetStyleColorName(ImGuiCol idx);
+            internal static extern IntPtr GetStyleColorName(global::DearImGui.ImGuiCol idx);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?SetStateStorage@ImGui@@YAXPAUImGuiStorage@@@Z", CallingConvention = CallingConvention.Cdecl)]
             internal static extern void SetStateStorage(IntPtr storage);
@@ -18944,7 +18944,7 @@ namespace DearImGui
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?BeginChildFrame@ImGui@@YA_NIABUImVec2@@H@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool BeginChildFrame(uint id, IntPtr size, ImGuiWindowFlags flags);
+            internal static extern bool BeginChildFrame(uint id, IntPtr size, global::DearImGui.ImGuiWindowFlags flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?EndChildFrame@ImGui@@YAXXZ", CallingConvention = CallingConvention.Cdecl)]
             internal static extern void EndChildFrame();
@@ -18966,43 +18966,43 @@ namespace DearImGui
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?IsKeyDown@ImGui@@YA_NH@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool IsKeyDown(ImGuiKey key);
+            internal static extern bool IsKeyDown(global::DearImGui.ImGuiKey key);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?IsKeyPressed@ImGui@@YA_NH_N@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool IsKeyPressed(ImGuiKey key, bool repeat);
+            internal static extern bool IsKeyPressed(global::DearImGui.ImGuiKey key, bool repeat);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?IsKeyReleased@ImGui@@YA_NH@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool IsKeyReleased(ImGuiKey key);
+            internal static extern bool IsKeyReleased(global::DearImGui.ImGuiKey key);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?GetKeyPressedAmount@ImGui@@YAHHMM@Z", CallingConvention = CallingConvention.Cdecl)]
-            internal static extern int GetKeyPressedAmount(ImGuiKey key, float repeat_delay, float rate);
+            internal static extern int GetKeyPressedAmount(global::DearImGui.ImGuiKey key, float repeat_delay, float rate);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?GetKeyName@ImGui@@YAPBDH@Z", CallingConvention = CallingConvention.Cdecl)]
-            internal static extern IntPtr GetKeyName(ImGuiKey key);
+            internal static extern IntPtr GetKeyName(global::DearImGui.ImGuiKey key);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?SetNextFrameWantCaptureKeyboard@ImGui@@YAX_N@Z", CallingConvention = CallingConvention.Cdecl)]
             internal static extern void SetNextFrameWantCaptureKeyboard(bool want_capture_keyboard);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?IsMouseDown@ImGui@@YA_NH@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool IsMouseDown(ImGuiMouseButton button);
+            internal static extern bool IsMouseDown(global::DearImGui.ImGuiMouseButton button);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?IsMouseClicked@ImGui@@YA_NH_N@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool IsMouseClicked(ImGuiMouseButton button, bool repeat);
+            internal static extern bool IsMouseClicked(global::DearImGui.ImGuiMouseButton button, bool repeat);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?IsMouseReleased@ImGui@@YA_NH@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool IsMouseReleased(ImGuiMouseButton button);
+            internal static extern bool IsMouseReleased(global::DearImGui.ImGuiMouseButton button);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?IsMouseDoubleClicked@ImGui@@YA_NH@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool IsMouseDoubleClicked(ImGuiMouseButton button);
+            internal static extern bool IsMouseDoubleClicked(global::DearImGui.ImGuiMouseButton button);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?GetMouseClickedCount@ImGui@@YAHH@Z", CallingConvention = CallingConvention.Cdecl)]
-            internal static extern int GetMouseClickedCount(ImGuiMouseButton button);
+            internal static extern int GetMouseClickedCount(global::DearImGui.ImGuiMouseButton button);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?IsMouseHoveringRect@ImGui@@YA_NABUImVec2@@0_N@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
@@ -19024,19 +19024,19 @@ namespace DearImGui
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?IsMouseDragging@ImGui@@YA_NHM@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool IsMouseDragging(ImGuiMouseButton button, float lock_threshold);
+            internal static extern bool IsMouseDragging(global::DearImGui.ImGuiMouseButton button, float lock_threshold);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?GetMouseDragDelta@ImGui@@YA?AUImVec2@@HM@Z", CallingConvention = CallingConvention.Cdecl)]
-            internal static extern void GetMouseDragDelta(IntPtr @return, ImGuiMouseButton button, float lock_threshold);
+            internal static extern void GetMouseDragDelta(IntPtr @return, global::DearImGui.ImGuiMouseButton button, float lock_threshold);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?ResetMouseDragDelta@ImGui@@YAXH@Z", CallingConvention = CallingConvention.Cdecl)]
-            internal static extern void ResetMouseDragDelta(ImGuiMouseButton button);
+            internal static extern void ResetMouseDragDelta(global::DearImGui.ImGuiMouseButton button);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?GetMouseCursor@ImGui@@YAHXZ", CallingConvention = CallingConvention.Cdecl)]
-            internal static extern ImGuiMouseCursor GetMouseCursor();
+            internal static extern global::DearImGui.ImGuiMouseCursor GetMouseCursor();
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?SetMouseCursor@ImGui@@YAXH@Z", CallingConvention = CallingConvention.Cdecl)]
-            internal static extern void SetMouseCursor(ImGuiMouseCursor cursor_type);
+            internal static extern void SetMouseCursor(global::DearImGui.ImGuiMouseCursor cursor_type);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?SetNextFrameWantCaptureMouse@ImGui@@YAX_N@Z", CallingConvention = CallingConvention.Cdecl)]
             internal static extern void SetNextFrameWantCaptureMouse(bool want_capture_mouse);
@@ -19051,20 +19051,20 @@ namespace DearImGui
             internal static extern void LoadIniSettingsFromDisk([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string ini_filename);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?LoadIniSettingsFromMemory@ImGui@@YAXPBDI@Z", CallingConvention = CallingConvention.Cdecl)]
-            internal static extern void LoadIniSettingsFromMemory([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string ini_data, UIntPtr ini_size);
+            internal static extern void LoadIniSettingsFromMemory([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string ini_data, global::System.UIntPtr ini_size);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?SaveIniSettingsToDisk@ImGui@@YAXPBD@Z", CallingConvention = CallingConvention.Cdecl)]
             internal static extern void SaveIniSettingsToDisk([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string ini_filename);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?SaveIniSettingsToMemory@ImGui@@YAPBDPAI@Z", CallingConvention = CallingConvention.Cdecl)]
-            internal static extern IntPtr SaveIniSettingsToMemory(UIntPtr* out_ini_size);
+            internal static extern IntPtr SaveIniSettingsToMemory(global::System.UIntPtr* out_ini_size);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?DebugTextEncoding@ImGui@@YAXPBD@Z", CallingConvention = CallingConvention.Cdecl)]
             internal static extern void DebugTextEncoding([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string text);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?DebugCheckVersionAndDataLayout@ImGui@@YA_NPBDIIIIII@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool DebugCheckVersionAndDataLayout([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string version_str, UIntPtr sz_io, UIntPtr sz_style, UIntPtr sz_vec2, UIntPtr sz_vec4, UIntPtr sz_drawvert, UIntPtr sz_drawidx);
+            internal static extern bool DebugCheckVersionAndDataLayout([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string version_str, global::System.UIntPtr sz_io, global::System.UIntPtr sz_style, global::System.UIntPtr sz_vec2, global::System.UIntPtr sz_vec4, global::System.UIntPtr sz_drawvert, global::System.UIntPtr sz_drawidx);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?SetAllocatorFunctions@ImGui@@YAXP6APAXIPAX@ZP6AX00@Z0@Z", CallingConvention = CallingConvention.Cdecl)]
             internal static extern void SetAllocatorFunctions(IntPtr alloc_func, IntPtr free_func, IntPtr user_data);
@@ -19073,7 +19073,7 @@ namespace DearImGui
             internal static extern void GetAllocatorFunctions(IntPtr p_alloc_func, IntPtr p_free_func, IntPtr* p_user_data);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?MemAlloc@ImGui@@YAPAXI@Z", CallingConvention = CallingConvention.Cdecl)]
-            internal static extern IntPtr MemAlloc(UIntPtr size);
+            internal static extern IntPtr MemAlloc(global::System.UIntPtr size);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?MemFree@ImGui@@YAXPAX@Z", CallingConvention = CallingConvention.Cdecl)]
             internal static extern void MemFree(IntPtr ptr);
@@ -19097,7 +19097,7 @@ namespace DearImGui
             internal static extern IntPtr FindViewportByPlatformHandle(IntPtr platform_handle);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?GetKeyIndex@ImGui@@YAHH@Z", CallingConvention = CallingConvention.Cdecl)]
-            internal static extern int GetKeyIndex(ImGuiKey key);
+            internal static extern int GetKeyIndex(global::DearImGui.ImGuiKey key);
 
         }
 
@@ -19175,18 +19175,18 @@ namespace DearImGui
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?Begin@ImGui@@YA_NPEBDPEA_NH@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool Begin([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string name, bool* p_open, ImGuiWindowFlags flags);
+            internal static extern bool Begin([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string name, bool* p_open, global::DearImGui.ImGuiWindowFlags flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?End@ImGui@@YAXXZ", CallingConvention = CallingConvention.Cdecl)]
             internal static extern void End();
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?BeginChild@ImGui@@YA_NPEBDAEBUImVec2@@_NH@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool BeginChild([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string str_id, IntPtr size, bool border, ImGuiWindowFlags flags);
+            internal static extern bool BeginChild([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string str_id, IntPtr size, bool border, global::DearImGui.ImGuiWindowFlags flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?BeginChild@ImGui@@YA_NIAEBUImVec2@@_NH@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool BeginChild_1(uint id, IntPtr size, bool border, ImGuiWindowFlags flags);
+            internal static extern bool BeginChild_1(uint id, IntPtr size, bool border, global::DearImGui.ImGuiWindowFlags flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?EndChild@ImGui@@YAXXZ", CallingConvention = CallingConvention.Cdecl)]
             internal static extern void EndChild();
@@ -19201,11 +19201,11 @@ namespace DearImGui
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?IsWindowFocused@ImGui@@YA_NH@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool IsWindowFocused(ImGuiFocusedFlags flags);
+            internal static extern bool IsWindowFocused(global::DearImGui.ImGuiFocusedFlags flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?IsWindowHovered@ImGui@@YA_NH@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool IsWindowHovered(ImGuiHoveredFlags flags);
+            internal static extern bool IsWindowHovered(global::DearImGui.ImGuiHoveredFlags flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?GetWindowDrawList@ImGui@@YAPEAUImDrawList@@XZ", CallingConvention = CallingConvention.Cdecl)]
             internal static extern IntPtr GetWindowDrawList();
@@ -19229,10 +19229,10 @@ namespace DearImGui
             internal static extern IntPtr GetWindowViewport();
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?SetNextWindowPos@ImGui@@YAXAEBUImVec2@@H0@Z", CallingConvention = CallingConvention.Cdecl)]
-            internal static extern void SetNextWindowPos(IntPtr pos, ImGuiCond cond, IntPtr pivot);
+            internal static extern void SetNextWindowPos(IntPtr pos, global::DearImGui.ImGuiCond cond, IntPtr pivot);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?SetNextWindowSize@ImGui@@YAXAEBUImVec2@@H@Z", CallingConvention = CallingConvention.Cdecl)]
-            internal static extern void SetNextWindowSize(IntPtr size, ImGuiCond cond);
+            internal static extern void SetNextWindowSize(IntPtr size, global::DearImGui.ImGuiCond cond);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?SetNextWindowSizeConstraints@ImGui@@YAXAEBUImVec2@@0P6AXPEAUImGuiSizeCallbackData@@@ZPEAX@Z", CallingConvention = CallingConvention.Cdecl)]
             internal static extern void SetNextWindowSizeConstraints(IntPtr size_min, IntPtr size_max, IntPtr custom_callback, IntPtr custom_callback_data);
@@ -19241,7 +19241,7 @@ namespace DearImGui
             internal static extern void SetNextWindowContentSize(IntPtr size);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?SetNextWindowCollapsed@ImGui@@YAX_NH@Z", CallingConvention = CallingConvention.Cdecl)]
-            internal static extern void SetNextWindowCollapsed(bool collapsed, ImGuiCond cond);
+            internal static extern void SetNextWindowCollapsed(bool collapsed, global::DearImGui.ImGuiCond cond);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?SetNextWindowFocus@ImGui@@YAXXZ", CallingConvention = CallingConvention.Cdecl)]
             internal static extern void SetNextWindowFocus();
@@ -19253,13 +19253,13 @@ namespace DearImGui
             internal static extern void SetNextWindowViewport(uint viewport_id);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?SetWindowPos@ImGui@@YAXAEBUImVec2@@H@Z", CallingConvention = CallingConvention.Cdecl)]
-            internal static extern void SetWindowPos(IntPtr pos, ImGuiCond cond);
+            internal static extern void SetWindowPos(IntPtr pos, global::DearImGui.ImGuiCond cond);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?SetWindowSize@ImGui@@YAXAEBUImVec2@@H@Z", CallingConvention = CallingConvention.Cdecl)]
-            internal static extern void SetWindowSize(IntPtr size, ImGuiCond cond);
+            internal static extern void SetWindowSize(IntPtr size, global::DearImGui.ImGuiCond cond);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?SetWindowCollapsed@ImGui@@YAX_NH@Z", CallingConvention = CallingConvention.Cdecl)]
-            internal static extern void SetWindowCollapsed(bool collapsed, ImGuiCond cond);
+            internal static extern void SetWindowCollapsed(bool collapsed, global::DearImGui.ImGuiCond cond);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?SetWindowFocus@ImGui@@YAXXZ", CallingConvention = CallingConvention.Cdecl)]
             internal static extern void SetWindowFocus();
@@ -19268,13 +19268,13 @@ namespace DearImGui
             internal static extern void SetWindowFontScale(float scale);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?SetWindowPos@ImGui@@YAXPEBDAEBUImVec2@@H@Z", CallingConvention = CallingConvention.Cdecl)]
-            internal static extern void SetWindowPos([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string name, IntPtr pos, ImGuiCond cond);
+            internal static extern void SetWindowPos([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string name, IntPtr pos, global::DearImGui.ImGuiCond cond);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?SetWindowSize@ImGui@@YAXPEBDAEBUImVec2@@H@Z", CallingConvention = CallingConvention.Cdecl)]
-            internal static extern void SetWindowSize([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string name, IntPtr size, ImGuiCond cond);
+            internal static extern void SetWindowSize([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string name, IntPtr size, global::DearImGui.ImGuiCond cond);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?SetWindowCollapsed@ImGui@@YAXPEBD_NH@Z", CallingConvention = CallingConvention.Cdecl)]
-            internal static extern void SetWindowCollapsed([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string name, bool collapsed, ImGuiCond cond);
+            internal static extern void SetWindowCollapsed([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string name, bool collapsed, global::DearImGui.ImGuiCond cond);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?SetWindowFocus@ImGui@@YAXPEBD@Z", CallingConvention = CallingConvention.Cdecl)]
             internal static extern void SetWindowFocus([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string name);
@@ -19328,19 +19328,19 @@ namespace DearImGui
             internal static extern void PopFont();
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?PushStyleColor@ImGui@@YAXHI@Z", CallingConvention = CallingConvention.Cdecl)]
-            internal static extern void PushStyleColor(ImGuiCol idx, uint col);
+            internal static extern void PushStyleColor(global::DearImGui.ImGuiCol idx, uint col);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?PushStyleColor@ImGui@@YAXHAEBUImVec4@@@Z", CallingConvention = CallingConvention.Cdecl)]
-            internal static extern void PushStyleColor(ImGuiCol idx, IntPtr col);
+            internal static extern void PushStyleColor(global::DearImGui.ImGuiCol idx, IntPtr col);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?PopStyleColor@ImGui@@YAXH@Z", CallingConvention = CallingConvention.Cdecl)]
             internal static extern void PopStyleColor(int count);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?PushStyleVar@ImGui@@YAXHM@Z", CallingConvention = CallingConvention.Cdecl)]
-            internal static extern void PushStyleVar(ImGuiStyleVar idx, float val);
+            internal static extern void PushStyleVar(global::DearImGui.ImGuiStyleVar idx, float val);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?PushStyleVar@ImGui@@YAXHAEBUImVec2@@@Z", CallingConvention = CallingConvention.Cdecl)]
-            internal static extern void PushStyleVar(ImGuiStyleVar idx, IntPtr val);
+            internal static extern void PushStyleVar(global::DearImGui.ImGuiStyleVar idx, IntPtr val);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?PopStyleVar@ImGui@@YAXH@Z", CallingConvention = CallingConvention.Cdecl)]
             internal static extern void PopStyleVar(int count);
@@ -19385,7 +19385,7 @@ namespace DearImGui
             internal static extern void GetFontTexUvWhitePixel(IntPtr @return);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?GetColorU32@ImGui@@YAIHM@Z", CallingConvention = CallingConvention.Cdecl)]
-            internal static extern uint GetColorU32(ImGuiCol idx, float alpha_mul);
+            internal static extern uint GetColorU32(global::DearImGui.ImGuiCol idx, float alpha_mul);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?GetColorU32@ImGui@@YAIAEBUImVec4@@@Z", CallingConvention = CallingConvention.Cdecl)]
             internal static extern uint GetColorU32(IntPtr col);
@@ -19394,7 +19394,7 @@ namespace DearImGui
             internal static extern uint GetColorU32(uint col);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?GetStyleColorVec4@ImGui@@YAAEBUImVec4@@H@Z", CallingConvention = CallingConvention.Cdecl)]
-            internal static extern IntPtr GetStyleColorVec4(ImGuiCol idx);
+            internal static extern IntPtr GetStyleColorVec4(global::DearImGui.ImGuiCol idx);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?Separator@ImGui@@YAXXZ", CallingConvention = CallingConvention.Cdecl)]
             internal static extern void Separator();
@@ -19496,37 +19496,37 @@ namespace DearImGui
             internal static extern void Text([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string fmt);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?TextV@ImGui@@YAXPEBDPEAD@Z", CallingConvention = CallingConvention.Cdecl)]
-            internal static extern void TextV([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string fmt, Object args);
+            internal static extern void TextV([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string fmt, global::System.Object args);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?TextColored@ImGui@@YAXAEBUImVec4@@PEBDZZ", CallingConvention = CallingConvention.Cdecl)]
             internal static extern void TextColored(IntPtr col, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string fmt);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?TextColoredV@ImGui@@YAXAEBUImVec4@@PEBDPEAD@Z", CallingConvention = CallingConvention.Cdecl)]
-            internal static extern void TextColoredV(IntPtr col, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string fmt, Object args);
+            internal static extern void TextColoredV(IntPtr col, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string fmt, global::System.Object args);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?TextDisabled@ImGui@@YAXPEBDZZ", CallingConvention = CallingConvention.Cdecl)]
             internal static extern void TextDisabled([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string fmt);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?TextDisabledV@ImGui@@YAXPEBDPEAD@Z", CallingConvention = CallingConvention.Cdecl)]
-            internal static extern void TextDisabledV([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string fmt, Object args);
+            internal static extern void TextDisabledV([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string fmt, global::System.Object args);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?TextWrapped@ImGui@@YAXPEBDZZ", CallingConvention = CallingConvention.Cdecl)]
             internal static extern void TextWrapped([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string fmt);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?TextWrappedV@ImGui@@YAXPEBDPEAD@Z", CallingConvention = CallingConvention.Cdecl)]
-            internal static extern void TextWrappedV([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string fmt, Object args);
+            internal static extern void TextWrappedV([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string fmt, global::System.Object args);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?LabelText@ImGui@@YAXPEBD0ZZ", CallingConvention = CallingConvention.Cdecl)]
             internal static extern void LabelText([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string fmt);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?LabelTextV@ImGui@@YAXPEBD0PEAD@Z", CallingConvention = CallingConvention.Cdecl)]
-            internal static extern void LabelTextV([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string fmt, Object args);
+            internal static extern void LabelTextV([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string fmt, global::System.Object args);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?BulletText@ImGui@@YAXPEBDZZ", CallingConvention = CallingConvention.Cdecl)]
             internal static extern void BulletText([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string fmt);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?BulletTextV@ImGui@@YAXPEBDPEAD@Z", CallingConvention = CallingConvention.Cdecl)]
-            internal static extern void BulletTextV([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string fmt, Object args);
+            internal static extern void BulletTextV([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string fmt, global::System.Object args);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?Button@ImGui@@YA_NPEBDAEBUImVec2@@@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
@@ -19538,11 +19538,11 @@ namespace DearImGui
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?InvisibleButton@ImGui@@YA_NPEBDAEBUImVec2@@H@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool InvisibleButton([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string str_id, IntPtr size, ImGuiButtonFlags flags);
+            internal static extern bool InvisibleButton([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string str_id, IntPtr size, global::DearImGui.ImGuiButtonFlags flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?ArrowButton@ImGui@@YA_NPEBDH@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool ArrowButton([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string str_id, ImGuiDir dir);
+            internal static extern bool ArrowButton([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string str_id, global::DearImGui.ImGuiDir dir);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?Image@ImGui@@YAXPEAXAEBUImVec2@@11AEBUImVec4@@2@Z", CallingConvention = CallingConvention.Cdecl)]
             internal static extern void Image(IntPtr user_texture_id, IntPtr size, IntPtr uv0, IntPtr uv1, IntPtr tint_col, IntPtr border_col);
@@ -19579,7 +19579,7 @@ namespace DearImGui
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?BeginCombo@ImGui@@YA_NPEBD0H@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool BeginCombo([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string preview_value, ImGuiComboFlags flags);
+            internal static extern bool BeginCombo([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string preview_value, global::DearImGui.ImGuiComboFlags flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?EndCombo@ImGui@@YAXXZ", CallingConvention = CallingConvention.Cdecl)]
             internal static extern void EndCombo();
@@ -19598,186 +19598,186 @@ namespace DearImGui
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?DragFloat@ImGui@@YA_NPEBDPEAMMMM0H@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool DragFloat([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, float* v, float v_speed, float v_min, float v_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, ImGuiSliderFlags flags);
+            internal static extern bool DragFloat([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, float* v, float v_speed, float v_min, float v_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, global::DearImGui.ImGuiSliderFlags flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?DragFloat2@ImGui@@YA_NPEBDQEAMMMM0H@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool DragFloat2([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, float* v, float v_speed, float v_min, float v_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, ImGuiSliderFlags flags);
+            internal static extern bool DragFloat2([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, float* v, float v_speed, float v_min, float v_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, global::DearImGui.ImGuiSliderFlags flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?DragFloat3@ImGui@@YA_NPEBDQEAMMMM0H@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool DragFloat3([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, float* v, float v_speed, float v_min, float v_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, ImGuiSliderFlags flags);
+            internal static extern bool DragFloat3([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, float* v, float v_speed, float v_min, float v_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, global::DearImGui.ImGuiSliderFlags flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?DragFloat4@ImGui@@YA_NPEBDQEAMMMM0H@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool DragFloat4([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, float* v, float v_speed, float v_min, float v_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, ImGuiSliderFlags flags);
+            internal static extern bool DragFloat4([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, float* v, float v_speed, float v_min, float v_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, global::DearImGui.ImGuiSliderFlags flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?DragFloatRange2@ImGui@@YA_NPEBDPEAM1MMM00H@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool DragFloatRange2([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, float* v_current_min, float* v_current_max, float v_speed, float v_min, float v_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format_max, ImGuiSliderFlags flags);
+            internal static extern bool DragFloatRange2([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, float* v_current_min, float* v_current_max, float v_speed, float v_min, float v_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format_max, global::DearImGui.ImGuiSliderFlags flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?DragInt@ImGui@@YA_NPEBDPEAHMHH0H@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool DragInt([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, int* v, float v_speed, int v_min, int v_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, ImGuiSliderFlags flags);
+            internal static extern bool DragInt([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, int* v, float v_speed, int v_min, int v_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, global::DearImGui.ImGuiSliderFlags flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?DragInt2@ImGui@@YA_NPEBDQEAHMHH0H@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool DragInt2([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, int* v, float v_speed, int v_min, int v_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, ImGuiSliderFlags flags);
+            internal static extern bool DragInt2([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, int* v, float v_speed, int v_min, int v_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, global::DearImGui.ImGuiSliderFlags flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?DragInt3@ImGui@@YA_NPEBDQEAHMHH0H@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool DragInt3([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, int* v, float v_speed, int v_min, int v_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, ImGuiSliderFlags flags);
+            internal static extern bool DragInt3([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, int* v, float v_speed, int v_min, int v_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, global::DearImGui.ImGuiSliderFlags flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?DragInt4@ImGui@@YA_NPEBDQEAHMHH0H@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool DragInt4([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, int* v, float v_speed, int v_min, int v_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, ImGuiSliderFlags flags);
+            internal static extern bool DragInt4([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, int* v, float v_speed, int v_min, int v_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, global::DearImGui.ImGuiSliderFlags flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?DragIntRange2@ImGui@@YA_NPEBDPEAH1MHH00H@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool DragIntRange2([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, int* v_current_min, int* v_current_max, float v_speed, int v_min, int v_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format_max, ImGuiSliderFlags flags);
+            internal static extern bool DragIntRange2([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, int* v_current_min, int* v_current_max, float v_speed, int v_min, int v_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format_max, global::DearImGui.ImGuiSliderFlags flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?DragScalar@ImGui@@YA_NPEBDHPEAXMPEBX20H@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool DragScalar([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, ImGuiDataType data_type, IntPtr p_data, float v_speed, IntPtr p_min, IntPtr p_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, ImGuiSliderFlags flags);
+            internal static extern bool DragScalar([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, global::DearImGui.ImGuiDataType data_type, IntPtr p_data, float v_speed, IntPtr p_min, IntPtr p_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, global::DearImGui.ImGuiSliderFlags flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?DragScalarN@ImGui@@YA_NPEBDHPEAXHMPEBX20H@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool DragScalarN([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, ImGuiDataType data_type, IntPtr p_data, int components, float v_speed, IntPtr p_min, IntPtr p_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, ImGuiSliderFlags flags);
+            internal static extern bool DragScalarN([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, global::DearImGui.ImGuiDataType data_type, IntPtr p_data, int components, float v_speed, IntPtr p_min, IntPtr p_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, global::DearImGui.ImGuiSliderFlags flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?SliderFloat@ImGui@@YA_NPEBDPEAMMM0H@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool SliderFloat([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, float* v, float v_min, float v_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, ImGuiSliderFlags flags);
+            internal static extern bool SliderFloat([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, float* v, float v_min, float v_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, global::DearImGui.ImGuiSliderFlags flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?SliderFloat2@ImGui@@YA_NPEBDQEAMMM0H@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool SliderFloat2([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, float* v, float v_min, float v_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, ImGuiSliderFlags flags);
+            internal static extern bool SliderFloat2([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, float* v, float v_min, float v_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, global::DearImGui.ImGuiSliderFlags flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?SliderFloat3@ImGui@@YA_NPEBDQEAMMM0H@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool SliderFloat3([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, float* v, float v_min, float v_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, ImGuiSliderFlags flags);
+            internal static extern bool SliderFloat3([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, float* v, float v_min, float v_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, global::DearImGui.ImGuiSliderFlags flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?SliderFloat4@ImGui@@YA_NPEBDQEAMMM0H@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool SliderFloat4([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, float* v, float v_min, float v_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, ImGuiSliderFlags flags);
+            internal static extern bool SliderFloat4([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, float* v, float v_min, float v_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, global::DearImGui.ImGuiSliderFlags flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?SliderAngle@ImGui@@YA_NPEBDPEAMMM0H@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool SliderAngle([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, float* v_rad, float v_degrees_min, float v_degrees_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, ImGuiSliderFlags flags);
+            internal static extern bool SliderAngle([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, float* v_rad, float v_degrees_min, float v_degrees_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, global::DearImGui.ImGuiSliderFlags flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?SliderInt@ImGui@@YA_NPEBDPEAHHH0H@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool SliderInt([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, int* v, int v_min, int v_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, ImGuiSliderFlags flags);
+            internal static extern bool SliderInt([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, int* v, int v_min, int v_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, global::DearImGui.ImGuiSliderFlags flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?SliderInt2@ImGui@@YA_NPEBDQEAHHH0H@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool SliderInt2([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, int* v, int v_min, int v_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, ImGuiSliderFlags flags);
+            internal static extern bool SliderInt2([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, int* v, int v_min, int v_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, global::DearImGui.ImGuiSliderFlags flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?SliderInt3@ImGui@@YA_NPEBDQEAHHH0H@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool SliderInt3([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, int* v, int v_min, int v_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, ImGuiSliderFlags flags);
+            internal static extern bool SliderInt3([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, int* v, int v_min, int v_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, global::DearImGui.ImGuiSliderFlags flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?SliderInt4@ImGui@@YA_NPEBDQEAHHH0H@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool SliderInt4([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, int* v, int v_min, int v_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, ImGuiSliderFlags flags);
+            internal static extern bool SliderInt4([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, int* v, int v_min, int v_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, global::DearImGui.ImGuiSliderFlags flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?SliderScalar@ImGui@@YA_NPEBDHPEAXPEBX20H@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool SliderScalar([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, ImGuiDataType data_type, IntPtr p_data, IntPtr p_min, IntPtr p_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, ImGuiSliderFlags flags);
+            internal static extern bool SliderScalar([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, global::DearImGui.ImGuiDataType data_type, IntPtr p_data, IntPtr p_min, IntPtr p_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, global::DearImGui.ImGuiSliderFlags flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?SliderScalarN@ImGui@@YA_NPEBDHPEAXHPEBX20H@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool SliderScalarN([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, ImGuiDataType data_type, IntPtr p_data, int components, IntPtr p_min, IntPtr p_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, ImGuiSliderFlags flags);
+            internal static extern bool SliderScalarN([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, global::DearImGui.ImGuiDataType data_type, IntPtr p_data, int components, IntPtr p_min, IntPtr p_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, global::DearImGui.ImGuiSliderFlags flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?VSliderFloat@ImGui@@YA_NPEBDAEBUImVec2@@PEAMMM0H@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool VSliderFloat([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, IntPtr size, float* v, float v_min, float v_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, ImGuiSliderFlags flags);
+            internal static extern bool VSliderFloat([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, IntPtr size, float* v, float v_min, float v_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, global::DearImGui.ImGuiSliderFlags flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?VSliderInt@ImGui@@YA_NPEBDAEBUImVec2@@PEAHHH0H@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool VSliderInt([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, IntPtr size, int* v, int v_min, int v_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, ImGuiSliderFlags flags);
+            internal static extern bool VSliderInt([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, IntPtr size, int* v, int v_min, int v_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, global::DearImGui.ImGuiSliderFlags flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?VSliderScalar@ImGui@@YA_NPEBDAEBUImVec2@@HPEAXPEBX30H@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool VSliderScalar([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, IntPtr size, ImGuiDataType data_type, IntPtr p_data, IntPtr p_min, IntPtr p_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, ImGuiSliderFlags flags);
+            internal static extern bool VSliderScalar([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, IntPtr size, global::DearImGui.ImGuiDataType data_type, IntPtr p_data, IntPtr p_min, IntPtr p_max, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, global::DearImGui.ImGuiSliderFlags flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?InputText@ImGui@@YA_NPEBDPEAD_KHP6AHPEAUImGuiInputTextCallbackData@@@ZPEAX@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool InputText([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, sbyte* buf, UIntPtr buf_size, ImGuiInputTextFlags flags, IntPtr callback, IntPtr user_data);
+            internal static extern bool InputText([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, sbyte* buf, global::System.UIntPtr buf_size, global::DearImGui.ImGuiInputTextFlags flags, IntPtr callback, IntPtr user_data);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?InputTextMultiline@ImGui@@YA_NPEBDPEAD_KAEBUImVec2@@HP6AHPEAUImGuiInputTextCallbackData@@@ZPEAX@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool InputTextMultiline([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, sbyte* buf, UIntPtr buf_size, IntPtr size, ImGuiInputTextFlags flags, IntPtr callback, IntPtr user_data);
+            internal static extern bool InputTextMultiline([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, sbyte* buf, global::System.UIntPtr buf_size, IntPtr size, global::DearImGui.ImGuiInputTextFlags flags, IntPtr callback, IntPtr user_data);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?InputTextWithHint@ImGui@@YA_NPEBD0PEAD_KHP6AHPEAUImGuiInputTextCallbackData@@@ZPEAX@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool InputTextWithHint([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string hint, sbyte* buf, UIntPtr buf_size, ImGuiInputTextFlags flags, IntPtr callback, IntPtr user_data);
+            internal static extern bool InputTextWithHint([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string hint, sbyte* buf, global::System.UIntPtr buf_size, global::DearImGui.ImGuiInputTextFlags flags, IntPtr callback, IntPtr user_data);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?InputFloat@ImGui@@YA_NPEBDPEAMMM0H@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool InputFloat([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, float* v, float step, float step_fast, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, ImGuiInputTextFlags flags);
+            internal static extern bool InputFloat([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, float* v, float step, float step_fast, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, global::DearImGui.ImGuiInputTextFlags flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?InputFloat2@ImGui@@YA_NPEBDQEAM0H@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool InputFloat2([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, float* v, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, ImGuiInputTextFlags flags);
+            internal static extern bool InputFloat2([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, float* v, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, global::DearImGui.ImGuiInputTextFlags flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?InputFloat3@ImGui@@YA_NPEBDQEAM0H@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool InputFloat3([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, float* v, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, ImGuiInputTextFlags flags);
+            internal static extern bool InputFloat3([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, float* v, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, global::DearImGui.ImGuiInputTextFlags flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?InputFloat4@ImGui@@YA_NPEBDQEAM0H@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool InputFloat4([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, float* v, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, ImGuiInputTextFlags flags);
+            internal static extern bool InputFloat4([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, float* v, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, global::DearImGui.ImGuiInputTextFlags flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?InputInt@ImGui@@YA_NPEBDPEAHHHH@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool InputInt([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, int* v, int step, int step_fast, ImGuiInputTextFlags flags);
+            internal static extern bool InputInt([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, int* v, int step, int step_fast, global::DearImGui.ImGuiInputTextFlags flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?InputInt2@ImGui@@YA_NPEBDQEAHH@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool InputInt2([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, int* v, ImGuiInputTextFlags flags);
+            internal static extern bool InputInt2([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, int* v, global::DearImGui.ImGuiInputTextFlags flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?InputInt3@ImGui@@YA_NPEBDQEAHH@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool InputInt3([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, int* v, ImGuiInputTextFlags flags);
+            internal static extern bool InputInt3([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, int* v, global::DearImGui.ImGuiInputTextFlags flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?InputInt4@ImGui@@YA_NPEBDQEAHH@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool InputInt4([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, int* v, ImGuiInputTextFlags flags);
+            internal static extern bool InputInt4([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, int* v, global::DearImGui.ImGuiInputTextFlags flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?InputDouble@ImGui@@YA_NPEBDPEANNN0H@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool InputDouble([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, double* v, double step, double step_fast, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, ImGuiInputTextFlags flags);
+            internal static extern bool InputDouble([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, double* v, double step, double step_fast, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, global::DearImGui.ImGuiInputTextFlags flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?InputScalar@ImGui@@YA_NPEBDHPEAXPEBX20H@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool InputScalar([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, ImGuiDataType data_type, IntPtr p_data, IntPtr p_step, IntPtr p_step_fast, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, ImGuiInputTextFlags flags);
+            internal static extern bool InputScalar([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, global::DearImGui.ImGuiDataType data_type, IntPtr p_data, IntPtr p_step, IntPtr p_step_fast, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, global::DearImGui.ImGuiInputTextFlags flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?InputScalarN@ImGui@@YA_NPEBDHPEAXHPEBX20H@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool InputScalarN([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, ImGuiDataType data_type, IntPtr p_data, int components, IntPtr p_step, IntPtr p_step_fast, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, ImGuiInputTextFlags flags);
+            internal static extern bool InputScalarN([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, global::DearImGui.ImGuiDataType data_type, IntPtr p_data, int components, IntPtr p_step, IntPtr p_step_fast, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string format, global::DearImGui.ImGuiInputTextFlags flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?ColorEdit3@ImGui@@YA_NPEBDQEAMH@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool ColorEdit3([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, float* col, ImGuiColorEditFlags flags);
+            internal static extern bool ColorEdit3([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, float* col, global::DearImGui.ImGuiColorEditFlags flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?ColorEdit4@ImGui@@YA_NPEBDQEAMH@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool ColorEdit4([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, float* col, ImGuiColorEditFlags flags);
+            internal static extern bool ColorEdit4([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, float* col, global::DearImGui.ImGuiColorEditFlags flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?ColorPicker3@ImGui@@YA_NPEBDQEAMH@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool ColorPicker3([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, float* col, ImGuiColorEditFlags flags);
+            internal static extern bool ColorPicker3([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, float* col, global::DearImGui.ImGuiColorEditFlags flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?ColorPicker4@ImGui@@YA_NPEBDQEAMHPEBM@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool ColorPicker4([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, float* col, ImGuiColorEditFlags flags, float* ref_col);
+            internal static extern bool ColorPicker4([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, float* col, global::DearImGui.ImGuiColorEditFlags flags, float* ref_col);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?ColorButton@ImGui@@YA_NPEBDAEBUImVec4@@HAEBUImVec2@@@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool ColorButton([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string desc_id, IntPtr col, ImGuiColorEditFlags flags, IntPtr size);
+            internal static extern bool ColorButton([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string desc_id, IntPtr col, global::DearImGui.ImGuiColorEditFlags flags, IntPtr size);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?SetColorEditOptions@ImGui@@YAXH@Z", CallingConvention = CallingConvention.Cdecl)]
-            internal static extern void SetColorEditOptions(ImGuiColorEditFlags flags);
+            internal static extern void SetColorEditOptions(global::DearImGui.ImGuiColorEditFlags flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?TreeNode@ImGui@@YA_NPEBD@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
@@ -19793,31 +19793,31 @@ namespace DearImGui
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?TreeNodeV@ImGui@@YA_NPEBD0PEAD@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool TreeNodeV([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string str_id, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string fmt, Object args);
+            internal static extern bool TreeNodeV([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string str_id, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string fmt, global::System.Object args);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?TreeNodeV@ImGui@@YA_NPEBXPEBDPEAD@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool TreeNodeV(IntPtr ptr_id, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string fmt, Object args);
+            internal static extern bool TreeNodeV(IntPtr ptr_id, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string fmt, global::System.Object args);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?TreeNodeEx@ImGui@@YA_NPEBDH@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool TreeNodeEx([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, ImGuiTreeNodeFlags flags);
+            internal static extern bool TreeNodeEx([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, global::DearImGui.ImGuiTreeNodeFlags flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?TreeNodeEx@ImGui@@YA_NPEBDH0ZZ", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool TreeNodeEx([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string str_id, ImGuiTreeNodeFlags flags, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string fmt);
+            internal static extern bool TreeNodeEx([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string str_id, global::DearImGui.ImGuiTreeNodeFlags flags, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string fmt);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?TreeNodeEx@ImGui@@YA_NPEBXHPEBDZZ", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool TreeNodeEx(IntPtr ptr_id, ImGuiTreeNodeFlags flags, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string fmt);
+            internal static extern bool TreeNodeEx(IntPtr ptr_id, global::DearImGui.ImGuiTreeNodeFlags flags, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string fmt);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?TreeNodeExV@ImGui@@YA_NPEBDH0PEAD@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool TreeNodeExV([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string str_id, ImGuiTreeNodeFlags flags, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string fmt, Object args);
+            internal static extern bool TreeNodeExV([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string str_id, global::DearImGui.ImGuiTreeNodeFlags flags, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string fmt, global::System.Object args);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?TreeNodeExV@ImGui@@YA_NPEBXHPEBDPEAD@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool TreeNodeExV(IntPtr ptr_id, ImGuiTreeNodeFlags flags, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string fmt, Object args);
+            internal static extern bool TreeNodeExV(IntPtr ptr_id, global::DearImGui.ImGuiTreeNodeFlags flags, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string fmt, global::System.Object args);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?TreePush@ImGui@@YAXPEBD@Z", CallingConvention = CallingConvention.Cdecl)]
             internal static extern void TreePush([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string str_id);
@@ -19833,22 +19833,22 @@ namespace DearImGui
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?CollapsingHeader@ImGui@@YA_NPEBDH@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool CollapsingHeader([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, ImGuiTreeNodeFlags flags);
+            internal static extern bool CollapsingHeader([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, global::DearImGui.ImGuiTreeNodeFlags flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?CollapsingHeader@ImGui@@YA_NPEBDPEA_NH@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool CollapsingHeader([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, bool* p_visible, ImGuiTreeNodeFlags flags);
+            internal static extern bool CollapsingHeader([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, bool* p_visible, global::DearImGui.ImGuiTreeNodeFlags flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?SetNextItemOpen@ImGui@@YAX_NH@Z", CallingConvention = CallingConvention.Cdecl)]
-            internal static extern void SetNextItemOpen(bool is_open, ImGuiCond cond);
+            internal static extern void SetNextItemOpen(bool is_open, global::DearImGui.ImGuiCond cond);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?Selectable@ImGui@@YA_NPEBD_NHAEBUImVec2@@@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool Selectable([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, bool selected, ImGuiSelectableFlags flags, IntPtr size);
+            internal static extern bool Selectable([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, bool selected, global::DearImGui.ImGuiSelectableFlags flags, IntPtr size);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?Selectable@ImGui@@YA_NPEBDPEA_NHAEBUImVec2@@@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool Selectable_1([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, bool* p_selected, ImGuiSelectableFlags flags, IntPtr size);
+            internal static extern bool Selectable_1([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, bool* p_selected, global::DearImGui.ImGuiSelectableFlags flags, IntPtr size);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?BeginListBox@ImGui@@YA_NPEBDAEBUImVec2@@@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
@@ -19866,16 +19866,16 @@ namespace DearImGui
             internal static extern bool ListBox([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, int* current_item, IntPtr items_getter, IntPtr data, int items_count, int height_in_items);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?PlotLines@ImGui@@YAXPEBDPEBMHH0MMUImVec2@@H@Z", CallingConvention = CallingConvention.Cdecl)]
-            internal static extern void PlotLines([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, float* values, int values_count, int values_offset, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string overlay_text, float scale_min, float scale_max, Vector2 graph_size, int stride);
+            internal static extern void PlotLines([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, float* values, int values_count, int values_offset, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string overlay_text, float scale_min, float scale_max, global::System.Numerics.Vector2 graph_size, int stride);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?PlotLines@ImGui@@YAXPEBDP6AMPEAXH@Z1HH0MMUImVec2@@@Z", CallingConvention = CallingConvention.Cdecl)]
-            internal static extern void PlotLines([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, IntPtr values_getter, IntPtr data, int values_count, int values_offset, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string overlay_text, float scale_min, float scale_max, Vector2 graph_size);
+            internal static extern void PlotLines([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, IntPtr values_getter, IntPtr data, int values_count, int values_offset, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string overlay_text, float scale_min, float scale_max, global::System.Numerics.Vector2 graph_size);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?PlotHistogram@ImGui@@YAXPEBDPEBMHH0MMUImVec2@@H@Z", CallingConvention = CallingConvention.Cdecl)]
-            internal static extern void PlotHistogram([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, float* values, int values_count, int values_offset, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string overlay_text, float scale_min, float scale_max, Vector2 graph_size, int stride);
+            internal static extern void PlotHistogram([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, float* values, int values_count, int values_offset, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string overlay_text, float scale_min, float scale_max, global::System.Numerics.Vector2 graph_size, int stride);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?PlotHistogram@ImGui@@YAXPEBDP6AMPEAXH@Z1HH0MMUImVec2@@@Z", CallingConvention = CallingConvention.Cdecl)]
-            internal static extern void PlotHistogram([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, IntPtr values_getter, IntPtr data, int values_count, int values_offset, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string overlay_text, float scale_min, float scale_max, Vector2 graph_size);
+            internal static extern void PlotHistogram([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, IntPtr values_getter, IntPtr data, int values_count, int values_offset, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string overlay_text, float scale_min, float scale_max, global::System.Numerics.Vector2 graph_size);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?Value@ImGui@@YAXPEBD_N@Z", CallingConvention = CallingConvention.Cdecl)]
             internal static extern void Value([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string prefix, bool b);
@@ -19928,56 +19928,56 @@ namespace DearImGui
             internal static extern void SetTooltip([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string fmt);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?SetTooltipV@ImGui@@YAXPEBDPEAD@Z", CallingConvention = CallingConvention.Cdecl)]
-            internal static extern void SetTooltipV([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string fmt, Object args);
+            internal static extern void SetTooltipV([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string fmt, global::System.Object args);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?BeginPopup@ImGui@@YA_NPEBDH@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool BeginPopup([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string str_id, ImGuiWindowFlags flags);
+            internal static extern bool BeginPopup([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string str_id, global::DearImGui.ImGuiWindowFlags flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?BeginPopupModal@ImGui@@YA_NPEBDPEA_NH@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool BeginPopupModal([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string name, bool* p_open, ImGuiWindowFlags flags);
+            internal static extern bool BeginPopupModal([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string name, bool* p_open, global::DearImGui.ImGuiWindowFlags flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?EndPopup@ImGui@@YAXXZ", CallingConvention = CallingConvention.Cdecl)]
             internal static extern void EndPopup();
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?OpenPopup@ImGui@@YAXPEBDH@Z", CallingConvention = CallingConvention.Cdecl)]
-            internal static extern void OpenPopup([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string str_id, ImGuiPopupFlags popup_flags);
+            internal static extern void OpenPopup([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string str_id, global::DearImGui.ImGuiPopupFlags popup_flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?OpenPopup@ImGui@@YAXIH@Z", CallingConvention = CallingConvention.Cdecl)]
-            internal static extern void OpenPopup_1(uint id, ImGuiPopupFlags popup_flags);
+            internal static extern void OpenPopup_1(uint id, global::DearImGui.ImGuiPopupFlags popup_flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?OpenPopupOnItemClick@ImGui@@YAXPEBDH@Z", CallingConvention = CallingConvention.Cdecl)]
-            internal static extern void OpenPopupOnItemClick([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string str_id, ImGuiPopupFlags popup_flags);
+            internal static extern void OpenPopupOnItemClick([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string str_id, global::DearImGui.ImGuiPopupFlags popup_flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?CloseCurrentPopup@ImGui@@YAXXZ", CallingConvention = CallingConvention.Cdecl)]
             internal static extern void CloseCurrentPopup();
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?BeginPopupContextItem@ImGui@@YA_NPEBDH@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool BeginPopupContextItem([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string str_id, ImGuiPopupFlags popup_flags);
+            internal static extern bool BeginPopupContextItem([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string str_id, global::DearImGui.ImGuiPopupFlags popup_flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?BeginPopupContextWindow@ImGui@@YA_NPEBDH@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool BeginPopupContextWindow([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string str_id, ImGuiPopupFlags popup_flags);
+            internal static extern bool BeginPopupContextWindow([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string str_id, global::DearImGui.ImGuiPopupFlags popup_flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?BeginPopupContextVoid@ImGui@@YA_NPEBDH@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool BeginPopupContextVoid([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string str_id, ImGuiPopupFlags popup_flags);
+            internal static extern bool BeginPopupContextVoid([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string str_id, global::DearImGui.ImGuiPopupFlags popup_flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?IsPopupOpen@ImGui@@YA_NPEBDH@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool IsPopupOpen([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string str_id, ImGuiPopupFlags flags);
+            internal static extern bool IsPopupOpen([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string str_id, global::DearImGui.ImGuiPopupFlags flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?BeginTable@ImGui@@YA_NPEBDHHAEBUImVec2@@M@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool BeginTable([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string str_id, int column, ImGuiTableFlags flags, IntPtr outer_size, float inner_width);
+            internal static extern bool BeginTable([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string str_id, int column, global::DearImGui.ImGuiTableFlags flags, IntPtr outer_size, float inner_width);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?EndTable@ImGui@@YAXXZ", CallingConvention = CallingConvention.Cdecl)]
             internal static extern void EndTable();
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?TableNextRow@ImGui@@YAXHM@Z", CallingConvention = CallingConvention.Cdecl)]
-            internal static extern void TableNextRow(ImGuiTableRowFlags row_flags, float min_row_height);
+            internal static extern void TableNextRow(global::DearImGui.ImGuiTableRowFlags row_flags, float min_row_height);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?TableNextColumn@ImGui@@YA_NXZ", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
@@ -19988,7 +19988,7 @@ namespace DearImGui
             internal static extern bool TableSetColumnIndex(int column_n);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?TableSetupColumn@ImGui@@YAXPEBDHMI@Z", CallingConvention = CallingConvention.Cdecl)]
-            internal static extern void TableSetupColumn([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, ImGuiTableColumnFlags flags, float init_width_or_weight, uint user_id);
+            internal static extern void TableSetupColumn([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, global::DearImGui.ImGuiTableColumnFlags flags, float init_width_or_weight, uint user_id);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?TableSetupScrollFreeze@ImGui@@YAXHH@Z", CallingConvention = CallingConvention.Cdecl)]
             internal static extern void TableSetupScrollFreeze(int cols, int rows);
@@ -20015,13 +20015,13 @@ namespace DearImGui
             internal static extern IntPtr TableGetColumnName(int column_n);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?TableGetColumnFlags@ImGui@@YAHH@Z", CallingConvention = CallingConvention.Cdecl)]
-            internal static extern ImGuiTableColumnFlags TableGetColumnFlags(int column_n);
+            internal static extern global::DearImGui.ImGuiTableColumnFlags TableGetColumnFlags(int column_n);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?TableSetColumnEnabled@ImGui@@YAXH_N@Z", CallingConvention = CallingConvention.Cdecl)]
             internal static extern void TableSetColumnEnabled(int column_n, bool v);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?TableSetBgColor@ImGui@@YAXHIH@Z", CallingConvention = CallingConvention.Cdecl)]
-            internal static extern void TableSetBgColor(ImGuiTableBgTarget target, uint color, int column_n);
+            internal static extern void TableSetBgColor(global::DearImGui.ImGuiTableBgTarget target, uint color, int column_n);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?Columns@ImGui@@YAXHPEBD_N@Z", CallingConvention = CallingConvention.Cdecl)]
             internal static extern void Columns(int count, [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string id, bool border);
@@ -20049,33 +20049,33 @@ namespace DearImGui
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?BeginTabBar@ImGui@@YA_NPEBDH@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool BeginTabBar([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string str_id, ImGuiTabBarFlags flags);
+            internal static extern bool BeginTabBar([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string str_id, global::DearImGui.ImGuiTabBarFlags flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?EndTabBar@ImGui@@YAXXZ", CallingConvention = CallingConvention.Cdecl)]
             internal static extern void EndTabBar();
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?BeginTabItem@ImGui@@YA_NPEBDPEA_NH@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool BeginTabItem([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, bool* p_open, ImGuiTabItemFlags flags);
+            internal static extern bool BeginTabItem([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, bool* p_open, global::DearImGui.ImGuiTabItemFlags flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?EndTabItem@ImGui@@YAXXZ", CallingConvention = CallingConvention.Cdecl)]
             internal static extern void EndTabItem();
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?TabItemButton@ImGui@@YA_NPEBDH@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool TabItemButton([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, ImGuiTabItemFlags flags);
+            internal static extern bool TabItemButton([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string label, global::DearImGui.ImGuiTabItemFlags flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?SetTabItemClosed@ImGui@@YAXPEBD@Z", CallingConvention = CallingConvention.Cdecl)]
             internal static extern void SetTabItemClosed([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string tab_or_docked_window_label);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?DockSpace@ImGui@@YAIIAEBUImVec2@@HPEBUImGuiWindowClass@@@Z", CallingConvention = CallingConvention.Cdecl)]
-            internal static extern uint DockSpace(uint id, IntPtr size, ImGuiDockNodeFlags flags, IntPtr window_class);
+            internal static extern uint DockSpace(uint id, IntPtr size, global::DearImGui.ImGuiDockNodeFlags flags, IntPtr window_class);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?DockSpaceOverViewport@ImGui@@YAIPEBUImGuiViewport@@HPEBUImGuiWindowClass@@@Z", CallingConvention = CallingConvention.Cdecl)]
-            internal static extern uint DockSpaceOverViewport(IntPtr viewport, ImGuiDockNodeFlags flags, IntPtr window_class);
+            internal static extern uint DockSpaceOverViewport(IntPtr viewport, global::DearImGui.ImGuiDockNodeFlags flags, IntPtr window_class);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?SetNextWindowDockID@ImGui@@YAXIH@Z", CallingConvention = CallingConvention.Cdecl)]
-            internal static extern void SetNextWindowDockID(uint dock_id, ImGuiCond cond);
+            internal static extern void SetNextWindowDockID(uint dock_id, global::DearImGui.ImGuiCond cond);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?SetNextWindowClass@ImGui@@YAXPEBUImGuiWindowClass@@@Z", CallingConvention = CallingConvention.Cdecl)]
             internal static extern void SetNextWindowClass(IntPtr window_class);
@@ -20106,15 +20106,15 @@ namespace DearImGui
             internal static extern void LogText([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string fmt);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?LogTextV@ImGui@@YAXPEBDPEAD@Z", CallingConvention = CallingConvention.Cdecl)]
-            internal static extern void LogTextV([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string fmt, Object args);
+            internal static extern void LogTextV([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string fmt, global::System.Object args);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?BeginDragDropSource@ImGui@@YA_NH@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool BeginDragDropSource(ImGuiDragDropFlags flags);
+            internal static extern bool BeginDragDropSource(global::DearImGui.ImGuiDragDropFlags flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?SetDragDropPayload@ImGui@@YA_NPEBDPEBX_KH@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool SetDragDropPayload([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string type, IntPtr data, UIntPtr sz, ImGuiCond cond);
+            internal static extern bool SetDragDropPayload([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string type, IntPtr data, global::System.UIntPtr sz, global::DearImGui.ImGuiCond cond);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?EndDragDropSource@ImGui@@YAXXZ", CallingConvention = CallingConvention.Cdecl)]
             internal static extern void EndDragDropSource();
@@ -20124,7 +20124,7 @@ namespace DearImGui
             internal static extern bool BeginDragDropTarget();
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?AcceptDragDropPayload@ImGui@@YAPEBUImGuiPayload@@PEBDH@Z", CallingConvention = CallingConvention.Cdecl)]
-            internal static extern IntPtr AcceptDragDropPayload([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string type, ImGuiDragDropFlags flags);
+            internal static extern IntPtr AcceptDragDropPayload([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string type, global::DearImGui.ImGuiDragDropFlags flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?EndDragDropTarget@ImGui@@YAXXZ", CallingConvention = CallingConvention.Cdecl)]
             internal static extern void EndDragDropTarget();
@@ -20152,7 +20152,7 @@ namespace DearImGui
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?IsItemHovered@ImGui@@YA_NH@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool IsItemHovered(ImGuiHoveredFlags flags);
+            internal static extern bool IsItemHovered(global::DearImGui.ImGuiHoveredFlags flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?IsItemActive@ImGui@@YA_NXZ", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
@@ -20164,7 +20164,7 @@ namespace DearImGui
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?IsItemClicked@ImGui@@YA_NH@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool IsItemClicked(ImGuiMouseButton mouse_button);
+            internal static extern bool IsItemClicked(global::DearImGui.ImGuiMouseButton mouse_button);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?IsItemVisible@ImGui@@YA_NXZ", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
@@ -20247,7 +20247,7 @@ namespace DearImGui
             internal static extern IntPtr GetDrawListSharedData();
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?GetStyleColorName@ImGui@@YAPEBDH@Z", CallingConvention = CallingConvention.Cdecl)]
-            internal static extern IntPtr GetStyleColorName(ImGuiCol idx);
+            internal static extern IntPtr GetStyleColorName(global::DearImGui.ImGuiCol idx);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?SetStateStorage@ImGui@@YAXPEAUImGuiStorage@@@Z", CallingConvention = CallingConvention.Cdecl)]
             internal static extern void SetStateStorage(IntPtr storage);
@@ -20257,7 +20257,7 @@ namespace DearImGui
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?BeginChildFrame@ImGui@@YA_NIAEBUImVec2@@H@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool BeginChildFrame(uint id, IntPtr size, ImGuiWindowFlags flags);
+            internal static extern bool BeginChildFrame(uint id, IntPtr size, global::DearImGui.ImGuiWindowFlags flags);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?EndChildFrame@ImGui@@YAXXZ", CallingConvention = CallingConvention.Cdecl)]
             internal static extern void EndChildFrame();
@@ -20279,43 +20279,43 @@ namespace DearImGui
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?IsKeyDown@ImGui@@YA_NH@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool IsKeyDown(ImGuiKey key);
+            internal static extern bool IsKeyDown(global::DearImGui.ImGuiKey key);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?IsKeyPressed@ImGui@@YA_NH_N@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool IsKeyPressed(ImGuiKey key, bool repeat);
+            internal static extern bool IsKeyPressed(global::DearImGui.ImGuiKey key, bool repeat);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?IsKeyReleased@ImGui@@YA_NH@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool IsKeyReleased(ImGuiKey key);
+            internal static extern bool IsKeyReleased(global::DearImGui.ImGuiKey key);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?GetKeyPressedAmount@ImGui@@YAHHMM@Z", CallingConvention = CallingConvention.Cdecl)]
-            internal static extern int GetKeyPressedAmount(ImGuiKey key, float repeat_delay, float rate);
+            internal static extern int GetKeyPressedAmount(global::DearImGui.ImGuiKey key, float repeat_delay, float rate);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?GetKeyName@ImGui@@YAPEBDH@Z", CallingConvention = CallingConvention.Cdecl)]
-            internal static extern IntPtr GetKeyName(ImGuiKey key);
+            internal static extern IntPtr GetKeyName(global::DearImGui.ImGuiKey key);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?SetNextFrameWantCaptureKeyboard@ImGui@@YAX_N@Z", CallingConvention = CallingConvention.Cdecl)]
             internal static extern void SetNextFrameWantCaptureKeyboard(bool want_capture_keyboard);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?IsMouseDown@ImGui@@YA_NH@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool IsMouseDown(ImGuiMouseButton button);
+            internal static extern bool IsMouseDown(global::DearImGui.ImGuiMouseButton button);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?IsMouseClicked@ImGui@@YA_NH_N@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool IsMouseClicked(ImGuiMouseButton button, bool repeat);
+            internal static extern bool IsMouseClicked(global::DearImGui.ImGuiMouseButton button, bool repeat);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?IsMouseReleased@ImGui@@YA_NH@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool IsMouseReleased(ImGuiMouseButton button);
+            internal static extern bool IsMouseReleased(global::DearImGui.ImGuiMouseButton button);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?IsMouseDoubleClicked@ImGui@@YA_NH@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool IsMouseDoubleClicked(ImGuiMouseButton button);
+            internal static extern bool IsMouseDoubleClicked(global::DearImGui.ImGuiMouseButton button);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?GetMouseClickedCount@ImGui@@YAHH@Z", CallingConvention = CallingConvention.Cdecl)]
-            internal static extern int GetMouseClickedCount(ImGuiMouseButton button);
+            internal static extern int GetMouseClickedCount(global::DearImGui.ImGuiMouseButton button);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?IsMouseHoveringRect@ImGui@@YA_NAEBUImVec2@@0_N@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
@@ -20337,19 +20337,19 @@ namespace DearImGui
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?IsMouseDragging@ImGui@@YA_NHM@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool IsMouseDragging(ImGuiMouseButton button, float lock_threshold);
+            internal static extern bool IsMouseDragging(global::DearImGui.ImGuiMouseButton button, float lock_threshold);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?GetMouseDragDelta@ImGui@@YA?AUImVec2@@HM@Z", CallingConvention = CallingConvention.Cdecl)]
-            internal static extern void GetMouseDragDelta(IntPtr @return, ImGuiMouseButton button, float lock_threshold);
+            internal static extern void GetMouseDragDelta(IntPtr @return, global::DearImGui.ImGuiMouseButton button, float lock_threshold);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?ResetMouseDragDelta@ImGui@@YAXH@Z", CallingConvention = CallingConvention.Cdecl)]
-            internal static extern void ResetMouseDragDelta(ImGuiMouseButton button);
+            internal static extern void ResetMouseDragDelta(global::DearImGui.ImGuiMouseButton button);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?GetMouseCursor@ImGui@@YAHXZ", CallingConvention = CallingConvention.Cdecl)]
-            internal static extern ImGuiMouseCursor GetMouseCursor();
+            internal static extern global::DearImGui.ImGuiMouseCursor GetMouseCursor();
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?SetMouseCursor@ImGui@@YAXH@Z", CallingConvention = CallingConvention.Cdecl)]
-            internal static extern void SetMouseCursor(ImGuiMouseCursor cursor_type);
+            internal static extern void SetMouseCursor(global::DearImGui.ImGuiMouseCursor cursor_type);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?SetNextFrameWantCaptureMouse@ImGui@@YAX_N@Z", CallingConvention = CallingConvention.Cdecl)]
             internal static extern void SetNextFrameWantCaptureMouse(bool want_capture_mouse);
@@ -20364,20 +20364,20 @@ namespace DearImGui
             internal static extern void LoadIniSettingsFromDisk([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string ini_filename);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?LoadIniSettingsFromMemory@ImGui@@YAXPEBD_K@Z", CallingConvention = CallingConvention.Cdecl)]
-            internal static extern void LoadIniSettingsFromMemory([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string ini_data, UIntPtr ini_size);
+            internal static extern void LoadIniSettingsFromMemory([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string ini_data, global::System.UIntPtr ini_size);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?SaveIniSettingsToDisk@ImGui@@YAXPEBD@Z", CallingConvention = CallingConvention.Cdecl)]
             internal static extern void SaveIniSettingsToDisk([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string ini_filename);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?SaveIniSettingsToMemory@ImGui@@YAPEBDPEA_K@Z", CallingConvention = CallingConvention.Cdecl)]
-            internal static extern IntPtr SaveIniSettingsToMemory(UIntPtr* out_ini_size);
+            internal static extern IntPtr SaveIniSettingsToMemory(global::System.UIntPtr* out_ini_size);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?DebugTextEncoding@ImGui@@YAXPEBD@Z", CallingConvention = CallingConvention.Cdecl)]
             internal static extern void DebugTextEncoding([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string text);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?DebugCheckVersionAndDataLayout@ImGui@@YA_NPEBD_K11111@Z", CallingConvention = CallingConvention.Cdecl)]
             [return: MarshalAs(UnmanagedType.I1)]
-            internal static extern bool DebugCheckVersionAndDataLayout([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string version_str, UIntPtr sz_io, UIntPtr sz_style, UIntPtr sz_vec2, UIntPtr sz_vec4, UIntPtr sz_drawvert, UIntPtr sz_drawidx);
+            internal static extern bool DebugCheckVersionAndDataLayout([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(CppSharp.Runtime.UTF8Marshaller))] string version_str, global::System.UIntPtr sz_io, global::System.UIntPtr sz_style, global::System.UIntPtr sz_vec2, global::System.UIntPtr sz_vec4, global::System.UIntPtr sz_drawvert, global::System.UIntPtr sz_drawidx);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?SetAllocatorFunctions@ImGui@@YAXP6APEAX_KPEAX@ZP6AX11@Z1@Z", CallingConvention = CallingConvention.Cdecl)]
             internal static extern void SetAllocatorFunctions(IntPtr alloc_func, IntPtr free_func, IntPtr user_data);
@@ -20386,7 +20386,7 @@ namespace DearImGui
             internal static extern void GetAllocatorFunctions(IntPtr p_alloc_func, IntPtr p_free_func, IntPtr* p_user_data);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?MemAlloc@ImGui@@YAPEAX_K@Z", CallingConvention = CallingConvention.Cdecl)]
-            internal static extern IntPtr MemAlloc(UIntPtr size);
+            internal static extern IntPtr MemAlloc(global::System.UIntPtr size);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?MemFree@ImGui@@YAXPEAX@Z", CallingConvention = CallingConvention.Cdecl)]
             internal static extern void MemFree(IntPtr ptr);
@@ -20410,13 +20410,13 @@ namespace DearImGui
             internal static extern IntPtr FindViewportByPlatformHandle(IntPtr platform_handle);
 
             [SuppressUnmanagedCodeSecurity, DllImport("imgui", EntryPoint = "?GetKeyIndex@ImGui@@YAHH@Z", CallingConvention = CallingConvention.Cdecl)]
-            internal static extern int GetKeyIndex(ImGuiKey key);
+            internal static extern int GetKeyIndex(global::DearImGui.ImGuiKey key);
 
         }
 
         /// <summary>Context creation and access.<br/>- Each context create its own ImFontAtlas by default. You may instance one yourself and pass it to CreateContext() to share a font atlas between contexts.<br/>- DLL users: heaps and globals are not shared across DLL boundaries! You will need to call SetCurrentContext() + SetAllocatorFunctions().<br/>For each static/DLL boundary you are calling from. Read "Context and Memory Allocators" section of imgui.cpp for details.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L290.</summary>
         // DEBUG: ImGuiContext* CreateContext(ImFontAtlas* shared_font_atlas = NULL)
-        public static IntPtr CreateContext(ImFontAtlas shared_font_atlas = default)
+        public static global::System.IntPtr CreateContext(global::DearImGui.ImFontAtlas shared_font_atlas = default)
         {
             var __arg0 = shared_font_atlas is null ? IntPtr.Zero : shared_font_atlas.__Instance;
             var ___ret = Environment.Is64BitProcess ? __Internal64.CreateContext(__arg0) : __Internal32.CreateContext(__arg0);
@@ -20427,7 +20427,7 @@ namespace DearImGui
 
         /// <summary>NULL = destroy current context.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L291.</summary>
         // DEBUG: void          DestroyContext(ImGuiContext* ctx = NULL)
-        public static void DestroyContext(IntPtr ctx = default)
+        public static void DestroyContext(global::System.IntPtr ctx = default)
         {
             var __arg0 = ctx
             /* DEBUG: TypeMapContext.CSharpMarshalToNative: Function: True, ReturnVarName: False */
@@ -20444,7 +20444,7 @@ namespace DearImGui
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L292.</summary>
         // DEBUG: ImGuiContext* GetCurrentContext()
-        public static IntPtr GetCurrentContext()
+        public static global::System.IntPtr GetCurrentContext()
         {
             var ___ret = Environment.Is64BitProcess ? __Internal64.GetCurrentContext() : __Internal32.GetCurrentContext();
             return ___ret
@@ -20454,7 +20454,7 @@ namespace DearImGui
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L293.</summary>
         // DEBUG: void          SetCurrentContext(ImGuiContext* ctx)
-        public static void SetCurrentContext(IntPtr ctx)
+        public static void SetCurrentContext(global::System.IntPtr ctx)
         {
             var __arg0 = ctx
             /* DEBUG: TypeMapContext.CSharpMarshalToNative: Function: True, ReturnVarName: False */
@@ -20471,19 +20471,19 @@ namespace DearImGui
 
         /// <summary>Access the IO structure (mouse/keyboard/gamepad inputs, time, various configuration options/flags).<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L296.</summary>
         // DEBUG: ImGuiIO&      GetIO()
-        public static ImGuiIO GetIO()
+        public static global::DearImGui.ImGuiIO GetIO()
         {
             var ___ret = Environment.Is64BitProcess ? __Internal64.GetIO() : __Internal32.GetIO();
-            var __result0 = ImGuiIO.__GetOrCreateInstance(___ret, false);
+            var __result0 = global::DearImGui.ImGuiIO.__GetOrCreateInstance(___ret, false);
             return __result0;
         }
 
         /// <summary>Access the Style structure (colors, sizes). Always use PushStyleCol(), PushStyleVar() to modify style mid-frame!<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L297.</summary>
         // DEBUG: ImGuiStyle&   GetStyle()
-        public static ImGuiStyle GetStyle()
+        public static global::DearImGui.ImGuiStyle GetStyle()
         {
             var ___ret = Environment.Is64BitProcess ? __Internal64.GetStyle() : __Internal32.GetStyle();
-            var __result0 = ImGuiStyle.__GetOrCreateInstance(___ret, false);
+            var __result0 = global::DearImGui.ImGuiStyle.__GetOrCreateInstance(___ret, false);
             return __result0;
         }
 
@@ -20531,10 +20531,10 @@ namespace DearImGui
 
         /// <summary>Valid after Render() and until the next call to NewFrame(). this is what you have to render.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L301.</summary>
         // DEBUG: ImDrawData*   GetDrawData()
-        public static ImDrawData GetDrawData()
+        public static global::DearImGui.ImDrawData GetDrawData()
         {
             var ___ret = Environment.Is64BitProcess ? __Internal64.GetDrawData() : __Internal32.GetDrawData();
-            var __result0 = ___ret != IntPtr.Zero ? ImDrawData.__CreateInstance(___ret) : default;
+            var __result0 = ___ret != IntPtr.Zero ? global::DearImGui.ImDrawData.__CreateInstance(___ret) : default;
             return __result0;
         }
 
@@ -20630,7 +20630,7 @@ namespace DearImGui
 
         /// <summary>Add style editor block (not a window). you can pass in a reference ImGuiStyle structure to compare to, revert to and save to (else it uses the default style).<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L309.</summary>
         // DEBUG: void          ShowStyleEditor(ImGuiStyle* ref = NULL)
-        public static void ShowStyleEditor(ImGuiStyle @ref = default)
+        public static void ShowStyleEditor(global::DearImGui.ImGuiStyle @ref = default)
         {
             var __arg0 = @ref is null ? IntPtr.Zero : @ref.__Instance;
             if (Environment.Is64BitProcess)
@@ -20684,12 +20684,12 @@ namespace DearImGui
         public static string GetVersion()
         {
             var ___ret = Environment.Is64BitProcess ? __Internal64.GetVersion() : __Internal32.GetVersion();
-            return CppSharp.Runtime.MarshalUtil.GetString(Encoding.UTF8, ___ret);
+            return CppSharp.Runtime.MarshalUtil.GetString(global::System.Text.Encoding.UTF8, ___ret);
         }
 
         /// <summary>New, recommended style (default).<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L316.</summary>
         // DEBUG: void          StyleColorsDark(ImGuiStyle* dst = NULL)
-        public static void StyleColorsDark(ImGuiStyle dst = default)
+        public static void StyleColorsDark(global::DearImGui.ImGuiStyle dst = default)
         {
             var __arg0 = dst is null ? IntPtr.Zero : dst.__Instance;
             if (Environment.Is64BitProcess)
@@ -20704,7 +20704,7 @@ namespace DearImGui
 
         /// <summary>Best used with borders and a custom, thicker font.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L317.</summary>
         // DEBUG: void          StyleColorsLight(ImGuiStyle* dst = NULL)
-        public static void StyleColorsLight(ImGuiStyle dst = default)
+        public static void StyleColorsLight(global::DearImGui.ImGuiStyle dst = default)
         {
             var __arg0 = dst is null ? IntPtr.Zero : dst.__Instance;
             if (Environment.Is64BitProcess)
@@ -20719,7 +20719,7 @@ namespace DearImGui
 
         /// <summary>Classic imgui style.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L318.</summary>
         // DEBUG: void          StyleColorsClassic(ImGuiStyle* dst = NULL)
-        public static void StyleColorsClassic(ImGuiStyle dst = default)
+        public static void StyleColorsClassic(global::DearImGui.ImGuiStyle dst = default)
         {
             var __arg0 = dst is null ? IntPtr.Zero : dst.__Instance;
             if (Environment.Is64BitProcess)
@@ -20734,7 +20734,7 @@ namespace DearImGui
 
         /// <summary>Windows.<br/>- Begin() = push window to the stack and start appending to it. End() = pop window from the stack.<br/>- Passing 'bool* p_open != NULL' shows a window-closing widget in the upper-right corner of the window,.<br/>Which clicking will set the boolean to false when clicked.<br/>- You may append multiple times to the same window during the same frame by calling Begin()/End() pairs multiple times.<br/>Some information such as 'flags' or 'p_open' will only be considered by the first call to Begin().<br/>- Begin() return false to indicate the window is collapsed or fully clipped, so you may early out and omit submitting.<br/>Anything to the window. Always call a matching End() for each Begin() call, regardless of its return value!<br/>[Important: due to legacy reason, this is inconsistent with most other functions such as BeginMenu/EndMenu,.<br/>BeginPopup/EndPopup, etc. where the EndXXX call should only be called if the corresponding BeginXXX function.<br/>Returned true. Begin and BeginChild are the only odd ones out. Will be fixed in a future update.].<br/>- Note that the bottom of window stack always contains a window called "Debug".<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L332.</summary>
         // DEBUG: bool          Begin(const char* name, bool* p_open = NULL, ImGuiWindowFlags flags = 0)
-        public static bool Begin(string name, ref bool p_open, ImGuiWindowFlags flags = (ImGuiWindowFlags)(0))
+        public static bool Begin(string name, ref bool p_open, global::DearImGui.ImGuiWindowFlags flags = (ImGuiWindowFlags)(0))
         {
             fixed (bool* __p_open1 = &p_open)
             {
@@ -20760,7 +20760,7 @@ namespace DearImGui
 
         /// <summary>Child Windows.<br/>- Use child windows to begin into a self-contained independent scrolling/clipping regions within a host window. Child windows can embed their own child.<br/>- For each independent axis of 'size': ==0.0f: use remaining host window size / &gt;0.0f: fixed size / &lt;0.0f: use remaining window size minus abs(size) / Each axis can use a different mode, e.g. ImVec2(0,400).<br/>- BeginChild() returns false to indicate the window is collapsed or fully clipped, so you may early out and omit submitting anything to the window.<br/>Always call a matching EndChild() for each BeginChild() call, regardless of its return value.<br/>[Important: due to legacy reason, this is inconsistent with most other functions such as BeginMenu/EndMenu,.<br/>BeginPopup/EndPopup, etc. where the EndXXX call should only be called if the corresponding BeginXXX function.<br/>Returned true. Begin and BeginChild are the only odd ones out. Will be fixed in a future update.].<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L343.</summary>
         // DEBUG: bool          BeginChild(const char* str_id, const ImVec2& size = ImVec2(0, 0), bool border = false, ImGuiWindowFlags flags = 0)
-        public static bool BeginChild(string str_id, Vector2 size, bool border = false, ImGuiWindowFlags flags = (ImGuiWindowFlags)(0))
+        public static bool BeginChild(string str_id, global::System.Numerics.Vector2 size, bool border = false, global::DearImGui.ImGuiWindowFlags flags = (ImGuiWindowFlags)(0))
         {
             var __arg1 = new IntPtr(Unsafe.AsPointer(ref size))
             /* DEBUG: TypeMapImVec2.CSharpMarshalToNative: Case 3 */
@@ -20772,7 +20772,7 @@ namespace DearImGui
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L344.</summary>
         // DEBUG: bool          BeginChild(ImGuiID id, const ImVec2& size = ImVec2(0, 0), bool border = false, ImGuiWindowFlags flags = 0)
-        public static bool BeginChild(uint id, Vector2 size, bool border = false, ImGuiWindowFlags flags = (ImGuiWindowFlags)(0))
+        public static bool BeginChild(uint id, global::System.Numerics.Vector2 size, bool border = false, global::DearImGui.ImGuiWindowFlags flags = (ImGuiWindowFlags)(0))
         {
             var __arg1 = new IntPtr(Unsafe.AsPointer(ref size))
             /* DEBUG: TypeMapImVec2.CSharpMarshalToNative: Case 3 */
@@ -20814,7 +20814,7 @@ namespace DearImGui
 
         /// <summary>Is current window focused? or its root/child, depending on flags. see flags for options.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L351.</summary>
         // DEBUG: bool          IsWindowFocused(ImGuiFocusedFlags flags=0)
-        public static bool IsWindowFocused(ImGuiFocusedFlags flags = (ImGuiFocusedFlags)(0))
+        public static bool IsWindowFocused(global::DearImGui.ImGuiFocusedFlags flags = (ImGuiFocusedFlags)(0))
         {
             var ___ret = Environment.Is64BitProcess ? __Internal64.IsWindowFocused(flags) : __Internal32.IsWindowFocused(flags);
             return ___ret;
@@ -20822,7 +20822,7 @@ namespace DearImGui
 
         /// <summary>Is current window hovered (and typically: not blocked by a popup/modal)? see flags for options. NB: If you are trying to check whether your mouse should be dispatched to imgui or to your app, you should use the 'io.WantCaptureMouse' boolean for that! Please read the FAQ!<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L352.</summary>
         // DEBUG: bool          IsWindowHovered(ImGuiHoveredFlags flags=0)
-        public static bool IsWindowHovered(ImGuiHoveredFlags flags = (ImGuiHoveredFlags)(0))
+        public static bool IsWindowHovered(global::DearImGui.ImGuiHoveredFlags flags = (ImGuiHoveredFlags)(0))
         {
             var ___ret = Environment.Is64BitProcess ? __Internal64.IsWindowHovered(flags) : __Internal32.IsWindowHovered(flags);
             return ___ret;
@@ -20830,10 +20830,10 @@ namespace DearImGui
 
         /// <summary>Get draw list associated to the current window, to append your own drawing primitives.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L353.</summary>
         // DEBUG: ImDrawList*   GetWindowDrawList()
-        public static ImDrawList GetWindowDrawList()
+        public static global::DearImGui.ImDrawList GetWindowDrawList()
         {
             var ___ret = Environment.Is64BitProcess ? __Internal64.GetWindowDrawList() : __Internal32.GetWindowDrawList();
-            var __result0 = ___ret != IntPtr.Zero ? ImDrawList.__CreateInstance(___ret) : default;
+            var __result0 = ___ret != IntPtr.Zero ? global::DearImGui.ImDrawList.__CreateInstance(___ret) : default;
             return __result0;
         }
 
@@ -20847,9 +20847,9 @@ namespace DearImGui
 
         /// <summary>Get current window position in screen space (useful if you want to do your own drawing via the DrawList API).<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L355.</summary>
         // DEBUG: ImVec2        GetWindowPos()
-        public static Vector2 GetWindowPos()
+        public static global::System.Numerics.Vector2 GetWindowPos()
         {
-            var ___ret = new Vector2();
+            var ___ret = new global::DearImGui.ImVec2.__Internal();
             if (Environment.Is64BitProcess)
             {
                 __Internal64.GetWindowPos(new IntPtr(&___ret));
@@ -20867,9 +20867,9 @@ namespace DearImGui
 
         /// <summary>Get current window size.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L356.</summary>
         // DEBUG: ImVec2        GetWindowSize()
-        public static Vector2 GetWindowSize()
+        public static global::System.Numerics.Vector2 GetWindowSize()
         {
-            var ___ret = new Vector2();
+            var ___ret = new global::DearImGui.ImVec2.__Internal();
             if (Environment.Is64BitProcess)
             {
                 __Internal64.GetWindowSize(new IntPtr(&___ret));
@@ -20903,16 +20903,16 @@ namespace DearImGui
 
         /// <summary>Get viewport currently associated to the current window.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L359.</summary>
         // DEBUG: ImGuiViewport*GetWindowViewport()
-        public static ImGuiViewport GetWindowViewport()
+        public static global::DearImGui.ImGuiViewport GetWindowViewport()
         {
             var ___ret = Environment.Is64BitProcess ? __Internal64.GetWindowViewport() : __Internal32.GetWindowViewport();
-            var __result0 = ImGuiViewport.__GetOrCreateInstance(___ret, false);
+            var __result0 = global::DearImGui.ImGuiViewport.__GetOrCreateInstance(___ret, false);
             return __result0;
         }
 
         /// <summary>Set next window position. call before Begin(). use pivot=(0.5f,0.5f) to center on given point, etc.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L363.</summary>
         // DEBUG: void          SetNextWindowPos(const ImVec2& pos, ImGuiCond cond = 0, const ImVec2& pivot = ImVec2(0, 0))
-        public static void SetNextWindowPos(Vector2 pos, ImGuiCond cond, Vector2 pivot)
+        public static void SetNextWindowPos(global::System.Numerics.Vector2 pos, global::DearImGui.ImGuiCond cond, global::System.Numerics.Vector2 pivot)
         {
             var __arg0 = new IntPtr(Unsafe.AsPointer(ref pos))
             /* DEBUG: TypeMapImVec2.CSharpMarshalToNative: Case 4 */
@@ -20934,7 +20934,7 @@ namespace DearImGui
 
         /// <summary>Set next window size. set axis to 0.0f to force an auto-fit on this axis. call before Begin().<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L364.</summary>
         // DEBUG: void          SetNextWindowSize(const ImVec2& size, ImGuiCond cond = 0)
-        public static void SetNextWindowSize(Vector2 size, ImGuiCond cond = (ImGuiCond)(0))
+        public static void SetNextWindowSize(global::System.Numerics.Vector2 size, global::DearImGui.ImGuiCond cond = (ImGuiCond)(0))
         {
             var __arg0 = new IntPtr(Unsafe.AsPointer(ref size))
             /* DEBUG: TypeMapImVec2.CSharpMarshalToNative: Case 4 */
@@ -20952,7 +20952,7 @@ namespace DearImGui
 
         /// <summary>Set next window size limits. use -1,-1 on either X/Y axis to preserve the current size. Sizes will be rounded down. Use callback to apply non-trivial programmatic constraints.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L365.</summary>
         // DEBUG: void          SetNextWindowSizeConstraints(const ImVec2& size_min, const ImVec2& size_max, ImGuiSizeCallback custom_callback = NULL, void* custom_callback_data = NULL)
-        public static void SetNextWindowSizeConstraints(Vector2 size_min, Vector2 size_max, ImGuiSizeCallback custom_callback = null, IntPtr custom_callback_data = default)
+        public static void SetNextWindowSizeConstraints(global::System.Numerics.Vector2 size_min, global::System.Numerics.Vector2 size_max, global::DearImGui.ImGuiSizeCallback custom_callback = null, IntPtr custom_callback_data = default)
         {
             var __arg0 = new IntPtr(Unsafe.AsPointer(ref size_min))
             /* DEBUG: TypeMapImVec2.CSharpMarshalToNative: Case 4 */
@@ -20962,7 +20962,7 @@ namespace DearImGui
             /* DEBUG: TypeMapImVec2.CSharpMarshalToNative: Case 4 */
             /* DEBUG: TypeMapImVec2.CSharpMarshalToNative: Function: True, ReturnVarName: False */
             ;
-            var __arg2 = custom_callback == null ? IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(custom_callback);
+            var __arg2 = custom_callback == null ? global::System.IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(custom_callback);
             if (Environment.Is64BitProcess)
             {
                 __Internal64.SetNextWindowSizeConstraints(__arg0, __arg1, __arg2, custom_callback_data);
@@ -20975,7 +20975,7 @@ namespace DearImGui
 
         /// <summary>Set next window content size (~ scrollable client area, which enforce the range of scrollbars). Not including window decorations (title bar, menu bar, etc.) nor WindowPadding. set an axis to 0.0f to leave it automatic. call before Begin().<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L366.</summary>
         // DEBUG: void          SetNextWindowContentSize(const ImVec2& size)
-        public static void SetNextWindowContentSize(Vector2 size)
+        public static void SetNextWindowContentSize(global::System.Numerics.Vector2 size)
         {
             var __arg0 = new IntPtr(Unsafe.AsPointer(ref size))
             /* DEBUG: TypeMapImVec2.CSharpMarshalToNative: Case 4 */
@@ -20993,7 +20993,7 @@ namespace DearImGui
 
         /// <summary>Set next window collapsed state. call before Begin().<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L367.</summary>
         // DEBUG: void          SetNextWindowCollapsed(bool collapsed, ImGuiCond cond = 0)
-        public static void SetNextWindowCollapsed(bool collapsed, ImGuiCond cond = (ImGuiCond)(0))
+        public static void SetNextWindowCollapsed(bool collapsed, global::DearImGui.ImGuiCond cond = (ImGuiCond)(0))
         {
             if (Environment.Is64BitProcess)
             {
@@ -21049,7 +21049,7 @@ namespace DearImGui
 
         /// <summary>(not recommended) set current window position - call within Begin()/End(). prefer using SetNextWindowPos(), as this may incur tearing and side-effects.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L371.</summary>
         // DEBUG: void          SetWindowPos(const ImVec2& pos, ImGuiCond cond = 0)
-        public static void SetWindowPos(Vector2 pos, ImGuiCond cond = (ImGuiCond)(0))
+        public static void SetWindowPos(global::System.Numerics.Vector2 pos, global::DearImGui.ImGuiCond cond = (ImGuiCond)(0))
         {
             var __arg0 = new IntPtr(Unsafe.AsPointer(ref pos))
             /* DEBUG: TypeMapImVec2.CSharpMarshalToNative: Case 4 */
@@ -21067,7 +21067,7 @@ namespace DearImGui
 
         /// <summary>(not recommended) set current window size - call within Begin()/End(). set to ImVec2(0, 0) to force an auto-fit. prefer using SetNextWindowSize(), as this may incur tearing and minor side-effects.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L372.</summary>
         // DEBUG: void          SetWindowSize(const ImVec2& size, ImGuiCond cond = 0)
-        public static void SetWindowSize(Vector2 size, ImGuiCond cond = (ImGuiCond)(0))
+        public static void SetWindowSize(global::System.Numerics.Vector2 size, global::DearImGui.ImGuiCond cond = (ImGuiCond)(0))
         {
             var __arg0 = new IntPtr(Unsafe.AsPointer(ref size))
             /* DEBUG: TypeMapImVec2.CSharpMarshalToNative: Case 4 */
@@ -21085,7 +21085,7 @@ namespace DearImGui
 
         /// <summary>(not recommended) set current window collapsed state. prefer using SetNextWindowCollapsed().<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L373.</summary>
         // DEBUG: void          SetWindowCollapsed(bool collapsed, ImGuiCond cond = 0)
-        public static void SetWindowCollapsed(bool collapsed, ImGuiCond cond = (ImGuiCond)(0))
+        public static void SetWindowCollapsed(bool collapsed, global::DearImGui.ImGuiCond cond = (ImGuiCond)(0))
         {
             if (Environment.Is64BitProcess)
             {
@@ -21127,7 +21127,7 @@ namespace DearImGui
 
         /// <summary>Set named window position.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L376.</summary>
         // DEBUG: void          SetWindowPos(const char* name, const ImVec2& pos, ImGuiCond cond = 0)
-        public static void SetWindowPos(string name, Vector2 pos, ImGuiCond cond = (ImGuiCond)(0))
+        public static void SetWindowPos(string name, global::System.Numerics.Vector2 pos, global::DearImGui.ImGuiCond cond = (ImGuiCond)(0))
         {
             var __arg1 = new IntPtr(Unsafe.AsPointer(ref pos))
             /* DEBUG: TypeMapImVec2.CSharpMarshalToNative: Case 4 */
@@ -21145,7 +21145,7 @@ namespace DearImGui
 
         /// <summary>Set named window size. set axis to 0.0f to force an auto-fit on this axis.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L377.</summary>
         // DEBUG: void          SetWindowSize(const char* name, const ImVec2& size, ImGuiCond cond = 0)
-        public static void SetWindowSize(string name, Vector2 size, ImGuiCond cond = (ImGuiCond)(0))
+        public static void SetWindowSize(string name, global::System.Numerics.Vector2 size, global::DearImGui.ImGuiCond cond = (ImGuiCond)(0))
         {
             var __arg1 = new IntPtr(Unsafe.AsPointer(ref size))
             /* DEBUG: TypeMapImVec2.CSharpMarshalToNative: Case 4 */
@@ -21163,7 +21163,7 @@ namespace DearImGui
 
         /// <summary>Set named window collapsed state.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L378.</summary>
         // DEBUG: void          SetWindowCollapsed(const char* name, bool collapsed, ImGuiCond cond = 0)
-        public static void SetWindowCollapsed(string name, bool collapsed, ImGuiCond cond = (ImGuiCond)(0))
+        public static void SetWindowCollapsed(string name, bool collapsed, global::DearImGui.ImGuiCond cond = (ImGuiCond)(0))
         {
             if (Environment.Is64BitProcess)
             {
@@ -21191,9 +21191,9 @@ namespace DearImGui
 
         /// <summary>== GetContentRegionMax() - GetCursorPos().<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L384.</summary>
         // DEBUG: ImVec2        GetContentRegionAvail()
-        public static Vector2 GetContentRegionAvail()
+        public static global::System.Numerics.Vector2 GetContentRegionAvail()
         {
-            var ___ret = new Vector2();
+            var ___ret = new global::DearImGui.ImVec2.__Internal();
             if (Environment.Is64BitProcess)
             {
                 __Internal64.GetContentRegionAvail(new IntPtr(&___ret));
@@ -21211,9 +21211,9 @@ namespace DearImGui
 
         /// <summary>Current content boundaries (typically window boundaries including scrolling, or current column boundaries), in windows coordinates.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L385.</summary>
         // DEBUG: ImVec2        GetContentRegionMax()
-        public static Vector2 GetContentRegionMax()
+        public static global::System.Numerics.Vector2 GetContentRegionMax()
         {
-            var ___ret = new Vector2();
+            var ___ret = new global::DearImGui.ImVec2.__Internal();
             if (Environment.Is64BitProcess)
             {
                 __Internal64.GetContentRegionMax(new IntPtr(&___ret));
@@ -21231,9 +21231,9 @@ namespace DearImGui
 
         /// <summary>Content boundaries min for the full window (roughly (0,0)-Scroll), in window coordinates.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L386.</summary>
         // DEBUG: ImVec2        GetWindowContentRegionMin()
-        public static Vector2 GetWindowContentRegionMin()
+        public static global::System.Numerics.Vector2 GetWindowContentRegionMin()
         {
-            var ___ret = new Vector2();
+            var ___ret = new global::DearImGui.ImVec2.__Internal();
             if (Environment.Is64BitProcess)
             {
                 __Internal64.GetWindowContentRegionMin(new IntPtr(&___ret));
@@ -21251,9 +21251,9 @@ namespace DearImGui
 
         /// <summary>Content boundaries max for the full window (roughly (0,0)+Size-Scroll) where Size can be override with SetNextWindowContentSize(), in window coordinates.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L387.</summary>
         // DEBUG: ImVec2        GetWindowContentRegionMax()
-        public static Vector2 GetWindowContentRegionMax()
+        public static global::System.Numerics.Vector2 GetWindowContentRegionMax()
         {
-            var ___ret = new Vector2();
+            var ___ret = new global::DearImGui.ImVec2.__Internal();
             if (Environment.Is64BitProcess)
             {
                 __Internal64.GetWindowContentRegionMax(new IntPtr(&___ret));
@@ -21387,7 +21387,7 @@ namespace DearImGui
 
         /// <summary>Use NULL as a shortcut to push default font.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L402.</summary>
         // DEBUG: void          PushFont(ImFont* font)
-        public static void PushFont(ImFont font)
+        public static void PushFont(global::DearImGui.ImFont font)
         {
             var __arg0 = font is null ? IntPtr.Zero : font.__Instance;
             if (Environment.Is64BitProcess)
@@ -21416,7 +21416,7 @@ namespace DearImGui
 
         /// <summary>Modify a style color. always use this if you modify the style after NewFrame().<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L404.</summary>
         // DEBUG: void          PushStyleColor(ImGuiCol idx, ImU32 col)
-        public static void PushStyleColor(ImGuiCol idx, uint col)
+        public static void PushStyleColor(global::DearImGui.ImGuiCol idx, uint col)
         {
             if (Environment.Is64BitProcess)
             {
@@ -21430,7 +21430,7 @@ namespace DearImGui
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L405.</summary>
         // DEBUG: void          PushStyleColor(ImGuiCol idx, const ImVec4& col)
-        public static void PushStyleColor(ImGuiCol idx, Vector4 col)
+        public static void PushStyleColor(global::DearImGui.ImGuiCol idx, global::System.Numerics.Vector4 col)
         {
             var __arg1 = new IntPtr(Unsafe.AsPointer(ref col))
             /* DEBUG: TypeMapImVec4.CSharpMarshalToNative: Case 4 */
@@ -21462,7 +21462,7 @@ namespace DearImGui
 
         /// <summary>Modify a style float variable. always use this if you modify the style after NewFrame().<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L407.</summary>
         // DEBUG: void          PushStyleVar(ImGuiStyleVar idx, float val)
-        public static void PushStyleVar(ImGuiStyleVar idx, float val)
+        public static void PushStyleVar(global::DearImGui.ImGuiStyleVar idx, float val)
         {
             if (Environment.Is64BitProcess)
             {
@@ -21476,7 +21476,7 @@ namespace DearImGui
 
         /// <summary>Modify a style ImVec2 variable. always use this if you modify the style after NewFrame().<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L408.</summary>
         // DEBUG: void          PushStyleVar(ImGuiStyleVar idx, const ImVec2& val)
-        public static void PushStyleVar(ImGuiStyleVar idx, Vector2 val)
+        public static void PushStyleVar(global::DearImGui.ImGuiStyleVar idx, global::System.Numerics.Vector2 val)
         {
             var __arg1 = new IntPtr(Unsafe.AsPointer(ref val))
             /* DEBUG: TypeMapImVec2.CSharpMarshalToNative: Case 4 */
@@ -21642,10 +21642,10 @@ namespace DearImGui
 
         /// <summary>Get current font.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L425.</summary>
         // DEBUG: ImFont*       GetFont()
-        public static ImFont GetFont()
+        public static global::DearImGui.ImFont GetFont()
         {
             var ___ret = Environment.Is64BitProcess ? __Internal64.GetFont() : __Internal32.GetFont();
-            var __result0 = ImFont.__GetOrCreateInstance(___ret, false);
+            var __result0 = global::DearImGui.ImFont.__GetOrCreateInstance(___ret, false);
             return __result0;
         }
 
@@ -21659,9 +21659,9 @@ namespace DearImGui
 
         /// <summary>Get UV coordinate for a while pixel, useful to draw custom shapes via the ImDrawList API.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L427.</summary>
         // DEBUG: ImVec2        GetFontTexUvWhitePixel()
-        public static Vector2 GetFontTexUvWhitePixel()
+        public static global::System.Numerics.Vector2 GetFontTexUvWhitePixel()
         {
-            var ___ret = new Vector2();
+            var ___ret = new global::DearImGui.ImVec2.__Internal();
             if (Environment.Is64BitProcess)
             {
                 __Internal64.GetFontTexUvWhitePixel(new IntPtr(&___ret));
@@ -21679,7 +21679,7 @@ namespace DearImGui
 
         /// <summary>Retrieve given style color with style alpha applied and optional extra alpha multiplier, packed as a 32-bit value suitable for ImDrawList.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L428.</summary>
         // DEBUG: ImU32         GetColorU32(ImGuiCol idx, float alpha_mul = 1.0f)
-        public static uint GetColorU32(ImGuiCol idx, float alpha_mul = 1.0F)
+        public static uint GetColorU32(global::DearImGui.ImGuiCol idx, float alpha_mul = 1.0F)
         {
             var ___ret = Environment.Is64BitProcess ? __Internal64.GetColorU32(idx, alpha_mul) : __Internal32.GetColorU32(idx, alpha_mul);
             return ___ret;
@@ -21687,7 +21687,7 @@ namespace DearImGui
 
         /// <summary>Retrieve given color with style alpha applied, packed as a 32-bit value suitable for ImDrawList.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L429.</summary>
         // DEBUG: ImU32         GetColorU32(const ImVec4& col)
-        public static uint GetColorU32(Vector4 col)
+        public static uint GetColorU32(global::System.Numerics.Vector4 col)
         {
             var __arg0 = new IntPtr(Unsafe.AsPointer(ref col))
             /* DEBUG: TypeMapImVec4.CSharpMarshalToNative: Case 4 */
@@ -21707,10 +21707,10 @@ namespace DearImGui
 
         /// <summary>Retrieve style color as stored in ImGuiStyle structure. use to feed back into PushStyleColor(), otherwise use GetColorU32() to get style color with style alpha baked in.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L431.</summary>
         // DEBUG: const ImVec4& GetStyleColorVec4(ImGuiCol idx)
-        public static Vector4 GetStyleColorVec4(ImGuiCol idx)
+        public static global::System.Numerics.Vector4 GetStyleColorVec4(global::DearImGui.ImGuiCol idx)
         {
             var ___ret = Environment.Is64BitProcess ? __Internal64.GetStyleColorVec4(idx) : __Internal32.GetStyleColorVec4(idx);
-            return Unsafe.Read<Vector4>(___ret.ToPointer())
+            return Unsafe.Read<global::System.Numerics.Vector4>(___ret.ToPointer())
             /* DEBUG: TypeMapImVec4.CSharpMarshalToManaged: Case 5 */
             /* DEBUG: TypeMapImVec4.CSharpMarshalToManaged: Function: True, ReturnVarName: True */
             ;
@@ -21774,7 +21774,7 @@ namespace DearImGui
 
         /// <summary>Add a dummy item of given size. unlike InvisibleButton(), Dummy() won't take the mouse click or be navigable into.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L444.</summary>
         // DEBUG: void          Dummy(const ImVec2& size)
-        public static void Dummy(Vector2 size)
+        public static void Dummy(global::System.Numerics.Vector2 size)
         {
             var __arg0 = new IntPtr(Unsafe.AsPointer(ref size))
             /* DEBUG: TypeMapImVec2.CSharpMarshalToNative: Case 4 */
@@ -21848,9 +21848,9 @@ namespace DearImGui
 
         /// <summary>Cursor position in window coordinates (relative to window position).<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L449.</summary>
         // DEBUG: ImVec2        GetCursorPos()
-        public static Vector2 GetCursorPos()
+        public static global::System.Numerics.Vector2 GetCursorPos()
         {
-            var ___ret = new Vector2();
+            var ___ret = new global::DearImGui.ImVec2.__Internal();
             if (Environment.Is64BitProcess)
             {
                 __Internal64.GetCursorPos(new IntPtr(&___ret));
@@ -21884,7 +21884,7 @@ namespace DearImGui
 
         /// <summary>Are using the main, absolute coordinate system.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L452.</summary>
         // DEBUG: void          SetCursorPos(const ImVec2& local_pos)
-        public static void SetCursorPos(Vector2 local_pos)
+        public static void SetCursorPos(global::System.Numerics.Vector2 local_pos)
         {
             var __arg0 = new IntPtr(Unsafe.AsPointer(ref local_pos))
             /* DEBUG: TypeMapImVec2.CSharpMarshalToNative: Case 4 */
@@ -21930,9 +21930,9 @@ namespace DearImGui
 
         /// <summary>Initial cursor position in window coordinates.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L455.</summary>
         // DEBUG: ImVec2        GetCursorStartPos()
-        public static Vector2 GetCursorStartPos()
+        public static global::System.Numerics.Vector2 GetCursorStartPos()
         {
-            var ___ret = new Vector2();
+            var ___ret = new global::DearImGui.ImVec2.__Internal();
             if (Environment.Is64BitProcess)
             {
                 __Internal64.GetCursorStartPos(new IntPtr(&___ret));
@@ -21950,9 +21950,9 @@ namespace DearImGui
 
         /// <summary>Cursor position in absolute coordinates (useful to work with ImDrawList API). generally top-left == GetMainViewport()-&gt;Pos == (0,0) in single viewport mode, and bottom-right == GetMainViewport()-&gt;Pos+Size == io.DisplaySize in single-viewport mode.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L456.</summary>
         // DEBUG: ImVec2        GetCursorScreenPos()
-        public static Vector2 GetCursorScreenPos()
+        public static global::System.Numerics.Vector2 GetCursorScreenPos()
         {
-            var ___ret = new Vector2();
+            var ___ret = new global::DearImGui.ImVec2.__Internal();
             if (Environment.Is64BitProcess)
             {
                 __Internal64.GetCursorScreenPos(new IntPtr(&___ret));
@@ -21970,7 +21970,7 @@ namespace DearImGui
 
         /// <summary>Cursor position in absolute coordinates.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L457.</summary>
         // DEBUG: void          SetCursorScreenPos(const ImVec2& pos)
-        public static void SetCursorScreenPos(Vector2 pos)
+        public static void SetCursorScreenPos(global::System.Numerics.Vector2 pos)
         {
             var __arg0 = new IntPtr(Unsafe.AsPointer(ref pos))
             /* DEBUG: TypeMapImVec2.CSharpMarshalToNative: Case 4 */
@@ -22156,7 +22156,7 @@ namespace DearImGui
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L487.</summary>
         // DEBUG: void          TextV(const char* fmt, va_list args)                            IM_FMTLIST(1)
-        public static void TextV(string fmt, Object args)
+        public static void TextV(string fmt, global::System.Object args)
         {
             if (Environment.Is64BitProcess)
             {
@@ -22170,7 +22170,7 @@ namespace DearImGui
 
         /// <summary>Shortcut for PushStyleColor(ImGuiCol_Text, col); Text(fmt, ...); PopStyleColor();.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L488.</summary>
         // DEBUG: void          TextColored(const ImVec4& col, const char* fmt, ...)            IM_FMTARGS(2)
-        public static void TextColored(Vector4 col, string fmt)
+        public static void TextColored(global::System.Numerics.Vector4 col, string fmt)
         {
             var __arg0 = new IntPtr(Unsafe.AsPointer(ref col))
             /* DEBUG: TypeMapImVec4.CSharpMarshalToNative: Case 4 */
@@ -22188,7 +22188,7 @@ namespace DearImGui
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L489.</summary>
         // DEBUG: void          TextColoredV(const ImVec4& col, const char* fmt, va_list args)  IM_FMTLIST(2)
-        public static void TextColoredV(Vector4 col, string fmt, Object args)
+        public static void TextColoredV(global::System.Numerics.Vector4 col, string fmt, global::System.Object args)
         {
             var __arg0 = new IntPtr(Unsafe.AsPointer(ref col))
             /* DEBUG: TypeMapImVec4.CSharpMarshalToNative: Case 4 */
@@ -22220,7 +22220,7 @@ namespace DearImGui
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L491.</summary>
         // DEBUG: void          TextDisabledV(const char* fmt, va_list args)                    IM_FMTLIST(1)
-        public static void TextDisabledV(string fmt, Object args)
+        public static void TextDisabledV(string fmt, global::System.Object args)
         {
             if (Environment.Is64BitProcess)
             {
@@ -22248,7 +22248,7 @@ namespace DearImGui
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L493.</summary>
         // DEBUG: void          TextWrappedV(const char* fmt, va_list args)                     IM_FMTLIST(1)
-        public static void TextWrappedV(string fmt, Object args)
+        public static void TextWrappedV(string fmt, global::System.Object args)
         {
             if (Environment.Is64BitProcess)
             {
@@ -22276,7 +22276,7 @@ namespace DearImGui
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L495.</summary>
         // DEBUG: void          LabelTextV(const char* label, const char* fmt, va_list args)    IM_FMTLIST(2)
-        public static void LabelTextV(string label, string fmt, Object args)
+        public static void LabelTextV(string label, string fmt, global::System.Object args)
         {
             if (Environment.Is64BitProcess)
             {
@@ -22304,7 +22304,7 @@ namespace DearImGui
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L497.</summary>
         // DEBUG: void          BulletTextV(const char* fmt, va_list args)                      IM_FMTLIST(1)
-        public static void BulletTextV(string fmt, Object args)
+        public static void BulletTextV(string fmt, global::System.Object args)
         {
             if (Environment.Is64BitProcess)
             {
@@ -22318,7 +22318,7 @@ namespace DearImGui
 
         /// <summary>Button.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L502.</summary>
         // DEBUG: bool          Button(const char* label, const ImVec2& size = ImVec2(0, 0))
-        public static bool Button(string label, Vector2 size)
+        public static bool Button(string label, global::System.Numerics.Vector2 size)
         {
             var __arg1 = new IntPtr(Unsafe.AsPointer(ref size))
             /* DEBUG: TypeMapImVec2.CSharpMarshalToNative: Case 3 */
@@ -22338,7 +22338,7 @@ namespace DearImGui
 
         /// <summary>Flexible button behavior without the visuals, frequently useful to build custom behaviors using the public api (along with IsItemActive, IsItemHovered, etc.).<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L504.</summary>
         // DEBUG: bool          InvisibleButton(const char* str_id, const ImVec2& size, ImGuiButtonFlags flags = 0)
-        public static bool InvisibleButton(string str_id, Vector2 size, ImGuiButtonFlags flags = (ImGuiButtonFlags)(0))
+        public static bool InvisibleButton(string str_id, global::System.Numerics.Vector2 size, global::DearImGui.ImGuiButtonFlags flags = (ImGuiButtonFlags)(0))
         {
             var __arg1 = new IntPtr(Unsafe.AsPointer(ref size))
             /* DEBUG: TypeMapImVec2.CSharpMarshalToNative: Case 4 */
@@ -22350,7 +22350,7 @@ namespace DearImGui
 
         /// <summary>Square button with an arrow shape.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L505.</summary>
         // DEBUG: bool          ArrowButton(const char* str_id, ImGuiDir dir)
-        public static bool ArrowButton(string str_id, ImGuiDir dir)
+        public static bool ArrowButton(string str_id, global::DearImGui.ImGuiDir dir)
         {
             var ___ret = Environment.Is64BitProcess ? __Internal64.ArrowButton(str_id, dir) : __Internal32.ArrowButton(str_id, dir);
             return ___ret;
@@ -22358,7 +22358,7 @@ namespace DearImGui
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L506.</summary>
         // DEBUG: void          Image(ImTextureID user_texture_id, const ImVec2& size, const ImVec2& uv0 = ImVec2(0, 0), const ImVec2& uv1 = ImVec2(1,1), const ImVec4& tint_col = ImVec4(1,1,1,1), const ImVec4& border_col = ImVec4(0,0,0,0))
-        public static void Image(IntPtr user_texture_id, Vector2 size, Vector2 uv0, Vector2 uv1, Vector4 tint_col, Vector4 border_col)
+        public static void Image(IntPtr user_texture_id, global::System.Numerics.Vector2 size, global::System.Numerics.Vector2 uv0, global::System.Numerics.Vector2 uv1, global::System.Numerics.Vector4 tint_col, global::System.Numerics.Vector4 border_col)
         {
             var __arg1 = new IntPtr(Unsafe.AsPointer(ref size))
             /* DEBUG: TypeMapImVec2.CSharpMarshalToNative: Case 4 */
@@ -22392,7 +22392,7 @@ namespace DearImGui
 
         /// <summary>&lt;0 frame_padding uses default frame padding settings. 0 for no padding.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L507.</summary>
         // DEBUG: bool          ImageButton(ImTextureID user_texture_id, const ImVec2& size, const ImVec2& uv0 = ImVec2(0, 0),  const ImVec2& uv1 = ImVec2(1,1), int frame_padding = -1, const ImVec4& bg_col = ImVec4(0,0,0,0), const ImVec4& tint_col = ImVec4(1,1,1,1))
-        public static bool ImageButton(IntPtr user_texture_id, Vector2 size, Vector2 uv0, Vector2 uv1, int frame_padding, Vector4 bg_col, Vector4 tint_col)
+        public static bool ImageButton(IntPtr user_texture_id, global::System.Numerics.Vector2 size, global::System.Numerics.Vector2 uv0, global::System.Numerics.Vector2 uv1, int frame_padding, global::System.Numerics.Vector4 bg_col, global::System.Numerics.Vector4 tint_col)
         {
             var __arg1 = new IntPtr(Unsafe.AsPointer(ref size))
             /* DEBUG: TypeMapImVec2.CSharpMarshalToNative: Case 4 */
@@ -22476,7 +22476,7 @@ namespace DearImGui
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L513.</summary>
         // DEBUG: void          ProgressBar(float fraction, const ImVec2& size_arg = ImVec2(-FLT_MIN, 0), const char* overlay = NULL)
-        public static void ProgressBar(float fraction, Vector2 size_arg, string overlay = default)
+        public static void ProgressBar(float fraction, global::System.Numerics.Vector2 size_arg, string overlay = default)
         {
             var __arg1 = new IntPtr(Unsafe.AsPointer(ref size_arg))
             /* DEBUG: TypeMapImVec2.CSharpMarshalToNative: Case 3 */
@@ -22508,7 +22508,7 @@ namespace DearImGui
 
         /// <summary>Widgets: Combo Box.<br/>- The BeginCombo()/EndCombo() api allows you to manage your contents and selection state however you want it, by creating e.g. Selectable() items.<br/>- The old Combo() api are helpers over BeginCombo()/EndCombo() which are kept available for convenience purpose. This is analogous to how ListBox are created.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L519.</summary>
         // DEBUG: bool          BeginCombo(const char* label, const char* preview_value, ImGuiComboFlags flags = 0)
-        public static bool BeginCombo(string label, string preview_value, ImGuiComboFlags flags = (ImGuiComboFlags)(0))
+        public static bool BeginCombo(string label, string preview_value, global::DearImGui.ImGuiComboFlags flags = (ImGuiComboFlags)(0))
         {
             var ___ret = Environment.Is64BitProcess ? __Internal64.BeginCombo(label, preview_value, flags) : __Internal32.BeginCombo(label, preview_value, flags);
             return ___ret;
@@ -22554,12 +22554,12 @@ namespace DearImGui
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L523.</summary>
         // DEBUG: bool          Combo(const char* label, int* current_item, bool(*items_getter)(void* data, int idx, const char** out_text), void* data, int items_count, int popup_max_height_in_items = -1)
-        public static bool Combo(string label, ref int current_item, ImItemsGetterHandler items_getter, IntPtr data, int items_count, int popup_max_height_in_items = (int)(-1))
+        public static bool Combo(string label, ref int current_item, global::DearImGui.ImItemsGetterHandler items_getter, IntPtr data, int items_count, int popup_max_height_in_items = (int)(-1))
         {
             fixed (int* __current_item1 = &current_item)
             {
                 var __arg1 = __current_item1;
-                var __arg2 = items_getter == null ? IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(items_getter);
+                var __arg2 = items_getter == null ? global::System.IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(items_getter);
                 var ___ret = Environment.Is64BitProcess ? __Internal64.Combo(label, __arg1, __arg2, data, items_count, popup_max_height_in_items) : __Internal32.Combo(label, __arg1, __arg2, data, items_count, popup_max_height_in_items);
                 return ___ret;
             }
@@ -22567,7 +22567,7 @@ namespace DearImGui
 
         /// <summary>If v_min &gt;= v_max we have no bound.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L537.</summary>
         // DEBUG: bool          DragFloat(const char* label, float* v, float v_speed = 1.0f, float v_min = 0.0f, float v_max = 0.0f, const char* format = "%.3f", ImGuiSliderFlags flags = 0)
-        public static bool DragFloat(string label, ref float v, float v_speed = 1.0F, float v_min = 0.0F, float v_max = 0.0F, string format = "%.3f", ImGuiSliderFlags flags = (ImGuiSliderFlags)(0))
+        public static bool DragFloat(string label, ref float v, float v_speed = 1.0F, float v_min = 0.0F, float v_max = 0.0F, string format = "%.3f", global::DearImGui.ImGuiSliderFlags flags = (ImGuiSliderFlags)(0))
         {
             fixed (float* __v1 = &v)
             {
@@ -22579,7 +22579,7 @@ namespace DearImGui
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L538.</summary>
         // DEBUG: bool          DragFloat2(const char* label, float v[2], float v_speed = 1.0f, float v_min = 0.0f, float v_max = 0.0f, const char* format = "%.3f", ImGuiSliderFlags flags = 0)
-        public static bool DragFloat2(string label, Span<float> v, float v_speed = 1.0F, float v_min = 0.0F, float v_max = 0.0F, string format = "%.3f", ImGuiSliderFlags flags = (ImGuiSliderFlags)(0))
+        public static bool DragFloat2(string label, Span<float> v, float v_speed = 1.0F, float v_min = 0.0F, float v_max = 0.0F, string format = "%.3f", global::DearImGui.ImGuiSliderFlags flags = (ImGuiSliderFlags)(0))
         {
             if (v == null || v.Length != 2)
                 throw new ArgumentOutOfRangeException("v", "The dimensions of the provided array don't match the required size.");
@@ -22593,7 +22593,7 @@ namespace DearImGui
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L539.</summary>
         // DEBUG: bool          DragFloat3(const char* label, float v[3], float v_speed = 1.0f, float v_min = 0.0f, float v_max = 0.0f, const char* format = "%.3f", ImGuiSliderFlags flags = 0)
-        public static bool DragFloat3(string label, Span<float> v, float v_speed = 1.0F, float v_min = 0.0F, float v_max = 0.0F, string format = "%.3f", ImGuiSliderFlags flags = (ImGuiSliderFlags)(0))
+        public static bool DragFloat3(string label, Span<float> v, float v_speed = 1.0F, float v_min = 0.0F, float v_max = 0.0F, string format = "%.3f", global::DearImGui.ImGuiSliderFlags flags = (ImGuiSliderFlags)(0))
         {
             if (v == null || v.Length != 3)
                 throw new ArgumentOutOfRangeException("v", "The dimensions of the provided array don't match the required size.");
@@ -22607,7 +22607,7 @@ namespace DearImGui
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L540.</summary>
         // DEBUG: bool          DragFloat4(const char* label, float v[4], float v_speed = 1.0f, float v_min = 0.0f, float v_max = 0.0f, const char* format = "%.3f", ImGuiSliderFlags flags = 0)
-        public static bool DragFloat4(string label, Span<float> v, float v_speed = 1.0F, float v_min = 0.0F, float v_max = 0.0F, string format = "%.3f", ImGuiSliderFlags flags = (ImGuiSliderFlags)(0))
+        public static bool DragFloat4(string label, Span<float> v, float v_speed = 1.0F, float v_min = 0.0F, float v_max = 0.0F, string format = "%.3f", global::DearImGui.ImGuiSliderFlags flags = (ImGuiSliderFlags)(0))
         {
             if (v == null || v.Length != 4)
                 throw new ArgumentOutOfRangeException("v", "The dimensions of the provided array don't match the required size.");
@@ -22621,7 +22621,7 @@ namespace DearImGui
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L541.</summary>
         // DEBUG: bool          DragFloatRange2(const char* label, float* v_current_min, float* v_current_max, float v_speed = 1.0f, float v_min = 0.0f, float v_max = 0.0f, const char* format = "%.3f", const char* format_max = NULL, ImGuiSliderFlags flags = 0)
-        public static bool DragFloatRange2(string label, ref float v_current_min, ref float v_current_max, float v_speed = 1.0F, float v_min = 0.0F, float v_max = 0.0F, string format = "%.3f", string format_max = default, ImGuiSliderFlags flags = (ImGuiSliderFlags)(0))
+        public static bool DragFloatRange2(string label, ref float v_current_min, ref float v_current_max, float v_speed = 1.0F, float v_min = 0.0F, float v_max = 0.0F, string format = "%.3f", string format_max = default, global::DearImGui.ImGuiSliderFlags flags = (ImGuiSliderFlags)(0))
         {
             fixed (float* __v_current_min1 = &v_current_min)
             {
@@ -22637,7 +22637,7 @@ namespace DearImGui
 
         /// <summary>If v_min &gt;= v_max we have no bound.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L542.</summary>
         // DEBUG: bool          DragInt(const char* label, int* v, float v_speed = 1.0f, int v_min = 0, int v_max = 0, const char* format = "%d", ImGuiSliderFlags flags = 0)
-        public static bool DragInt(string label, ref int v, float v_speed = 1.0F, int v_min = (int)(0), int v_max = (int)(0), string format = "%d", ImGuiSliderFlags flags = (ImGuiSliderFlags)(0))
+        public static bool DragInt(string label, ref int v, float v_speed = 1.0F, int v_min = (int)(0), int v_max = (int)(0), string format = "%d", global::DearImGui.ImGuiSliderFlags flags = (ImGuiSliderFlags)(0))
         {
             fixed (int* __v1 = &v)
             {
@@ -22649,7 +22649,7 @@ namespace DearImGui
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L543.</summary>
         // DEBUG: bool          DragInt2(const char* label, int v[2], float v_speed = 1.0f, int v_min = 0, int v_max = 0, const char* format = "%d", ImGuiSliderFlags flags = 0)
-        public static bool DragInt2(string label, Span<int> v, float v_speed = 1.0F, int v_min = (int)(0), int v_max = (int)(0), string format = "%d", ImGuiSliderFlags flags = (ImGuiSliderFlags)(0))
+        public static bool DragInt2(string label, Span<int> v, float v_speed = 1.0F, int v_min = (int)(0), int v_max = (int)(0), string format = "%d", global::DearImGui.ImGuiSliderFlags flags = (ImGuiSliderFlags)(0))
         {
             if (v == null || v.Length != 2)
                 throw new ArgumentOutOfRangeException("v", "The dimensions of the provided array don't match the required size.");
@@ -22663,7 +22663,7 @@ namespace DearImGui
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L544.</summary>
         // DEBUG: bool          DragInt3(const char* label, int v[3], float v_speed = 1.0f, int v_min = 0, int v_max = 0, const char* format = "%d", ImGuiSliderFlags flags = 0)
-        public static bool DragInt3(string label, Span<int> v, float v_speed = 1.0F, int v_min = (int)(0), int v_max = (int)(0), string format = "%d", ImGuiSliderFlags flags = (ImGuiSliderFlags)(0))
+        public static bool DragInt3(string label, Span<int> v, float v_speed = 1.0F, int v_min = (int)(0), int v_max = (int)(0), string format = "%d", global::DearImGui.ImGuiSliderFlags flags = (ImGuiSliderFlags)(0))
         {
             if (v == null || v.Length != 3)
                 throw new ArgumentOutOfRangeException("v", "The dimensions of the provided array don't match the required size.");
@@ -22677,7 +22677,7 @@ namespace DearImGui
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L545.</summary>
         // DEBUG: bool          DragInt4(const char* label, int v[4], float v_speed = 1.0f, int v_min = 0, int v_max = 0, const char* format = "%d", ImGuiSliderFlags flags = 0)
-        public static bool DragInt4(string label, Span<int> v, float v_speed = 1.0F, int v_min = (int)(0), int v_max = (int)(0), string format = "%d", ImGuiSliderFlags flags = (ImGuiSliderFlags)(0))
+        public static bool DragInt4(string label, Span<int> v, float v_speed = 1.0F, int v_min = (int)(0), int v_max = (int)(0), string format = "%d", global::DearImGui.ImGuiSliderFlags flags = (ImGuiSliderFlags)(0))
         {
             if (v == null || v.Length != 4)
                 throw new ArgumentOutOfRangeException("v", "The dimensions of the provided array don't match the required size.");
@@ -22691,7 +22691,7 @@ namespace DearImGui
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L546.</summary>
         // DEBUG: bool          DragIntRange2(const char* label, int* v_current_min, int* v_current_max, float v_speed = 1.0f, int v_min = 0, int v_max = 0, const char* format = "%d", const char* format_max = NULL, ImGuiSliderFlags flags = 0)
-        public static bool DragIntRange2(string label, ref int v_current_min, ref int v_current_max, float v_speed = 1.0F, int v_min = (int)(0), int v_max = (int)(0), string format = "%d", string format_max = default, ImGuiSliderFlags flags = (ImGuiSliderFlags)(0))
+        public static bool DragIntRange2(string label, ref int v_current_min, ref int v_current_max, float v_speed = 1.0F, int v_min = (int)(0), int v_max = (int)(0), string format = "%d", string format_max = default, global::DearImGui.ImGuiSliderFlags flags = (ImGuiSliderFlags)(0))
         {
             fixed (int* __v_current_min1 = &v_current_min)
             {
@@ -22707,7 +22707,7 @@ namespace DearImGui
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L547.</summary>
         // DEBUG: bool          DragScalar(const char* label, ImGuiDataType data_type, void* p_data, float v_speed = 1.0f, const void* p_min = NULL, const void* p_max = NULL, const char* format = NULL, ImGuiSliderFlags flags = 0)
-        public static bool DragScalar(string label, ImGuiDataType data_type, IntPtr p_data, float v_speed = 1.0F, IntPtr p_min = default, IntPtr p_max = default, string format = default, ImGuiSliderFlags flags = (ImGuiSliderFlags)(0))
+        public static bool DragScalar(string label, global::DearImGui.ImGuiDataType data_type, IntPtr p_data, float v_speed = 1.0F, IntPtr p_min = default, IntPtr p_max = default, string format = default, global::DearImGui.ImGuiSliderFlags flags = (ImGuiSliderFlags)(0))
         {
             var ___ret = Environment.Is64BitProcess ? __Internal64.DragScalar(label, data_type, p_data, v_speed, p_min, p_max, format, flags) : __Internal32.DragScalar(label, data_type, p_data, v_speed, p_min, p_max, format, flags);
             return ___ret;
@@ -22715,7 +22715,7 @@ namespace DearImGui
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L548.</summary>
         // DEBUG: bool          DragScalarN(const char* label, ImGuiDataType data_type, void* p_data, int components, float v_speed = 1.0f, const void* p_min = NULL, const void* p_max = NULL, const char* format = NULL, ImGuiSliderFlags flags = 0)
-        public static bool DragScalarN(string label, ImGuiDataType data_type, IntPtr p_data, int components, float v_speed = 1.0F, IntPtr p_min = default, IntPtr p_max = default, string format = default, ImGuiSliderFlags flags = (ImGuiSliderFlags)(0))
+        public static bool DragScalarN(string label, global::DearImGui.ImGuiDataType data_type, IntPtr p_data, int components, float v_speed = 1.0F, IntPtr p_min = default, IntPtr p_max = default, string format = default, global::DearImGui.ImGuiSliderFlags flags = (ImGuiSliderFlags)(0))
         {
             var ___ret = Environment.Is64BitProcess ? __Internal64.DragScalarN(label, data_type, p_data, components, v_speed, p_min, p_max, format, flags) : __Internal32.DragScalarN(label, data_type, p_data, components, v_speed, p_min, p_max, format, flags);
             return ___ret;
@@ -22723,7 +22723,7 @@ namespace DearImGui
 
         /// <summary>Adjust format to decorate the value with a prefix or a suffix for in-slider labels or unit display.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L556.</summary>
         // DEBUG: bool          SliderFloat(const char* label, float* v, float v_min, float v_max, const char* format = "%.3f", ImGuiSliderFlags flags = 0)
-        public static bool SliderFloat(string label, ref float v, float v_min, float v_max, string format = "%.3f", ImGuiSliderFlags flags = (ImGuiSliderFlags)(0))
+        public static bool SliderFloat(string label, ref float v, float v_min, float v_max, string format = "%.3f", global::DearImGui.ImGuiSliderFlags flags = (ImGuiSliderFlags)(0))
         {
             fixed (float* __v1 = &v)
             {
@@ -22735,7 +22735,7 @@ namespace DearImGui
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L557.</summary>
         // DEBUG: bool          SliderFloat2(const char* label, float v[2], float v_min, float v_max, const char* format = "%.3f", ImGuiSliderFlags flags = 0)
-        public static bool SliderFloat2(string label, Span<float> v, float v_min, float v_max, string format = "%.3f", ImGuiSliderFlags flags = (ImGuiSliderFlags)(0))
+        public static bool SliderFloat2(string label, Span<float> v, float v_min, float v_max, string format = "%.3f", global::DearImGui.ImGuiSliderFlags flags = (ImGuiSliderFlags)(0))
         {
             if (v == null || v.Length != 2)
                 throw new ArgumentOutOfRangeException("v", "The dimensions of the provided array don't match the required size.");
@@ -22749,7 +22749,7 @@ namespace DearImGui
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L558.</summary>
         // DEBUG: bool          SliderFloat3(const char* label, float v[3], float v_min, float v_max, const char* format = "%.3f", ImGuiSliderFlags flags = 0)
-        public static bool SliderFloat3(string label, Span<float> v, float v_min, float v_max, string format = "%.3f", ImGuiSliderFlags flags = (ImGuiSliderFlags)(0))
+        public static bool SliderFloat3(string label, Span<float> v, float v_min, float v_max, string format = "%.3f", global::DearImGui.ImGuiSliderFlags flags = (ImGuiSliderFlags)(0))
         {
             if (v == null || v.Length != 3)
                 throw new ArgumentOutOfRangeException("v", "The dimensions of the provided array don't match the required size.");
@@ -22763,7 +22763,7 @@ namespace DearImGui
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L559.</summary>
         // DEBUG: bool          SliderFloat4(const char* label, float v[4], float v_min, float v_max, const char* format = "%.3f", ImGuiSliderFlags flags = 0)
-        public static bool SliderFloat4(string label, Span<float> v, float v_min, float v_max, string format = "%.3f", ImGuiSliderFlags flags = (ImGuiSliderFlags)(0))
+        public static bool SliderFloat4(string label, Span<float> v, float v_min, float v_max, string format = "%.3f", global::DearImGui.ImGuiSliderFlags flags = (ImGuiSliderFlags)(0))
         {
             if (v == null || v.Length != 4)
                 throw new ArgumentOutOfRangeException("v", "The dimensions of the provided array don't match the required size.");
@@ -22777,7 +22777,7 @@ namespace DearImGui
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L560.</summary>
         // DEBUG: bool          SliderAngle(const char* label, float* v_rad, float v_degrees_min = -360.0f, float v_degrees_max = +360.0f, const char* format = "%.0f deg", ImGuiSliderFlags flags = 0)
-        public static bool SliderAngle(string label, ref float v_rad, float v_degrees_min = -360.0F, float v_degrees_max = +360.0F, string format = "%.0f deg", ImGuiSliderFlags flags = (ImGuiSliderFlags)(0))
+        public static bool SliderAngle(string label, ref float v_rad, float v_degrees_min = -360.0F, float v_degrees_max = +360.0F, string format = "%.0f deg", global::DearImGui.ImGuiSliderFlags flags = (ImGuiSliderFlags)(0))
         {
             fixed (float* __v_rad1 = &v_rad)
             {
@@ -22789,7 +22789,7 @@ namespace DearImGui
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L561.</summary>
         // DEBUG: bool          SliderInt(const char* label, int* v, int v_min, int v_max, const char* format = "%d", ImGuiSliderFlags flags = 0)
-        public static bool SliderInt(string label, ref int v, int v_min, int v_max, string format = "%d", ImGuiSliderFlags flags = (ImGuiSliderFlags)(0))
+        public static bool SliderInt(string label, ref int v, int v_min, int v_max, string format = "%d", global::DearImGui.ImGuiSliderFlags flags = (ImGuiSliderFlags)(0))
         {
             fixed (int* __v1 = &v)
             {
@@ -22801,7 +22801,7 @@ namespace DearImGui
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L562.</summary>
         // DEBUG: bool          SliderInt2(const char* label, int v[2], int v_min, int v_max, const char* format = "%d", ImGuiSliderFlags flags = 0)
-        public static bool SliderInt2(string label, Span<int> v, int v_min, int v_max, string format = "%d", ImGuiSliderFlags flags = (ImGuiSliderFlags)(0))
+        public static bool SliderInt2(string label, Span<int> v, int v_min, int v_max, string format = "%d", global::DearImGui.ImGuiSliderFlags flags = (ImGuiSliderFlags)(0))
         {
             if (v == null || v.Length != 2)
                 throw new ArgumentOutOfRangeException("v", "The dimensions of the provided array don't match the required size.");
@@ -22815,7 +22815,7 @@ namespace DearImGui
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L563.</summary>
         // DEBUG: bool          SliderInt3(const char* label, int v[3], int v_min, int v_max, const char* format = "%d", ImGuiSliderFlags flags = 0)
-        public static bool SliderInt3(string label, Span<int> v, int v_min, int v_max, string format = "%d", ImGuiSliderFlags flags = (ImGuiSliderFlags)(0))
+        public static bool SliderInt3(string label, Span<int> v, int v_min, int v_max, string format = "%d", global::DearImGui.ImGuiSliderFlags flags = (ImGuiSliderFlags)(0))
         {
             if (v == null || v.Length != 3)
                 throw new ArgumentOutOfRangeException("v", "The dimensions of the provided array don't match the required size.");
@@ -22829,7 +22829,7 @@ namespace DearImGui
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L564.</summary>
         // DEBUG: bool          SliderInt4(const char* label, int v[4], int v_min, int v_max, const char* format = "%d", ImGuiSliderFlags flags = 0)
-        public static bool SliderInt4(string label, Span<int> v, int v_min, int v_max, string format = "%d", ImGuiSliderFlags flags = (ImGuiSliderFlags)(0))
+        public static bool SliderInt4(string label, Span<int> v, int v_min, int v_max, string format = "%d", global::DearImGui.ImGuiSliderFlags flags = (ImGuiSliderFlags)(0))
         {
             if (v == null || v.Length != 4)
                 throw new ArgumentOutOfRangeException("v", "The dimensions of the provided array don't match the required size.");
@@ -22843,7 +22843,7 @@ namespace DearImGui
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L565.</summary>
         // DEBUG: bool          SliderScalar(const char* label, ImGuiDataType data_type, void* p_data, const void* p_min, const void* p_max, const char* format = NULL, ImGuiSliderFlags flags = 0)
-        public static bool SliderScalar(string label, ImGuiDataType data_type, IntPtr p_data, IntPtr p_min, IntPtr p_max, string format = default, ImGuiSliderFlags flags = (ImGuiSliderFlags)(0))
+        public static bool SliderScalar(string label, global::DearImGui.ImGuiDataType data_type, IntPtr p_data, IntPtr p_min, IntPtr p_max, string format = default, global::DearImGui.ImGuiSliderFlags flags = (ImGuiSliderFlags)(0))
         {
             var ___ret = Environment.Is64BitProcess ? __Internal64.SliderScalar(label, data_type, p_data, p_min, p_max, format, flags) : __Internal32.SliderScalar(label, data_type, p_data, p_min, p_max, format, flags);
             return ___ret;
@@ -22851,7 +22851,7 @@ namespace DearImGui
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L566.</summary>
         // DEBUG: bool          SliderScalarN(const char* label, ImGuiDataType data_type, void* p_data, int components, const void* p_min, const void* p_max, const char* format = NULL, ImGuiSliderFlags flags = 0)
-        public static bool SliderScalarN(string label, ImGuiDataType data_type, IntPtr p_data, int components, IntPtr p_min, IntPtr p_max, string format = default, ImGuiSliderFlags flags = (ImGuiSliderFlags)(0))
+        public static bool SliderScalarN(string label, global::DearImGui.ImGuiDataType data_type, IntPtr p_data, int components, IntPtr p_min, IntPtr p_max, string format = default, global::DearImGui.ImGuiSliderFlags flags = (ImGuiSliderFlags)(0))
         {
             var ___ret = Environment.Is64BitProcess ? __Internal64.SliderScalarN(label, data_type, p_data, components, p_min, p_max, format, flags) : __Internal32.SliderScalarN(label, data_type, p_data, components, p_min, p_max, format, flags);
             return ___ret;
@@ -22859,7 +22859,7 @@ namespace DearImGui
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L567.</summary>
         // DEBUG: bool          VSliderFloat(const char* label, const ImVec2& size, float* v, float v_min, float v_max, const char* format = "%.3f", ImGuiSliderFlags flags = 0)
-        public static bool VSliderFloat(string label, Vector2 size, ref float v, float v_min, float v_max, string format = "%.3f", ImGuiSliderFlags flags = (ImGuiSliderFlags)(0))
+        public static bool VSliderFloat(string label, global::System.Numerics.Vector2 size, ref float v, float v_min, float v_max, string format = "%.3f", global::DearImGui.ImGuiSliderFlags flags = (ImGuiSliderFlags)(0))
         {
             var __arg1 = new IntPtr(Unsafe.AsPointer(ref size))
             /* DEBUG: TypeMapImVec2.CSharpMarshalToNative: Case 4 */
@@ -22875,7 +22875,7 @@ namespace DearImGui
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L568.</summary>
         // DEBUG: bool          VSliderInt(const char* label, const ImVec2& size, int* v, int v_min, int v_max, const char* format = "%d", ImGuiSliderFlags flags = 0)
-        public static bool VSliderInt(string label, Vector2 size, ref int v, int v_min, int v_max, string format = "%d", ImGuiSliderFlags flags = (ImGuiSliderFlags)(0))
+        public static bool VSliderInt(string label, global::System.Numerics.Vector2 size, ref int v, int v_min, int v_max, string format = "%d", global::DearImGui.ImGuiSliderFlags flags = (ImGuiSliderFlags)(0))
         {
             var __arg1 = new IntPtr(Unsafe.AsPointer(ref size))
             /* DEBUG: TypeMapImVec2.CSharpMarshalToNative: Case 4 */
@@ -22891,7 +22891,7 @@ namespace DearImGui
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L569.</summary>
         // DEBUG: bool          VSliderScalar(const char* label, const ImVec2& size, ImGuiDataType data_type, void* p_data, const void* p_min, const void* p_max, const char* format = NULL, ImGuiSliderFlags flags = 0)
-        public static bool VSliderScalar(string label, Vector2 size, ImGuiDataType data_type, IntPtr p_data, IntPtr p_min, IntPtr p_max, string format = default, ImGuiSliderFlags flags = (ImGuiSliderFlags)(0))
+        public static bool VSliderScalar(string label, global::System.Numerics.Vector2 size, global::DearImGui.ImGuiDataType data_type, IntPtr p_data, IntPtr p_min, IntPtr p_max, string format = default, global::DearImGui.ImGuiSliderFlags flags = (ImGuiSliderFlags)(0))
         {
             var __arg1 = new IntPtr(Unsafe.AsPointer(ref size))
             /* DEBUG: TypeMapImVec2.CSharpMarshalToNative: Case 4 */
@@ -22903,20 +22903,20 @@ namespace DearImGui
 
         /// <summary>Widgets: Input with Keyboard.<br/>- If you want to use InputText() with std::string or any custom dynamic string type, see misc/cpp/imgui_stdlib.h and comments in imgui_demo.cpp.<br/>- Most of the ImGuiInputTextFlags flags are only useful for InputText() and not for InputFloatX, InputIntX, InputDouble etc.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L574.</summary>
         // DEBUG: bool          InputText(const char* label, char* buf, size_t buf_size, ImGuiInputTextFlags flags = 0, ImGuiInputTextCallback callback = NULL, void* user_data = NULL)
-        public static bool InputText(string label, char* buf, UIntPtr buf_size, ImGuiInputTextFlags flags = (ImGuiInputTextFlags)(0), ImGuiInputTextCallback callback = null, IntPtr user_data = default)
+        public static bool InputText(string label, char* buf, global::System.UIntPtr buf_size, global::DearImGui.ImGuiInputTextFlags flags = (ImGuiInputTextFlags)(0), global::DearImGui.ImGuiInputTextCallback callback = null, IntPtr user_data = default)
         {
             var __arg1 = (sbyte*)buf;
             var __arg2 = buf_size
             /* DEBUG: TypeMapSizeT.CSharpMarshalToNative: Function: True, ReturnVarName: False */
             ;
-            var __arg4 = callback == null ? IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(callback);
+            var __arg4 = callback == null ? global::System.IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(callback);
             var ___ret = Environment.Is64BitProcess ? __Internal64.InputText(label, __arg1, __arg2, flags, __arg4, user_data) : __Internal32.InputText(label, __arg1, __arg2, flags, __arg4, user_data);
             return ___ret;
         }
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L575.</summary>
         // DEBUG: bool          InputTextMultiline(const char* label, char* buf, size_t buf_size, const ImVec2& size = ImVec2(0, 0), ImGuiInputTextFlags flags = 0, ImGuiInputTextCallback callback = NULL, void* user_data = NULL)
-        public static bool InputTextMultiline(string label, char* buf, UIntPtr buf_size, Vector2 size, ImGuiInputTextFlags flags = (ImGuiInputTextFlags)(0), ImGuiInputTextCallback callback = null, IntPtr user_data = default)
+        public static bool InputTextMultiline(string label, char* buf, global::System.UIntPtr buf_size, global::System.Numerics.Vector2 size, global::DearImGui.ImGuiInputTextFlags flags = (ImGuiInputTextFlags)(0), global::DearImGui.ImGuiInputTextCallback callback = null, IntPtr user_data = default)
         {
             var __arg1 = (sbyte*)buf;
             var __arg2 = buf_size
@@ -22926,27 +22926,27 @@ namespace DearImGui
             /* DEBUG: TypeMapImVec2.CSharpMarshalToNative: Case 3 */
             /* DEBUG: TypeMapImVec2.CSharpMarshalToNative: Function: True, ReturnVarName: False */
             ;
-            var __arg5 = callback == null ? IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(callback);
+            var __arg5 = callback == null ? global::System.IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(callback);
             var ___ret = Environment.Is64BitProcess ? __Internal64.InputTextMultiline(label, __arg1, __arg2, __arg3, flags, __arg5, user_data) : __Internal32.InputTextMultiline(label, __arg1, __arg2, __arg3, flags, __arg5, user_data);
             return ___ret;
         }
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L576.</summary>
         // DEBUG: bool          InputTextWithHint(const char* label, const char* hint, char* buf, size_t buf_size, ImGuiInputTextFlags flags = 0, ImGuiInputTextCallback callback = NULL, void* user_data = NULL)
-        public static bool InputTextWithHint(string label, string hint, char* buf, UIntPtr buf_size, ImGuiInputTextFlags flags = (ImGuiInputTextFlags)(0), ImGuiInputTextCallback callback = null, IntPtr user_data = default)
+        public static bool InputTextWithHint(string label, string hint, char* buf, global::System.UIntPtr buf_size, global::DearImGui.ImGuiInputTextFlags flags = (ImGuiInputTextFlags)(0), global::DearImGui.ImGuiInputTextCallback callback = null, IntPtr user_data = default)
         {
             var __arg2 = (sbyte*)buf;
             var __arg3 = buf_size
             /* DEBUG: TypeMapSizeT.CSharpMarshalToNative: Function: True, ReturnVarName: False */
             ;
-            var __arg5 = callback == null ? IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(callback);
+            var __arg5 = callback == null ? global::System.IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(callback);
             var ___ret = Environment.Is64BitProcess ? __Internal64.InputTextWithHint(label, hint, __arg2, __arg3, flags, __arg5, user_data) : __Internal32.InputTextWithHint(label, hint, __arg2, __arg3, flags, __arg5, user_data);
             return ___ret;
         }
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L577.</summary>
         // DEBUG: bool          InputFloat(const char* label, float* v, float step = 0.0f, float step_fast = 0.0f, const char* format = "%.3f", ImGuiInputTextFlags flags = 0)
-        public static bool InputFloat(string label, ref float v, float step = 0.0F, float step_fast = 0.0F, string format = "%.3f", ImGuiInputTextFlags flags = (ImGuiInputTextFlags)(0))
+        public static bool InputFloat(string label, ref float v, float step = 0.0F, float step_fast = 0.0F, string format = "%.3f", global::DearImGui.ImGuiInputTextFlags flags = (ImGuiInputTextFlags)(0))
         {
             fixed (float* __v1 = &v)
             {
@@ -22958,7 +22958,7 @@ namespace DearImGui
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L578.</summary>
         // DEBUG: bool          InputFloat2(const char* label, float v[2], const char* format = "%.3f", ImGuiInputTextFlags flags = 0)
-        public static bool InputFloat2(string label, Span<float> v, string format = "%.3f", ImGuiInputTextFlags flags = (ImGuiInputTextFlags)(0))
+        public static bool InputFloat2(string label, Span<float> v, string format = "%.3f", global::DearImGui.ImGuiInputTextFlags flags = (ImGuiInputTextFlags)(0))
         {
             if (v == null || v.Length != 2)
                 throw new ArgumentOutOfRangeException("v", "The dimensions of the provided array don't match the required size.");
@@ -22972,7 +22972,7 @@ namespace DearImGui
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L579.</summary>
         // DEBUG: bool          InputFloat3(const char* label, float v[3], const char* format = "%.3f", ImGuiInputTextFlags flags = 0)
-        public static bool InputFloat3(string label, Span<float> v, string format = "%.3f", ImGuiInputTextFlags flags = (ImGuiInputTextFlags)(0))
+        public static bool InputFloat3(string label, Span<float> v, string format = "%.3f", global::DearImGui.ImGuiInputTextFlags flags = (ImGuiInputTextFlags)(0))
         {
             if (v == null || v.Length != 3)
                 throw new ArgumentOutOfRangeException("v", "The dimensions of the provided array don't match the required size.");
@@ -22986,7 +22986,7 @@ namespace DearImGui
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L580.</summary>
         // DEBUG: bool          InputFloat4(const char* label, float v[4], const char* format = "%.3f", ImGuiInputTextFlags flags = 0)
-        public static bool InputFloat4(string label, Span<float> v, string format = "%.3f", ImGuiInputTextFlags flags = (ImGuiInputTextFlags)(0))
+        public static bool InputFloat4(string label, Span<float> v, string format = "%.3f", global::DearImGui.ImGuiInputTextFlags flags = (ImGuiInputTextFlags)(0))
         {
             if (v == null || v.Length != 4)
                 throw new ArgumentOutOfRangeException("v", "The dimensions of the provided array don't match the required size.");
@@ -23000,7 +23000,7 @@ namespace DearImGui
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L581.</summary>
         // DEBUG: bool          InputInt(const char* label, int* v, int step = 1, int step_fast = 100, ImGuiInputTextFlags flags = 0)
-        public static bool InputInt(string label, ref int v, int step = (int)(1), int step_fast = (int)(100), ImGuiInputTextFlags flags = (ImGuiInputTextFlags)(0))
+        public static bool InputInt(string label, ref int v, int step = (int)(1), int step_fast = (int)(100), global::DearImGui.ImGuiInputTextFlags flags = (ImGuiInputTextFlags)(0))
         {
             fixed (int* __v1 = &v)
             {
@@ -23012,7 +23012,7 @@ namespace DearImGui
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L582.</summary>
         // DEBUG: bool          InputInt2(const char* label, int v[2], ImGuiInputTextFlags flags = 0)
-        public static bool InputInt2(string label, Span<int> v, ImGuiInputTextFlags flags = (ImGuiInputTextFlags)(0))
+        public static bool InputInt2(string label, Span<int> v, global::DearImGui.ImGuiInputTextFlags flags = (ImGuiInputTextFlags)(0))
         {
             if (v == null || v.Length != 2)
                 throw new ArgumentOutOfRangeException("v", "The dimensions of the provided array don't match the required size.");
@@ -23026,7 +23026,7 @@ namespace DearImGui
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L583.</summary>
         // DEBUG: bool          InputInt3(const char* label, int v[3], ImGuiInputTextFlags flags = 0)
-        public static bool InputInt3(string label, Span<int> v, ImGuiInputTextFlags flags = (ImGuiInputTextFlags)(0))
+        public static bool InputInt3(string label, Span<int> v, global::DearImGui.ImGuiInputTextFlags flags = (ImGuiInputTextFlags)(0))
         {
             if (v == null || v.Length != 3)
                 throw new ArgumentOutOfRangeException("v", "The dimensions of the provided array don't match the required size.");
@@ -23040,7 +23040,7 @@ namespace DearImGui
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L584.</summary>
         // DEBUG: bool          InputInt4(const char* label, int v[4], ImGuiInputTextFlags flags = 0)
-        public static bool InputInt4(string label, Span<int> v, ImGuiInputTextFlags flags = (ImGuiInputTextFlags)(0))
+        public static bool InputInt4(string label, Span<int> v, global::DearImGui.ImGuiInputTextFlags flags = (ImGuiInputTextFlags)(0))
         {
             if (v == null || v.Length != 4)
                 throw new ArgumentOutOfRangeException("v", "The dimensions of the provided array don't match the required size.");
@@ -23054,7 +23054,7 @@ namespace DearImGui
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L585.</summary>
         // DEBUG: bool          InputDouble(const char* label, double* v, double step = 0.0, double step_fast = 0.0, const char* format = "%.6f", ImGuiInputTextFlags flags = 0)
-        public static bool InputDouble(string label, ref double v, double step = 0.0, double step_fast = 0.0, string format = "%.6f", ImGuiInputTextFlags flags = (ImGuiInputTextFlags)(0))
+        public static bool InputDouble(string label, ref double v, double step = 0.0, double step_fast = 0.0, string format = "%.6f", global::DearImGui.ImGuiInputTextFlags flags = (ImGuiInputTextFlags)(0))
         {
             fixed (double* __v1 = &v)
             {
@@ -23066,7 +23066,7 @@ namespace DearImGui
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L586.</summary>
         // DEBUG: bool          InputScalar(const char* label, ImGuiDataType data_type, void* p_data, const void* p_step = NULL, const void* p_step_fast = NULL, const char* format = NULL, ImGuiInputTextFlags flags = 0)
-        public static bool InputScalar(string label, ImGuiDataType data_type, IntPtr p_data, IntPtr p_step = default, IntPtr p_step_fast = default, string format = default, ImGuiInputTextFlags flags = (ImGuiInputTextFlags)(0))
+        public static bool InputScalar(string label, global::DearImGui.ImGuiDataType data_type, IntPtr p_data, IntPtr p_step = default, IntPtr p_step_fast = default, string format = default, global::DearImGui.ImGuiInputTextFlags flags = (ImGuiInputTextFlags)(0))
         {
             var ___ret = Environment.Is64BitProcess ? __Internal64.InputScalar(label, data_type, p_data, p_step, p_step_fast, format, flags) : __Internal32.InputScalar(label, data_type, p_data, p_step, p_step_fast, format, flags);
             return ___ret;
@@ -23074,7 +23074,7 @@ namespace DearImGui
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L587.</summary>
         // DEBUG: bool          InputScalarN(const char* label, ImGuiDataType data_type, void* p_data, int components, const void* p_step = NULL, const void* p_step_fast = NULL, const char* format = NULL, ImGuiInputTextFlags flags = 0)
-        public static bool InputScalarN(string label, ImGuiDataType data_type, IntPtr p_data, int components, IntPtr p_step = default, IntPtr p_step_fast = default, string format = default, ImGuiInputTextFlags flags = (ImGuiInputTextFlags)(0))
+        public static bool InputScalarN(string label, global::DearImGui.ImGuiDataType data_type, IntPtr p_data, int components, IntPtr p_step = default, IntPtr p_step_fast = default, string format = default, global::DearImGui.ImGuiInputTextFlags flags = (ImGuiInputTextFlags)(0))
         {
             var ___ret = Environment.Is64BitProcess ? __Internal64.InputScalarN(label, data_type, p_data, components, p_step, p_step_fast, format, flags) : __Internal32.InputScalarN(label, data_type, p_data, components, p_step, p_step_fast, format, flags);
             return ___ret;
@@ -23082,7 +23082,7 @@ namespace DearImGui
 
         /// <summary>Widgets: Color Editor/Picker (tip: the ColorEdit* functions have a little color square that can be left-clicked to open a picker, and right-clicked to open an option menu.).<br/>- Note that in C++ a 'float v[X]' function argument is the _same_ as 'float* v', the array syntax is just a way to document the number of elements that are expected to be accessible.<br/>- You can pass the address of a first float element out of a contiguous structure, e.g. &amp;myvector.x.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L592.</summary>
         // DEBUG: bool          ColorEdit3(const char* label, float col[3], ImGuiColorEditFlags flags = 0)
-        public static bool ColorEdit3(string label, Span<float> col, ImGuiColorEditFlags flags = (ImGuiColorEditFlags)(0))
+        public static bool ColorEdit3(string label, Span<float> col, global::DearImGui.ImGuiColorEditFlags flags = (ImGuiColorEditFlags)(0))
         {
             if (col == null || col.Length != 3)
                 throw new ArgumentOutOfRangeException("col", "The dimensions of the provided array don't match the required size.");
@@ -23096,7 +23096,7 @@ namespace DearImGui
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L593.</summary>
         // DEBUG: bool          ColorEdit4(const char* label, float col[4], ImGuiColorEditFlags flags = 0)
-        public static bool ColorEdit4(string label, Span<float> col, ImGuiColorEditFlags flags = (ImGuiColorEditFlags)(0))
+        public static bool ColorEdit4(string label, Span<float> col, global::DearImGui.ImGuiColorEditFlags flags = (ImGuiColorEditFlags)(0))
         {
             if (col == null || col.Length != 4)
                 throw new ArgumentOutOfRangeException("col", "The dimensions of the provided array don't match the required size.");
@@ -23110,7 +23110,7 @@ namespace DearImGui
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L594.</summary>
         // DEBUG: bool          ColorPicker3(const char* label, float col[3], ImGuiColorEditFlags flags = 0)
-        public static bool ColorPicker3(string label, Span<float> col, ImGuiColorEditFlags flags = (ImGuiColorEditFlags)(0))
+        public static bool ColorPicker3(string label, Span<float> col, global::DearImGui.ImGuiColorEditFlags flags = (ImGuiColorEditFlags)(0))
         {
             if (col == null || col.Length != 3)
                 throw new ArgumentOutOfRangeException("col", "The dimensions of the provided array don't match the required size.");
@@ -23124,7 +23124,7 @@ namespace DearImGui
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L595.</summary>
         // DEBUG: bool          ColorPicker4(const char* label, float col[4], ImGuiColorEditFlags flags = 0, const float* ref_col = NULL)
-        public static bool ColorPicker4(string label, Span<float> col, ImGuiColorEditFlags flags, ref float ref_col)
+        public static bool ColorPicker4(string label, Span<float> col, global::DearImGui.ImGuiColorEditFlags flags, ref float ref_col)
         {
             if (col == null || col.Length != 4)
                 throw new ArgumentOutOfRangeException("col", "The dimensions of the provided array don't match the required size.");
@@ -23142,7 +23142,7 @@ namespace DearImGui
 
         /// <summary>Display a color square/button, hover for details, return true when pressed.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L596.</summary>
         // DEBUG: bool          ColorButton(const char* desc_id, const ImVec4& col, ImGuiColorEditFlags flags = 0, const ImVec2& size = ImVec2(0, 0))
-        public static bool ColorButton(string desc_id, Vector4 col, ImGuiColorEditFlags flags, Vector2 size)
+        public static bool ColorButton(string desc_id, global::System.Numerics.Vector4 col, global::DearImGui.ImGuiColorEditFlags flags, global::System.Numerics.Vector2 size)
         {
             var __arg1 = new IntPtr(Unsafe.AsPointer(ref col))
             /* DEBUG: TypeMapImVec4.CSharpMarshalToNative: Case 4 */
@@ -23158,7 +23158,7 @@ namespace DearImGui
 
         /// <summary>Initialize current options (generally on application startup) if you want to select a default format, picker type, etc. User will be able to change many settings, unless you pass the _NoOptions flag to your calls.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L597.</summary>
         // DEBUG: void          SetColorEditOptions(ImGuiColorEditFlags flags)
-        public static void SetColorEditOptions(ImGuiColorEditFlags flags)
+        public static void SetColorEditOptions(global::DearImGui.ImGuiColorEditFlags flags)
         {
             if (Environment.Is64BitProcess)
             {
@@ -23196,7 +23196,7 @@ namespace DearImGui
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L604.</summary>
         // DEBUG: bool          TreeNodeV(const char* str_id, const char* fmt, va_list args) IM_FMTLIST(2)
-        public static bool TreeNodeV(string str_id, string fmt, Object args)
+        public static bool TreeNodeV(string str_id, string fmt, global::System.Object args)
         {
             var ___ret = Environment.Is64BitProcess ? __Internal64.TreeNodeV(str_id, fmt, args) : __Internal32.TreeNodeV(str_id, fmt, args);
             return ___ret;
@@ -23204,7 +23204,7 @@ namespace DearImGui
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L605.</summary>
         // DEBUG: bool          TreeNodeV(const void* ptr_id, const char* fmt, va_list args) IM_FMTLIST(2)
-        public static bool TreeNodeV(IntPtr ptr_id, string fmt, Object args)
+        public static bool TreeNodeV(IntPtr ptr_id, string fmt, global::System.Object args)
         {
             var ___ret = Environment.Is64BitProcess ? __Internal64.TreeNodeV(ptr_id, fmt, args) : __Internal32.TreeNodeV(ptr_id, fmt, args);
             return ___ret;
@@ -23212,7 +23212,7 @@ namespace DearImGui
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L606.</summary>
         // DEBUG: bool          TreeNodeEx(const char* label, ImGuiTreeNodeFlags flags = 0)
-        public static bool TreeNodeEx(string label, ImGuiTreeNodeFlags flags = (ImGuiTreeNodeFlags)(0))
+        public static bool TreeNodeEx(string label, global::DearImGui.ImGuiTreeNodeFlags flags = (ImGuiTreeNodeFlags)(0))
         {
             var ___ret = Environment.Is64BitProcess ? __Internal64.TreeNodeEx(label, flags) : __Internal32.TreeNodeEx(label, flags);
             return ___ret;
@@ -23220,7 +23220,7 @@ namespace DearImGui
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L607.</summary>
         // DEBUG: bool          TreeNodeEx(const char* str_id, ImGuiTreeNodeFlags flags, const char* fmt, ...) IM_FMTARGS(3)
-        public static bool TreeNodeEx(string str_id, ImGuiTreeNodeFlags flags, string fmt)
+        public static bool TreeNodeEx(string str_id, global::DearImGui.ImGuiTreeNodeFlags flags, string fmt)
         {
             var ___ret = Environment.Is64BitProcess ? __Internal64.TreeNodeEx(str_id, flags, fmt) : __Internal32.TreeNodeEx(str_id, flags, fmt);
             return ___ret;
@@ -23228,7 +23228,7 @@ namespace DearImGui
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L608.</summary>
         // DEBUG: bool          TreeNodeEx(const void* ptr_id, ImGuiTreeNodeFlags flags, const char* fmt, ...) IM_FMTARGS(3)
-        public static bool TreeNodeEx(IntPtr ptr_id, ImGuiTreeNodeFlags flags, string fmt)
+        public static bool TreeNodeEx(IntPtr ptr_id, global::DearImGui.ImGuiTreeNodeFlags flags, string fmt)
         {
             var ___ret = Environment.Is64BitProcess ? __Internal64.TreeNodeEx(ptr_id, flags, fmt) : __Internal32.TreeNodeEx(ptr_id, flags, fmt);
             return ___ret;
@@ -23236,7 +23236,7 @@ namespace DearImGui
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L609.</summary>
         // DEBUG: bool          TreeNodeExV(const char* str_id, ImGuiTreeNodeFlags flags, const char* fmt, va_list args) IM_FMTLIST(3)
-        public static bool TreeNodeExV(string str_id, ImGuiTreeNodeFlags flags, string fmt, Object args)
+        public static bool TreeNodeExV(string str_id, global::DearImGui.ImGuiTreeNodeFlags flags, string fmt, global::System.Object args)
         {
             var ___ret = Environment.Is64BitProcess ? __Internal64.TreeNodeExV(str_id, flags, fmt, args) : __Internal32.TreeNodeExV(str_id, flags, fmt, args);
             return ___ret;
@@ -23244,7 +23244,7 @@ namespace DearImGui
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L610.</summary>
         // DEBUG: bool          TreeNodeExV(const void* ptr_id, ImGuiTreeNodeFlags flags, const char* fmt, va_list args) IM_FMTLIST(3)
-        public static bool TreeNodeExV(IntPtr ptr_id, ImGuiTreeNodeFlags flags, string fmt, Object args)
+        public static bool TreeNodeExV(IntPtr ptr_id, global::DearImGui.ImGuiTreeNodeFlags flags, string fmt, global::System.Object args)
         {
             var ___ret = Environment.Is64BitProcess ? __Internal64.TreeNodeExV(ptr_id, flags, fmt, args) : __Internal32.TreeNodeExV(ptr_id, flags, fmt, args);
             return ___ret;
@@ -23302,7 +23302,7 @@ namespace DearImGui
 
         /// <summary>If returning 'true' the header is open. doesn't indent nor push on ID stack. user doesn't have to call TreePop().<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L615.</summary>
         // DEBUG: bool          CollapsingHeader(const char* label, ImGuiTreeNodeFlags flags = 0)
-        public static bool CollapsingHeader(string label, ImGuiTreeNodeFlags flags = (ImGuiTreeNodeFlags)(0))
+        public static bool CollapsingHeader(string label, global::DearImGui.ImGuiTreeNodeFlags flags = (ImGuiTreeNodeFlags)(0))
         {
             var ___ret = Environment.Is64BitProcess ? __Internal64.CollapsingHeader(label, flags) : __Internal32.CollapsingHeader(label, flags);
             return ___ret;
@@ -23310,7 +23310,7 @@ namespace DearImGui
 
         /// <summary>When 'p_visible != NULL': if '*p_visible==true' display an additional small close button on upper right of the header which will set the bool to false when clicked, if '*p_visible==false' don't display the header.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L616.</summary>
         // DEBUG: bool          CollapsingHeader(const char* label, bool* p_visible, ImGuiTreeNodeFlags flags = 0)
-        public static bool CollapsingHeader(string label, ref bool p_visible, ImGuiTreeNodeFlags flags = (ImGuiTreeNodeFlags)(0))
+        public static bool CollapsingHeader(string label, ref bool p_visible, global::DearImGui.ImGuiTreeNodeFlags flags = (ImGuiTreeNodeFlags)(0))
         {
             fixed (bool* __p_visible1 = &p_visible)
             {
@@ -23322,7 +23322,7 @@ namespace DearImGui
 
         /// <summary>Set next TreeNode/CollapsingHeader open state.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L617.</summary>
         // DEBUG: void          SetNextItemOpen(bool is_open, ImGuiCond cond = 0)
-        public static void SetNextItemOpen(bool is_open, ImGuiCond cond = (ImGuiCond)(0))
+        public static void SetNextItemOpen(bool is_open, global::DearImGui.ImGuiCond cond = (ImGuiCond)(0))
         {
             if (Environment.Is64BitProcess)
             {
@@ -23336,7 +23336,7 @@ namespace DearImGui
 
         /// <summary>"bool selected" carry the selection state (read-only). Selectable() is clicked is returns true so you can modify your selection state. size.x==0.0: use remaining width, size.x&gt;0.0: specify width. size.y==0.0: use label height, size.y&gt;0.0: specify height.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L622.</summary>
         // DEBUG: bool          Selectable(const char* label, bool selected = false, ImGuiSelectableFlags flags = 0, const ImVec2& size = ImVec2(0, 0))
-        public static bool Selectable(string label, bool selected, ImGuiSelectableFlags flags, Vector2 size)
+        public static bool Selectable(string label, bool selected, global::DearImGui.ImGuiSelectableFlags flags, global::System.Numerics.Vector2 size)
         {
             var __arg3 = new IntPtr(Unsafe.AsPointer(ref size))
             /* DEBUG: TypeMapImVec2.CSharpMarshalToNative: Case 3 */
@@ -23348,7 +23348,7 @@ namespace DearImGui
 
         /// <summary>"bool* p_selected" point to the selection state (read-write), as a convenient helper.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L623.</summary>
         // DEBUG: bool          Selectable(const char* label, bool* p_selected, ImGuiSelectableFlags flags = 0, const ImVec2& size = ImVec2(0, 0))
-        public static bool Selectable(string label, ref bool p_selected, ImGuiSelectableFlags flags, Vector2 size)
+        public static bool Selectable(string label, ref bool p_selected, global::DearImGui.ImGuiSelectableFlags flags, global::System.Numerics.Vector2 size)
         {
             fixed (bool* __p_selected1 = &p_selected)
             {
@@ -23364,7 +23364,7 @@ namespace DearImGui
 
         /// <summary>Open a framed scrolling region.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L631.</summary>
         // DEBUG: bool          BeginListBox(const char* label, const ImVec2& size = ImVec2(0, 0))
-        public static bool BeginListBox(string label, Vector2 size)
+        public static bool BeginListBox(string label, global::System.Numerics.Vector2 size)
         {
             var __arg1 = new IntPtr(Unsafe.AsPointer(ref size))
             /* DEBUG: TypeMapImVec2.CSharpMarshalToNative: Case 3 */
@@ -23402,12 +23402,12 @@ namespace DearImGui
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L634.</summary>
         // DEBUG: bool          ListBox(const char* label, int* current_item, bool (*items_getter)(void* data, int idx, const char** out_text), void* data, int items_count, int height_in_items = -1)
-        public static bool ListBox(string label, ref int current_item, ImItemsGetterHandler items_getter, IntPtr data, int items_count, int height_in_items = (int)(-1))
+        public static bool ListBox(string label, ref int current_item, global::DearImGui.ImItemsGetterHandler items_getter, IntPtr data, int items_count, int height_in_items = (int)(-1))
         {
             fixed (int* __current_item1 = &current_item)
             {
                 var __arg1 = __current_item1;
-                var __arg2 = items_getter == null ? IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(items_getter);
+                var __arg2 = items_getter == null ? global::System.IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(items_getter);
                 var ___ret = Environment.Is64BitProcess ? __Internal64.ListBox(label, __arg1, __arg2, data, items_count, height_in_items) : __Internal32.ListBox(label, __arg1, __arg2, data, items_count, height_in_items);
                 return ___ret;
             }
@@ -23415,7 +23415,7 @@ namespace DearImGui
 
         /// <summary>Widgets: Data Plotting.<br/>- Consider using ImPlot (https://github.com/epezent/implot) which is much better!<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L638.</summary>
         // DEBUG: void          PlotLines(const char* label, const float* values, int values_count, int values_offset = 0, const char* overlay_text = NULL, float scale_min = FLT_MAX, float scale_max = FLT_MAX, ImVec2 graph_size = ImVec2(0, 0), int stride = sizeof(float))
-        public static void PlotLines(string label, ref float values, int values_count, int values_offset, string overlay_text, float scale_min, float scale_max, Vector2 graph_size, int stride = sizeof(float))
+        public static void PlotLines(string label, ref float values, int values_count, int values_offset, string overlay_text, float scale_min, float scale_max, global::System.Numerics.Vector2 graph_size, int stride = sizeof(float))
         {
             fixed (float* __values1 = &values)
             {
@@ -23437,9 +23437,9 @@ namespace DearImGui
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L639.</summary>
         // DEBUG: void          PlotLines(const char* label, float(*values_getter)(void* data, int idx), void* data, int values_count, int values_offset = 0, const char* overlay_text = NULL, float scale_min = FLT_MAX, float scale_max = FLT_MAX, ImVec2 graph_size = ImVec2(0, 0))
-        public static void PlotLines(string label, ImValuesGetterHandler values_getter, IntPtr data, int values_count, int values_offset, string overlay_text, float scale_min, float scale_max, Vector2 graph_size)
+        public static void PlotLines(string label, global::DearImGui.ImValuesGetterHandler values_getter, IntPtr data, int values_count, int values_offset, string overlay_text, float scale_min, float scale_max, global::System.Numerics.Vector2 graph_size)
         {
-            var __arg1 = values_getter == null ? IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(values_getter);
+            var __arg1 = values_getter == null ? global::System.IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(values_getter);
             var __arg8 = graph_size
             /* DEBUG: TypeMapImVec2.CSharpMarshalToNative: Case 5 */
             /* DEBUG: TypeMapImVec2.CSharpMarshalToNative: Function: True, ReturnVarName: False */
@@ -23456,7 +23456,7 @@ namespace DearImGui
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L640.</summary>
         // DEBUG: void          PlotHistogram(const char* label, const float* values, int values_count, int values_offset = 0, const char* overlay_text = NULL, float scale_min = FLT_MAX, float scale_max = FLT_MAX, ImVec2 graph_size = ImVec2(0, 0), int stride = sizeof(float))
-        public static void PlotHistogram(string label, ref float values, int values_count, int values_offset, string overlay_text, float scale_min, float scale_max, Vector2 graph_size, int stride = sizeof(float))
+        public static void PlotHistogram(string label, ref float values, int values_count, int values_offset, string overlay_text, float scale_min, float scale_max, global::System.Numerics.Vector2 graph_size, int stride = sizeof(float))
         {
             fixed (float* __values1 = &values)
             {
@@ -23478,9 +23478,9 @@ namespace DearImGui
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L641.</summary>
         // DEBUG: void          PlotHistogram(const char* label, float(*values_getter)(void* data, int idx), void* data, int values_count, int values_offset = 0, const char* overlay_text = NULL, float scale_min = FLT_MAX, float scale_max = FLT_MAX, ImVec2 graph_size = ImVec2(0, 0))
-        public static void PlotHistogram(string label, ImValuesGetterHandler values_getter, IntPtr data, int values_count, int values_offset, string overlay_text, float scale_min, float scale_max, Vector2 graph_size)
+        public static void PlotHistogram(string label, global::DearImGui.ImValuesGetterHandler values_getter, IntPtr data, int values_count, int values_offset, string overlay_text, float scale_min, float scale_max, global::System.Numerics.Vector2 graph_size)
         {
-            var __arg1 = values_getter == null ? IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(values_getter);
+            var __arg1 = values_getter == null ? global::System.IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(values_getter);
             var __arg8 = graph_size
             /* DEBUG: TypeMapImVec2.CSharpMarshalToNative: Case 5 */
             /* DEBUG: TypeMapImVec2.CSharpMarshalToNative: Function: True, ReturnVarName: False */
@@ -23681,7 +23681,7 @@ namespace DearImGui
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L669.</summary>
         // DEBUG: void          SetTooltipV(const char* fmt, va_list args) IM_FMTLIST(1)
-        public static void SetTooltipV(string fmt, Object args)
+        public static void SetTooltipV(string fmt, global::System.Object args)
         {
             if (Environment.Is64BitProcess)
             {
@@ -23695,7 +23695,7 @@ namespace DearImGui
 
         /// <summary>Return true if the popup is open, and you can start outputting to it.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L683.</summary>
         // DEBUG: bool          BeginPopup(const char* str_id, ImGuiWindowFlags flags = 0)
-        public static bool BeginPopup(string str_id, ImGuiWindowFlags flags = (ImGuiWindowFlags)(0))
+        public static bool BeginPopup(string str_id, global::DearImGui.ImGuiWindowFlags flags = (ImGuiWindowFlags)(0))
         {
             var ___ret = Environment.Is64BitProcess ? __Internal64.BeginPopup(str_id, flags) : __Internal32.BeginPopup(str_id, flags);
             return ___ret;
@@ -23703,7 +23703,7 @@ namespace DearImGui
 
         /// <summary>Return true if the modal is open, and you can start outputting to it.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L684.</summary>
         // DEBUG: bool          BeginPopupModal(const char* name, bool* p_open = NULL, ImGuiWindowFlags flags = 0)
-        public static bool BeginPopupModal(string name, ref bool p_open, ImGuiWindowFlags flags = (ImGuiWindowFlags)(0))
+        public static bool BeginPopupModal(string name, ref bool p_open, global::DearImGui.ImGuiWindowFlags flags = (ImGuiWindowFlags)(0))
         {
             fixed (bool* __p_open1 = &p_open)
             {
@@ -23729,7 +23729,7 @@ namespace DearImGui
 
         /// <summary>Call to mark popup as open (don't call every frame!).<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L695.</summary>
         // DEBUG: void          OpenPopup(const char* str_id, ImGuiPopupFlags popup_flags = 0)
-        public static void OpenPopup(string str_id, ImGuiPopupFlags popup_flags = (ImGuiPopupFlags)(0))
+        public static void OpenPopup(string str_id, global::DearImGui.ImGuiPopupFlags popup_flags = (ImGuiPopupFlags)(0))
         {
             if (Environment.Is64BitProcess)
             {
@@ -23743,7 +23743,7 @@ namespace DearImGui
 
         /// <summary>Id overload to facilitate calling from nested stacks.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L696.</summary>
         // DEBUG: void          OpenPopup(ImGuiID id, ImGuiPopupFlags popup_flags = 0)
-        public static void OpenPopup(uint id, ImGuiPopupFlags popup_flags = (ImGuiPopupFlags)(0))
+        public static void OpenPopup(uint id, global::DearImGui.ImGuiPopupFlags popup_flags = (ImGuiPopupFlags)(0))
         {
             if (Environment.Is64BitProcess)
             {
@@ -23757,7 +23757,7 @@ namespace DearImGui
 
         /// <summary>Helper to open popup when clicked on last item. Default to ImGuiPopupFlags_MouseButtonRight == 1. (note: actually triggers on the mouse _released_ event to be consistent with popup behaviors).<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L697.</summary>
         // DEBUG: void          OpenPopupOnItemClick(const char* str_id = NULL, ImGuiPopupFlags popup_flags = 1)
-        public static void OpenPopupOnItemClick(string str_id = default, ImGuiPopupFlags popup_flags = (ImGuiPopupFlags)(1))
+        public static void OpenPopupOnItemClick(string str_id = default, global::DearImGui.ImGuiPopupFlags popup_flags = (ImGuiPopupFlags)(1))
         {
             if (Environment.Is64BitProcess)
             {
@@ -23785,7 +23785,7 @@ namespace DearImGui
 
         /// <summary>Open+begin popup when clicked on last item. Use str_id==NULL to associate the popup to previous item. If you want to use that on a non-interactive item such as Text() you need to pass in an explicit ID here. read comments in .cpp!<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L705.</summary>
         // DEBUG: bool          BeginPopupContextItem(const char* str_id = NULL, ImGuiPopupFlags popup_flags = 1)
-        public static bool BeginPopupContextItem(string str_id = default, ImGuiPopupFlags popup_flags = (ImGuiPopupFlags)(1))
+        public static bool BeginPopupContextItem(string str_id = default, global::DearImGui.ImGuiPopupFlags popup_flags = (ImGuiPopupFlags)(1))
         {
             var ___ret = Environment.Is64BitProcess ? __Internal64.BeginPopupContextItem(str_id, popup_flags) : __Internal32.BeginPopupContextItem(str_id, popup_flags);
             return ___ret;
@@ -23793,7 +23793,7 @@ namespace DearImGui
 
         /// <summary>Open+begin popup when clicked on current window.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L706.</summary>
         // DEBUG: bool          BeginPopupContextWindow(const char* str_id = NULL, ImGuiPopupFlags popup_flags = 1)
-        public static bool BeginPopupContextWindow(string str_id = default, ImGuiPopupFlags popup_flags = (ImGuiPopupFlags)(1))
+        public static bool BeginPopupContextWindow(string str_id = default, global::DearImGui.ImGuiPopupFlags popup_flags = (ImGuiPopupFlags)(1))
         {
             var ___ret = Environment.Is64BitProcess ? __Internal64.BeginPopupContextWindow(str_id, popup_flags) : __Internal32.BeginPopupContextWindow(str_id, popup_flags);
             return ___ret;
@@ -23801,7 +23801,7 @@ namespace DearImGui
 
         /// <summary>Open+begin popup when clicked in void (where there are no windows).<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L707.</summary>
         // DEBUG: bool          BeginPopupContextVoid(const char* str_id = NULL, ImGuiPopupFlags popup_flags = 1)
-        public static bool BeginPopupContextVoid(string str_id = default, ImGuiPopupFlags popup_flags = (ImGuiPopupFlags)(1))
+        public static bool BeginPopupContextVoid(string str_id = default, global::DearImGui.ImGuiPopupFlags popup_flags = (ImGuiPopupFlags)(1))
         {
             var ___ret = Environment.Is64BitProcess ? __Internal64.BeginPopupContextVoid(str_id, popup_flags) : __Internal32.BeginPopupContextVoid(str_id, popup_flags);
             return ___ret;
@@ -23809,7 +23809,7 @@ namespace DearImGui
 
         /// <summary>Return true if the popup is open.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L713.</summary>
         // DEBUG: bool          IsPopupOpen(const char* str_id, ImGuiPopupFlags flags = 0)
-        public static bool IsPopupOpen(string str_id, ImGuiPopupFlags flags = (ImGuiPopupFlags)(0))
+        public static bool IsPopupOpen(string str_id, global::DearImGui.ImGuiPopupFlags flags = (ImGuiPopupFlags)(0))
         {
             var ___ret = Environment.Is64BitProcess ? __Internal64.IsPopupOpen(str_id, flags) : __Internal32.IsPopupOpen(str_id, flags);
             return ___ret;
@@ -23817,7 +23817,7 @@ namespace DearImGui
 
         /// <summary>Tables.<br/>- Full-featured replacement for old Columns API.<br/>- See Demo-&gt;Tables for demo code. See top of imgui_tables.cpp for general commentary.<br/>- See ImGuiTableFlags_ and ImGuiTableColumnFlags_ enums for a description of available flags.<br/>The typical call flow is:.<br/>- 1. Call BeginTable(), early out if returning false.<br/>- 2. Optionally call TableSetupColumn() to submit column name/flags/defaults.<br/>- 3. Optionally call TableSetupScrollFreeze() to request scroll freezing of columns/rows.<br/>- 4. Optionally call TableHeadersRow() to submit a header row. Names are pulled from TableSetupColumn() data.<br/>- 5. Populate contents:.<br/>- In most situations you can use TableNextRow() + TableSetColumnIndex(N) to start appending into a column.<br/>- If you are using tables as a sort of grid, where every columns is holding the same type of contents,.<br/>You may prefer using TableNextColumn() instead of TableNextRow() + TableSetColumnIndex().<br/>TableNextColumn() will automatically wrap-around into the next row if needed.<br/>- IMPORTANT: Comparatively to the old Columns() API, we need to call TableNextColumn() for the first column!<br/>- Summary of possible call flow:.<br/>--------------------------------------------------------------------------------------------------------.<br/>TableNextRow() -&gt; TableSetColumnIndex(0) -&gt; Text("Hello 0") -&gt; TableSetColumnIndex(1) -&gt; Text("Hello 1"), // OK.<br/>TableNextRow() -&gt; TableNextColumn(), -&gt; Text("Hello 0") -&gt; TableNextColumn(), -&gt; Text("Hello 1"), // OK.<br/>TableNextColumn(), -&gt; Text("Hello 0") -&gt; TableNextColumn(), -&gt; Text("Hello 1"), // OK: TableNextColumn() automatically gets to next row!<br/>TableNextRow(), -&gt; Text("Hello 0"), // Not OK! Missing TableSetColumnIndex() or TableNextColumn()! Text will not appear!<br/>--------------------------------------------------------------------------------------------------------.<br/>- 5. Call EndTable().<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L738.</summary>
         // DEBUG: bool          BeginTable(const char* str_id, int column, ImGuiTableFlags flags = 0, const ImVec2& outer_size = ImVec2(0.0f, 0.0f), float inner_width = 0.0f)
-        public static bool BeginTable(string str_id, int column, ImGuiTableFlags flags, Vector2 outer_size, float inner_width = 0.0F)
+        public static bool BeginTable(string str_id, int column, global::DearImGui.ImGuiTableFlags flags, global::System.Numerics.Vector2 outer_size, float inner_width = 0.0F)
         {
             var __arg3 = new IntPtr(Unsafe.AsPointer(ref outer_size))
             /* DEBUG: TypeMapImVec2.CSharpMarshalToNative: Case 3 */
@@ -23843,7 +23843,7 @@ namespace DearImGui
 
         /// <summary>Append into the first cell of a new row.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L740.</summary>
         // DEBUG: void          TableNextRow(ImGuiTableRowFlags row_flags = 0, float min_row_height = 0.0f)
-        public static void TableNextRow(ImGuiTableRowFlags row_flags = (ImGuiTableRowFlags)(0), float min_row_height = 0.0F)
+        public static void TableNextRow(global::DearImGui.ImGuiTableRowFlags row_flags = (ImGuiTableRowFlags)(0), float min_row_height = 0.0F)
         {
             if (Environment.Is64BitProcess)
             {
@@ -23873,7 +23873,7 @@ namespace DearImGui
 
         /// <summary>Tables: Headers &amp; Columns declaration.<br/>- Use TableSetupColumn() to specify label, resizing policy, default width/weight, id, various other flags etc.<br/>- Use TableHeadersRow() to create a header row and automatically submit a TableHeader() for each column.<br/>Headers are required to perform: reordering, sorting, and opening the context menu.<br/>The context menu can also be made available in columns body using ImGuiTableFlags_ContextMenuInBody.<br/>- You may manually submit headers using TableNextRow() + TableHeader() calls, but this is only useful in.<br/>Some advanced use cases (e.g. adding custom widgets in header row).<br/>- Use TableSetupScrollFreeze() to lock columns/rows so they stay visible when scrolled.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L752.</summary>
         // DEBUG: void          TableSetupColumn(const char* label, ImGuiTableColumnFlags flags = 0, float init_width_or_weight = 0.0f, ImGuiID user_id = 0)
-        public static void TableSetupColumn(string label, ImGuiTableColumnFlags flags = (ImGuiTableColumnFlags)(0), float init_width_or_weight = 0.0F, uint user_id = (uint)(0))
+        public static void TableSetupColumn(string label, global::DearImGui.ImGuiTableColumnFlags flags = (ImGuiTableColumnFlags)(0), float init_width_or_weight = 0.0F, uint user_id = (uint)(0))
         {
             if (Environment.Is64BitProcess)
             {
@@ -23929,10 +23929,10 @@ namespace DearImGui
 
         /// <summary>Get latest sort specs for the table (NULL if not sorting).<br/>Lifetime: don't hold on this pointer over multiple frames or past any subsequent call to BeginTable().<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L763.</summary>
         // DEBUG: ImGuiTableSortSpecs*  TableGetSortSpecs()
-        public static ImGuiTableSortSpecs TableGetSortSpecs()
+        public static global::DearImGui.ImGuiTableSortSpecs TableGetSortSpecs()
         {
             var ___ret = Environment.Is64BitProcess ? __Internal64.TableGetSortSpecs() : __Internal32.TableGetSortSpecs();
-            var __result0 = ImGuiTableSortSpecs.__GetOrCreateInstance(___ret, false);
+            var __result0 = global::DearImGui.ImGuiTableSortSpecs.__GetOrCreateInstance(___ret, false);
             return __result0;
         }
 
@@ -23965,12 +23965,12 @@ namespace DearImGui
         public static string TableGetColumnName(int column_n = (int)(-1))
         {
             var ___ret = Environment.Is64BitProcess ? __Internal64.TableGetColumnName(column_n) : __Internal32.TableGetColumnName(column_n);
-            return CppSharp.Runtime.MarshalUtil.GetString(Encoding.UTF8, ___ret);
+            return CppSharp.Runtime.MarshalUtil.GetString(global::System.Text.Encoding.UTF8, ___ret);
         }
 
         /// <summary>Return column flags so you can query their Enabled/Visible/Sorted/Hovered status flags. Pass -1 to use current column.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L768.</summary>
         // DEBUG: ImGuiTableColumnFlags TableGetColumnFlags(int column_n = -1)
-        public static ImGuiTableColumnFlags TableGetColumnFlags(int column_n = (int)(-1))
+        public static global::DearImGui.ImGuiTableColumnFlags TableGetColumnFlags(int column_n = (int)(-1))
         {
             var ___ret = Environment.Is64BitProcess ? __Internal64.TableGetColumnFlags(column_n) : __Internal32.TableGetColumnFlags(column_n);
             return ___ret;
@@ -23992,7 +23992,7 @@ namespace DearImGui
 
         /// <summary>Change the color of a cell, row, or column. See ImGuiTableBgTarget_ flags for details.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L770.</summary>
         // DEBUG: void                  TableSetBgColor(ImGuiTableBgTarget target, ImU32 color, int column_n = -1)
-        public static void TableSetBgColor(ImGuiTableBgTarget target, uint color, int column_n = (int)(-1))
+        public static void TableSetBgColor(global::DearImGui.ImGuiTableBgTarget target, uint color, int column_n = (int)(-1))
         {
             if (Environment.Is64BitProcess)
             {
@@ -24094,7 +24094,7 @@ namespace DearImGui
 
         /// <summary>Create and append into a TabBar.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L785.</summary>
         // DEBUG: bool          BeginTabBar(const char* str_id, ImGuiTabBarFlags flags = 0)
-        public static bool BeginTabBar(string str_id, ImGuiTabBarFlags flags = (ImGuiTabBarFlags)(0))
+        public static bool BeginTabBar(string str_id, global::DearImGui.ImGuiTabBarFlags flags = (ImGuiTabBarFlags)(0))
         {
             var ___ret = Environment.Is64BitProcess ? __Internal64.BeginTabBar(str_id, flags) : __Internal32.BeginTabBar(str_id, flags);
             return ___ret;
@@ -24116,7 +24116,7 @@ namespace DearImGui
 
         /// <summary>Create a Tab. Returns true if the Tab is selected.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L787.</summary>
         // DEBUG: bool          BeginTabItem(const char* label, bool* p_open = NULL, ImGuiTabItemFlags flags = 0)
-        public static bool BeginTabItem(string label, ref bool p_open, ImGuiTabItemFlags flags = (ImGuiTabItemFlags)(0))
+        public static bool BeginTabItem(string label, ref bool p_open, global::DearImGui.ImGuiTabItemFlags flags = (ImGuiTabItemFlags)(0))
         {
             fixed (bool* __p_open1 = &p_open)
             {
@@ -24142,7 +24142,7 @@ namespace DearImGui
 
         /// <summary>Create a Tab behaving like a button. return true when clicked. cannot be selected in the tab bar.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L789.</summary>
         // DEBUG: bool          TabItemButton(const char* label, ImGuiTabItemFlags flags = 0)
-        public static bool TabItemButton(string label, ImGuiTabItemFlags flags = (ImGuiTabItemFlags)(0))
+        public static bool TabItemButton(string label, global::DearImGui.ImGuiTabItemFlags flags = (ImGuiTabItemFlags)(0))
         {
             var ___ret = Environment.Is64BitProcess ? __Internal64.TabItemButton(label, flags) : __Internal32.TabItemButton(label, flags);
             return ___ret;
@@ -24164,7 +24164,7 @@ namespace DearImGui
 
         /// <summary>Docking.<br/>[BETA API] Enable with io.ConfigFlags |= ImGuiConfigFlags_DockingEnable.<br/>Note: You can use most Docking facilities without calling any API. You DO NOT need to call DockSpace() to use Docking!<br/>- Drag from window title bar or their tab to dock/undock. Hold SHIFT to disable docking/undocking.<br/>- Drag from window menu button (upper-left button) to undock an entire node (all windows).<br/>- When io.ConfigDockingWithShift == true, you instead need to hold SHIFT to _enable_ docking/undocking.<br/>About dockspaces:.<br/>- Use DockSpace() to create an explicit dock node _within_ an existing window. See Docking demo for details.<br/>- Use DockSpaceOverViewport() to create an explicit dock node covering the screen or a specific viewport.<br/>This is often used with ImGuiDockNodeFlags_PassthruCentralNode.<br/>- Important: Dockspaces need to be submitted _before_ any window they can host. Submit it early in your frame!<br/>- Important: Dockspaces need to be kept alive if hidden, otherwise windows docked into it will be undocked.<br/>E.g. if you have multiple tabs with a dockspace inside each tab: submit the non-visible dockspaces with ImGuiDockNodeFlags_KeepAliveOnly.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L805.</summary>
         // DEBUG: ImGuiID       DockSpace(ImGuiID id, const ImVec2& size = ImVec2(0, 0), ImGuiDockNodeFlags flags = 0, const ImGuiWindowClass* window_class = NULL)
-        public static uint DockSpace(uint id, Vector2 size, ImGuiDockNodeFlags flags = (ImGuiDockNodeFlags)(0), ImGuiWindowClass window_class = default)
+        public static uint DockSpace(uint id, global::System.Numerics.Vector2 size, global::DearImGui.ImGuiDockNodeFlags flags = (ImGuiDockNodeFlags)(0), global::DearImGui.ImGuiWindowClass window_class = default)
         {
             var __arg1 = new IntPtr(Unsafe.AsPointer(ref size))
             /* DEBUG: TypeMapImVec2.CSharpMarshalToNative: Case 3 */
@@ -24177,7 +24177,7 @@ namespace DearImGui
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L806.</summary>
         // DEBUG: ImGuiID       DockSpaceOverViewport(const ImGuiViewport* viewport = NULL, ImGuiDockNodeFlags flags = 0, const ImGuiWindowClass* window_class = NULL)
-        public static uint DockSpaceOverViewport(ImGuiViewport viewport = default, ImGuiDockNodeFlags flags = (ImGuiDockNodeFlags)(0), ImGuiWindowClass window_class = default)
+        public static uint DockSpaceOverViewport(global::DearImGui.ImGuiViewport viewport = default, global::DearImGui.ImGuiDockNodeFlags flags = (ImGuiDockNodeFlags)(0), global::DearImGui.ImGuiWindowClass window_class = default)
         {
             var __arg0 = viewport is null ? IntPtr.Zero : viewport.__Instance;
             var __arg2 = window_class is null ? IntPtr.Zero : window_class.__Instance;
@@ -24187,7 +24187,7 @@ namespace DearImGui
 
         /// <summary>Set next window dock id.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L807.</summary>
         // DEBUG: void          SetNextWindowDockID(ImGuiID dock_id, ImGuiCond cond = 0)
-        public static void SetNextWindowDockID(uint dock_id, ImGuiCond cond = (ImGuiCond)(0))
+        public static void SetNextWindowDockID(uint dock_id, global::DearImGui.ImGuiCond cond = (ImGuiCond)(0))
         {
             if (Environment.Is64BitProcess)
             {
@@ -24201,7 +24201,7 @@ namespace DearImGui
 
         /// <summary>Set next window class (control docking compatibility + provide hints to platform backend via custom viewport flags and platform parent/child relationship).<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L808.</summary>
         // DEBUG: void          SetNextWindowClass(const ImGuiWindowClass* window_class)
-        public static void SetNextWindowClass(ImGuiWindowClass window_class)
+        public static void SetNextWindowClass(global::DearImGui.ImGuiWindowClass window_class)
         {
             var __arg0 = window_class is null ? IntPtr.Zero : window_class.__Instance;
             if (Environment.Is64BitProcess)
@@ -24316,7 +24316,7 @@ namespace DearImGui
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L820.</summary>
         // DEBUG: void          LogTextV(const char* fmt, va_list args) IM_FMTLIST(1)
-        public static void LogTextV(string fmt, Object args)
+        public static void LogTextV(string fmt, global::System.Object args)
         {
             if (Environment.Is64BitProcess)
             {
@@ -24330,7 +24330,7 @@ namespace DearImGui
 
         /// <summary>Call after submitting an item which may be dragged. when this return true, you can call SetDragDropPayload() + EndDragDropSource().<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L827.</summary>
         // DEBUG: bool          BeginDragDropSource(ImGuiDragDropFlags flags = 0)
-        public static bool BeginDragDropSource(ImGuiDragDropFlags flags = (ImGuiDragDropFlags)(0))
+        public static bool BeginDragDropSource(global::DearImGui.ImGuiDragDropFlags flags = (ImGuiDragDropFlags)(0))
         {
             var ___ret = Environment.Is64BitProcess ? __Internal64.BeginDragDropSource(flags) : __Internal32.BeginDragDropSource(flags);
             return ___ret;
@@ -24338,7 +24338,7 @@ namespace DearImGui
 
         /// <summary>Type is a user defined string of maximum 32 characters. Strings starting with '_' are reserved for dear imgui internal types. Data is copied and held by imgui. Return true when payload has been accepted.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L828.</summary>
         // DEBUG: bool          SetDragDropPayload(const char* type, const void* data, size_t sz, ImGuiCond cond = 0)
-        public static bool SetDragDropPayload(string type, IntPtr data, UIntPtr sz, ImGuiCond cond = (ImGuiCond)(0))
+        public static bool SetDragDropPayload(string type, IntPtr data, global::System.UIntPtr sz, global::DearImGui.ImGuiCond cond = (ImGuiCond)(0))
         {
             var __arg2 = sz
             /* DEBUG: TypeMapSizeT.CSharpMarshalToNative: Function: True, ReturnVarName: False */
@@ -24371,10 +24371,10 @@ namespace DearImGui
 
         /// <summary>Accept contents of a given type. If ImGuiDragDropFlags_AcceptBeforeDelivery is set you can peek into the payload before the mouse button is released.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L831.</summary>
         // DEBUG: const ImGuiPayload*   AcceptDragDropPayload(const char* type, ImGuiDragDropFlags flags = 0)
-        public static ImGuiPayload AcceptDragDropPayload(string type, ImGuiDragDropFlags flags = (ImGuiDragDropFlags)(0))
+        public static global::DearImGui.ImGuiPayload AcceptDragDropPayload(string type, global::DearImGui.ImGuiDragDropFlags flags = (ImGuiDragDropFlags)(0))
         {
             var ___ret = Environment.Is64BitProcess ? __Internal64.AcceptDragDropPayload(type, flags) : __Internal32.AcceptDragDropPayload(type, flags);
-            var __result0 = ImGuiPayload.__GetOrCreateInstance(___ret, false);
+            var __result0 = global::DearImGui.ImGuiPayload.__GetOrCreateInstance(___ret, false);
             return __result0;
         }
 
@@ -24394,10 +24394,10 @@ namespace DearImGui
 
         /// <summary>Peek directly into the current payload from anywhere. may return NULL. use ImGuiPayload::IsDataType() to test for the payload type.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L833.</summary>
         // DEBUG: const ImGuiPayload*   GetDragDropPayload()
-        public static ImGuiPayload GetDragDropPayload()
+        public static global::DearImGui.ImGuiPayload GetDragDropPayload()
         {
             var ___ret = Environment.Is64BitProcess ? __Internal64.GetDragDropPayload() : __Internal32.GetDragDropPayload();
-            var __result0 = ImGuiPayload.__GetOrCreateInstance(___ret, false);
+            var __result0 = global::DearImGui.ImGuiPayload.__GetOrCreateInstance(___ret, false);
             return __result0;
         }
 
@@ -24431,7 +24431,7 @@ namespace DearImGui
 
         /// <summary>Clipping.<br/>- Mouse hovering is affected by ImGui::PushClipRect() calls, unlike direct calls to ImDrawList::PushClipRect() which are render only.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L844.</summary>
         // DEBUG: void          PushClipRect(const ImVec2& clip_rect_min, const ImVec2& clip_rect_max, bool intersect_with_current_clip_rect)
-        public static void PushClipRect(Vector2 clip_rect_min, Vector2 clip_rect_max, bool intersect_with_current_clip_rect)
+        public static void PushClipRect(global::System.Numerics.Vector2 clip_rect_min, global::System.Numerics.Vector2 clip_rect_max, bool intersect_with_current_clip_rect)
         {
             var __arg0 = new IntPtr(Unsafe.AsPointer(ref clip_rect_min))
             /* DEBUG: TypeMapImVec2.CSharpMarshalToNative: Case 4 */
@@ -24495,7 +24495,7 @@ namespace DearImGui
 
         /// <summary>Is the last item hovered? (and usable, aka not blocked by a popup, etc.). See ImGuiHoveredFlags for more options.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L855.</summary>
         // DEBUG: bool          IsItemHovered(ImGuiHoveredFlags flags = 0)
-        public static bool IsItemHovered(ImGuiHoveredFlags flags = (ImGuiHoveredFlags)(0))
+        public static bool IsItemHovered(global::DearImGui.ImGuiHoveredFlags flags = (ImGuiHoveredFlags)(0))
         {
             var ___ret = Environment.Is64BitProcess ? __Internal64.IsItemHovered(flags) : __Internal32.IsItemHovered(flags);
             return ___ret;
@@ -24519,7 +24519,7 @@ namespace DearImGui
 
         /// <summary>Is the last item hovered and mouse clicked on? (**).<br/>== IsMouseClicked(mouse_button) &amp; &amp; IsItemHovered()Important. (**) this it NOT equivalent to the behavior of e.g. Button(). Read comments in function definition.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L858.</summary>
         // DEBUG: bool          IsItemClicked(ImGuiMouseButton mouse_button = 0)
-        public static bool IsItemClicked(ImGuiMouseButton mouse_button = (ImGuiMouseButton)(0))
+        public static bool IsItemClicked(global::DearImGui.ImGuiMouseButton mouse_button = (ImGuiMouseButton)(0))
         {
             var ___ret = Environment.Is64BitProcess ? __Internal64.IsItemClicked(mouse_button) : __Internal32.IsItemClicked(mouse_button);
             return ___ret;
@@ -24599,9 +24599,9 @@ namespace DearImGui
 
         /// <summary>Get upper-left bounding rectangle of the last item (screen space).<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L868.</summary>
         // DEBUG: ImVec2        GetItemRectMin()
-        public static Vector2 GetItemRectMin()
+        public static global::System.Numerics.Vector2 GetItemRectMin()
         {
-            var ___ret = new Vector2();
+            var ___ret = new global::DearImGui.ImVec2.__Internal();
             if (Environment.Is64BitProcess)
             {
                 __Internal64.GetItemRectMin(new IntPtr(&___ret));
@@ -24619,9 +24619,9 @@ namespace DearImGui
 
         /// <summary>Get lower-right bounding rectangle of the last item (screen space).<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L869.</summary>
         // DEBUG: ImVec2        GetItemRectMax()
-        public static Vector2 GetItemRectMax()
+        public static global::System.Numerics.Vector2 GetItemRectMax()
         {
-            var ___ret = new Vector2();
+            var ___ret = new global::DearImGui.ImVec2.__Internal();
             if (Environment.Is64BitProcess)
             {
                 __Internal64.GetItemRectMax(new IntPtr(&___ret));
@@ -24639,9 +24639,9 @@ namespace DearImGui
 
         /// <summary>Get size of last item.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L870.</summary>
         // DEBUG: ImVec2        GetItemRectSize()
-        public static Vector2 GetItemRectSize()
+        public static global::System.Numerics.Vector2 GetItemRectSize()
         {
-            var ___ret = new Vector2();
+            var ___ret = new global::DearImGui.ImVec2.__Internal();
             if (Environment.Is64BitProcess)
             {
                 __Internal64.GetItemRectSize(new IntPtr(&___ret));
@@ -24673,54 +24673,54 @@ namespace DearImGui
 
         /// <summary>Return primary/default viewport. This can never be NULL.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L877.</summary>
         // DEBUG: ImGuiViewport* GetMainViewport()
-        public static ImGuiViewport GetMainViewport()
+        public static global::DearImGui.ImGuiViewport GetMainViewport()
         {
             var ___ret = Environment.Is64BitProcess ? __Internal64.GetMainViewport() : __Internal32.GetMainViewport();
-            var __result0 = ImGuiViewport.__GetOrCreateInstance(___ret, false);
+            var __result0 = global::DearImGui.ImGuiViewport.__GetOrCreateInstance(___ret, false);
             return __result0;
         }
 
         /// <summary>Get background draw list for the viewport associated to the current window. this draw list will be the first rendering one. Useful to quickly draw shapes/text behind dear imgui contents.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L880.</summary>
         // DEBUG: ImDrawList*   GetBackgroundDrawList()
-        public static ImDrawList GetBackgroundDrawList()
+        public static global::DearImGui.ImDrawList GetBackgroundDrawList()
         {
             var ___ret = Environment.Is64BitProcess ? __Internal64.GetBackgroundDrawList() : __Internal32.GetBackgroundDrawList();
-            var __result0 = ___ret != IntPtr.Zero ? ImDrawList.__CreateInstance(___ret) : default;
+            var __result0 = ___ret != IntPtr.Zero ? global::DearImGui.ImDrawList.__CreateInstance(___ret) : default;
             return __result0;
         }
 
         /// <summary>Get foreground draw list for the viewport associated to the current window. this draw list will be the last rendered one. Useful to quickly draw shapes/text over dear imgui contents.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L881.</summary>
         // DEBUG: ImDrawList*   GetForegroundDrawList()
-        public static ImDrawList GetForegroundDrawList()
+        public static global::DearImGui.ImDrawList GetForegroundDrawList()
         {
             var ___ret = Environment.Is64BitProcess ? __Internal64.GetForegroundDrawList() : __Internal32.GetForegroundDrawList();
-            var __result0 = ___ret != IntPtr.Zero ? ImDrawList.__CreateInstance(___ret) : default;
+            var __result0 = ___ret != IntPtr.Zero ? global::DearImGui.ImDrawList.__CreateInstance(___ret) : default;
             return __result0;
         }
 
         /// <summary>Get background draw list for the given viewport. this draw list will be the first rendering one. Useful to quickly draw shapes/text behind dear imgui contents.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L882.</summary>
         // DEBUG: ImDrawList*   GetBackgroundDrawList(ImGuiViewport* viewport)
-        public static ImDrawList GetBackgroundDrawList(ImGuiViewport viewport)
+        public static global::DearImGui.ImDrawList GetBackgroundDrawList(global::DearImGui.ImGuiViewport viewport)
         {
             var __arg0 = viewport is null ? IntPtr.Zero : viewport.__Instance;
             var ___ret = Environment.Is64BitProcess ? __Internal64.GetBackgroundDrawList(__arg0) : __Internal32.GetBackgroundDrawList(__arg0);
-            var __result0 = ___ret != IntPtr.Zero ? ImDrawList.__CreateInstance(___ret) : default;
+            var __result0 = ___ret != IntPtr.Zero ? global::DearImGui.ImDrawList.__CreateInstance(___ret) : default;
             return __result0;
         }
 
         /// <summary>Get foreground draw list for the given viewport. this draw list will be the last rendered one. Useful to quickly draw shapes/text over dear imgui contents.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L883.</summary>
         // DEBUG: ImDrawList*   GetForegroundDrawList(ImGuiViewport* viewport)
-        public static ImDrawList GetForegroundDrawList(ImGuiViewport viewport)
+        public static global::DearImGui.ImDrawList GetForegroundDrawList(global::DearImGui.ImGuiViewport viewport)
         {
             var __arg0 = viewport is null ? IntPtr.Zero : viewport.__Instance;
             var ___ret = Environment.Is64BitProcess ? __Internal64.GetForegroundDrawList(__arg0) : __Internal32.GetForegroundDrawList(__arg0);
-            var __result0 = ___ret != IntPtr.Zero ? ImDrawList.__CreateInstance(___ret) : default;
+            var __result0 = ___ret != IntPtr.Zero ? global::DearImGui.ImDrawList.__CreateInstance(___ret) : default;
             return __result0;
         }
 
         /// <summary>Test if rectangle (of given size, starting from cursor position) is visible / not clipped.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L886.</summary>
         // DEBUG: bool          IsRectVisible(const ImVec2& size)
-        public static bool IsRectVisible(Vector2 size)
+        public static bool IsRectVisible(global::System.Numerics.Vector2 size)
         {
             var __arg0 = new IntPtr(Unsafe.AsPointer(ref size))
             /* DEBUG: TypeMapImVec2.CSharpMarshalToNative: Case 4 */
@@ -24732,7 +24732,7 @@ namespace DearImGui
 
         /// <summary>Test if rectangle (in screen space) is visible / not clipped. to perform coarse clipping on user's side.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L887.</summary>
         // DEBUG: bool          IsRectVisible(const ImVec2& rect_min, const ImVec2& rect_max)
-        public static bool IsRectVisible(Vector2 rect_min, Vector2 rect_max)
+        public static bool IsRectVisible(global::System.Numerics.Vector2 rect_min, global::System.Numerics.Vector2 rect_max)
         {
             var __arg0 = new IntPtr(Unsafe.AsPointer(ref rect_min))
             /* DEBUG: TypeMapImVec2.CSharpMarshalToNative: Case 4 */
@@ -24764,24 +24764,24 @@ namespace DearImGui
 
         /// <summary>You may use this when creating your own ImDrawList instances.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L890.</summary>
         // DEBUG: ImDrawListSharedData* GetDrawListSharedData()
-        public static ImDrawListSharedData GetDrawListSharedData()
+        public static global::DearImGui.ImDrawListSharedData GetDrawListSharedData()
         {
             var ___ret = Environment.Is64BitProcess ? __Internal64.GetDrawListSharedData() : __Internal32.GetDrawListSharedData();
-            var __result0 = ImDrawListSharedData.__GetOrCreateInstance(___ret, false);
+            var __result0 = global::DearImGui.ImDrawListSharedData.__GetOrCreateInstance(___ret, false);
             return __result0;
         }
 
         /// <summary>Get a string corresponding to the enum value (for display, saving, etc.).<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L891.</summary>
         // DEBUG: const char*   GetStyleColorName(ImGuiCol idx)
-        public static string GetStyleColorName(ImGuiCol idx)
+        public static string GetStyleColorName(global::DearImGui.ImGuiCol idx)
         {
             var ___ret = Environment.Is64BitProcess ? __Internal64.GetStyleColorName(idx) : __Internal32.GetStyleColorName(idx);
-            return CppSharp.Runtime.MarshalUtil.GetString(Encoding.UTF8, ___ret);
+            return CppSharp.Runtime.MarshalUtil.GetString(global::System.Text.Encoding.UTF8, ___ret);
         }
 
         /// <summary>Replace current window storage with our own (if you want to manipulate it yourself, typically clear subsection of it).<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L892.</summary>
         // DEBUG: void          SetStateStorage(ImGuiStorage* storage)
-        public static void SetStateStorage(ImGuiStorage storage)
+        public static void SetStateStorage(global::DearImGui.ImGuiStorage storage)
         {
             var __arg0 = storage is null ? IntPtr.Zero : storage.__Instance;
             if (Environment.Is64BitProcess)
@@ -24796,16 +24796,16 @@ namespace DearImGui
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L893.</summary>
         // DEBUG: ImGuiStorage* GetStateStorage()
-        public static ImGuiStorage GetStateStorage()
+        public static global::DearImGui.ImGuiStorage GetStateStorage()
         {
             var ___ret = Environment.Is64BitProcess ? __Internal64.GetStateStorage() : __Internal32.GetStateStorage();
-            var __result0 = ImGuiStorage.__GetOrCreateInstance(___ret, false);
+            var __result0 = global::DearImGui.ImGuiStorage.__GetOrCreateInstance(___ret, false);
             return __result0;
         }
 
         /// <summary>Helper to create a child window / scrolling region that looks like a normal widget frame.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L894.</summary>
         // DEBUG: bool          BeginChildFrame(ImGuiID id, const ImVec2& size, ImGuiWindowFlags flags = 0)
-        public static bool BeginChildFrame(uint id, Vector2 size, ImGuiWindowFlags flags = (ImGuiWindowFlags)(0))
+        public static bool BeginChildFrame(uint id, global::System.Numerics.Vector2 size, global::DearImGui.ImGuiWindowFlags flags = (ImGuiWindowFlags)(0))
         {
             var __arg1 = new IntPtr(Unsafe.AsPointer(ref size))
             /* DEBUG: TypeMapImVec2.CSharpMarshalToNative: Case 4 */
@@ -24831,9 +24831,9 @@ namespace DearImGui
 
         /// <summary>Text Utilities.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L898.</summary>
         // DEBUG: ImVec2        CalcTextSize(const char* text, const char* text_end = NULL, bool hide_text_after_double_hash = false, float wrap_width = -1.0f)
-        public static Vector2 CalcTextSize(string text, string text_end = default, bool hide_text_after_double_hash = false, float wrap_width = -1.0F)
+        public static global::System.Numerics.Vector2 CalcTextSize(string text, string text_end = default, bool hide_text_after_double_hash = false, float wrap_width = -1.0F)
         {
-            var ___ret = new Vector2();
+            var ___ret = new global::DearImGui.ImVec2.__Internal();
             if (Environment.Is64BitProcess)
             {
                 __Internal64.CalcTextSize(new IntPtr(&___ret), text, text_end, hide_text_after_double_hash, wrap_width);
@@ -24851,9 +24851,9 @@ namespace DearImGui
 
         /// <summary>Color Utilities.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L901.</summary>
         // DEBUG: ImVec4        ColorConvertU32ToFloat4(ImU32 in)
-        public static Vector4 ColorConvertU32ToFloat4(uint @in)
+        public static global::System.Numerics.Vector4 ColorConvertU32ToFloat4(uint @in)
         {
-            var ___ret = new Vector4();
+            var ___ret = new global::DearImGui.ImVec4.__Internal();
             if (Environment.Is64BitProcess)
             {
                 __Internal64.ColorConvertU32ToFloat4(new IntPtr(&___ret), @in);
@@ -24871,7 +24871,7 @@ namespace DearImGui
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L902.</summary>
         // DEBUG: ImU32         ColorConvertFloat4ToU32(const ImVec4& in)
-        public static uint ColorConvertFloat4ToU32(Vector4 @in)
+        public static uint ColorConvertFloat4ToU32(global::System.Numerics.Vector4 @in)
         {
             var __arg0 = new IntPtr(Unsafe.AsPointer(ref @in))
             /* DEBUG: TypeMapImVec4.CSharpMarshalToNative: Case 4 */
@@ -24935,7 +24935,7 @@ namespace DearImGui
 
         /// <summary>Is key being held.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L912.</summary>
         // DEBUG: bool          IsKeyDown(ImGuiKey key)
-        public static bool IsKeyDown(ImGuiKey key)
+        public static bool IsKeyDown(global::DearImGui.ImGuiKey key)
         {
             var ___ret = Environment.Is64BitProcess ? __Internal64.IsKeyDown(key) : __Internal32.IsKeyDown(key);
             return ___ret;
@@ -24943,7 +24943,7 @@ namespace DearImGui
 
         /// <summary>Was key pressed (went from !Down to Down)? if repeat=true, uses io.KeyRepeatDelay / KeyRepeatRate.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L913.</summary>
         // DEBUG: bool          IsKeyPressed(ImGuiKey key, bool repeat = true)
-        public static bool IsKeyPressed(ImGuiKey key, bool repeat = true)
+        public static bool IsKeyPressed(global::DearImGui.ImGuiKey key, bool repeat = true)
         {
             var ___ret = Environment.Is64BitProcess ? __Internal64.IsKeyPressed(key, repeat) : __Internal32.IsKeyPressed(key, repeat);
             return ___ret;
@@ -24951,7 +24951,7 @@ namespace DearImGui
 
         /// <summary>Was key released (went from Down to !Down)?.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L914.</summary>
         // DEBUG: bool          IsKeyReleased(ImGuiKey key)
-        public static bool IsKeyReleased(ImGuiKey key)
+        public static bool IsKeyReleased(global::DearImGui.ImGuiKey key)
         {
             var ___ret = Environment.Is64BitProcess ? __Internal64.IsKeyReleased(key) : __Internal32.IsKeyReleased(key);
             return ___ret;
@@ -24959,7 +24959,7 @@ namespace DearImGui
 
         /// <summary>Uses provided repeat rate/delay. return a count, most often 0 or 1 but might be &gt;1 if RepeatRate is small enough that DeltaTime &gt; RepeatRate.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L915.</summary>
         // DEBUG: int           GetKeyPressedAmount(ImGuiKey key, float repeat_delay, float rate)
-        public static int GetKeyPressedAmount(ImGuiKey key, float repeat_delay, float rate)
+        public static int GetKeyPressedAmount(global::DearImGui.ImGuiKey key, float repeat_delay, float rate)
         {
             var ___ret = Environment.Is64BitProcess ? __Internal64.GetKeyPressedAmount(key, repeat_delay, rate) : __Internal32.GetKeyPressedAmount(key, repeat_delay, rate);
             return ___ret;
@@ -24967,10 +24967,10 @@ namespace DearImGui
 
         /// <summary>[DEBUG] returns English name of the key. Those names a provided for debugging purpose and are not meant to be saved persistently not compared.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L916.</summary>
         // DEBUG: const char*   GetKeyName(ImGuiKey key)
-        public static string GetKeyName(ImGuiKey key)
+        public static string GetKeyName(global::DearImGui.ImGuiKey key)
         {
             var ___ret = Environment.Is64BitProcess ? __Internal64.GetKeyName(key) : __Internal32.GetKeyName(key);
-            return CppSharp.Runtime.MarshalUtil.GetString(Encoding.UTF8, ___ret);
+            return CppSharp.Runtime.MarshalUtil.GetString(global::System.Text.Encoding.UTF8, ___ret);
         }
 
         /// <summary>Override io.WantCaptureKeyboard flag next frame (said flag is left for your application to handle, typically when true it instructs your app to ignore inputs). e.g. force capture keyboard when your widget is being hovered. This is equivalent to setting "io.WantCaptureKeyboard = want_capture_keyboard"; after the next NewFrame() call.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L917.</summary>
@@ -24989,7 +24989,7 @@ namespace DearImGui
 
         /// <summary>Is mouse button held?.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L923.</summary>
         // DEBUG: bool          IsMouseDown(ImGuiMouseButton button)
-        public static bool IsMouseDown(ImGuiMouseButton button)
+        public static bool IsMouseDown(global::DearImGui.ImGuiMouseButton button)
         {
             var ___ret = Environment.Is64BitProcess ? __Internal64.IsMouseDown(button) : __Internal32.IsMouseDown(button);
             return ___ret;
@@ -24997,7 +24997,7 @@ namespace DearImGui
 
         /// <summary>Did mouse button clicked? (went from !Down to Down). Same as GetMouseClickedCount() == 1.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L924.</summary>
         // DEBUG: bool          IsMouseClicked(ImGuiMouseButton button, bool repeat = false)
-        public static bool IsMouseClicked(ImGuiMouseButton button, bool repeat = false)
+        public static bool IsMouseClicked(global::DearImGui.ImGuiMouseButton button, bool repeat = false)
         {
             var ___ret = Environment.Is64BitProcess ? __Internal64.IsMouseClicked(button, repeat) : __Internal32.IsMouseClicked(button, repeat);
             return ___ret;
@@ -25005,7 +25005,7 @@ namespace DearImGui
 
         /// <summary>Did mouse button released? (went from Down to !Down).<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L925.</summary>
         // DEBUG: bool          IsMouseReleased(ImGuiMouseButton button)
-        public static bool IsMouseReleased(ImGuiMouseButton button)
+        public static bool IsMouseReleased(global::DearImGui.ImGuiMouseButton button)
         {
             var ___ret = Environment.Is64BitProcess ? __Internal64.IsMouseReleased(button) : __Internal32.IsMouseReleased(button);
             return ___ret;
@@ -25013,7 +25013,7 @@ namespace DearImGui
 
         /// <summary>Did mouse button double-clicked? Same as GetMouseClickedCount() == 2. (note that a double-click will also report IsMouseClicked() == true).<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L926.</summary>
         // DEBUG: bool          IsMouseDoubleClicked(ImGuiMouseButton button)
-        public static bool IsMouseDoubleClicked(ImGuiMouseButton button)
+        public static bool IsMouseDoubleClicked(global::DearImGui.ImGuiMouseButton button)
         {
             var ___ret = Environment.Is64BitProcess ? __Internal64.IsMouseDoubleClicked(button) : __Internal32.IsMouseDoubleClicked(button);
             return ___ret;
@@ -25021,7 +25021,7 @@ namespace DearImGui
 
         /// <summary>Return the number of successive mouse-clicks at the time where a click happen (otherwise 0).<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L927.</summary>
         // DEBUG: int           GetMouseClickedCount(ImGuiMouseButton button)
-        public static int GetMouseClickedCount(ImGuiMouseButton button)
+        public static int GetMouseClickedCount(global::DearImGui.ImGuiMouseButton button)
         {
             var ___ret = Environment.Is64BitProcess ? __Internal64.GetMouseClickedCount(button) : __Internal32.GetMouseClickedCount(button);
             return ___ret;
@@ -25029,7 +25029,7 @@ namespace DearImGui
 
         /// <summary>Is mouse hovering given bounding rect (in screen space). clipped by current clipping settings, but disregarding of other consideration of focus/window ordering/popup-block.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L928.</summary>
         // DEBUG: bool          IsMouseHoveringRect(const ImVec2& r_min, const ImVec2& r_max, bool clip = true)
-        public static bool IsMouseHoveringRect(Vector2 r_min, Vector2 r_max, bool clip = true)
+        public static bool IsMouseHoveringRect(global::System.Numerics.Vector2 r_min, global::System.Numerics.Vector2 r_max, bool clip = true)
         {
             var __arg0 = new IntPtr(Unsafe.AsPointer(ref r_min))
             /* DEBUG: TypeMapImVec2.CSharpMarshalToNative: Case 4 */
@@ -25045,7 +25045,7 @@ namespace DearImGui
 
         /// <summary>By convention we use (-FLT_MAX,-FLT_MAX) to denote that there is no mouse available.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L929.</summary>
         // DEBUG: bool          IsMousePosValid(const ImVec2* mouse_pos = NULL)
-        public static bool IsMousePosValid(ref Vector2 mouse_pos)
+        public static bool IsMousePosValid(ref global::System.Numerics.Vector2 mouse_pos = default)
         {
             var __arg0 = new IntPtr(Unsafe.AsPointer(ref mouse_pos))
             /* DEBUG: TypeMapImVec2.CSharpMarshalToNative: Case 3 */
@@ -25065,9 +25065,9 @@ namespace DearImGui
 
         /// <summary>Shortcut to ImGui::GetIO().MousePos provided by user, to be consistent with other calls.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L931.</summary>
         // DEBUG: ImVec2        GetMousePos()
-        public static Vector2 GetMousePos()
+        public static global::System.Numerics.Vector2 GetMousePos()
         {
-            var ___ret = new Vector2();
+            var ___ret = new global::DearImGui.ImVec2.__Internal();
             if (Environment.Is64BitProcess)
             {
                 __Internal64.GetMousePos(new IntPtr(&___ret));
@@ -25085,9 +25085,9 @@ namespace DearImGui
 
         /// <summary>Retrieve mouse position at the time of opening popup we have BeginPopup() into (helper to avoid user backing that value themselves).<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L932.</summary>
         // DEBUG: ImVec2        GetMousePosOnOpeningCurrentPopup()
-        public static Vector2 GetMousePosOnOpeningCurrentPopup()
+        public static global::System.Numerics.Vector2 GetMousePosOnOpeningCurrentPopup()
         {
-            var ___ret = new Vector2();
+            var ___ret = new global::DearImGui.ImVec2.__Internal();
             if (Environment.Is64BitProcess)
             {
                 __Internal64.GetMousePosOnOpeningCurrentPopup(new IntPtr(&___ret));
@@ -25105,7 +25105,7 @@ namespace DearImGui
 
         /// <summary>Is mouse dragging? (if lock_threshold &lt; -1.0f, uses io.MouseDraggingThreshold).<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L933.</summary>
         // DEBUG: bool          IsMouseDragging(ImGuiMouseButton button, float lock_threshold = -1.0f)
-        public static bool IsMouseDragging(ImGuiMouseButton button, float lock_threshold = -1.0F)
+        public static bool IsMouseDragging(global::DearImGui.ImGuiMouseButton button, float lock_threshold = -1.0F)
         {
             var ___ret = Environment.Is64BitProcess ? __Internal64.IsMouseDragging(button, lock_threshold) : __Internal32.IsMouseDragging(button, lock_threshold);
             return ___ret;
@@ -25113,9 +25113,9 @@ namespace DearImGui
 
         /// <summary>Return the delta from the initial clicking position while the mouse button is pressed or was just released. This is locked and return 0.0f until the mouse moves past a distance threshold at least once (if lock_threshold &lt; -1.0f, uses io.MouseDraggingThreshold).<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L934.</summary>
         // DEBUG: ImVec2        GetMouseDragDelta(ImGuiMouseButton button = 0, float lock_threshold = -1.0f)
-        public static Vector2 GetMouseDragDelta(ImGuiMouseButton button = (ImGuiMouseButton)(0), float lock_threshold = -1.0F)
+        public static global::System.Numerics.Vector2 GetMouseDragDelta(global::DearImGui.ImGuiMouseButton button = (ImGuiMouseButton)(0), float lock_threshold = -1.0F)
         {
-            var ___ret = new Vector2();
+            var ___ret = new global::DearImGui.ImVec2.__Internal();
             if (Environment.Is64BitProcess)
             {
                 __Internal64.GetMouseDragDelta(new IntPtr(&___ret), button, lock_threshold);
@@ -25133,7 +25133,7 @@ namespace DearImGui
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L935.</summary>
         // DEBUG: void          ResetMouseDragDelta(ImGuiMouseButton button = 0)
-        public static void ResetMouseDragDelta(ImGuiMouseButton button = (ImGuiMouseButton)(0))
+        public static void ResetMouseDragDelta(global::DearImGui.ImGuiMouseButton button = (ImGuiMouseButton)(0))
         {
             if (Environment.Is64BitProcess)
             {
@@ -25147,7 +25147,7 @@ namespace DearImGui
 
         /// <summary>Get desired cursor type, reset in ImGui::NewFrame(), this is updated during the frame. valid before Render(). If you use software rendering by setting io.MouseDrawCursor ImGui will render those for you.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L936.</summary>
         // DEBUG: ImGuiMouseCursor GetMouseCursor()
-        public static ImGuiMouseCursor GetMouseCursor()
+        public static global::DearImGui.ImGuiMouseCursor GetMouseCursor()
         {
             var ___ret = Environment.Is64BitProcess ? __Internal64.GetMouseCursor() : __Internal32.GetMouseCursor();
             return ___ret;
@@ -25155,7 +25155,7 @@ namespace DearImGui
 
         /// <summary>Set desired cursor type.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L937.</summary>
         // DEBUG: void          SetMouseCursor(ImGuiMouseCursor cursor_type)
-        public static void SetMouseCursor(ImGuiMouseCursor cursor_type)
+        public static void SetMouseCursor(global::DearImGui.ImGuiMouseCursor cursor_type)
         {
             if (Environment.Is64BitProcess)
             {
@@ -25186,7 +25186,7 @@ namespace DearImGui
         public static string GetClipboardText()
         {
             var ___ret = Environment.Is64BitProcess ? __Internal64.GetClipboardText() : __Internal32.GetClipboardText();
-            return CppSharp.Runtime.MarshalUtil.GetString(Encoding.UTF8, ___ret);
+            return CppSharp.Runtime.MarshalUtil.GetString(global::System.Text.Encoding.UTF8, ___ret);
         }
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L943.</summary>
@@ -25219,7 +25219,7 @@ namespace DearImGui
 
         /// <summary>Call after CreateContext() and before the first call to NewFrame() to provide .ini data from your own data source.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L950.</summary>
         // DEBUG: void          LoadIniSettingsFromMemory(const char* ini_data, size_t ini_size=0)
-        public static void LoadIniSettingsFromMemory(string ini_data, UIntPtr ini_size = default)
+        public static void LoadIniSettingsFromMemory(string ini_data, global::System.UIntPtr ini_size = default)
         {
             var __arg1 = ini_size
             /* DEBUG: TypeMapSizeT.CSharpMarshalToNative: Function: True, ReturnVarName: False */
@@ -25250,13 +25250,13 @@ namespace DearImGui
 
         /// <summary>Return a zero-terminated string with the .ini data which you can save by your own mean. call when io.WantSaveIniSettings is set, then save data by your own mean and clear io.WantSaveIniSettings.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L952.</summary>
         // DEBUG: const char*   SaveIniSettingsToMemory(size_t* out_ini_size = NULL)
-        public static string SaveIniSettingsToMemory(ref UIntPtr out_ini_size)
+        public static string SaveIniSettingsToMemory(ref global::System.UIntPtr out_ini_size)
         {
-            fixed (UIntPtr* __out_ini_size0 = &out_ini_size)
+            fixed (global::System.UIntPtr* __out_ini_size0 = &out_ini_size)
             {
                 var __arg0 = __out_ini_size0;
                 var ___ret = Environment.Is64BitProcess ? __Internal64.SaveIniSettingsToMemory(__arg0) : __Internal32.SaveIniSettingsToMemory(__arg0);
-                return CppSharp.Runtime.MarshalUtil.GetString(Encoding.UTF8, ___ret);
+                return CppSharp.Runtime.MarshalUtil.GetString(global::System.Text.Encoding.UTF8, ___ret);
             }
         }
 
@@ -25276,7 +25276,7 @@ namespace DearImGui
 
         /// <summary>This is called by IMGUI_CHECKVERSION() macro.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L956.</summary>
         // DEBUG: bool          DebugCheckVersionAndDataLayout(const char* version_str, size_t sz_io, size_t sz_style, size_t sz_vec2, size_t sz_vec4, size_t sz_drawvert, size_t sz_drawidx)
-        public static bool DebugCheckVersionAndDataLayout(string version_str, UIntPtr sz_io, UIntPtr sz_style, UIntPtr sz_vec2, UIntPtr sz_vec4, UIntPtr sz_drawvert, UIntPtr sz_drawidx)
+        public static bool DebugCheckVersionAndDataLayout(string version_str, global::System.UIntPtr sz_io, global::System.UIntPtr sz_style, global::System.UIntPtr sz_vec2, global::System.UIntPtr sz_vec4, global::System.UIntPtr sz_drawvert, global::System.UIntPtr sz_drawidx)
         {
             var __arg1 = sz_io
             /* DEBUG: TypeMapSizeT.CSharpMarshalToNative: Function: True, ReturnVarName: False */
@@ -25302,10 +25302,10 @@ namespace DearImGui
 
         /// <summary>Memory Allocators.<br/>- Those functions are not reliant on the current context.<br/>- DLL users: heaps and globals are not shared across DLL boundaries! You will need to call SetCurrentContext() + SetAllocatorFunctions().<br/>For each static/DLL boundary you are calling from. Read "Context and Memory Allocators" section of imgui.cpp for more details.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L962.</summary>
         // DEBUG: void          SetAllocatorFunctions(ImGuiMemAllocFunc alloc_func, ImGuiMemFreeFunc free_func, void* user_data = NULL)
-        public static void SetAllocatorFunctions(ImGuiMemAllocFunc alloc_func, ImGuiMemFreeFunc free_func, IntPtr user_data = default)
+        public static void SetAllocatorFunctions(global::DearImGui.ImGuiMemAllocFunc alloc_func, global::DearImGui.ImGuiMemFreeFunc free_func, IntPtr user_data = default)
         {
-            var __arg0 = alloc_func == null ? IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(alloc_func);
-            var __arg1 = free_func == null ? IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(free_func);
+            var __arg0 = alloc_func == null ? global::System.IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(alloc_func);
+            var __arg1 = free_func == null ? global::System.IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(free_func);
             if (Environment.Is64BitProcess)
             {
                 __Internal64.SetAllocatorFunctions(__arg0, __arg1, user_data);
@@ -25318,10 +25318,10 @@ namespace DearImGui
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L963.</summary>
         // DEBUG: void          GetAllocatorFunctions(ImGuiMemAllocFunc* p_alloc_func, ImGuiMemFreeFunc* p_free_func, void** p_user_data)
-        public static void GetAllocatorFunctions(ImGuiMemAllocFunc p_alloc_func, ImGuiMemFreeFunc p_free_func, IntPtr* p_user_data)
+        public static void GetAllocatorFunctions(global::DearImGui.ImGuiMemAllocFunc p_alloc_func, global::DearImGui.ImGuiMemFreeFunc p_free_func, IntPtr* p_user_data)
         {
-            var __arg0 = p_alloc_func == null ? IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(p_alloc_func);
-            var __arg1 = p_free_func == null ? IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(p_free_func);
+            var __arg0 = p_alloc_func == null ? global::System.IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(p_alloc_func);
+            var __arg1 = p_free_func == null ? global::System.IntPtr.Zero : Marshal.GetFunctionPointerForDelegate(p_free_func);
             if (Environment.Is64BitProcess)
             {
                 __Internal64.GetAllocatorFunctions(__arg0, __arg1, p_user_data);
@@ -25334,7 +25334,7 @@ namespace DearImGui
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L964.</summary>
         // DEBUG: void*         MemAlloc(size_t size)
-        public static IntPtr MemAlloc(UIntPtr size)
+        public static IntPtr MemAlloc(global::System.UIntPtr size)
         {
             var __arg0 = size
             /* DEBUG: TypeMapSizeT.CSharpMarshalToNative: Function: True, ReturnVarName: False */
@@ -25359,10 +25359,10 @@ namespace DearImGui
 
         /// <summary>Platform/renderer functions, for backend to setup + viewports list.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L970.</summary>
         // DEBUG: ImGuiPlatformIO&  GetPlatformIO()
-        public static ImGuiPlatformIO GetPlatformIO()
+        public static global::DearImGui.ImGuiPlatformIO GetPlatformIO()
         {
             var ___ret = Environment.Is64BitProcess ? __Internal64.GetPlatformIO() : __Internal32.GetPlatformIO();
-            var __result0 = ImGuiPlatformIO.__GetOrCreateInstance(___ret, false);
+            var __result0 = global::DearImGui.ImGuiPlatformIO.__GetOrCreateInstance(___ret, false);
             return __result0;
         }
 
@@ -25410,25 +25410,25 @@ namespace DearImGui
 
         /// <summary>This is a helper for backends.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L974.</summary>
         // DEBUG: ImGuiViewport*    FindViewportByID(ImGuiID id)
-        public static ImGuiViewport FindViewportByID(uint id)
+        public static global::DearImGui.ImGuiViewport FindViewportByID(uint id)
         {
             var ___ret = Environment.Is64BitProcess ? __Internal64.FindViewportByID(id) : __Internal32.FindViewportByID(id);
-            var __result0 = ImGuiViewport.__GetOrCreateInstance(___ret, false);
+            var __result0 = global::DearImGui.ImGuiViewport.__GetOrCreateInstance(___ret, false);
             return __result0;
         }
 
         /// <summary>This is a helper for backends. the type platform_handle is decided by the backend (e.g. HWND, MyWindow*, GLFWwindow* etc.).<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L975.</summary>
         // DEBUG: ImGuiViewport*    FindViewportByPlatformHandle(void* platform_handle)
-        public static ImGuiViewport FindViewportByPlatformHandle(IntPtr platform_handle)
+        public static global::DearImGui.ImGuiViewport FindViewportByPlatformHandle(IntPtr platform_handle)
         {
             var ___ret = Environment.Is64BitProcess ? __Internal64.FindViewportByPlatformHandle(platform_handle) : __Internal32.FindViewportByPlatformHandle(platform_handle);
-            var __result0 = ImGuiViewport.__GetOrCreateInstance(___ret, false);
+            var __result0 = global::DearImGui.ImGuiViewport.__GetOrCreateInstance(___ret, false);
             return __result0;
         }
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L3221.</summary>
         // DEBUG: static inline int   GetKeyIndex(ImGuiKey key)   { IM_ASSERT(key >= ImGuiKey_NamedKey_BEGIN && key < ImGuiKey_NamedKey_END && "ImGuiKey and native_index was merged together and native_index is disabled by IMGUI_DISABLE_OBSOLETE_KEYIO. Please switch to ImGuiKey."); return key; }
-        public static int GetKeyIndex(ImGuiKey key)
+        public static int GetKeyIndex(global::DearImGui.ImGuiKey key)
         {
             var ___ret = Environment.Is64BitProcess ? __Internal64.GetKeyIndex(key) : __Internal32.GetKeyIndex(key);
             return ___ret;
@@ -25486,103 +25486,103 @@ namespace DearImGui
         // DEBUG: bool          BeginChild(const char* str_id, const ImVec2& size = ImVec2(0, 0), bool border = false, ImGuiWindowFlags flags = 0)
         public static bool BeginChild(string str_id)
         {
-            return BeginChild(str_id, new Vector2(0, 0), false, 0);
+            return BeginChild(str_id, new global::System.Numerics.Vector2(0, 0), false, 0);
         }
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L344.</summary>
         // DEBUG: bool          BeginChild(ImGuiID id, const ImVec2& size = ImVec2(0, 0), bool border = false, ImGuiWindowFlags flags = 0)
         public static bool BeginChild(uint id)
         {
-            return BeginChild(id, new Vector2(0, 0), false, 0);
+            return BeginChild(id, new global::System.Numerics.Vector2(0, 0), false, 0);
         }
 
         /// <summary>Set next window position. call before Begin(). use pivot=(0.5f,0.5f) to center on given point, etc.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L363.</summary>
         // DEBUG: void          SetNextWindowPos(const ImVec2& pos, ImGuiCond cond = 0, const ImVec2& pivot = ImVec2(0, 0))
-        public static void SetNextWindowPos(Vector2 pos, ImGuiCond cond = (ImGuiCond)(0))
+        public static void SetNextWindowPos(global::System.Numerics.Vector2 pos, global::DearImGui.ImGuiCond cond = (ImGuiCond)(0))
         {
-            SetNextWindowPos(pos, cond, new Vector2(0, 0));
+            SetNextWindowPos(pos, cond, new global::System.Numerics.Vector2(0, 0));
         }
 
         /// <summary>Button.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L502.</summary>
         // DEBUG: bool          Button(const char* label, const ImVec2& size = ImVec2(0, 0))
         public static bool Button(string label)
         {
-            return Button(label, new Vector2(0, 0));
+            return Button(label, new global::System.Numerics.Vector2(0, 0));
         }
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L506.</summary>
         // DEBUG: void          Image(ImTextureID user_texture_id, const ImVec2& size, const ImVec2& uv0 = ImVec2(0, 0), const ImVec2& uv1 = ImVec2(1,1), const ImVec4& tint_col = ImVec4(1,1,1,1), const ImVec4& border_col = ImVec4(0,0,0,0))
-        public static void Image(IntPtr user_texture_id, Vector2 size)
+        public static void Image(IntPtr user_texture_id, global::System.Numerics.Vector2 size)
         {
-            Image(user_texture_id, size, new Vector2(0, 0), new Vector2(1, 1), new Vector4(1, 1, 1, 1), new Vector4(0, 0, 0, 0));
+            Image(user_texture_id, size, new global::System.Numerics.Vector2(0, 0), new global::System.Numerics.Vector2(1, 1), new global::System.Numerics.Vector4(1, 1, 1, 1), new global::System.Numerics.Vector4(0, 0, 0, 0));
         }
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L506.</summary>
         // DEBUG: void          Image(ImTextureID user_texture_id, const ImVec2& size, const ImVec2& uv0 = ImVec2(0, 0), const ImVec2& uv1 = ImVec2(1,1), const ImVec4& tint_col = ImVec4(1,1,1,1), const ImVec4& border_col = ImVec4(0,0,0,0))
-        public static void Image(IntPtr user_texture_id, Vector2 size, Vector2 uv0)
+        public static void Image(IntPtr user_texture_id, global::System.Numerics.Vector2 size, global::System.Numerics.Vector2 uv0)
         {
-            Image(user_texture_id, size, uv0, new Vector2(1, 1), new Vector4(1, 1, 1, 1), new Vector4(0, 0, 0, 0));
+            Image(user_texture_id, size, uv0, new global::System.Numerics.Vector2(1, 1), new global::System.Numerics.Vector4(1, 1, 1, 1), new global::System.Numerics.Vector4(0, 0, 0, 0));
         }
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L506.</summary>
         // DEBUG: void          Image(ImTextureID user_texture_id, const ImVec2& size, const ImVec2& uv0 = ImVec2(0, 0), const ImVec2& uv1 = ImVec2(1,1), const ImVec4& tint_col = ImVec4(1,1,1,1), const ImVec4& border_col = ImVec4(0,0,0,0))
-        public static void Image(IntPtr user_texture_id, Vector2 size, Vector2 uv0, Vector2 uv1)
+        public static void Image(IntPtr user_texture_id, global::System.Numerics.Vector2 size, global::System.Numerics.Vector2 uv0, global::System.Numerics.Vector2 uv1)
         {
-            Image(user_texture_id, size, uv0, uv1, new Vector4(1, 1, 1, 1), new Vector4(0, 0, 0, 0));
+            Image(user_texture_id, size, uv0, uv1, new global::System.Numerics.Vector4(1, 1, 1, 1), new global::System.Numerics.Vector4(0, 0, 0, 0));
         }
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L506.</summary>
         // DEBUG: void          Image(ImTextureID user_texture_id, const ImVec2& size, const ImVec2& uv0 = ImVec2(0, 0), const ImVec2& uv1 = ImVec2(1,1), const ImVec4& tint_col = ImVec4(1,1,1,1), const ImVec4& border_col = ImVec4(0,0,0,0))
-        public static void Image(IntPtr user_texture_id, Vector2 size, Vector2 uv0, Vector2 uv1, Vector4 tint_col)
+        public static void Image(IntPtr user_texture_id, global::System.Numerics.Vector2 size, global::System.Numerics.Vector2 uv0, global::System.Numerics.Vector2 uv1, global::System.Numerics.Vector4 tint_col)
         {
-            Image(user_texture_id, size, uv0, uv1, tint_col, new Vector4(0, 0, 0, 0));
+            Image(user_texture_id, size, uv0, uv1, tint_col, new global::System.Numerics.Vector4(0, 0, 0, 0));
         }
 
         /// <summary>&lt;0 frame_padding uses default frame padding settings. 0 for no padding.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L507.</summary>
         // DEBUG: bool          ImageButton(ImTextureID user_texture_id, const ImVec2& size, const ImVec2& uv0 = ImVec2(0, 0),  const ImVec2& uv1 = ImVec2(1,1), int frame_padding = -1, const ImVec4& bg_col = ImVec4(0,0,0,0), const ImVec4& tint_col = ImVec4(1,1,1,1))
-        public static bool ImageButton(IntPtr user_texture_id, Vector2 size)
+        public static bool ImageButton(IntPtr user_texture_id, global::System.Numerics.Vector2 size)
         {
-            return ImageButton(user_texture_id, size, new Vector2(0, 0), new Vector2(1, 1), -1, new Vector4(0, 0, 0, 0), new Vector4(1, 1, 1, 1));
+            return ImageButton(user_texture_id, size, new global::System.Numerics.Vector2(0, 0), new global::System.Numerics.Vector2(1, 1), -1, new global::System.Numerics.Vector4(0, 0, 0, 0), new global::System.Numerics.Vector4(1, 1, 1, 1));
         }
 
         /// <summary>&lt;0 frame_padding uses default frame padding settings. 0 for no padding.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L507.</summary>
         // DEBUG: bool          ImageButton(ImTextureID user_texture_id, const ImVec2& size, const ImVec2& uv0 = ImVec2(0, 0),  const ImVec2& uv1 = ImVec2(1,1), int frame_padding = -1, const ImVec4& bg_col = ImVec4(0,0,0,0), const ImVec4& tint_col = ImVec4(1,1,1,1))
-        public static bool ImageButton(IntPtr user_texture_id, Vector2 size, Vector2 uv0)
+        public static bool ImageButton(IntPtr user_texture_id, global::System.Numerics.Vector2 size, global::System.Numerics.Vector2 uv0)
         {
-            return ImageButton(user_texture_id, size, uv0, new Vector2(1, 1), -1, new Vector4(0, 0, 0, 0), new Vector4(1, 1, 1, 1));
+            return ImageButton(user_texture_id, size, uv0, new global::System.Numerics.Vector2(1, 1), -1, new global::System.Numerics.Vector4(0, 0, 0, 0), new global::System.Numerics.Vector4(1, 1, 1, 1));
         }
 
         /// <summary>&lt;0 frame_padding uses default frame padding settings. 0 for no padding.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L507.</summary>
         // DEBUG: bool          ImageButton(ImTextureID user_texture_id, const ImVec2& size, const ImVec2& uv0 = ImVec2(0, 0),  const ImVec2& uv1 = ImVec2(1,1), int frame_padding = -1, const ImVec4& bg_col = ImVec4(0,0,0,0), const ImVec4& tint_col = ImVec4(1,1,1,1))
-        public static bool ImageButton(IntPtr user_texture_id, Vector2 size, Vector2 uv0, Vector2 uv1, int frame_padding = (int)(-1))
+        public static bool ImageButton(IntPtr user_texture_id, global::System.Numerics.Vector2 size, global::System.Numerics.Vector2 uv0, global::System.Numerics.Vector2 uv1, int frame_padding = (int)(-1))
         {
-            return ImageButton(user_texture_id, size, uv0, uv1, frame_padding, new Vector4(0, 0, 0, 0), new Vector4(1, 1, 1, 1));
+            return ImageButton(user_texture_id, size, uv0, uv1, frame_padding, new global::System.Numerics.Vector4(0, 0, 0, 0), new global::System.Numerics.Vector4(1, 1, 1, 1));
         }
 
         /// <summary>&lt;0 frame_padding uses default frame padding settings. 0 for no padding.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L507.</summary>
         // DEBUG: bool          ImageButton(ImTextureID user_texture_id, const ImVec2& size, const ImVec2& uv0 = ImVec2(0, 0),  const ImVec2& uv1 = ImVec2(1,1), int frame_padding = -1, const ImVec4& bg_col = ImVec4(0,0,0,0), const ImVec4& tint_col = ImVec4(1,1,1,1))
-        public static bool ImageButton(IntPtr user_texture_id, Vector2 size, Vector2 uv0, Vector2 uv1, int frame_padding, Vector4 bg_col)
+        public static bool ImageButton(IntPtr user_texture_id, global::System.Numerics.Vector2 size, global::System.Numerics.Vector2 uv0, global::System.Numerics.Vector2 uv1, int frame_padding, global::System.Numerics.Vector4 bg_col)
         {
-            return ImageButton(user_texture_id, size, uv0, uv1, frame_padding, bg_col, new Vector4(1, 1, 1, 1));
+            return ImageButton(user_texture_id, size, uv0, uv1, frame_padding, bg_col, new global::System.Numerics.Vector4(1, 1, 1, 1));
         }
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L513.</summary>
         // DEBUG: void          ProgressBar(float fraction, const ImVec2& size_arg = ImVec2(-FLT_MIN, 0), const char* overlay = NULL)
         public static void ProgressBar(float fraction)
         {
-            ProgressBar(fraction, new Vector2(-1.17549435E-38F, 0), default);
+            ProgressBar(fraction, new global::System.Numerics.Vector2(-1.17549435E-38F, 0), default);
         }
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L575.</summary>
         // DEBUG: bool          InputTextMultiline(const char* label, char* buf, size_t buf_size, const ImVec2& size = ImVec2(0, 0), ImGuiInputTextFlags flags = 0, ImGuiInputTextCallback callback = NULL, void* user_data = NULL)
-        public static bool InputTextMultiline(string label, char* buf, UIntPtr buf_size)
+        public static bool InputTextMultiline(string label, char* buf, global::System.UIntPtr buf_size)
         {
-            return InputTextMultiline(label, buf, buf_size, new Vector2(0, 0), 0, null, default);
+            return InputTextMultiline(label, buf, buf_size, new global::System.Numerics.Vector2(0, 0), 0, null, default);
         }
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L595.</summary>
         // DEBUG: bool          ColorPicker4(const char* label, float col[4], ImGuiColorEditFlags flags = 0, const float* ref_col = NULL)
-        public static bool ColorPicker4(string label, Span<float> col, ImGuiColorEditFlags flags = (ImGuiColorEditFlags)(0))
+        public static bool ColorPicker4(string label, Span<float> col, global::DearImGui.ImGuiColorEditFlags flags = (ImGuiColorEditFlags)(0))
         {
             float param0 = 0;
             return ColorPicker4(label, col, flags, ref param0);
@@ -25590,58 +25590,58 @@ namespace DearImGui
 
         /// <summary>Display a color square/button, hover for details, return true when pressed.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L596.</summary>
         // DEBUG: bool          ColorButton(const char* desc_id, const ImVec4& col, ImGuiColorEditFlags flags = 0, const ImVec2& size = ImVec2(0, 0))
-        public static bool ColorButton(string desc_id, Vector4 col, ImGuiColorEditFlags flags = (ImGuiColorEditFlags)(0))
+        public static bool ColorButton(string desc_id, global::System.Numerics.Vector4 col, global::DearImGui.ImGuiColorEditFlags flags = (ImGuiColorEditFlags)(0))
         {
-            return ColorButton(desc_id, col, flags, new Vector2(0, 0));
+            return ColorButton(desc_id, col, flags, new global::System.Numerics.Vector2(0, 0));
         }
 
         /// <summary>"bool selected" carry the selection state (read-only). Selectable() is clicked is returns true so you can modify your selection state. size.x==0.0: use remaining width, size.x&gt;0.0: specify width. size.y==0.0: use label height, size.y&gt;0.0: specify height.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L622.</summary>
         // DEBUG: bool          Selectable(const char* label, bool selected = false, ImGuiSelectableFlags flags = 0, const ImVec2& size = ImVec2(0, 0))
-        public static bool Selectable(string label, bool selected = false, ImGuiSelectableFlags flags = (ImGuiSelectableFlags)(0))
+        public static bool Selectable(string label, bool selected = false, global::DearImGui.ImGuiSelectableFlags flags = (ImGuiSelectableFlags)(0))
         {
-            return Selectable(label, selected, flags, new Vector2(0, 0));
+            return Selectable(label, selected, flags, new global::System.Numerics.Vector2(0, 0));
         }
 
         /// <summary>"bool* p_selected" point to the selection state (read-write), as a convenient helper.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L623.</summary>
         // DEBUG: bool          Selectable(const char* label, bool* p_selected, ImGuiSelectableFlags flags = 0, const ImVec2& size = ImVec2(0, 0))
-        public static bool Selectable(string label, ref bool p_selected, ImGuiSelectableFlags flags = (ImGuiSelectableFlags)(0))
+        public static bool Selectable(string label, ref bool p_selected, global::DearImGui.ImGuiSelectableFlags flags = (ImGuiSelectableFlags)(0))
         {
-            return Selectable(label, ref p_selected, flags, new Vector2(0, 0));
+            return Selectable(label, ref p_selected, flags, new global::System.Numerics.Vector2(0, 0));
         }
 
         /// <summary>Open a framed scrolling region.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L631.</summary>
         // DEBUG: bool          BeginListBox(const char* label, const ImVec2& size = ImVec2(0, 0))
         public static bool BeginListBox(string label)
         {
-            return BeginListBox(label, new Vector2(0, 0));
+            return BeginListBox(label, new global::System.Numerics.Vector2(0, 0));
         }
 
         /// <summary>Widgets: Data Plotting.<br/>- Consider using ImPlot (https://github.com/epezent/implot) which is much better!<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L638.</summary>
         // DEBUG: void          PlotLines(const char* label, const float* values, int values_count, int values_offset = 0, const char* overlay_text = NULL, float scale_min = FLT_MAX, float scale_max = FLT_MAX, ImVec2 graph_size = ImVec2(0, 0), int stride = sizeof(float))
         public static void PlotLines(string label, ref float values, int values_count, int values_offset = (int)(0), string overlay_text = default, float scale_min = 3.40282347E+38F, float scale_max = 3.40282347E+38F)
         {
-            PlotLines(label, ref values, values_count, values_offset, overlay_text, scale_min, scale_max, new Vector2(0, 0), sizeof(float));
+            PlotLines(label, ref values, values_count, values_offset, overlay_text, scale_min, scale_max, new global::System.Numerics.Vector2(0, 0), sizeof(float));
         }
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L639.</summary>
         // DEBUG: void          PlotLines(const char* label, float(*values_getter)(void* data, int idx), void* data, int values_count, int values_offset = 0, const char* overlay_text = NULL, float scale_min = FLT_MAX, float scale_max = FLT_MAX, ImVec2 graph_size = ImVec2(0, 0))
-        public static void PlotLines(string label, ImValuesGetterHandler values_getter, IntPtr data, int values_count, int values_offset = (int)(0), string overlay_text = default, float scale_min = 3.40282347E+38F, float scale_max = 3.40282347E+38F)
+        public static void PlotLines(string label, global::DearImGui.ImValuesGetterHandler values_getter, IntPtr data, int values_count, int values_offset = (int)(0), string overlay_text = default, float scale_min = 3.40282347E+38F, float scale_max = 3.40282347E+38F)
         {
-            PlotLines(label, values_getter, data, values_count, values_offset, overlay_text, scale_min, scale_max, new Vector2(0, 0));
+            PlotLines(label, values_getter, data, values_count, values_offset, overlay_text, scale_min, scale_max, new global::System.Numerics.Vector2(0, 0));
         }
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L640.</summary>
         // DEBUG: void          PlotHistogram(const char* label, const float* values, int values_count, int values_offset = 0, const char* overlay_text = NULL, float scale_min = FLT_MAX, float scale_max = FLT_MAX, ImVec2 graph_size = ImVec2(0, 0), int stride = sizeof(float))
         public static void PlotHistogram(string label, ref float values, int values_count, int values_offset = (int)(0), string overlay_text = default, float scale_min = 3.40282347E+38F, float scale_max = 3.40282347E+38F)
         {
-            PlotHistogram(label, ref values, values_count, values_offset, overlay_text, scale_min, scale_max, new Vector2(0, 0), sizeof(float));
+            PlotHistogram(label, ref values, values_count, values_offset, overlay_text, scale_min, scale_max, new global::System.Numerics.Vector2(0, 0), sizeof(float));
         }
 
         /// <summary>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L641.</summary>
         // DEBUG: void          PlotHistogram(const char* label, float(*values_getter)(void* data, int idx), void* data, int values_count, int values_offset = 0, const char* overlay_text = NULL, float scale_min = FLT_MAX, float scale_max = FLT_MAX, ImVec2 graph_size = ImVec2(0, 0))
-        public static void PlotHistogram(string label, ImValuesGetterHandler values_getter, IntPtr data, int values_count, int values_offset = (int)(0), string overlay_text = default, float scale_min = 3.40282347E+38F, float scale_max = 3.40282347E+38F)
+        public static void PlotHistogram(string label, global::DearImGui.ImValuesGetterHandler values_getter, IntPtr data, int values_count, int values_offset = (int)(0), string overlay_text = default, float scale_min = 3.40282347E+38F, float scale_max = 3.40282347E+38F)
         {
-            PlotHistogram(label, values_getter, data, values_count, values_offset, overlay_text, scale_min, scale_max, new Vector2(0, 0));
+            PlotHistogram(label, values_getter, data, values_count, values_offset, overlay_text, scale_min, scale_max, new global::System.Numerics.Vector2(0, 0));
         }
 
         /// <summary>Return true if the modal is open, and you can start outputting to it.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L684.</summary>
@@ -25654,9 +25654,9 @@ namespace DearImGui
 
         /// <summary>Tables.<br/>- Full-featured replacement for old Columns API.<br/>- See Demo-&gt;Tables for demo code. See top of imgui_tables.cpp for general commentary.<br/>- See ImGuiTableFlags_ and ImGuiTableColumnFlags_ enums for a description of available flags.<br/>The typical call flow is:.<br/>- 1. Call BeginTable(), early out if returning false.<br/>- 2. Optionally call TableSetupColumn() to submit column name/flags/defaults.<br/>- 3. Optionally call TableSetupScrollFreeze() to request scroll freezing of columns/rows.<br/>- 4. Optionally call TableHeadersRow() to submit a header row. Names are pulled from TableSetupColumn() data.<br/>- 5. Populate contents:.<br/>- In most situations you can use TableNextRow() + TableSetColumnIndex(N) to start appending into a column.<br/>- If you are using tables as a sort of grid, where every columns is holding the same type of contents,.<br/>You may prefer using TableNextColumn() instead of TableNextRow() + TableSetColumnIndex().<br/>TableNextColumn() will automatically wrap-around into the next row if needed.<br/>- IMPORTANT: Comparatively to the old Columns() API, we need to call TableNextColumn() for the first column!<br/>- Summary of possible call flow:.<br/>--------------------------------------------------------------------------------------------------------.<br/>TableNextRow() -&gt; TableSetColumnIndex(0) -&gt; Text("Hello 0") -&gt; TableSetColumnIndex(1) -&gt; Text("Hello 1"), // OK.<br/>TableNextRow() -&gt; TableNextColumn(), -&gt; Text("Hello 0") -&gt; TableNextColumn(), -&gt; Text("Hello 1"), // OK.<br/>TableNextColumn(), -&gt; Text("Hello 0") -&gt; TableNextColumn(), -&gt; Text("Hello 1"), // OK: TableNextColumn() automatically gets to next row!<br/>TableNextRow(), -&gt; Text("Hello 0"), // Not OK! Missing TableSetColumnIndex() or TableNextColumn()! Text will not appear!<br/>--------------------------------------------------------------------------------------------------------.<br/>- 5. Call EndTable().<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L738.</summary>
         // DEBUG: bool          BeginTable(const char* str_id, int column, ImGuiTableFlags flags = 0, const ImVec2& outer_size = ImVec2(0.0f, 0.0f), float inner_width = 0.0f)
-        public static bool BeginTable(string str_id, int column, ImGuiTableFlags flags = (ImGuiTableFlags)(0))
+        public static bool BeginTable(string str_id, int column, global::DearImGui.ImGuiTableFlags flags = (ImGuiTableFlags)(0))
         {
-            return BeginTable(str_id, column, flags, new Vector2(0.0F, 0.0F), 0.0F);
+            return BeginTable(str_id, column, flags, new global::System.Numerics.Vector2(0.0F, 0.0F), 0.0F);
         }
 
         /// <summary>Create a Tab. Returns true if the Tab is selected.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L787.</summary>
@@ -25671,14 +25671,14 @@ namespace DearImGui
         // DEBUG: ImGuiID       DockSpace(ImGuiID id, const ImVec2& size = ImVec2(0, 0), ImGuiDockNodeFlags flags = 0, const ImGuiWindowClass* window_class = NULL)
         public static uint DockSpace(uint id)
         {
-            return DockSpace(id, new Vector2(0, 0), 0, default);
+            return DockSpace(id, new global::System.Numerics.Vector2(0, 0), 0, default);
         }
 
         /// <summary>Return a zero-terminated string with the .ini data which you can save by your own mean. call when io.WantSaveIniSettings is set, then save data by your own mean and clear io.WantSaveIniSettings.<br/>https://github.com/ocornut/imgui/blob/9cd9c2eff99877a3f10a7f9c2a3a5b9c15ea36c6/imgui.h#L952.</summary>
         // DEBUG: const char*   SaveIniSettingsToMemory(size_t* out_ini_size = NULL)
         public static string SaveIniSettingsToMemory()
         {
-            UIntPtr param0 = (UIntPtr)0;
+            global::System.UIntPtr param0 = 0;
             return SaveIniSettingsToMemory(ref param0);
         }
 
@@ -25689,7 +25689,7 @@ namespace DearImGui
             var path = "imgui";
             var image = DearImGui.SymbolResolver.LoadImage(ref path);
             if (image == IntPtr.Zero)
-                throw new DllNotFoundException(path);
+                throw new global::System.DllNotFoundException(path);
             _EmptyString_ImGuiTextBuffer__2PADA = DearImGui.SymbolResolver.ResolveSymbol(image, "?EmptyString@ImGuiTextBuffer@@2PADA");
         }
     }

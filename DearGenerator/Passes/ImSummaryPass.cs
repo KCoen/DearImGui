@@ -222,6 +222,7 @@ public abstract class ImSummaryPass : TranslationUnitPass
 
     private bool Ignore(Declaration declaration)
     {
+        
         if (declaration.Namespace == null)
         {
             return true; // "T" ["TypeTemplateParameter"]
